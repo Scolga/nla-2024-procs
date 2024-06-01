@@ -1,0 +1,113 @@
+
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+\usepackage{todonotes}
+
+\usepackage{nla} 
+
+\begin{document}
+\fi
+
+\title{On Estimates for Solutions to \\ a Class of Nonautonomous Systems of Neutral Type \\with Concentrated and Distributed Delays\thanks{The research is supported
+by the Russian Science Foundation (grant no.~24-21-00367),
+https://rscf.ru/project/24-21-00367/.}}
+
+\author{Inessa I. Matveeva
+}
+\institute{Novosibirsk State University, Novosibirsk, Russia\\
+  \email{i.matveeva@g.nsu.ru}
+}
+
+\maketitle
+
+\begin{abstract}
+We consider a class of neutral type systems of 
+nonautonomous differential equations with concentrated 
+and distributed delays. 
+Using a Lyapunov--Krasovskii functional, some estimates for solutions 
+are established. The obtained estimates allow us to conclude whether the solutions 
+are stable. 
+\keywords{time-delay systems of neutral type, variable coefficients, 
+estimates for solutions, stability, Lyapunov--Krasovskii functional}
+\end{abstract}
+
+We consider time-delay systems of the following form:
+$$
+\frac{d}{dt}y(t) = A(t) y(t) + B(t) y(t-\tau) + C(t) \frac{d}{dt} y(t-\tau)
++ \int\limits^t_{t-\tau}D(t, t-s)y(s)\,ds
+$$
+$$
++ F\left(t, y(t), y(t-\tau), \frac{d}{dt} y(t-\tau), \int\limits^t_{t-\tau}D(t, t-s)y(s)\,ds \right), 
+\qquad 
+t \ge 0, 
+\eqno(1)
+$$
+where 
+$A(t)$, $B(t)$, $C(t)$, $D(t,s)$
+are 
+$(n \times n)$-matrices with continuous real-valued entries; i.e.
+$$
+a_{ij}(t), \ b_{ij}(t), \ c_{ij}(t) \in C(\overline{\mathbb R}_+), 
+\quad
+d_{ij}(t, s) \in C(\overline{\mathbb R}_+ \times [0, \tau]),
+\quad 
+i, j = 1, \dots, n,
+$$
+$\tau > 0$
+is a delay,
+$F(t, u_1, u_2, u_3, u_4)$ 
+is a continuous real-valued vector-function. 
+We assume that 
+$F(t, u_1, u_2, u_3, u_4)$ 
+is a Lipschitz function of 
+$u_1$, $u_4$ 
+on every compact set 
+$G \subset [0,\infty) \times {\mathbb R}^n \times {\mathbb R}^n \times {\mathbb R}^n \times {\mathbb R}^n$ 
+and satisfies the inequality
+$$
+\|F(t, u_1, u_2, u_3, u_4)\| \le q_1 \|u_1\| + q_2 \|u_2\|, 
+\qquad
+t \ge 0, 
+\quad 
+u_j \in {\mathbb R}^n,
+\quad
+q_j \ge 0. 
+$$
+
+Using a Lyapunov--Krasovskii functional introduced in [1] and functional difference equations,
+we establish some estimates for solutions to these systems. 
+The obtained estimates allow us to conclude whether the solutions 
+are stable. In the case of the exponential stability, 
+stabilization rates of the solutions at infinity are pointed out.
+The present work continues our investigations of properties 
+of solutions to nonautonomous time-delay systems (see, for example, [2, 3]). 
+
+% At the end of the text, acknowledgments are expressed, if you haven't
+% made a footnote from the title. For example, we can write
+
+%The research is supported by the Russian Science Foundation
+%(grant no.~24-21-00367), https://rscf.ru/project/24-21-00367/
+
+\begin{thebibliography}{9} % or {99}, if there is more than ten references.
+
+\bibitem{1}
+Matveeva I. I. 
+Estimates of the exponential decay of solutions to linear systems of 
+neutral type with periodic coefficients.  
+Journal of Applied and Industrial Mathematics. 2019. Vol. 13, no. 3. Pp. 511--518.
+
+\bibitem{2}
+Matveeva I. I.
+Estimates for solutions to a class of nonautonomous systems of neutral type 
+with unbounded delay. Siberian Mathematical Journal. 2021. Vol. 62, no.~3. Pp. 468--481.
+
+\bibitem{3}
+Matveeva I. I.
+Estimates for solutions to one class of nonlinear nonautonomous systems with 
+time-varying concentrated and distributed delays.   
+Siberian Electronic Mathematical Reports. 2021. Vol. 18, no. 2. Pp. 1689--1697.
+
+\end{thebibliography}
+%\end{document}

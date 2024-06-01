@@ -1,0 +1,101 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{Determination of thermal conductivity and volumetric heat capacity by heat flow}
+% First author
+\author{Andrei Gorchakov\inst{1,2}  \and  Vladimir Zubov\inst{1,2}
+}
+\institute{Federal Research Center "Computer Science and Control"
+of the Russian Academy of Sciences, Moscow, Russia\\
+  \email{andrgor12@gmail.com, vladimir.zubov@mail.ru}
+  \and
+Moscow Institute of Physics and Technology, Dolgoprudny, Russia\\
+\email{andrgor12@gmail.com, vladimir.zubov@mail.ru}}
+% etc
+
+\maketitle
+
+\begin{abstract}
+When creating new materials, the properties of these substances are not always known. We often encounter a situation where the volumetric heat capacity and thermal conductivity of a substance depend only on temperature, and this dependencies are unknown. In this regard, the problem of determining the dependence of the volumetric heat capacity and thermal conductivity of a substance on temperature based on the results of experimental observation of the dynamics of the temperature field is relevant.
+
+Previously, the authors proposed an effective algorithm for simultaneous identification of the temperature-dependent volumetric heat capacity and the thermal conductivity of a substance based on the results of experimental observation of the dynamics of the temperature field in an object.
+
+This paper examines the possibility of using the proposed algorithm to obtain a numerical solution to the problem of simultaneous identification of the temperature-dependent volumetric heat capacity and thermal conductivity of the substance under study based on the results of measuring the heat flow at the boundary of the domain.
+The work considers a layer of material of a given width. The temperature of this layer at the initial time is known. It is also known how the temperature at the edges of this layer changes in time. To model the temperature distribution in the layer, the first boundary value problem for the one-dimensional non-stationary heat equation is used.
+The identification problem under consideration is to determine such dependencies of the volumetric heat capacity of a substance and the thermal conductivity on temperature at which the heat flux at the layer boundary, obtained as a result of solving the mixed (direct) problem, differs little from the flux obtained experimentally. A measure of the deviation of these functions can be a certain norm of deviation of the theoretical flow from the experimental one.
+An algorithm for the numerical solution of the inverse coefficient problem is proposed. To minimize the cost functional, the gradient method was used in the work. The gradient of the cost functional was calculated using the fast automatic differentiation technique. The examples of solving the inverse coefficient problem considered in the work demonstrated the efficiency of the proposed algorithm.
+
+
+\keywords{thermal conductivity, inverse coefficient problems, gradient, heat equation} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  This is the template file for the 6th International conference
+%  NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+%  June 25-30, 2018
+%  Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[12pt]{llncs}
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes}
+
+\usepackage[russian]{nla}
+
+\begin{document}
+\fi
+
+\title{Определение коэффициента теплопроводности и объемной теплоемкости по  тепловому потоку\thanks{Исследование выполнено за счет гранта Российского научного фонда, проект \textnumero~21-71-30005, https://rscf.ru/project/21-71-30005/}}
+% Первый автор
+\author{А.~Ю.~Горчаков\inst{1,2}  \and  В.~И.~Зубов\inst{1,2}
+  }
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{Федеральный исследовательский центр «Информатика и управление» Российской академии наук \\(ФИЦ ИУ РАН), Москва, Россия \\
+  \email{andrgor12@gmail.com, vladimir.zubov@mail.ru}
+  \and   % Разделяет институты и присваивает им номера по порядку.
+Московский физико-технический институт (национальный исследовательский университет) (МФТИ), Долгопрудный, Россия\\
+  \email{andrgor12@gmail.com, vladimir.zubov@mail.ru}
+}
+
+\maketitle
+
+\begin{abstract}
+При создании новых материалов свойства этих веществ не всегда бывают известны. Нередко приходится встречаться с ситуацией, когда объемная теплоемкость и коэффициент теплопроводности вещества зависят только от температуры, и эти зависимости неизвестны. В связи с этим актуальной оказывается задача определения зависимости объемной теплоемкости и коэффициента теплопроводности вещества от температуры по результатам экспериментального наблюдения за динамикой температурного поля. 
+
+	Ранее авторами был предложен эффективный алгоритм одновременной идентификации зависящих от температуры объемной теплоемкости и  коэффициента теплопроводности вещества на основе результатов экспериментального наблюдения за динамикой температурного поля в объекте.
+
+В данной работе исследуется возможность применения предложенного алгоритма для получения численного решения задачи одновременной идентификации зависящих от температуры объемной теплоемкости и коэффициента теплопроводности исследуемого вещества по результатам измерения теплового потока на границе области.
+В работе рассматривается слой материала заданной ширины. Температура этого слоя в начальный момент времени известна. Также известно, как изменяется со временем температура на краях этого слоя. Для моделирования распределения температуры в слое используется первая краевая задача для одномерного нестационарного уравнения теплопроводности.
+Рассматриваемая задача идентификации состоит в определении такой зависимости объемной теплоемкости вещества  и коэффициента теплопроводности от температуры, при которой тепловой поток на границе слоя, полученный в результате решения смешанной (прямой) задачи, мало отличается от потока, полученного экспериментально. Мерой отклонения этих функций может служить некоторая норма отклонения теоретического потока от экспериментального.
+Предложен алгоритм численного решения обратной коэффициентной задачи. Для минимизации целевого функционала в работе использовался градиентный метод. Градиент целевого функционала вычислялся с помощью методологии быстрого автоматического дифференцирования. Рассмотренные в работе примеры решения обратной коэффициентной задачи продемонстрировали работоспособность предложенного алгоритма.
+
+
+\keywords{теплопроводность, обратные коэффициентные задачи, градиент, уравнение теплопроводности} % в конце списка точка не ставится
+\end{abstract}
+
+
+
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок.
+
+
+
+%\end{document}
+

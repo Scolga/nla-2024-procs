@@ -1,0 +1,142 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{Semiclassical solutions to the nonlocal nonlinear Schr\"{o}dinger equation with an anti-Hermitian term associated with the dynamics of quasiparticles}
+% First author
+\author{Anton Kulagin\inst{1,2}  \and  Alexander Shapovalov\inst{3}
+}
+\institute{Tomsk Polytechnic University, Tomsk, Russia\\
+  \email{aek8@tpu.ru}
+  \and
+Institute of Atmospheric Optics SB RAS, Tomsk, Russia\\
+\and
+Tomsk State University, Tomsk, Russia\\
+  \email{shpv@mail.tsu.ru}
+}
+% etc
+
+\maketitle
+
+\begin{abstract}
+The method of constructing asymptotic solutions to the Schr\"{o}dinger equation with a nonlocal nonlinearity and an anti-Hermitian term within the semiclassical approximation. The solutions under consideration are localized in a neighbourhood of few trajectories associated with classical mechanics of quasiparticles. The general formalism is applied to the specific one-dimensional model equation for the Bose--Einstein condensate.
+
+
+\keywords{quasiparticles, open quantum system, semiclassical approximation, Maslov complex germ method} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  This is the template file for the 6th International conference
+%  NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+%  June 25-30, 2018
+%  Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[12pt]{llncs}
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes}
+
+\usepackage[russian]{nla}
+
+\begin{document}
+\fi
+
+\title{Квазиклассические решения нелокального нелинейного уравнения Шредингера с антиэрмитовой частью, ассоциированные с динамикой квазичастиц\thanks{Исследование выполнено за счет гранта Российского научного фонда \textnumero~23-71-01047, https://rscf.ru/project/23-71-01047/.}}
+% Первый автор
+\author{А.~Е.~Кулагин\inst{1,2}  \and  А.~В.~Шаповалов\inst{3}
+}
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{Томский политехнический университет, г. Томск, Россия \\
+  \email{aek8@tpu.ru}
+  \and   % Разделяет институты и присваивает им номера по порядку.
+  Институт оптики атмосферы СО РАН, г. Томск, Россия \\
+  \and   % Разделяет институты и присваивает им номера по порядку.
+Томский государственный университет, г. Томск, Россия\\
+  \email{shpv@mail.tsu.ru}
+% \and Другие авторы...
+}
+
+\maketitle
+
+\begin{abstract}
+Предлагается метод построения асимптотических решений уравнения Шредингера с нелокальной нелинейностью и антиэрмитовой частью в квазиклассическом приближении. Рассматриваемые решения локализованы в окрестности нескольких траекторий, ассоциированных с классической механикой квазичастиц. Общий формализм применен к конкретному одномерному модельному уравнению для бозе-эйнштейновского конденсата.
+
+\keywords{квазичастицы, открытая квантовая система, квазиклассическое приближение, метод комплексного ростка Маслова} % в конце списка точка не ставится
+\end{abstract}
+
+%\section{Основные результаты} % не обязательное поле
+
+Метод квазиклассически сосредоточенных состояний (МКСС), основанный на методе комплексного ростка Маслова \cite{mas94}, позволяет строить решения нелокального нелинейного уравнения Шредингера (ННУШ), которые локализованы в окрестности траектории в фазовом пространстве \cite{bel02}. Эта работа посвящена более сложной проблеме построения решений, которые локализованы в окрестности нескольких траекторий, а не одной. Такие решения ассоциированы с "классической механикой"\, нескольких квазичастиц, каждая из которых имеет свою траекторию и взаимодействие которых друг с другом диктуется ННУШ.
+
+Рассматривается задача Коши для следующего ННУШ с антиэрмитовой частью:
+\begin{equation}
+\begin{array}{l}
+\bigg\{ -i\hbar\partial_t + H(\hat{z},t)[\Psi]-i\hbar \Lambda \breve{H}(\hat{z},t)[\Psi] \bigg\}\Psi(\vec{x},t)=0, \quad \Psi(\vec{x},0)=\psi(\vec{x}),\cr
+H(\hat{z},t)[\Psi]=V(\hat{z},t)+\kappa\displaystyle\int\limits_{{\mathbb{R}}^n}d\vec{y}\,\Psi^{*}(\vec{y},t)W(\hat{z},\hat{w},t)\Psi(\vec{y},t), \cr
+\breve{H}(\hat{z},t)[\Psi]=\breve{V}(\hat{z},t)+\kappa\displaystyle\int\limits_{{\mathbb{R}}^n}d\vec{y}\,\Psi^{*}(\vec{y},t)\breve{W}(\hat{z},\hat{w},t)\Psi(\vec{y},t),
+\end{array}
+\label{eq1}
+\end{equation}
+где $\vec{x},\vec{y}\in{\mathbb{R}}^n$, $\hat{\vec{p}}=-i\hbar\partial_x$, $\hat{\vec{p}}_y=-i\hbar\partial_y$, $\hat{z}=(\hat{\vec{p}},\vec{x})$, $\hat{w}=(\hat{\vec{p}}_y,\vec{y})$ и $\hbar$ --- формальный малый параметр квазиклассического приближения. Операторы $V(\hat{z},t)$, $\breve{V}(\hat{z},t)$, $W(\hat{z},\hat{w},t)$ и $\breve{W}(\hat{z},\hat{w},t)$ --- псевдодифференциальные операторы с гладкими символами.
+
+Расширение МКСС на случай ННУШ с анти-эрмитовой частью было предложено в работе \cite{kul24}. Здесь мы обобщаем этот формализм на асимптотические решения уравнения \eqref{eq1}, ассоциированные с динамической системой обыкновенных дифференциальных уравнений, описывающих квазиклассическую динамику квазичастиц.
+
+С помощью предложенного формализма построены решения задачи Коши одномерного уравнения вида
+\begin{equation}
+\bigg\{ \displaystyle\frac{-i\hbar\partial_t}{1-i\hbar\Lambda} + \displaystyle\frac{1}{2}\hat{p}^2+\epsilon\cos x +\kappa\displaystyle\int\limits_{-\infty}^{\infty} \displaystyle\frac{c^2}{\big((x-y)^2+c^2\big)^{3/2}}|\Psi(y,t)|^2dy \bigg\}\Psi(x,t)=0,
+\label{primereq1}
+\end{equation}
+описывающего бозе-эйнштейновский конденсат в периодической потенциальной ловушке с диполь-дипольным взаимодействием и феноменологическим затуханием. В рамках квазиклассического приближения показано, что для одиночной квазичастицы в потенциальной яме, возникает коллапс решения $\Psi(\vec{x},t)$, в то время как при добавлении в соседнюю потенциальную яму второй такой же квазичастицы коллапс пропадает даже при слабом взаимодействии между квазичастицами, что свидетельствует о солитоноподобном поведении ансамбля взаимодействующих квазичастиц.
+
+
+% В конце текста можно выразить благодарности, если этого не было
+% сделано в ссылке с заголовка статьи, например,
+%
+
+
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+
+\bibitem{mas94} Maslov~V.P. The Complex WKB Method for Nonlinear Equations. I. Linear Theory~/ Birkhauser Verlag, Basel,~1994.
+
+\bibitem{bel02} Belov~V.V., Trifonov~A.Yu., Shapovalov~A.V. The trajectory-coherent approximation and the system of moments for the Hartree type equation~// Int. J. of Mathematics and Mathematical Sciences. 2002. Vol.~32. Pp.~325--370.
+
+\bibitem{kul24} Kulagin~A.E., Shapovalov~A.V. Semiclassical approach to the nonlocal nonlinear Schrodinger equation with a non-Hermitian term~// Mathematics. 2024. Vol.~12. 580.
+
+
+\end{thebibliography}
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок.
+
+
+\author{А.~Е.~Кулагин\inst{1,2}
+  \and
+% Второй автор
+  А.~В.~Шаповалов\inst{3}
+%  \and
+%% Третий автор
+%  И.~О.~Фамилия\inst{1}
+}
+
+
+
+
+
+%\end{document}
+

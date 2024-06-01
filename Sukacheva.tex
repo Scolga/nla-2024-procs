@@ -1,0 +1,189 @@
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+\usepackage{todonotes}
+
+\usepackage{nla}
+
+\begin{document}
+\fi
+
+\title{The Avalos--Triggiani Problem for the Linear Oskolkov System of Non-Zero Order and a System of Wave Equations}%\thanks{}
+
+\author{T.G. Sukacheva \and  A.O. Kondyukov 
+% \and
+%  Name FamilyName3\inst{1}
+}
+\institute{Novgorod State University, Velikiy Novgorod, Russian Federation\\
+  \email{tamara.sukacheva@novsu.ru},\quad
+ % \and
+%Novgorod State University, Velikiy Novgorod, Russian Federation\\
+\email{k.a.o$ _{-} $leksey999@mail.ru}}
+
+\maketitle
+
+\begin{abstract}
+%Insert your english abstract here. Include 3-6 keywords below.
+
+The Avalos--Triggiani problem for a system of wave equations and a linear Oskolkov system of nonzero order is investigated. The mathematical model contains a linear Oskolkov system describing the flow of an incompressible viscoelastic Kelvin--Voigt fluid of nonzero order, and a wave vector equation corresponding to some structure immersed in the specified fluid. Based on the method proposed by the authors of this problem, the theorem of the existence of the unique solution to the Avalos--Triggiani problem for the indicated systems is proved.
+
+\keywords{Avalos--Triggiani problem, incompressible viscoelastic fluid; linear Oskolkov's
+systems.}
+\end{abstract}
+
+
+%\section{The main results} %optional section
+
+
+%The text of the report.
+Let $\Omega$ be a bounded domain in $\mathbb{R}^n, n=2, 3,$ with sufficiently smooth boundary $\partial \Omega .$
+Let $u={\rm{col}}(u_1, u_2, ... , u_n)$ be a $n-$dimensional velocity vector $n=2, 3$,  the scalar function $p$ be a pressure, and the vector $w={\rm{col}} (w_1. w_2, ... , w_n)$  be a vector of displacement of a
+body, which occupies the domain ${\Omega}_s,$ and is immersed in a fluid occupying the domain ${\Omega}_f.$
+Therefore, $\Omega = {\Omega}_s \cup {\Omega}_f , {\overline{\Omega}_s} \cap {\overline{\Omega}_f} =\partial {\Omega}_s \equiv {\Gamma}_s$ is the common boundary of ${\Omega}_s,$ and ${\Omega}_f$. Let us denote the outer boundary of
+${\Omega}_f$ by ${\Gamma}_f$
+%(see Fig. 1)
+.
+Our goal is to investigate the Avalos--Triggiani problem \cite{AT1}, \cite{AT2}  for the case when the fluid in ${\Omega}_f$ is an incompressible
+viscoelastic Kelvin--Voigt fluid of the nonzero-order \cite{OAPN}. The considered mathematical model
+is determined by the system
+
+
+\begin{equation}
+(1- \kappa {\nabla}^2)u_{t}-\mu\nabla^{2}u-\displaystyle\sum_{l=1}^K\beta_{l}\nabla^{2}\textbf{w}_{l}+\nabla p =0
+{\displaystyle ~~~~~\forall (t,x) \in (0, T] \times \Omega_f}\equiv\Omega_{Tf},
+\end{equation}
+\begin{equation}
+\dfrac{\partial\textbf{w}_{l}}{\partial t}=u+\alpha_{l}\textbf{w}_{l},
+{\displaystyle ~~~~~\alpha_{l}\in R_{-},}
+{\displaystyle ~~~~~\beta_{l}\in R_{+},}
+{\displaystyle ~~~~~l=\overline{1,~K},}
+{\displaystyle ~~~~~\forall (t,x) \in \Omega_{Tf}},
+\end{equation}
+\begin{equation}
+\mathop{\mathop{\nabla  \cdot { u} =0,\quad}\limits^{\ }}
+\limits^{\ } {\displaystyle ~~~~~\forall (t,x) \in \Omega_{Tf}},
+\end{equation}
+\begin{equation}
+   {\displaystyle\mathop{\mathop{
+{w_{tt}}-{\nabla}^2 w + w=0 {\displaystyle ~~~~~\forall (t,x) \in (0, T] \times \Omega_s\equiv\Omega_{Ts}}
+\quad}\limits^{\ }}\limits^{\ }}
+\end{equation}
+%с краевыми условиями
+with the boundary value conditions
+\begin{equation}
+\mathop{\mathop{u {\mid}_{{\Gamma}_f} \equiv 0,\quad}\limits^{\ }}
+\limits^{\ } {\displaystyle ~~~~~\forall (t,x) \in (0, T] \times \Gamma_f\equiv\Gamma_{Tf}},
+\end{equation}
+\begin{equation}
+\mathop{\mathop{\textbf{w}_{l} {\mid}_{{\Gamma}_f} \equiv 0,\quad}\limits^{\ }}
+\limits^{\ } {\displaystyle ~~~~~\forall (t,x) \in \Gamma_{Tf}},
+\end{equation}
+\begin{equation}
+\mathop{\mathop{u \equiv w_t,\quad}\limits^{\ }}
+\limits^{\ } {\displaystyle ~~~~~\forall (t,x) \in (0, T] \times \Gamma_s\equiv\Gamma_{Ts}},
+\end{equation}
+\begin{equation}
+{\displaystyle\mathop{\mathop{\dfrac{\partial u}{\partial \nu} -
+\dfrac{\partial w}{\partial \nu} =p{\nu}
+\quad}\limits^{\ }}}
+ {\displaystyle ~~~~~\forall (t,x) \in \Gamma_{Ts}}
+\end{equation}
+%и начальным условием
+and the initial value condition
+\begin{equation}
+(w(0, \cdot ), w_t (0, \cdot ), \textbf{w}_{1}(0, \cdot ),\ldots,\textbf{w}_{K}(0, \cdot ), u(0, \cdot )) = (w_0, w_1,\textbf{w}_{10},\ldots,\textbf{w}_{K0}, u_0) \in {\bf H},
+\end{equation}
+where ${\bf H} = {(H^1({\Omega}_s))}^n \times {(L^2({\Omega}_s))}^n \times{\cal H}_1\times\ldots\times{\cal H}_K\times {\cal H}_f$ and $ {\cal H}_l=(L^2({\Omega}_s))^n, l=\overline{1,~K},$ \\${\cal H}_f = \{ f \in {(L^2({\Omega}_f))}^n : \nabla \cdot f = 0$ in $ {\Omega}_f$ and $[f \cdot \nu ] {\mid}_{{\Gamma}_f} =0\}.$
+
+%где ${\bf H} = {(H^1({\Omega}_s))}^n \times {(L^2({\Omega}_s))}^n \times{\cal H}_1\times\ldots\times{\cal H}_K\times {\cal H}_f$ и $ {\cal H}_l=(L^2({\Omega}_s))^n, l=\overline{1,~K},$ \\${\cal H}_f = \{ f \in {(L^2({\Omega}_f))}^n : \nabla \cdot f = 0$  в $ {\Omega}_f$ и $[f \cdot \nu ] {\mid}_{{\Gamma}_f} =0\}.$
+
+In system (1), the parameters $\kappa$ and $\mu$  characterize the elastic and viscous properties of the fluid, respectively, the parameters $ \beta_{l},~l=\overline{1,~K} $ determine the time of pressure retardation (delay), $ \nu $ is a unit normal vector. In the case of $K=0,\kappa =0$, problem (1)--(9) was investigated in \cite{AT1}, \cite{AT2}, and for $K=0,\kappa\neq 0$ in \cite{ATVM2022}, \cite{ATVM2022II}. The case of $K\neq 0,\kappa\neq 0$ was investigated for the first time in \cite{ATVM2023II}.
+
+We reduce the problem (1)--(9) to the singular abstract
+Cauchy problem:
+
+\begin{equation}
+L\dot v=Mv,\quad v(0)=v_0.
+\end{equation}
+Then the problem (10) is transformed to the regular abstract
+Cauchy problem.
+
+\begin{lemma}
+Let $\kappa\in\mathbb{R}$, $\mu\in\mathbb{R}_{+}$, the operators $L$ and $M$ be linear continuous operators from
+$\textbf{G}$ to $\textbf{H}$ ($L,M\in\mathcal{L}(\textbf{G},\textbf{H})$), then there exists $L^{-1}\in\mathcal{L}(\textbf{H}).$ Here is the space $ \textbf{G}= {(H^2({\Omega}_s))}^n \times {(H^2({\Omega}_s))}^n\times{\cal G}_1\times\ldots\times{\cal G}_K\times {\cal G}_f,$ where $ {\cal G}_l={(H^2({\Omega}_s))}^n,l=\overline{1,~K},$ $ {\cal G}_f$ is closure according to the norm of the space ${(H^2({\Omega}_s))}^n$ spaces of infinitely differentiable solenoid functions such that (15)--(17) in \cite{ATVM2023II} are fulfilled.
+\end{lemma}
+
+
+\begin{theorem}\cite{ATVM2023II}
+For any $\kappa\in\mathbb{R},\mu\in\mathbb{R}_{+}$ and $v_{0}\in\textbf{G}$, there is the unique solution to the problem (10) $v\in C^{\infty}((0, T],\textbf{G}) $
+\end{theorem}
+
+
+Based on the method proposed by the authors \cite{AT1}, \cite{AT2}, the theorem of the existence of the unique solution  to the Avalos--Triggiani problem for the indicated systems is proved.
+
+
+The work was carried out within the framework of solving problems for the development of the laboratory of Differential Equations and Mathematical Physics of Yaroslav-the-Wise Novgorod State University. The authors express their gratitude to Professor G. A. Sviridyuk for his attention to the work and discussion of the results.
+
+%\begin{figure}[htb]
+%\centering
+
+%% Two picture formats are supported:
+%%\includegraphics[width=0.7\linewidth]{figure.pdf} % Raster format
+%%\includegraphics[width=0.7\linewidth]{figure.png} % Vector and raster format
+%%
+%% Vector drawings can be drawn in Inkscape editor
+%% https://inkscape.org/ru/download/
+%% The usual format of the editor is SVG, so the drawings must be exported in
+%% PDF or PNG (with a resolution of minimum 150 dpi, and maximum of 300 dpi).
+% \begin{center}
+%   \missingfigure[figwidth=0.7\linewidth]{Remove me from the article!} \end{center}
+% \caption{Caption of the figure}\label{fig:example}
+%\end{figure}
+
+% At the end of the text, acknowledgments are expressed, if you haven't
+% made a footnote from the title. For example, we can write
+%The research is carried on with support of RFBR (RNF, other funds), project No.~00-00-00000.
+
+\begin{thebibliography}{9} % or {99}, if there is more than ten references.
+%\bibitem{DLions1976} Duvaut D., Lions J.L. Inequalities in Mechanics and Phisics. Springer, Berlin, 1976.
+
+%\bibitem{Gur1997}  Gurman V.I. The Extension Principle in Optimal Control Problems. 2nd~ed. Fizmatlit, Moscow, 1997.~[In Russian]
+
+%\bibitem{Moreau1977} Moreau J.-J. Evolution problem associated with a moving convex set in a Hilbert space. J. Differential Eq.~1977. Vol.~26. Pp.~347--374.
+
+%\bibitem{BrKr2013}  Brokate M., Krej\u{c}\'{\i} P. Optimal control of ODE systems involving a rate independent variational inequality. Disc. Cont. Dyn. Syst. Ser.~B. 2013. Vol.~18, no~2. Pp.~331--348.
+
+%\bibitem{Karpinski2014} Kapinski J., Deshmukh J, Sankaranarayanan S., Arechiga N. Simulation-guided Lyapunov analysis for hybrid dynamical systems. In Proceedings of the 17th International Conference on Hybrid Systems: Computation and Control (HSCC 2014), Berlin, Germany, 2014. Pp.~133--142.
+
+%\bibitem{Forsman1991} Forsman K. Construction of Lyapunov functions using Grobner bases. In Proceedings of the 30th IEEE Conference on Decision and Control, Brighton, UK, 1991. Vol.~1. Pp.~798--799.
+
+\bibitem{AT1}
+Avalos G., Lasiecka I., Triggiani R. Higher Regularity of a Coupled Parabolic-Hyperbolic Fluid-Structure Interactive System. \textit{Georgian Mathematical Journal}, 2008.
+Vol.~15. no.~3. Pp.~403-437.
+
+\bibitem{AT2}
+Avalos G., Triggiani R. Backward Uniqueness of the S.C. Semigroup Arising
+in Parabolic-Hyperbolic Fluid-Structure Interaction. \textit{Differential Equations}, 2008.
+vol.~245. Pp.~737-761.
+
+\bibitem{OAPN}
+Oskolkov A.P. Initial-Boundary Value Problems for Equations of Motion of Kelvin -
+Voight Fluids and Oldroyd fluids. \textit{Proceedings of the Steklov Institute of Mathematics},
+1989. Vol.~179. Pp.~137-182.
+
+\bibitem{ATVM2022}
+Sviridyuk G.A., Sukacheva T.G. The Avalos--Triggiani Problem for the Linear
+Oskolkov System and a System of Wave Equations.  \textit{Computational Mathematics
+and Mathematical Physics}, 2022. Vol.~62, no.~3. Pp.~427-431.
+
+\bibitem{ATVM2022II}
+Sukacheva T. G.,  Sviridyuk G. A. The Avalos--Triggiani problem for the linear oskolkov system and a system of wave equaions. II. \textit{Journal of Computational and Engineering Mathematics}, 2022. Vol.~9. no.~2. Pp.~67-72.
+
+\bibitem{ATVM2023II}
+Sukacheva T.G., Kondyukov  A.O. An Analysis of the Avalos--Triggiani Problem for the Linear Oskolkov System of Non-Zero Order and a System of Wave Equations. \textit{Bulletin of the South Ural State University. Series: Mathematical Modelling,
+Programming and Computer Software}. 2023. Vol.~16. no.~4.  Pp.~93-98.
+%DOI:~10.14529/mmp230407\vspace{-2mm}
+
+\end{thebibliography}
+%\end{document}

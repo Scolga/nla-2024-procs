@@ -1,0 +1,151 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{Sufficient stability conditions for solutions to linear differential equations with aftereffect}
+% First author
+\author{Kirill Chudinov
+}
+\institute{Perm National Research Polytechnic University, Perm, Russia\\
+  \email{cyril@list.ru}}
+% etc
+
+\maketitle
+
+\begin{abstract}
+We study effective stability conditions for solutions to differential equations with aftereffect, coming from the well-known Myshkis theorem on $3/2$.
+We consider applicability of the ideas underlying these results, and present a theorem that generalizes known results for the linear equation with delay of general form.
+
+\keywords{differential equations with aftereffect, stability, effective conditions} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes}
+
+\usepackage[russian]{nla}
+
+
+\begin{document}
+\fi
+
+\title{Достаточные условия устойчивости решений линейных дифференциальных уравнений с~последействием\thanks{Работа выполнена при поддержке Министерства науки и высшего образования Российской Федерации, проект FSNM-2023-0003.}}
+% Первый автор
+\author{К.~М.~Чудинов
+} % обязательное поле
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{Пермский национальный исследовательский политехнический университет (ПНИПУ), Пермь, Россия\\
+  \email{cyril@list.ru}
+}
+
+\maketitle
+
+\begin{abstract}
+Рассматриваются эффективные условия устойчивости решений дифференциальных уравнений с последействием, идущие от известных теорем Мышкиса о $3/2$.
+Обсуждается область применимости идей, лежащих в основе этих результатов, и приводится теорема, обобщающая известные результаты для линейного уравнения с запаздыванием произвольного вида.
+
+\keywords{дифференциальное уравнение с последействием, устойчивость, эффективные условия} % в конце списка точка не ставится
+\end{abstract}
+
+Асимптотические свойства решений линейных уравнений с последействием первым систематически изучал А.\,Д.\,Мышкис~[1].
+В частности, он указал границу области устойчивости линейного неавтономного уравнения в виде верхней оценки функционала от параметров уравнения константой~$3/2$.
+После произошедшего в 80-90-х гг. ХХ~в. всплеска интереса к теореме о $3/2$ и возможностях ее уточнения и обобщения~[2], в XXI веке основное внимание исследователей асимптотических свойств решений уравнений с последействием переключилось на перенос известных оценок решений на более широкие классы уравнений.
+%; этот подход, как правило,  преполагает комбинирование старых идей, а не предложение новых.
+Это, однако, не означает, что новые типы оценок больше не нужны.
+%В последние десятилетия исследования устойчивости и колеблемости ведутся параллельно (и множества исследователей близки), хотя и не слишком согласованно.
+%Рассмотрим некоторые новые достижения в этих направлениях.
+
+%Константа $3/2$ появляется при попытках перенесения на неавтономное уравнение известных условий устойчивости автономного уравнения $\dot x(t)+ax(t-r)=0$: уравнение равномерно устойчиво при $ar\leqslant \pi/2$ и асимптотически устойчиво при $0<ar<\pi/2$.
+%$ Мышкис установил условия устойчивости и колеблемости всех решений линейного неавтономного уравнения первого порядка
+%$$
+%\dot x(t)+a(t)x(h(t))=0,\quad t\geqslant0,\eqno(1)
+%$$
+%где $h(t)\leqslant t$.
+%
+%Положим $a(t)\geqslant0$, то есть рассмотрим уравнения устойчивого типа.
+%Пусть также $h(t)\to+\infty$ при $t\to+\infty$.
+
+Рассмотрим линейное неавтономное уравнение с последействием общего вида
+$$
+\dot x(t)+\int\limits_{h(t)}^t x(s)\,d_sr(t,s)=0,\quad t\geq 0.\eqno(1)
+$$
+где интеграл понимается в смысле Римана "--- Стилтьеса; для всех~$t$ функция $r(t,\cdot)$ имеет ограниченную вариацию, при этом функция $\rho(t)=\bigvee\limits_{s=h(t)}^t r(t,s)$ локально суммируема; функция $r(\cdot,s)$ измерима для всех~$s$.
+Соответствующее уравнению (1) неоднородное уравнение включает как частные случаи уравнения с соcредоточенными запаздываниями, интегро-диф\-фе\-рен\-ци\-аль\-ные уравнения с последействием и уравнения, содержащие последействия разных типов (если в постановке задачи участвует начальная функция, то она переносится в правую часть уравнения).
+
+Назовем уравнение~(1) \textit{уравнением устойчивого типа}, если
+% для всех $t$ функция $r(t,\cdot)$ не убывает и для всех $s\geqslant0$ существует такое $T(s)>s$, что для всех $\sigma\leqslant s$ и $\tau\geqslant T(s)$ имеем $r(\tau,\sigma)=0$. Устойчивость типа означает, что
+функция  $r(t,\cdot)$ не убывает и $h(t)\to+\infty$ при $t\to+\infty$.
+Для $T\geq 0$ положим
+ $$I(T)=\sup\limits_{t\geq  T}\int\limits_t^{+\infty} \int\limits_{h(s)}^t \mu\left(\int\limits_\tau^t\int\limits_{h(\eta)}^\eta d_\xi r(\eta,\xi)\,d\eta\right) d_\tau r(s,\tau)\,ds,\text{ где }\mu(x)=
+\begin{cases}x,& x\leq 1,\\1,&x>1.\end{cases}$$
+
+%{\bf Теорема 1} [2]. {\it
+%Если для некоторого $t\geqslant0$
+%$$
+%\sup_{t\to+\infty} \int\limits_t^{+\infty} \int\limits_0^t d_\tau r(s,\tau)\,ds\geqslant1/e,
+%$$
+%то уравнение {\rm (1)} равномерно устойчиво.}
+
+\textbf{Теорема~1.}
+\textit{Пусть {\rm (1)} "--- уравнение устойчивого типа.
+Если для некоторого $T>0$ имеем $I(T)\leq 1$, то все решения уравнения~{\rm (1)} равномерно устойчивы;
+если же $I(T)<1$ и $\int\limits_0^\infty \rho(t)\,dt=\infty$, то все решения уравнения~{\rm (1)} асимптотически устойчивы.}
+
+Для уравнения с одним сосредоточенным запаздыванием теорема~1 дает теорему Мыш\-киса о $3/2$.
+Преимущество теоремы~1 перед известными обобщениями теоремы Мышкиса состоит в том, что если интеграл в левой части уравнения (1) разбит на несколько слагаемых, то условие устойчивости в равной степени учитывает влияние всех слагаемых.
+Например, для уравнения с несколькими сосредоточенными запаздываниями
+$$
+\dot x(t)+\sum_{k=1}^na_k(t)x(h_k(t))=0,\quad t\geq 0,\eqno(2)
+$$
+где $a_k(t)\geq 0$ и $h_k(t)\to+\infty$ при $t\to\infty$ (уравнение устойчивого типа), обозначив
+ $$E_k(t)=\{s\geq  t\mid h_k(s)\leq  t\},\quad I_1(T)=\sum_{k=1}^n\int\limits_{E_k(t)} \mu\left(\sum_{i=1}^n\int\limits_{h_k(s)}^t a_i(\tau)\,d\tau\right)a_k(s)\,ds,$$
+ получаем
+
+\textbf{Следствие.}
+\textit{Если $I_1(T)\leq 1$ для некоторого $T>0$, то все решения уравнения~{\rm (2)} равномерно устойчивы.
+Если $I_1(T)<1$ и $\int\limits_0^\infty\sum\limits_{k=1}^n a_k(t)\,dt=\infty$, то все решения уравнения~{\rm (2)} асимптотически устойчивы.}
+
+%The first question on asymptotic properties of solutions to equation~(2) that we consider is to find effective oscillation and stability tests (which are conditions expressed in terms of parameters of the equation under consideration) that  equally take into account all terms of the sum in (2).
+%The next question is generalization of such tests to the case of equations with distributed delay and, in the general case, to equation~(3).
+
+% кавычки << >>.
+
+% В конце текста можно выразить благодарности, если этого не было
+% сделано в ссылке с заголовка статьи, например,
+%Работа выполнена при поддержке РФФИ (РНФ, другие фонды), проект \textnumero~FSNM-2023-0005.
+%
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+\bibitem{Myshkis} Мышкис~А.Д. Линейные дифференциальные уравнения с запаздывающим аргументом. М.:~Наука,~1972.
+
+%\bibitem{Aleksandrov1} Коплатадзе~Р.Г., Чантурия~Т.А. ... устойчивости уравнений...~// Дифференциальные уравнения. 1982. Т.~18, \textnumero~8. С.~1463--1465.
+
+%\bibitem{Moreau1977} Chudinov~K.M. The Koplatadze–Chanturiya type theorem for linear first-order delay differentialequation of general form~// Mem. Differential Equations Math. Phys. 2022. Vol.~87. Pp. 53–-62.
+
+\bibitem{Malygina} Малыгина В.В. Теорема Мышкиса о 3/2 и ее обобщения~// Сиб. матем. журн. 2023. Т.~64, \textnumero~6. С.~1248--1262.
+
+%{Malygina V.\,V.,}{``Some criteria for stability of equations with retarded argument,'' Differ. Equ., \textbf{28}, No.~10, 1398--1405 (1992).}
+
+%\bibitem{Semenov} Семенов~А.А. Замечание о вычислительной сложности известных предположительно односторонних функций~// Тр.~XII Байкальской междунар. конф. <<Методы оптимизации и их приложения>>. Иркутск, 2001. С.~142--146.
+
+\end{thebibliography}
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок и аннотацию.
+
+
+
+
+%\end{document}

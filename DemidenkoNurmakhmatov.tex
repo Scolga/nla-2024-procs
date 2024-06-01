@@ -1,0 +1,139 @@
+
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+\usepackage{todonotes}
+
+\usepackage{nla} 
+
+\begin{document}
+\fi
+
+\title{An energy estimate for \\one pseudohyperbolic equation\thanks{The research is supported
+by the Russian Science Foundation (grant no.~24-21-00370),
+https://rscf.ru/project/24-21-00370/.}}
+
+\author{Gennadii V. Demidenko   \and  Vakhobbiddin S. Nurmakhmatov
+  }
+\institute{Novosibirsk State University, Novosibirsk, Russia\\
+  \email{g.demidenko@g.nsu.ru},
+  \email{v.s.nurmuhammad@gmail.com}}
+
+\maketitle
+
+\begin{abstract}
+We establish an energy estimate for one pseudohyperbolic operator
+of the fourth order with variable coefficients.
+
+\keywords{pseudohyperbolic operator, weighted Sobolev spaces, energy estimates}
+\end{abstract}
+
+We consider the differential operator of the fourth order
+of the following form
+$$
+{\cal L}(x;D_t,D_x) = (\sum\limits_{|\beta|=2} a^0_{\beta}(x) D^{\beta}_x - a I) D^2_t 
++ \sum\limits_{|\beta|=3} a^1_{\beta}(x) D^{\beta}_x D_t 
++ \sum\limits_{|\beta|\le 4} a^2_{\beta}(x) D^{\beta}_x, \quad a > 0,  
+$$
+where the coefficients are real-valued sufficiently smooth functions,
+which are constant outside of some ball.
+We suppose that the operator
+${\cal L}(x_0;D_t,D_x)$
+at any fixed point
+$x_0$  
+is strictly pseudohyperbolic (see~[1]). 
+
+{\bf Theorem.}
+{\it Let
+$$
+\sum\limits_{|\beta|=2} a^0_{\beta}(x) \xi^{\beta}  
+\ge q |\xi|^2, \quad \xi \in {\Bbb R}^n, \quad q > 0.
+$$
+Then there exists
+$\gamma_0 > 0$
+such that for any function
+$u(t,x) \in W^{2,4}_{2,\gamma}({\Bbb R}^{n+1})$,
+$\gamma > \gamma_0$,
+such that
+$$
+D^2_tD^\beta_x u(t,x) \in L_{2,\gamma}({\Bbb R}^{n+1}), \quad |\beta| = 2, 
+$$
+the estimate holds
+$$
+\gamma\|(|\xi|^2 + a)\left(|\eta| + \gamma + |\xi|\right) 
+\widehat u_\gamma(\eta,\xi), L_2({\Bbb R}^{n+1})\| 
+\leq c \|{\cal L}(x;D_t,D_x)u(t,x), L_{2,\gamma}({\Bbb R}^{n+1})\| 
+\eqno(1)
+$$
+with a constant
+$c > 0$
+independent of
+$u(t,x)$.
+}
+
+Estimate~(1) is an analogue of the energy estimate for strictly
+hyperbolic operators~[2, 3]. 
+
+The obtained energy estimate can be used for studying
+the correctness of the Cauchy problem for strictly
+pseudohyperbolic equations
+$$
+\begin{array}{ll}
+{\cal L}(x;D_t,D_x) u = f(t,x), \quad t>0, \ x\in {\Bbb R}^n,\\
+\\
+u|_{t=0} = \varphi_1(x), \quad D_t u|_{t=0} = \varphi_2(x),  
+\end{array}
+$$
+in weighted Sobolev space
+$W^{2,4}_{2,\gamma}({\Bbb R}^{n+1}_+)$
+(see~[1, 4]). 
+
+Note that pseudohyperbolic equations arise when studying some problems
+of hydrodynamics, elasticity theory, when constructing waveguides, etc.
+(see, for example,~[5--7]).
+
+\begin{thebibliography}{9} % or {99}, if there is more than ten references.
+
+\bibitem{DeUs_2003}
+Demidenko G. V., Uspenskii S. V. 
+Partial Differential Equations and Systems Not Solvable with Respect to the Highest-Order Derivative. 
+Nauchnaya Kniga, Novosibirsk, 1998 [in Russian]; English transl. Marcel Dekker, New York and Basel. 2003.
+
+\bibitem{Pe_1996}
+Petrowsky I. G.
+Selected Works. Part~1: Systems of Partial Differential Equations
+and Algebraic Geometry.
+Gordon and Breach, Amsterdam, 1996.
+
+\bibitem{Le_1953}
+Leray J.
+Hyperbolic Differential Equations.
+Institute for Advanced Study, Princeton, 1953.
+
+\bibitem{De_2015}
+Demidenko G. V.
+Solvability conditions of the Cauchy problem
+for pseudohyperbolic equations. Sib. Math. J.
+2015. Vol.~56, no.~6. Pp.~1028--1041.
+
+\bibitem{Vl_1961}
+Vlasov V. Z.
+Thin-Walled Elastic Beams. 
+National Science Foundation, Washington, D.C., 1961.
+
+\bibitem{GeEr_2014}
+Gerasimov S. I., Erofeev V. I.
+Problems of Wave Dynamics for Structural Elements. 
+Ross. Fed. Yad. Tsentr-Vseross. Nauchn.-Issled. Inst. Eksp. Fiz.,
+Sarov, 2014.~[In Russian]
+
+\bibitem{Bi_1952} 
+Bishop R. E. D.
+Longitudinal waves in beams.
+Aeronautical Quarterly.
+1952. Vol.~3, no.~4. Pp.~280--293. 
+
+\end{thebibliography}
+
+%\end{document} 

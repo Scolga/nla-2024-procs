@@ -1,0 +1,97 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{Hybrid non-local optimization algorithms based on biogeography, grey wolf, flower pollination and L-BFGS~methods}
+% First author
+\author{Pavel Sorokovikov
+}
+\institute{Matrosov Institute for System Dynamics and Control Theory of SB RAS, Irkutsk, Russia\\
+  \email{pavel@sorokovikov.ru}
+}
+% etc
+
+\maketitle
+
+\begin{abstract}
+The approach proposed in the paper to solving problems of finding the global extremum of multimodal objective functions combines globalized methods of biogeography, grey wolf, flower pollination and the local optimization method L-BFGS. Algorithms inspired by nature are used to scan the search space globally. The L-BFGS method is used to locally refine the found approximations. Based on these methods, hybrid non-local optimization algorithms have been proposed and implemented in unified software standards. A numerical study of the effectiveness of the developed algorithms was carried out in comparison with modifications of genetic optimization, differential evolution and harmony search methods on a variety of test problems. The results of the testing confirm the performance of the implemented algorithms.
+
+\keywords{global optimum, biogeography method, grey wolf method, flower pollination method} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  This is the template file for the 6th International conference
+%  NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+%  June 25-30, 2018
+%  Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[12pt]{llncs}
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes} 
+
+\usepackage[russian]{nla}
+
+\begin{document}
+\fi
+
+\title{Гибридные алгоритмы нелокальной оптимизации на основе методов биогеографии, серых волков, опыления~цветков и 
+L-BFGS\thanks{Работа выполнена за счет субсидии Минобрнауки России в рамках проекта \textnumero~121041300060-4.} }
+% Первый автор
+\author{П.~С.~Сороковиков  
+}
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{Институт динамики систем и теории управления имени В.М. Матросова СО РАН, Иркутск, Россия\\
+  \email{pavel@sorokovikov.ru}
+}
+
+\maketitle
+
+\begin{abstract}
+Предложенный в работе подход к решению задач поиска глобального экстремума мультимодальных целевых функций объединяет глобализированные методы биогеографии, серых волков, опыления цветков и метод локальной оптимизации L-BFGS. Алгоритмы, инспирированные живой природой, используются для глобального сканирования пространства поиска. Метод L-BFGS применяется для локального уточнения найденных приближений. На основе указанных методов предложены и реализованы в единых программных стандартах  гибридные алгоритмы нелокальной оптимизации. Проведено численное исследование эффективности разработанных алгоритмов в сравнении с модификациями методов генетической оптимизации, дифференциальной эволюции и гармонического поиска на разнообразных тестовых задачах. Результаты проведенного тестирования подтверждают работоспособность реализованных алгоритмов.
+
+\keywords{глобальный оптимум, метод биогеографии, метод серых волков, метод опыления цветков} % в конце списка точка не ставится
+\end{abstract}
+
+Задача поиска глобального экстремума мультимодальной целевой функции является одной из самых сложных и актуальных проблем в вычислительной оптимизации. Эффективные методы нелокального поиска часто основаны на балансе между глобальным сканированием поискового пространства и локальным уточнением найденных приближений (<<эксплуатацией>>). Таким образом, при конструировании алгоритмов нелокальной оптимизации следует на каждой итерации выполнять как глобальное исследование в допустимом множестве, так и <<эксплуатацию>> с помощью градиентных методов локального поиска.
+
+В данной работе предложен подход, который объединяет преимущества алгоритмов, инспирированных живой природой, и градиентных методов для глобального и локального поиска соответственно. Указанный подход позволяет разрабатывать вычислительные схемы, лежащие в основе эффективных методов решения многоэкстремальных задач оптимизации, и опирается на использование алгоритмов биогеографии \cite{Ma}, серых волков \cite{Gupta}, опыления цветков \cite{Abdel-Basset} и L-BFGS \cite{Mokhtari}. Разработаны и реализованы с применением единых программных стандартов двухметодные вычислительные схемы поиска оптимумов многоэкстремальных целевых функций.
+
+Реализованные вычислительные схемы были протестированы на репрезентативной коллекции невыпуклых тестовых задач с различными экстремальными характеристиками. Сравнивались результаты численных экспериментов, полученные с помощью предложенных алгоритмов и модификаций методов генетической оптимизации, дифференциальной эволюции и гармонического поиска \cite{Jaksic}. Алгоритмы, которые были скомбинированы с методом локального поиска L-BFGS, продемонстрировали значительные улучшения по сравнению с базовыми алгоритмами, инспирированными природой. Представлены результаты вычислительных экспериментов, подтверждающие эффективность разработанных алгоритмов.
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+\bibitem{Ma} Ma~H., Simon~D., Siarry~P., Yang~Z., Fei~M.  Biogeography-based optimization: a 10-year review. IEEE~Transactions~on~Emerging~Topics~in~Computational Intelligence. 2017. Vol.~1, No~5. P.~391--407.
+
+\bibitem{Gupta} Gupta~S., Deep~K. A novel random walk grey wolf optimizer. Swarm~and~Evolutionary~Computation. 2019. Vol.~44. P.~101--112.
+  
+\bibitem{Abdel-Basset} Abdel-Basset~M., Shawky~L.A. Flower pollination algorithm: a comprehensive review. Artificial~Intelligence~Review. 2019. Vol.~52. P.~2533--2557.
+  
+\bibitem{Mokhtari} Mokhtari~A., Ribeiro~A. Global convergence of online limited memory BFGS. Journal~of~Machine~Learning~Research. 2015. Vol.~16. P.~3151--3181.
+
+\bibitem{Jaksic} Jakšić~Z., Devi~S., Jakšić~O., Guha~K. A comprehensive review of bio-inspired optimization algorithms including applications in microelectronics and nanophotonics. Biomimetics. 2023. Vol.~8, No~3. P.~278.
+
+\end{thebibliography}
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок.
+
+
+
+
+%\end{document}
+

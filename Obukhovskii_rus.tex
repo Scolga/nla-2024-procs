@@ -1,0 +1,143 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{On the existence of bounded solutions of differential inclusions}
+% First author
+\author{Valerii Obukhovskii \and  Sergey Kornev \and  Polina Korneva  
+}
+\institute{Voronezh State Pedagogical University, Voronezh, Russia\\
+\email{valerio-ob2000@mail.ru}
+% etc
+}
+
+\maketitle
+
+\begin{abstract}
+One of the most effective and geometrically clear ways to solve the problem of the existence of periodic solutions of differential equations is the method of guiding functions, the general principles of which were formulated by M.A. Krasnosel`skii and A.I. Perov. The universality of the method under consideration allows it to be applied to the problem of the existence of bounded solutions of differential equations and inclusions (see, for example, \cite{k_kr}).
+
+In this note, to effectively solve this problem, in addition to the classical concept of a guiding function, its modifications are used an integral guiding function, a guiding function on a given set, a multivalent guiding function (see, for example, \cite{k_b_g_m_o}--\cite{k_k_o_z_2}).
+
+\keywords{differential inclusion, bounded solutions, method of guiding functions \ldots{}} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes}
+
+\usepackage[russian]{nla}
+
+
+\begin{document}
+\fi
+% Текст оформляется в соответствии с классом article, используя дополнения
+% AMS.
+%
+
+\title{О существовании ограниченных решений дифференциальных включений\thanks{Работа выполнена при поддержке РНФ, проект \textnumero~22-71-10008.}}
+% Первый автор
+\author{В.~В.~Обуховский \and С.~В.~Корнев  \and  П.~С.~Корнева
+} % обязательное поле
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{Воронежский государственный педагогический университет, Воронеж, Россия\\
+  \email{valerio-ob2000@mail.ru}
+%  \and   % Разделяет институты и присваивает им номера по порядку.
+%Институт (название в краткой форме), Город, Страна\\
+%\email{email@examle.com}
+% \and Другие авторы...
+}
+
+\maketitle
+
+\begin{abstract}
+Одним из наиболее эффективных и геометрически наглядных способов решения периодической задачи для дифференциальных уравнений является метод направляющих функций, общие принципы которого сформулировали М.А. Красносельский и А.И. Перов. Универсальность рассматриваемого метода позволяет применять его и к задаче о существовании ограниченных решений дифференциальных уравнений и включений (см., например, \cite{k_kr}).
+
+В настоящей заметке для эффективного решения этой задачи помимо классического понятия направляющей функции применяются его модификации -- интегральная направляющая функция, направляющая функция на заданном множестве, многолистная направляющая функция (см., например, \cite{k_b_g_m_o}--\cite{k_k_o_z_2}).
+
+\keywords{дифференциальное включение, ограниченные решения, метод направляющих функций\ldots} % в конце списка точка не ставится
+\end{abstract}
+
+\section{Основные результаты} % не обязательное поле
+
+Пусть мультиотображение $F:\mathbb{R} \times \mathbb{R}^n \to Kv(\mathbb{R}^n)$ удовлетворяет верхним $L^1$-условиям Каратеодори и условию подлинейного роста на любом множестве $[a;b]\times \mathbb{R}^n$ (по поводу терминологии см., например, \cite{k_b_g_m_o}).
+
+
+Рассмотрим диф\-ференциальное включение следующего вида:
+\begin{equation}
+\label{eq2.1}
+x'(t)\in F(t,x(t)),\quad\;\;t\in\mathbb{R}.
+\end{equation}
+
+Справедлив следующий аналог леммы Красносельского М.А. (см. \cite{k_kr}, Лемма 8.1).
+
+\begin{lemma}
+Пусть $\{x_n\}$ -- последовательность решений  такая, что
+
+$(i)$  каждое решение $x_n(t)$ определено на промежутке $[-t_n, t_n],$ причем $t_n\to \infty$;
+
+$(ii)$ существует ограниченное множество $\Omega\subset \mathbb{R}^n$ такое, что $x_n(t)\in\Omega,$ $t\in[-t_n,t_n]$ для любого $n\in \mathbb{N}.$
+
+Тогда дифференциальное включение (\ref{eq2.1}) имеет по крайней мере одно решение $x(t),$ определенное для всех $t\in \mathbb{R}$ и такое, что $x(t)\in\overline{\Omega}$ для любого $t\in \mathbb{R}.$
+\end{lemma}
+
+Применение результатов работы \cite{o_k_k} позволяет установить существование ограниченного решения диф\-ференциального включения (\ref{eq2.1}) при условии наличия у него классической направляющей функции, удовлетворяющей условию коэрцитивности.
+
+\begin{theorem}
+Пусть мультиотображение $F:\mathbb{R} \times \mathbb{R}^n \to Kv(\mathbb{R}^n)$ удовлетворяет верхним условиям Каратеодори и условию подлинейного роста. Пусть выполнено условие:
+
+(*) существует $r>0$ такое, что для любых $t\in \mathbb{R}$ и $x \in \mathbb{R}^n, \; \|x\|=r,$ найдется $y\in F(t,x)$ такое, что
+$
+\langle x, y \rangle\leq 0.
+$
+
+Тогда дифференциальное включение (\ref{eq2.1}) имеет решение $x_*:\mathbb{R}\to \mathbb{R}^n$ такое, что
+$
+x_*(t)\in B_r \;\mbox{для любого} \; t\in\mathbb{R},
+$
+где $B_r=\{x:\|x\|\leq r\}.$
+\end{theorem}
+
+Не менее эффективным оказывается метод направляющих функций на заданном множестве (см., например, \cite{k_k_o}), а также метод многолистных направляющих функций (см., например, \cite{k_k_o_z_2}). Существенным преимуществом по сравнению с классическим подходом является возможность "локализовать" $\,$ проверку основного условия "направляемости" $\,$ на области пространства, зависящей от самой направляющей функции.
+
+
+% Список литературы оформляется подобно ГОСТ-2008.
+% Примеры оформления находятся по этому адресу -
+%     https://narfu.ru/agtu/www.agtu.ru/fad08f5ab5ca9486942a52596ba6582elit.html
+%
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+
+\bibitem{k_kr} Красносельский~М.А. Оператор сдвига по траекториям дифференциальных уравнений. M.:~Наука,~1966.
+
+\bibitem{k_b_g_m_o} Борисович~Ю.Г., Гельман~Б.Д., Мышкис~А.Д., Обуховский~В.В. Введение в теорию многозначных отображений и дифференциальных включений. М.:~Либроком,~2011.
+
+\bibitem{k_k_o} Корнев~С.В., Обуховский~В.В. О локализации метода направляющих функций в задаче о периодических решениях дифференциальных включений~// Известия вузов. Математика. 2009. №~5. С.~23--32.
+
+\bibitem{k_k_o_z} Kornev~S., Obukhovskii~V., Zecca~P. Guiding functions and periodic solutions for inclusions with causal multioperators~// Applicable Analysis. 2017. V.~96, Issue~3. Pp.~418--428.
+
+\bibitem{k_k_o_z_2} Kornev~S., Obukhovskii~V., Zecca~P. On multivalent guiding functions method in the periodic problem for random differential equations~// Journal of Dynamics and Differential Equations. 2019. V.~31, Issue~2. Pp.~1017–-1028.
+
+\bibitem{o_k_k}   Obukhovskii~V., Kornev~S., Korneva~P. Method of guiding functions and Birkhoff-Kellogg-Rothe and Kakutani fixed point theorems~// Communications in Optimization Theory. 2024. Vol.~8. Pp.~1--7.
+
+\end{thebibliography}
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок.
+
+
+
+
+%\end{document}

@@ -1,0 +1,122 @@
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+\usepackage{todonotes}
+
+\usepackage{nla} 
+
+\begin{document}
+\fi
+
+\title{Estimates for Solutions to Neutral Type Differential Equations: Applications to the Hopfield Neural Networks Model\thanks{The research is supported
+by the Russian Science Foundation (grant no.~24-21-00367),
+https://rscf.ru/project/24-21-00367/.}}
+
+\author{Maria A. Skvortsova}
+\institute{Novosibirsk State University, Novosibirsk, Russia\\
+\email{sm-18-nsu@yandex.ru}}
+
+\maketitle
+
+\begin{abstract}
+We consider Hopfield neural networks model described by a system of differential equations of neutral type with several delays.
+Using Lyapunov--Krasovskii functionals we obtain estimates for solutions
+characterizing the stabilization rate at infinity.
+
+\keywords{neutral type differential equations, Hopfield neural networks model, Lyapunov--Krasovskii functionals, estimates for solutions, exponential stability}
+\end{abstract}
+
+Consider the following system of differential equations of neutral type
+$$
+\dot{x}_i(t)=-c_i x_i(t)
++\sum\limits_{j=1}^{n} a_{ij} f_j(x_j(t))
++\sum\limits_{j=1}^{n} b_{ij} g_j(x_j(t-\tau_{ij}(t)))
++\sum\limits_{j=1}^{n} e_{ij} \dot{x}_j(t-\xi_{ij}(t))
++u_i,
+$$
+$$
+i=1,\dots,n, \quad t>0,
+$$
+where
+$\tau_{ij}(t), \ \xi_{ij}(t) \in C^1(\mathbb{R}_{+})$,
+$f_j(x), \ g_j(x) \in C(\mathbb{R})$,
+and the following conditions hold
+$$
+0 \leq \xi_{ij}(t) \leq \xi,
+\quad
+0 \leq \tau_{ij}(t) \leq \tau,
+\quad
+\dot{\xi}_{ij}(t) \leq \bar{\xi},
+\quad
+\dot{\tau}_{ij}(t) \leq \bar{\tau},
+$$
+$$
+|f_j(x)-f_j(y)| \leq l_j |x-y|,
+\quad
+|g_j(x)-g_j(y)| \leq m_j |x-y|,
+\quad
+x,y \in \mathbb{R}.
+$$
+This system was considered in~[1] as a model of Hopfield neural networks.
+The authors of this work studied the exponential stability of stationary solutions to the system using a quasi-linear Lyapunov--Krasovskii functional.
+They obtained sufficient conditions for the coefficients of the system, delay parameters and nonlinear functions, under which the stationary solution is exponentially stable.
+The question of obtaining constructive estimates for solutions characterizing the stabilization rate at infinity is also of great interest for this model.
+
+Note that in the present time there exist the results about obtaining constructive estimates for solutions to wide classes of neutral type differential equations (see, for example,~[2--6]).
+In these works the authors proposed several quadratic Lyapunov--Krasovskii functionals, which allow to obtain estimates for solutions characterizing the stabilization rate at infinity.
+
+In this paper we discuss how the ideas~[2--6] of constructing Lyapunov--Krasovskii functionals can be applied to the Hopfield neural networks model.
+
+% At the end of the text, acknowledgments are expressed, if you haven't
+% made a footnote from the title. For example, we can write
+
+%The research is supported by the Russian Science Foundation
+%(grant no.~24-21-00367), https://rscf.ru/project/24-21-00367/
+
+\begin{thebibliography}{9} % or {99}, if there is more than ten references.
+
+\bibitem{WaZhFuZh_2021}
+Wan L., Zhou Q., Fu H., Zhang Q.
+Exponential stability of Hopfield neural networks of neutral type
+with multiple time-varying delays.
+AIMS Mathematics.
+2021. Vol.~6, no.~8. Pp.~8030--8043.
+
+\bibitem{De_2009}
+Demidenko G.V.
+Stability of solutions to linear differential equations of neutral type.
+Journal of Analysis and Applications.
+2009. Vol.~7, no.~3. Pp.~119--130.
+
+\bibitem{DeMa_2014}
+Demidenko G.V., Matveeva I.I.
+On estimates of solutions to systems of differential equations of neutral
+type with periodic coefficients.
+Siberian Mathematical Journal.
+2014. Vol.~55, no.~5. Pp.~866--881.
+
+\bibitem{Ma_2017}
+Matveeva I.I.
+On exponential stability of solutions to periodic neutral-type systems.
+Siberian Mathematical Journal.
+2017. Vol.~58, no.~2. Pp.~264--270.
+
+\bibitem{Ma_2021}
+Matveeva I.I.
+Estimates for solutions to a class of nonautonomous systems
+of neutral type with unbounded delay.
+Siberian Mathematical Journal.
+2021. Vol.~62, no.~3. Pp.~468--481.
+
+\bibitem{DeMa_2021}
+Demidenko G.V., Matveeva I.I.
+The second Lyapunov method for time-delay systems~//
+Functional Differential Equations and Applications
+(Editors: Domoshnitsky A., Rasin A., Padhi S.).
+Series: Springer Proceedings in Mathematics \& Statistics.
+Singapore: Springer Nature, 2021. Vol.~379. Pp.~145--167.
+
+\end{thebibliography}
+
+%\end{document}

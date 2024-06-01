@@ -1,0 +1,217 @@
+\begin{englishtitle}
+\title{Numerical solution of a particular control problem with phase constraints}
+% First author
+\author{Dmitrii Novikov
+%Name FamilyName2\inst{2}
+}
+\institute{Institute of Mathematics and Mechanics, Ural Branch of the Russian Academy of
+	Sciences, Yekaterinburg, Russia\\
+  \email{ya.novikovdmitry@imm.uran.ru}
+%  \and
+%Affiliation, City, Country\\
+%\email{email}
+}
+% etc
+
+\maketitle
+
+\begin{abstract}
+The problem of controlling the horizontal movement of a rod on a plane is considered. The rod is controlled by a constant modulo force applied to one of its ends. The rate of change of the angle between the rod and the vector specifying the direction of the specified force is used as a control parameter. Restrictions are imposed on the control and the current phase state of the dynamic system describing the movement of the rod. The desired control must satisfy the constraints and ensure that the rod is placed on a given vertical axis with zero velocity and with the required spatial orientation, with all restrictions on the current phase state of the dynamic system describing its movement being fulfilled. A particular method for constructing such a control is discussed, based on the decomposition of a linear system of differential equations in a mathematical model of the problem. Two auxiliary tasks are considered. The solution of the first forms a reference function of the angle determining the deviation of the rod from the vertical, the solution of the second determines the desired control. The results obtained are illustrated by examples of numerical solutions to a number of model problems.
+
+\keywords{linear dynamic system, system decomposition, phase constraints, performance problem, optimal control,  \emph{etc.}}
+\end{abstract}
+\end{englishtitle}
+
+\iffalse
+\documentclass[12pt]{llncs}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[russian]{nla}
+
+\begin{document}
+%\selectlanguage{russian}
+\fi
+
+\title{Численное решение задачи управления с фазовыми ограничениями}
+% Первый автор
+\author{Д.~А.~Новиков%\inst{1}
+%  \and
+% Второй автор
+%  И.~О.~Фамилия\inst{2}
+%  \and
+% Третий автор
+%  И.~О.~Фамилия\inst{2}
+} % обязательное поле
+\institute{Институт математики и механики УрО РАН (ИММ УрО РАН), Екатеринбург, Российская федерация\\
+  \email{ya.novikovdmitry@imm.uran.ru}
+%  \and
+%Институт (название в краткой форме), Город, Страна\\
+%\email{email}
+}
+% Другие авторы...
+
+\maketitle
+
+\begin{abstract}
+Рассматривается задача управления горизонтальным движением стержня на плоскости. Управление стержнем осуществляется с помощью постоянной по модулю силы, приложенной к одному из его концов, которая отклоняет стержень от вертикального положения. В качестве управляющего параметра используется скорость изменения угла между стержнем и вектором, задающим направление указанной силы. На управление и текущее фазовое состояние динамической системы, описывающей движение стержня, накладываются ограничения. Искомое управление должно удовлетворять ограничениям и обеспечивать выведение стержня на заданную вертикальную ось с нулевой скоростью и с требуемой пространственной ориентацией, с выполнением всех ограничений на текущее фазовое состояние динамической системы, описывающей его движение. Обсуждается один подход построения такого управления, основанный на декомпозиции линейной системы дифференциальных уравнений в математической модели задачи. Рассматриваются две вспомогательные задачи управления. Решение первой формирует эталонную функцию угла, определяющего отклонение стержня от вертикали. Решение второй на основе этой эталонной функции определяет искомое управление в исходной задаче. Полученные результаты иллюстрируются примерами численного решения ряда модельных задач. 
+
+\keywords{линейная динамическая система, декомпозиция системы, фазовые ограничения, задача быстродействия, оптимальное управление}
+\end{abstract}
+
+\section{Постановка задачи} % не обязательное поле
+
+
+Рассматривается линейная система дифференциальных уравнений, описывающая горизонтальное и вращательное движения стержня на плоскости:
+\begin{equation}\label{eq:NovikovDA:20231002}
+\begin{aligned}
+	&\dot x=v \\
+	&\dot{v}=-\frac{p}{m}\cdot (\vartheta+\delta) \\
+	&\dot{\vartheta}=\omega \\
+	&\dot{\omega}=-\frac{l}{J}\cdot p\cdot \delta \\
+	&\dot \delta = u
+\end{aligned},
+\qquad t\in [0,t_f],
+\end{equation}
+где $x$~--~положение центра масс стержня, $v$~--~его скорость,  $\vartheta$~--~угол отклонения оси стержня от вертикали,  $\omega$~--~угловая скорость вращения стержня вокруг центра масс, $\delta$~--~угол между направлением приложенной силы и оси стержня, $m$~--~масса стержня, $p$~--~величина постоянной по модулю приложенной к концу стержня силы, $l$~--~длина стержня, $J$~--~его момент инерции стержня.
+
+В момент времени $t=0$ для системы \eqref{eq:NovikovDA:20231002} заданы начальные условия: 
+\begin{equation}\label{eq:NovikovDA:202310051}
+	x=x_0 \qquad v=v_0 \qquad  \vartheta=\vartheta_0  \qquad\omega=\omega_0 \qquad \delta=\delta_0
+\end{equation}
+
+Значения $\vartheta$ и $\delta$ должны удовлетворять ограничениям:
+\begin{equation}\label{eq:NovikovDA:202310021}	
+	\begin{aligned}
+		&|\vartheta| \leq \vartheta^{\max}\\
+		&|\delta| \leq \delta^{\max} \\	
+	\end{aligned}
+\end{equation}
+
+На управление $u$ накладывается ограничение:
+\begin{equation}\label{eq:NovikovDA:202310022}
+	\begin{aligned}
+		&|u| \leq u^{\max}\\
+	\end{aligned}
+	\qquad t\in [0,t_f]
+\end{equation}
+
+Пусть начальный момент времени $t_f$ не зафиксирован, но считая его формально заданным, можно сформулировать следующую задачу управления.
+
+З~а~д~а~ч~а~1. Для системы \eqref{eq:NovikovDA:20231002}, у которой в момент времени $t=0$ задано начальное условие \eqref{eq:NovikovDA:202310051}, требуется на интервале времени $[0,t_f]$ найти управление $u$ (кусочно-постоянную функцию), удовлетворяющее ограничению \eqref{eq:NovikovDA:202310022} и обеспечивающее перевод системы \eqref{eq:NovikovDA:20231002} из начального фазового состояния \eqref{eq:NovikovDA:202310051} в конечное состояние:
+\begin{equation}\label{eq:NovikovDA:202310052}
+	x^f=0\text{,} \qquad  {v}^f = 0\text{,} \qquad  \vartheta^f=0\text{,} \qquad  \omega^f=0\text{,} \qquad  \delta^f=0\text{.}
+\end{equation}
+
+% Требуется найти управление $u$ как кусочно-постоянную скалярную функцию, удовлетворяющую ограничению, обеспечивающую выполнение фазовых ограничений, и на некотором нефиксированном интервале времени $t \in [0,t_f]$  приводит центр масс стержня на вертикальную ось, задаваемую уравнением  $x=0$, с нулевой вертикальной составляющей скоростью ${\vx} = 0$. Дополнительно стержень в конечный момент должен иметь горизонтальное положение и нулевую угловую скорость, а также ее производную: 
+%\begin{equation}\label{eq:NovikovDA:202310052}
+%	x^f=0 \qquad  {\vx}^f = 0 \qquad  \vartheta^f=0 \qquad  \omega^f=0 \qquad  \delta^f=0
+%\end{equation}
+%Частным случаем задачи является отсутствия условия $x^f=0$, что приводит к задаче торможения.
+
+\section{Основные результаты} % не обязательное поле
+
+Для решения задачи~1 предлагается рассмотреть две вспомогательные задачи управления.
+
+В первой рассматривается динамическая система, описывающая поступательное движение центра масс стержня, в предположении, что отклонение силы $p$ от оси стержня мало и отлично от нуля на небольшом интервале времени:
+\begin{equation}\label{eq:NovikovDA:202310053}
+	\begin{aligned}
+		&\dot x=v \\
+		&\dot{v}=-\frac{p}{m}\cdot \vartheta \\
+	\end{aligned},
+	\quad t \in [0,\tau_f].
+\end{equation}
+Для системы \eqref{eq:NovikovDA:202310053} задаются начальные
+\begin{equation}\label{eq:NovikovDA:202310054}
+x(0)=x_0,~~~v(0)= v_0
+\end{equation}
+и конечные 
+\begin{equation}\label{eq:NovikovDA:202310055}
+x(\tau_f)=0,~~~v(\tau_f)= 0
+\end{equation}
+условия. В качестве управления используется функция $\vartheta$, на значения которой накладывается ограничение 
+\begin{equation}\label{eq:NovikovDA:202310056}
+|\vartheta|\leq \vartheta^{\max}\qquad t\in[0,\tau_f]
+\end{equation}
+
+Для системы \eqref{eq:NovikovDA:202310053} решается задача быстродействия:
+\begin{equation}\label{eq:NovikovDA:202310057}
+J(\vartheta) = \int_{0}^{\tau_f} dt \to \min
+\end{equation}
+Эталонной функцией $\vartheta^*(t)$, $t\in[0,\tau^*_f]$ будем называть решение задачи~\eqref{eq:NovikovDA:202310057}.
+
+Затем строится разбиение промежутка времени $[0,\tau^*_f]$
+\begin{equation}
+t_{k+1}=t_k+\Delta t\text{,~~где~~~~} t_0=0, \quad \Delta t=\frac{\tau_f}{N}
+\end{equation}
+
+Во второй вспомогательной задаче на каждом элементарном интервале $[t_k,t_{k+1}]$ рассматривается система
+\begin{equation}\label{eq:NovikovDA:202403301}
+\begin{aligned}
+&\dot{\vartheta}=\omega \\
+&\dot{\omega}=-\frac{l}{J}\cdot p\cdot \delta \\
+&\dot \delta = u \text{,}\\
+\end{aligned}, \quad t \in [t_k,t_{k+1}]
+\end{equation} 
+фазовое состояние которой в момент $t=t_0$ задается условиями \eqref{eq:NovikovDA:202310051}. Выполняется итерационная по элементарным интервалам времени процедура, на каждом шаге которой с помощью алгоритма, изложенного в \cite{1}, определяется управление $u^*_k(t)$, где $t\in[t_k,t_{k+1}]$. С помощью этого управления система \eqref{eq:NovikovDA:202403301} переводится из текущего состояния в заданное состояние:
+\begin{equation}
+\vartheta(t_{k+1})=\vartheta^*(t_{k+1})\text{,} \qquad   \omega(t_{k+1})=0\text{,} \qquad  \delta(t_{k+1})=0\text{.}
+\end{equation}
+
+В результате такой итерационной процедуре строится управление 
+\begin{equation}
+u^*(t)=	\left \{u^*_k(\tau), \tau\in[t_k,t_{k+1}] : k=1,\ldots N-1 \right \}\text{,}
+\end{equation}
+которое удовлетворяет ограничению \eqref{eq:NovikovDA:202310022} и переводит систему \eqref{eq:NovikovDA:20231002} из начального фазового состояния \eqref{eq:NovikovDA:202310051}  в состояние
+\begin{equation}\label{eq:NovikovDA:202404141}
+x(\tau^*_f)=0\text{,} \qquad  {v}(\tau^*_f) = 0\text{,} \qquad  \omega(\tau^*_f)=0\text{,} \qquad  \delta(\tau^*_f)=0\text{,}
+\end{equation}
+в котором $\vartheta(\tau^*_f) \neq 0$. 
+
+Чтобы обеспечить выполнение условия \eqref{eq:NovikovDA:202310052}, на интервале времени $t\in[t_N,t_f]$ с помощью алгоритма, предложенным в \cite{1}, строится  управление $u^*_N$, которое переводит систему из фазового состояния \eqref{eq:NovikovDA:202404141} в конечное  состояние \eqref{eq:NovikovDA:202310052}.
+
+Таким образом, искомое управление для исходной задачи примет вид
+
+\begin{equation}
+u^*(t)=	
+\begin{cases}
+u^*_k(t),& t\in[t_k,t_{k+1}) \\
+u^*_N(t),& t\in[t_N,t_f] 
+\end{cases}	
+\end{equation}
+
+Полученные результаты иллюстрируются двумя численными примерами.
+
+% Список литературы.
+\begin{thebibliography}{99}
+\bibitem{1}
+% Format for Journal Reference
+Новиков~Д.А. {О простейшей задаче быстродействия с фазовым ограничением при управлении пространственной ориентацией тела} // Труды Института математики и механики УрО РАН. 2023. Т.~29, No~3. С.~62-72.
+\bibitem{2}
+% Format for Journal Reference
+Новиков~Д.А.,~Кандоба И.Н.,~Козмин И.В.,~Плаксин А.Р. { О решении одной задачи управления движением объекта в плотных слоях атмосферы} // Труды Института математики и механики УрО РАН. 2021. Т.~27, No~2. С.~169-184.
+\bibitem{3} Благодатских~В.И. { Введение в оптимальное управление (линейная теория)}. М.: Высш. шк., 2001.
+
+\bibitem{4} Лебедев~А.А., Герасюта~Н.Ф. { Баллистика ракет}. М.: Машиностроение, 1970.
+
+\bibitem{5} Васильев~Ф.П. { Методы оптимизации}. М.: Изд-во ``Факториал пресс'', 2002.
+
+% Format for books
+%\bibitem{2}
+%Author N. Book title. Place: Publisher, year.
+% Format for Russian Journal Reference
+%\bibitem{3} Фамилия И.О. {\it Название статьи}. Журнал. Год. Т.~том,  \textnumero~номер. С.~страницы.
+% etc
+\end{thebibliography}
+
+
+
+
+
+
+%\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

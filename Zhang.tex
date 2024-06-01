@@ -1,0 +1,79 @@
+
+
+\iffalse
+% This is LLNCS.DEM the demonstration file of
+% the LaTeX macro package from Springer-Verlag
+% for Lecture Notes in Computer Science,
+% version 2.4 for LaTeX2e as of 16. April 2010
+%
+%\documentclass[12pt]{llncs}
+%\usepackage{iftex}
+%\usepackage{nla}
+%\usepackage{showframe}
+%
+%
+
+\documentclass[12pt]{llncs}
+
+% The correcting style file is added.
+\usepackage{todonotes}
+
+\usepackage{nla} 
+\begin{document}
+\fi
+
+\title{Prediction of nonlinear dynamical systems based on Kooperman operator in two-dimensional motion model of four-wheel car}
+%
+\titlerunning{Prediction of Nonlinear Dynamical Systems}  % abbreviated title (for running head)
+%                                     also used for the TOC unless
+%                                     \toctitle is used
+%
+\author{Shaoxing Zhang \and Jinxiu Wu \and Jinlong Yuan}
+%
+\authorrunning{Shaoxing  et al.} % abbreviated author list (for running head)
+%
+%%%% list of authors for the TOC (use if author list has to be modified)
+\tocauthor{Shaoxing Zhang, Jinxiu Wu, Jinlong Yuan}
+%
+\institute{Department of Applied Mathematics, School of Science, Dalian Maritime University, Dalian 116026, PR China}
+
+\maketitle              % typeset the title of the contribution
+
+\begin{abstract}
+\noindent\textbf{Abstract}\\
+The motion model of a four-wheel car is a class of nonlinear dynamic system in two-dimensional plane. The Koopman operator is a linear infinite dimensional operator, which can describe the evolution process of a nonlinear system. Extended dynamic mode decomposition(EDMD) is a variation of dynamic mode decomposition method based on the Koopman operator, which can elevate the nonlinear system state into an approximated linear space with higher dimensions so as to improve the accuracy and interpretability of models. Our work is to build a predictor based on EDMD method to predict a four-wheel car motion trajectory. By using three different types of base functions, the prediction performance of the predictor based on EDMD method is better than other two predictors.
+\keywords{Nonlinear dynamic system, Kooperman operator, Model predictive control}
+\end{abstract}
+
+% ---- Bibliography ----
+%
+\begin{thebibliography}{5}
+%
+\bibitem {ref1}
+Jinlong Yuan, Sida Lin, Shaoxing Zhang, Chongyang Liu,
+Distributionally robust system identification for continuous fermentation nonlinear switched system under moment uncertainty of experimental data.
+Applied Mathematical Modelling. 2014. Vol. 127. Pp. 679--695.
+
+\bibitem {ref2}
+Jinlong Yuan, Ke Guo$^{*}$, Lixia Meng, Chongyang Liu, Kok Lay Teo, Jun Xie,
+A distributionally robust optimization model for batch nonlinear switched time-delay system considering uncertain output measurements.
+Nonlinear Analysis: Hybrid Systems. 2023. Vol.  48. P. 101330.
+
+\bibitem {ref3}
+Jinlong Yuan, Lei Wang$^{*}$, Jun Xie, Kok Lay Teo.
+Control with Quality Constraint for Fed-Batch Fermentation Processes Involving Multiple Feeds.
+Journal of the Franklin Institute. 2020. Vol. 357.
+
+\bibitem {ref4}
+Jinlong Yuan, Changzhi Wu$^{*}$, Jianxiong Ye, Jun Xie,
+Robust indentification of nonlinear state-dependent impulsive switched system with switching duration constraints.
+Nonlinear Analysis: Hybrid Systems. 2020. Vol. 36. P. 100879.
+
+\bibitem {ref5}
+Jinlong Yuan, Jun Xie, Ming Huang$^{*}$, Houming Fan, Enmin Feng, Zhilong Xiu,
+Robust optimal control problem with multiple characteristic time points in the objective
+for a batch nonlinear time-varying process using parallel global optimization.
+Optimization and Engineering. 2020. Vol. 21. Pp. 905--937.
+
+\end{thebibliography}
+%\end{document}

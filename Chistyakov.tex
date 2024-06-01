@@ -1,0 +1,69 @@
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+\usepackage{todonotes}
+
+\usepackage{nla} 
+
+\begin{document}
+\fi
+
+\title{Singular points of the Jacobi equation and their influence on the properties of the  singular quadratic functional}
+
+\author{Viktor Chistyakov  
+  \and
+  Elena Chistyakova 
+  }
+\institute{Institute for System Dynamics and Control Theory SB RAS, Irkutsk, Russia\\
+  \email{chist@icc.ru, elena.chistyakova@icc.ru}
+ }
+
+\maketitle
+
+\begin{abstract}
+We consider some properties of a singular quadratic functional. We identify singular points of the Jacobi equation that corresponds the functional and study their influence on the functional's
+properties.
+
+\keywords{differential-algebraic equations, Lyapunov exponents, Bohl exponents, stability of exponents}
+\end{abstract}
+
+
+\section{The main result} %optional section
+
+
+In this talk, we consider the following quadratic functional 
+\begin{equation}\label{post1}
+\Phi (x)=\int\limits_{\alpha}^{\beta}\left[\left\langle A(t)\dot x(t),\dot x(t)
+	\right\rangle_n +2\left\langle B(t)\dot x(t),x(t) \right\rangle_n+\left\langle  C(t)x(t),x(t) \right\rangle_n \right]dt,
+\end{equation}
+where $A(t),\ B(t),\ C(t)$ are sufficiently smooth $(n\times n)$-matrices, \linebreak $t\in T=[\alpha ,\beta ]\subset {\bf R}^1$,
+$\left\langle  .\ ,. \right\rangle_q$ is a scalar product in the spaces  ${\bf R}^q$, $q$ is some number, 
+$\dot {x}(t)\equiv dx(t)/dt$. 
+The functional (\ref{post1}) is defined on a set of vector functions 
+\begin{equation}\label{post2}
+	{\bf X}=\{x\equiv x(t): {\bf C}^{1}(T), \ x(\alpha )=x(\beta )=0\}.
+\end{equation}
+We study  (\ref{post1}) for the case 
+$$
+\det A(t)=0 \ \forall t\in T.
+$$
+In particular, it means that the strengthened Legendre condition  
+$$
+A(t)>0 \ \forall t\in T
+$$
+ is violated at each point of the segment $T$. 
+We search for conditions fulfillment of which  ensures that 
+\begin{enumerate}
+\item ${\rm dim}\;{\rm ker}\;\Phi (x)<\infty,\ x\in {\bf X}$, in particular, ${\rm ker}\;\Phi (x)=0,\ x\in {\bf X}$; 
+\item $\Phi (x)\geq 0\ \forall x\in {\bf X}$; 
+\item small variations in $\Phi (x)$ correspond to small variations in  $x$.
+\end{enumerate}
+
+As in the non-singular case, when it is assumed that the strengthened Legendre condition is satisfied, many properties of functional (1) are determined by the properties of its Euler equation, which is often referred to as the Jacobi equation. We identify singular points of the Jacobi equation and study their influence on the properties of the functional (1).
+
+
+%\end{document}
+
+
+

@@ -1,0 +1,91 @@
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+% The correcting style file is added.
+\usepackage{todonotes}
+
+\usepackage{nla} % This package is needed for compiling
+                 % this template, it should be removed
+                 % from your article.
+
+% Many popular packages (amsXXX, graphicx, etc.) are already imported in the style file.
+% If there is a conflict with your packages, try disabling them and compile
+% the text.
+%
+% It would be convenient in the layout of the proceedings if the file names
+% of the figures of different authors do not clash.
+% To minimize the clash, the drawings can be placed in a separate subfolder
+% named after the author or the title of the paper.
+%
+% \graphicspath{{ivanov-petrov-pics/}} % specifies the folder with images in png, pdf formats.
+% or
+% \graphicspath{{great-problem-solving-paper-pics/}}.
+
+\begin{document}
+\fi
+% Text should be formatted in accordance with the 'article' class, using extensions like
+% AMS.
+%
+\title{Well-posedness and Controllability of Semilinear Impulsive Stochastic Functional Evolution Equations\thanks{The research is supported by PMRF, PMRF Grant Code: PM-31-22-702-414, Ministry of Education.}}
+% First author
+\author{Nidhi Shukla}
+\institute{Indian Institute of Technology Roorkee, Roorkee, Uttarakhand, India\\
+  \email{n{\_}shukla@as.iitr.ac.in}}
+ 
+% etc
+
+\maketitle
+
+\begin{abstract}
+\textbf{Abstract:} This paper is concerned with the well-posedness and controllability of semilinear impulsive stochastic functional evolution equations in Hilbert spaces. The existence and uniqueness of mild solutions are proved under suitable assumptions. We establish sufficient conditions for the finite-approximate controllability of such systems with non-Lipschitz drift and diffusion coefficients using Picard-type iterations. An application involving the impulse effect associated with the delay is presented to verify our claimed results.
+
+\keywords{Finite-approximate controllability, Stochastic evolution equations, Impulse, Functional differential equations, Semigroup, Fixed point theorem}
+\end{abstract}
+
+% at the end of the list, there should be no final dot
+\section{The main results}
+Firstly, we prove the existence and uniqueness of mild solutions for semilinear impulsive stochastic functional evolution equations with the help of the fixed point theorem. Then, We present sufficient conditions for the finite-approximate controllability of semilinear impulsive stochastic functional evolution systems in Hilbert spaces under non-Lipschitz conditions satisfied by the nonlinear drift and diffusion coefficients depending on the control using the Picard approximation method and semigroup property, under the assumption of approximate controllability of the associated linear stochastic system via stochastic resolvent-like operators 
+$(\epsilon(I-\pi \mathop{\mathbb{E}(\cdot)})+\Pi^T_{0})^{-1}$. Our results have improved and extended some relevant results in this area.
+
+% The figures and tables are drawn according to the standard class 'article'.
+%\begin{figure}[htb]
+  %\centering
+
+% Two picture formats are supported:
+%\includegraphics[width=0.7\linewidth]{figure.pdf} % Raster format
+%\includegraphics[width=0.7\linewidth]{figure.png} % Vector and raster format
+%
+% Vector drawings can be drawn in Inkscape editor
+% https://inkscape.org/ru/download/
+% The usual format of the editor is SVG, so the drawings must be exported in
+% PDF or PNG (with a resolution of minimum 150 dpi, and maximum of 300 dpi).
+  %\begin{center}
+  %  \missingfigure[figwidth=0.7\linewidth]{Remove me from the article!} \end{center}
+  %\caption{Caption of the figure}\label{fig:example}
+%\end{figure}
+
+% At the end of the text, acknowledgments are expressed, if you haven't
+% made a footnote from the title. For example, we can write
+The research is carried on with the support of the Prime Minister's Research Fellowship (PMRF) under PMRF Grant Code: PM-31-22-702-414, Ministry of Education.
+
+\begin{thebibliography}{9} % or {99}, if there is more than ten references.
+
+\bibitem{Curtain1999} Curtain R.F., Zwart H. An Introduction to Infinite-Dimensional Linear Systems Theory. Springer-Verlag, New York, 1999.
+
+\bibitem{Prato2014} Prato G.D., Zabczyk J. Stochastic Equations in Infinite Dimensions, Cambridge University Press, 2014.~[In Russian]
+
+\bibitem{Triggiani1975} Triggiani R. Controllability and observability in Banach spaces with bounded operators. SIAM Journal on Control and Optimization. 1975. Vol.~13. Pp.~462--491.
+
+\bibitem{Mahmudov2003}  Mahmudov N.I. Approximate controllability of semilinear deterministic and stochastic evolution equations in abstract spaces. SIAM Journal on Control and Optimization. 2003. Vol.~42, no~5. Pp.~1602--1622.
+
+\bibitem{Bashirov1999} Bashirov A.E., Mahmudov N.I. On concepts of controllability for deterministic and stochastic systems. SIAM Journal on Control and Optimization. 1999. Vol.~37, no~6. Pp.~1808--1821.
+
+
+\end{thebibliography}
+%\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

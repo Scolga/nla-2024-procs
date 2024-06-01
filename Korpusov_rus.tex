@@ -1,0 +1,217 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{On critical exponents for weak solutions of the Cauchy problem for one $2+1$-dimensional nonlinear equation of wave theory in semiconductors}
+% First author
+\author{Maxim Korpusov\inst{1,2}  \and  Alexandra Matveeva\inst{1}
+  %\and
+  %Name FamilyName3\inst{1}
+}
+\institute{{Lomonosov Moscow State University, Moscow, Russia\\
+  \email{matveeva2778@yandex.ru}
+  \and
+Peoples’ Friendship University of Russia named after Patrice Lumumba, Moscow, Russia\\
+\email{korpusov@gmail.com}}
+% etc
+}
+\maketitle
+
+\begin{abstract}
+
+The Cauchy problem for a model nonlinear equation with gradient nonlinearity is considered.
+We prove the existence of two critical exponents  $q_1=2$ and $q_2=3,$  such that this problem has no local-in-time weak (in some sense) solution  t for $1<q\leqslant q_1$,  while such a solution exists for  $q>q_1$ , but , for $q_1<q\leqslant q_2$ , there is no global-in-time weak solution.
+
+\keywords{nonlinear Sobolev-type equations, blow-up, local solvability, nonlinear capacity,  blow-up time estimates} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  This is the template file for the 6th International conference
+%  NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+%  June 25-30, 2018
+%  Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[12pt]{llncs}
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\usepackage[tbtags]{amsmath}
+\usepackage{amsfonts,amssymb,mathrsfs,amscd}
+\fi
+
+\usepackage{todonotes}
+
+\usepackage[russian]{nla}
+
+\begin{document}
+\fi
+
+\title{О критических показателях для слабых решений задачи Коши для одного $2+1$--мерного нелинейного уравнения теории волн в полупроводниках\thanks{Работа выполнена при финансовой поддержке РНФ (проект \textnumero~23-11-00056) и при поддержке  Фонда развития теоретической физики и математики БАЗИС  (проект \textnumero~22-2-2-17-1)}}
+% Первый автор
+\author{M.~О.~Корпусов\inst{1,2} \and А.~К.~Матвеева\inst{1}
+  %\and
+% Третий автор
+ % И.~О.~Фамилия\inst{1}
+}
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{МГУ им. Ломоносова, Москва, Россия \\
+  \email{matveeva2778@yandex.ru}
+  \and   % Разделяет институты и присваивает им номера по порядку.
+РУДН, Москва, Россия\\
+  \email{korpusov@gmail.com}
+  %  \and
+ % НИЯУ МИФИ, Москва, Россия\\
+ % \email{email@example.com}
+% \and Другие авторы...
+}
+
+\maketitle
+
+\begin{abstract}
+В работе рассматривается задача Коши для одного модельного нелинейного уравнения с градиентной нелинейностью.
+Для этой задачи Коши в работе доказано существование двух критических показателей $q_1=2$ и $q_2=3,$ таких что при $1<q\leqslant q_1$ отсутствует локальное во времени в некотором смысле слабое решение, при $q>q_1$ локальное во времени слабое решение появляется, однако при $q_1<q\leqslant q_2$ отсутствует глобальное во времени слабое решение.
+
+\keywords{нелинейные уравнения соболевского типа, разрушение, blow-up, локальная разрешимость, нелинейная емкость, оценки времени разрушения} % в конце списка точка не ставится
+\end{abstract}
+
+%\section{Основные результаты} % не обязательное поле
+В работе рассматривается следующая задача Коши:
+\begin{equation}\label{eq_intro-1}
+\dfrac{\partial}{\partial t}\Delta u(x,t)+\dfrac{\partial}{\partial x_1}\Delta u(x,t)=|\nabla u(x,t)|^q,\quad (x,t)\in\mathbb{R}^2\otimes(0,T],
+\end{equation}
+\begin{equation}\label{eq_intro-2}
+u(x,0)=u_0(x),\quad x\in\mathbb{R}^2,\quad\Delta=\dfrac{\partial^2}{\partial x^2_1}+\dfrac{\partial^2}{\partial x^2_2}.
+\end{equation}
+Вывод уравнения (\ref{eq_intro-1}) имеется в работе \cite{bagdoev}. Уравнение (\ref{eq_intro-1}) относятся к классу нелинейных уравнений типа С. Л. Соболева. Отметим, что исследованию линейных и нелинейных уравнений соболевского типа посвящено много работ. Так, в работах Г. А. Свиридюка, С. А. Загребиной, А. А. Замышляевой \cite{svirid1}--\cite{svirid3} были рассмотрены в общем виде и в виде примеров начально--краевые задачи для большого многообразия классов линейных и нелинейных уравнений соболевского типа.
+
+Отметим, что впервые теория потенциала для неклассических уравнений типа С. Л. Соболева была рассмотрена в работе Б. В. Капитонова \cite{Kapitonov}. В дальнейшем теория потенциала изучалась в работах С. А. Габова и А.~Г.~Свешникова \cite{sveshnikov}, \cite{Gabov2}, а также в работах их учеников (см., например, работу Ю. Д. Плетнера \cite{pletner}).
+
+В классической работе \cite{pokhozaev1} С. И. Похожаева и Э. Митидиери были достаточно простым методом нелинейной емкости были получены глубокие результаты
+о роли так называемых критических показателей. Отметим также работы Е. И. Галахова и О. А. Салиевой \cite{gala1} и \cite{gala2}. В настоящей работе мы получили результат о существовании двух критических показателей $q_1=2$ и $q_2=3$ таких, что
+в широких классах начальных функций $u_0(x)$ при $1<q\leqslant q_1$ отсутствует даже локальные во времени слабые решения задачи Коши (\ref{eq_intro-1}), (\ref{eq_intro-2}), а при $q_1<q$ локальные во времени слабые решения уже существуют, однако, при $q_1<q\leqslant q_2$ глобальных во времени слабых решений нет --- все слабые решения разрушаются за конечное время.
+
+Данная работа продолжает исследования, начатые нами в работах \cite{korpusov1}--\cite{korpusov5}. Причем в работе \cite{korpusov5}
+была рассмотрена следующая задача Коши:
+$$
+\dfrac{\partial}{\partial t}\Delta_x u+\dfrac{\partial}{\partial x_1}\Delta_xu=|u|^q,\quad x=(x_1,x_2,x_3)\in\mathbb{R}^3,\quad t>0,\quad q>1,
+$$
+$$
+u(x,0)=u_0(x),\quad x\in\mathbb{R}^3,\quad\Delta_x=\dfrac{\partial^2}{\partial x^2_1}+\dfrac{\partial^2}{\partial x^2_2}+\dfrac{\partial^2}{\partial x_3^2}.
+$$
+Для которой были тоже получены два критических показателя $q_1=3$ и $q_2=4$ для аналогичных утверждений, что и в этой работе.
+%Текст доклада на русском языке.
+
+% Рисунки и таблицы оформляются по стандарту класса article. Например,
+
+%\begin{figure}[htb]
+ % \centering
+  % Поддерживаются два формата:
+  %\includegraphics[width=0.7\linewidth]{figure.pdf} % Растровый формат
+  %\includegraphics[width=0.7\linewidth]{figure.png} % Векторный и растровый формат
+  %
+
+  %\begin{center}
+   % \missingfigure[figwidth=0.7\linewidth]{Уберите меня из статьи!}
+ % \end{center}
+  %\caption{Заголовок рисунка}\label{fig:example}
+%\end{figure}
+
+
+% В конце текста можно выразить благодарности, если этого не было
+% сделано в ссылке с заголовка статьи, например,
+Работа выполнена при финансовой поддержке РНФ (проект \textnumero~23-11-00056) и при поддержке  Фонда развития теоретической физики и математики БАЗИС  (проект \textnumero~22-2-2-17-1).
+
+%Работа выполнена при поддержке РФФИ (РНФ, другие фонды), проект \textnumero~00-00-00000.
+%
+
+
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+%\bibitem{Gantmakher} Гантмахер~Ф.Р. Теория матриц. М.:~Наука,~1966.
+
+%\bibitem{Kholl} Современные численные методы решения обыкновенных дифференциальных уравнений~/ Под~ред.~Дж.~Холл, Дж.~Уатт. М.:~Мир,~1979.
+
+%\bibitem{Aleksandrov1} Александров~А.Ю. Об устойчивости сложных систем в критических случаях~// Автоматика и телемеханика. 2001. \textnumero~9. С.~3--13.
+
+%\bibitem{Moreau1977} Moreau~J.-J. Evolution problem associated with a moving convex set in a Hilbert space~// J.~Differential~Eq. 1977. Vol.~26. Pp.~347--374.
+
+%\bibitem{Semenov} Семенов~А.А. Замечание о вычислительной сложности известных предположительно односторонних функций~// Тр.~XII Байкальской междунар. конф. <<Методы оптимизации и их приложения>>. Иркутск, 2001. С.~142--146.
+
+
+
+\bibitem{bagdoev} Линейные и нелинейные волны в диспергирующих средах ~/ Под~ред.Багдоев~ А. Г., Ерофеев~В. И. ,  Шекоян~А. В. М.: ФИЗМАТЛИТ  ~2009.
+
+\bibitem{svirid1}  Свиридюк~Г. А. К общей теории полугрупп операторов~// УМН. 1994\textnumero~49(4) С.~47--74.
+
+\bibitem{svirid2}  Загребина~С. А. Начально-конечная задача для уравнений соболевского типа с сильно (L,p)--радиальным оператором~// Мат. заметки ЯГУ. 2012 \textnumero~ 19(2). С.39--48.
+
+
+\bibitem{svirid3}  Zamyshlyaeva ~A. A., Sviridyuk ~G. A.  Nonclassical equations of mathematical physics. Linear Sobolev type equations of higher order~// Вестн. Южно-Ур. ун-та. Сер. Матем. Мех. Физ. 2016. \textnumero~ 8. Pp.5--16.
+
+\bibitem{Kapitonov}   Капитонов~Б. В. Теория потенциала для уравнения малых колебаний вращающейся жидкости~// Матем. сб.1979. \textnumero~109(151). C.607--628.
+
+\bibitem{sveshnikov}   Габов~С. А.,  Свешников~А. Г.  Линейные задачи теории нестационарных внутренних волн. М.:~Наука,~1990.
+
+\bibitem{Gabov2} Габов~С. А.   Новые задачи математической теории волн. М.:~Физматлит, ~1998.
+
+\bibitem{pletner}   Плетнер~Ю. Д. Фундаментальные решения операторов типа Соболева и некоторые начально-краевые задачи~// Ж. вычисл. матем. и матем. физ. 1992. \textnumero~32. C.1885--1899.
+
+
+\bibitem{pokhozaev1}   Похожаев~С. И. ,  Митидиери~Э.  Априорные оценки и отсутствие решений нелинейных уравнений и неравенств в частных производных~// Тр. МИАН.2001  \textnumero 234  C.3--383.
+
+\bibitem{gala1}  Galakhov ~E. I.  Some nonexistence results for quasilinear elliptic problems~// J. Math. Anal. Appl.Vol.2000. Vol.~252. Pp.256--277.
+
+\bibitem{gala2} Галахов ~Е. И. , Салиева ~О. А. Об отсутствии неотрицательных монотонных решений для некоторых коэрцитивных неравенств в полупространстве ~// СФМ. 2017.  \textnumero~63. C. 573--585.
+
+\bibitem{korpusov1}  Корпусов ~М. О.  Критические показатели мгновенного разрушения или локальной разрешимости нелинейных уравнений соболевского типа~// Изв. РАН. Сер. матем. 2015.\textnumero~79. C.103--162.
+
+\bibitem{korpusov2}   Корпусов~М. О.  О разрушении решений нелинейных уравнений типа уравнения Хохлова–Заболотской~// ТМФ.2018. \textnumero~194. C.403--417.
+
+\bibitem{korpusov3}  Korpusov~M. O., Ovchinnikov~A. V., Panin~A. A.  Instantaneous blow-up versus local solvability of solutions to the Cauchy problem for the equation of a semiconductor in a magnetic field ~// Math. Methods Appl. Sci.2018. Vol.~41. Pp.8070--8099.
+
+\bibitem{korpusov4}  Корпусов  ~M.O., Панин ~А.А.  Мгновенное разрушение versus локальная разрешимость задачи Коши для двумерного уравнения полупроводника с тепловым разогревом ~// Изв. РАН. Сер. матем. 2019 Vol.~83. C. 1174--1200.
+
+\bibitem{korpusov5}   Korpusov ~M.O., Matveeva ~A.K.  О критических показателях для слабых решений задачи Коши для одного нелинейного уравнения составного типа ~// Изв. РАН. Сер. матем.2021 Vol.~ 85 C.96--136.
+
+\bibitem{korpusov51}   Korpusov ~M.O., Matveeva ~A.K.  On critical exponents for weak solutions to the Cauchy problem for one nonlinear equation with gradient nonlinearity~// MMAS.2023
+
+
+
+
+
+
+
+
+\bibitem{Vlad}  Владимиров~В. С.   Уравнения математической физики~//М.: Наука. 1988.
+
+\bibitem{Gilbarg}  Гилбарг~Д., Трудингер~М. Эллиптические дифференциальные уравнения с частными производными второго порядка ~// М.: Наука. 1989.
+
+\bibitem{Fridman}   Фридман~А. Уравнения с частными производными параболического типа~// М.: Мир.1968.
+
+\bibitem{panin5}  Панин ~А. А. О локальной разрешимости и разрушении решения абстрактного нелинейного интегрального уравнения Вольтерра~// Математические заметки. 2015 \textnumero~97. C.884--903.
+
+
+
+
+\end{thebibliography}
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок.
+
+
+
+
+%\end{document}
+

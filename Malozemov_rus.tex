@@ -1,0 +1,135 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{Comparative analysis of Kozinets, MDM and SMO algorithms for solving the hard SVM-separation problem}
+% First author
+\author{Vassili N. Malozemov\inst{1} \and Natalya A. Solovyeva\inst{2}  \and  Grigoriy Sh. Tamasyan\inst{3,4}
+}
+\institute{St.Petersburg State University, St.Petersburg, Russian Federation\\
+  \email{vmalv@mail.ru}
+  \and
+Petersburg State University of Economics, St.Petersburg, Russian Federation\\
+\email{4vinyo@gmail.com}
+\and
+Mozhaiskiy Space Military Academy, St.Petersburg, Russian Federation\\
+\and
+Institute of Problems of Mechanical Engineering, St.Petersburg, Russian Federation\\
+\email{grigoriytamasjan@mail.ru}}
+% etc
+
+\maketitle
+
+\begin{abstract}
+The report provides a comparative analysis of three related algorithms for solving the problem of hard SVM-separation of two finite sets in Euclidean space.
+
+\keywords{machine learning, hard SVM-separation, Kozinec algorithm, MDM-algorithm, SMO-algorithm, clipped iterations{}} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+\iffalse
+\documentclass[12pt]{llncs}  
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes} 
+
+\usepackage[russian]{nla}
+
+\begin{document}
+\fi
+% Текст оформляется в соответствии с классом article, используя дополнения
+% AMS.
+%
+
+\title{Сравнительный анализ алгоритмов Kозинца, MDM и~SMO решения задачи жесткого SVM-отделения\thanks{Численные эксперименты выполнялись в~Институте проблем машиноведения РАН при финансовой поддержке Российского научного фонда, проект \textnumero~23-41-00060.}}
+% Первый автор
+\author{В.~Н.~Малозёмов\inst{1}  % \inst ставит циферку над автором.
+  \and  % разделяет авторов, в тексте выглядит как запятая.
+% Второй автор
+  Н.~А.~Соловьёва\inst{2}
+  \and
+% Третий автор
+  Г.~Ш.~Тамасян\inst{3,4}
+} % обязательное поле
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{Санкт-Петербургский государственный университет (СПбГУ), Санкт-Петербург, Россия\\
+  \email{vmalv@mail.ru}
+  \and   % Разделяет институты и присваивает им номера по порядку.
+Санкт-Петербургский государственный экономический университет (СПбГЭУ), Санкт-Петербург, Россия\\
+\email{4vinyo@gmail.com}
+ \and Военно-космическая академия им.~А.\,Ф.~Можайского (ВКА им.~А.\,Ф.~Можайского), Санкт-Петербург, Россия\\
+%\email{grigoriytamasjan@mail.ru}\\
+\and Институт проблем машиноведения РАН (ИПМаш РАН), Санкт-Петербург, Россия\\
+\email{grigoriytamasjan@mail.ru}
+}
+
+\maketitle
+
+\begin{abstract}
+В докладе приводится сравнительный анализ трех родственных алгоритмов решения задачи жесткого SVM-отделения двух конечных множеств в евклидовом пространстве.
+
+\keywords{машинное обучение, жесткое SVM-отделение, алгоритм Козинца, MDM-алгоритм, SMO-алгоритм,  оценка плана, усеченные итерации} % в конце списка точка не ставится
+\end{abstract}
+
+\section{Постановка задачи} % не обязательное поле
+
+Пусть в пространстве $\mathbb{R}^n$ с евклидовой нормой заданы два конечных множества, состоящие из попарно различных точек,
+$$
+  P_1 = \bigl\{p_j\bigr\}_{j=1}^s \quad\text{и}\quad P_2 = \bigl\{p_j\bigr\}_{j=s+1}^m.
+$$
+Здесь $s\in 1:m+1$. Будем считать, что выпуклые оболочки $C_1$ и $C_2$ этих множеств не имеют общих точек. Задача жесткого SVM-отделения множеств $P_1$ и $P_2$ ставится так:
+\begin{quote}
+\textit{построить гиперплоскость, разделяющую множества~$P_1$ и $P_2$, при условии, что расстояние от этой гиперплоскости до объединения $P_1 \cup P_2$ максимально.}
+\end{quote}
+
+Данную задачу можно формализовать следующим образом:
+\begin{equation}\label{equ:1}
+  \tfrac12 \|x-y\|^2 \to \min_{x\in C_1,\, y\in C_2}.
+\end{equation}
+Очевидно, что задача~\eqref{equ:1} имеет решение~$(x^*,y^*)$, вообще говоря, не~единственное. Но единственным будет вектор~$w^*=x^*-y^*$. Так как $C_1 \cap C_2 = \emptyset$, то $w^*\neq \mathbf{0}$.
+
+Обозначим через $c$ середину отрезка~$[x^*,y^*]$, $c=\tfrac12(x^*+y^*)$. Уравнение $\langle w^*,x-c \rangle= 0$ определяет искомую гиперплоскость,  разделяющую множества $P_1$ и $P_2$.
+
+\section{Основные результаты}
+\begin{itemize}
+  \item С использованием специальной параметрической вариации вводится \textit{оценка плана задачи}. Оценка неотрицательна на любом плане. Она равна нулю тогда и только тогда, когда план оптимальный.
+  \item Положительность оценки позволяет улучшить план (уменьшить целевую функцию). Это служит основой для построения алгоритма решения задачи жесткого SVM-отде\-ления.
+  \item Алгоритмы были реализованы в среде MatLab 2022b. Замерялось время, затраченное каждым алгоритмом на решение одинаковых задач.
+\end{itemize}
+
+Из проведенного сравнительного анализа алгоритмов \cite{MVN_20240321_Kozinec, MVN_20220601_MDM_SVM, MVN_20231130_MDM_SMO, MVN_20240523}, получили, что MDM-алгоритм имеет преимущество перед алгоритмами Козинца и SMO.
+% Список литературы оформляется подобно ГОСТ-2008.
+% Примеры оформления находятся по этому адресу -
+%     https://narfu.ru/agtu/www.agtu.ru/fad08f5ab5ca9486942a52596ba6582elit.html
+%
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+\bibitem{MVN_20240321_Kozinec} Малозёмов~В.~Н., Соловьёва~Н.~А., Тамасян~Г.~Ш.
+Об алгоритме Козинца.~II~// Семинар «O\&ML». Избранные доклады. 21~марта 2024~г.      (\url{ http://oml.cmlaboratory.com/reps24.shtml\#0321})
+
+\bibitem{MVN_20220601_MDM_SVM} Малозёмов~В.~Н., Соловьёва~Н.~А.
+МДМ-метод для решения общей квадратичной задачи математической диагностики~// Семинар «O\&ML». Избранные доклады. 1~июня~2022~г. (\url{http://oml.cmlaboratory.com/reps22.shtml\#0601})
+
+\bibitem{MVN_20231130_MDM_SMO} Малозёмов~В.~Н., Соловьёва~Н.~А.
+Сильная сходимость SMO-алгоритма~// Семинар «O\&ML». Избранные доклады. 30~ноября 2023~г. (\url{http://oml.cmlaboratory.com/reps23.shtml\#1130})
+    
+\bibitem{MVN_20240523} Малозёмов~В.~Н., Соловьёва~Н.~А., Тамасян~Г.~Ш.
+Сравнительный анализ алгоритмов Kозинца, MDM и~SMO решения задачи жесткого SVM-отделения~// Семинар «O\&ML». Избранные доклады. 23~мая 2024~г. (\url{ http://oml.cmlaboratory.com/reps24.shtml\#0523})
+
+\end{thebibliography}
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок.
+
+
+
+
+%\end{document}

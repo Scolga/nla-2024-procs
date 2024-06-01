@@ -1,0 +1,175 @@
+
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is the template file for the 6th International conference
+% NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+% June 25-30, 2018
+% Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The preparation of the article is based on the standard llncs class
+% (Lecture Notes in Computer Sciences), which is adjusted with style
+% file of the conference.
+%
+% There are two ways of compilation of the file into PDF
+% 1. Use pdfLaTeX (pdflatex), (LaTeX+DVIPS will not work);
+% 2. Use LuaLaTeX (XeLaTeX will work too).
+% When using LuaLaTeX You will need TTF or OTF CMU fonts
+% (Computer Modern Unicode). The fonts are installed with 'cm-unicode' package in
+% a distribution of LaTeX % (https://www.ctan.org/tex-archive/fonts/cm-unicode),
+% either by downloading and installing these fonts system wide, the address of their page is
+% http://canopus.iacp.dvo.ru/%7Epanov/cm-unicode/
+% The second option won't work in XeLaTeX.
+%
+% For MiKTeX (LaTeX distribution for Windows),
+%  1. Package 'cm-unicode' is installed manually with the MiKTeX administration Console.
+%  2. For the compilation of this example, namely, the stub figure, one will also need to
+% download package 'pgf' manually. This package uses in the popular
+% package tikz.
+%  3. Tests showed that the rest of the required packages MiKTeX loads automatically (if
+%     it is allowed). The 'auto download' option is
+%     configured in 'Settings' section in MiKTeX Console.
+%
+%
+% The easiest way to compile an article is to use pdfLaTeX, but
+% the final layout of the book will be compiled with LuaLaTeX,
+% as a result will be of better quality thanks to the package 'microtype' and
+% use vector OTF instead of standard raster fonts of pdfLaTeX.
+%
+% In the case of questions and problems with the article compilation,
+% write letters to e-mail: eugeneai@irnok.net, Cherkashin Evgeny.
+%
+% New version of the correcting style file will be available at the website:
+%     https://github.com/eugeneai/nla-style
+%     file - nla.sty
+%
+% Further instructions are in the text body of the template. The template itself
+% is an article example.
+%
+% The LaTeX2e format is used!
+
+% 12 points font size is used.
+\documentclass[12pt]{llncs}
+
+% The correcting style file is added.
+\usepackage{todonotes}
+\usepackage{algorithm}  
+\usepackage{algorithmic} 
+\usepackage{mathrsfs}
+\usepackage{nla} % This package is needed for compiling
+                 % this template, it should be removed
+                 % from your article.
+
+% Many popular packages (amsXXX, graphicx, etc.) are already imported in the style file.
+% If there is a conflict with your packages, try disabling them and compile
+% the text.
+%
+% It would be convenient in the layout of the proceedings if the file names
+% of the figures of different authors do not clash.
+% To minimize the clash, the drawings can be placed in a separate subfolder
+% named after the author or the title of the paper.
+%
+% \graphicspath{{ivanov-petrov-pics/}} % specifies the folder with images in png, pdf formats.
+% or
+% \graphicspath{{great-problem-solving-paper-pics/}}.
+
+\begin{document}
+\fi
+% Text should be formatted in accordance with the 'article' class, using extensions like
+% AMS.
+%
+\title{A two-phase strategy for elliptic optimal control problems with $L^1$-control cost and box constraints 	on the control\thanks{This research was funded by the National Natural Science Foundation of China (No. 12301477, No. 42274166), the Fundamental Scientific Research Projects of Higher Education Institutions of Liaoning Provincial Department of Education (No. JYTMS20230165), the Fundamental Research Funds for the Central Universities (No.).
+}}
+% First author
+\author{Tongtong Wang  \and Xiaotong Chen
+}
+\institute{School of Science, Dalian Maritime University, Dalian, China\\
+  \email{wangtongtong0225@163.com}\\
+  \email{chenxiaotong@dlmu.edu.cn}
+}
+% etc
+
+\maketitle
+
+\begin{abstract}
+ In this paper, elliptic optimal control problems with $L^1$-control cost and box constraints
+on the control are considered. 
+Motivated by the efficiency of the multilevel heterogeneous alternating direction method of multipliers (mhADMM) and the primal-dual active set (PDAS) method in solving optimal control problems, we combine the efficiencies of the two methods and propose an efficient
+two-phase strategy. In Phase I, we use the mhADMM algorithm, which is highly efficient in obtaining a moderate accuracy solution. In Phase II, the PDAS method is used as a post-processor of the mhADMM algorithm to get a more accurate solution.  Numerical results show that the two-phase strategy is highly efficient.
+
+\keywords{optimal control, mhADMM, PDAS, two-phase strategy}
+\end{abstract}
+  
+% at the end of the list, there should be no final dot
+\section{The main results}
+
+ In this paper, elliptic optimal control problems with $L^1$-control cost and box constraints
+ on the control are considered:
+\begin{equation}
+	\left.\left\{\begin{aligned}\min_{(y,u)\in Y\times
+			U}J(y,u)&=\frac{1}{2}\|y-y_d\|_{L^2(\Omega)}^2+\frac{\alpha}{2}\|u\|_{L^2(\Omega)}^2+\beta\|u\|_{L^1(\Omega)}^2\\
+		\mathrm{s.t.}\qquad\quad Ly&=u+y_r\quad\mathrm{in~}\Omega,\\ \qquad y&=0\hspace{38pt}\mathrm{on~}\partial\Omega,\\u&\in U_{ad}=\{\nu(x)|a\leq\nu(x)\leq b,\text{a.e on }\Omega\}\subseteq U,\end{aligned}\right.\right.\tag{P}\label{eq:P}
+\end{equation}
+where $Y:=H_{0}^{1}(\Omega),U:=L^{2}(\Omega),\Omega\subseteq\mathbb{R}^{n}(n=2,3)$ is a convex, open and bounded domain with $C^{1,1}$- or polygonal boundary; the desired state $y_{d}\in H^{1}(\Omega)$ and the source term $y_{r}\in H^{1}(\Omega)$ are given; parameters $\alpha,\beta>0,-\infty<a<0<b<+\infty$; $L$ is the uniformly elliptic differential operator.
+ \iffalse
+ given by
+$$Ly:=-\sum_{i,j=1}^n\partial_{x_j}(a_{ij}y_{x_i})+c_0y,$$
+ where $a_{ij},c_0\in L^\infty(\Omega),c_0\geqslant0,a_{ij}=a_{ji}$ and there is a constant $\theta>0$, 
+ such that $$\sum_{i,j=1}^na_{ij}(x)\xi_i\xi_j\geqslant\theta\|\xi\|^2,\mathrm{~a.a.~}x\in\Omega,\forall\xi\in\mathbb{R}^n.$$
+ \fi
+ 
+ To numerically solve problem \eqref{eq:P}, we apply the \textit{First optimize, then discretize} approach. 
+First, we consider using mhADMM  \cite{mhADMM} to solve \eqref{eq:P}. Specifically, we introduce the artificial variable $z$ and use the solution operator $S$ to rewrite \eqref{eq:P} as a two-block separable convex optimization problem with linear
+ equality constraints. Then, we give the iterative scheme of the inexact ADMM in Hilbert space. Second, we employ the finite element method to discretize the subproblems in each iteration. Different from the classical finite-element-based algorithm, the mhADMM algorithm introduces the idea of gradually refining the grid rather than fixing the mesh size during the computation process. In the initial iterations of the algorithm, the precision is relatively low. Thus, employing a coarse mesh does not deteriorate the precision but reduces the computational cost. While as the iteration process proceeds, the iteration precision becomes higher and higher. In this case, it is necessary to use a finer mesh. 
+ Finally, we rewrite the subproblems into matrix-vector forms. 
+We can see that the $\mathbf{u}$-subproblem is a saddle point problem and the $\mathbf{z}$-subproblem has a closed form solution. The $\mathbf{u}$-subproblem can be solved by the generalized minimal residual (GMRES) with the preconditioned variant of modified hermitian and skew-hermitian splitting (PMHSS) preconditioner.
+ 
+ However, mhADMM is only efficient in obtaining medium accuracy solutions. For more accurate solutions, we consider combining the mhADMM algorithm and the PDAS method \cite{song,PDAS}. Therefore, we introduce a two-stage strategy. Specifically, in Phase I, we utilize the mhADMM algorithm to obtain a moderate accuracy solution as a initial point, in Phase II, the PDAS method is used as a post-processor for the mhADMM algorithm.
+
+We use the following example to illustrate the numerical performance of our
+two-phase strategy. All of our computational results are obtained by MATLAB R2023b
+with the FEM package iFEM \cite{LONG} running on a desktop computer with Intel Core i7 CPU (2.10 GHz) with
+32GB of RAM.
+ 
+\textbf{Example: }Consider:
+\begin{equation}
+	\left.\left\{\begin{aligned}\min_{(y,u){\in}H_{0}^{1}(\Omega){\times}L^{2}(\Omega)}J(y,u)&=\frac{1}{2}\|y-y_{d}\|_{L^{2}(\Omega)}^{2}+\frac{\alpha}{2}\|u\|_{L^{2}(\Omega)}^{2}+\beta\|u\|_{L^{1}(\Omega)}\\\text{s.t.}\hspace{38pt} -\Delta y&=u+y_r\quad\text{in }\Omega=(0,1)\times(0,1),\\y&=0\hspace{38pt}\text{on }\partial\Omega,\\u&\in U_{ad}=\{v(x)|a\leq v(x)\leq b,\text{ a.e. on }\Omega\},\end{aligned}\right.\right.\notag
+	\end{equation}
+where the parameters $\alpha=0.5,\beta=0.5,a=-0.5,b=0.5, y^*=\sin(\pi x_1)\sin(\pi x_2)$ and $p^*=2\beta\sin(2\pi x_1)\exp(0.5x_1)\sin(4\pi x_2)$. The optimal control solution $u^*=\Pi_{U_{ad}}\left(\frac1\alpha\mathrm{~soft}(p^*,\beta)\right)$, the source term $y_r=S^{-1}y^*-u^*$ and the desired state $y_d=y^*-(S^*)^{-1}p^*.$
+
+We present the numerical results obtained by the proposed two-phase method. As a comparison, numerical results obtained by the PDAS method are also presented. In our two-stage strategy, we terminate the mhADMM when the KKT residual $\eta<10^{-3}$ to warm-start the PDAS algorithm which is terminated when $\eta<10^{-10}.$ In the PDAS method, we terminate the PDAS method when the KKT residual
+$\eta<10^{-10}.$
+
+From the numerical results, it can be observed that our two-phase strategy is faster and more efficient than the PDAS method
+in terms of the computational time with different final mesh sizes. Moreover, with the final mesh size becomes smaller, our two-phase strategy has an
+ evident advantage over the PDAS method in the computational time.
+ 
+% At the end of the text, acknowledgments are expressed, if you haven't
+% made a footnote from the title. For example, we can write
+
+\begin{thebibliography}{99} % or {99}, if there is more than ten references.
+
+\bibitem{mhADMM}
+Chen X., Song X., Chen Z., Xu L. A multilevel heterogeneous ADMM algorithm for elliptic optimal control problems with $L^1$-control cost. Mathematics. 2023. 
+Vol.~11. Pp.~570.
+	\bibitem{song}
+Song X., Yu B. A two‐phase strategy for control constrained elliptic optimal control problems. Numerical Linear Algebra with Applications. 2018.
+Vol.~25. Pp.~e2138.
+
+\bibitem{PDAS}
+Bergounioux M., Kunisch K. Primal-dual strategy for state-constrained optimal control problems.
+Computational Optimization and Applications. 2002. Vol.~22. Pp.~193–224.
+
+\bibitem{LONG}
+ Chen L. iFEM: An Integrated Finite Element Methods Package in MATLAB. Technical Report, University of California at Irvine, Irvine, CA, USA. 2008.
+
+
+\end{thebibliography}
+%\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

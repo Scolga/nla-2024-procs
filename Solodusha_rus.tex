@@ -1,0 +1,99 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{Iterative Approach to Solving Polynomial Volterra Integral Equations of the First Kind}
+% First author
+\author{S.~V.~Solodusha  }
+\institute{ESI SB RAS, ISDCT SB RAS, Irkutsk, Russian Federation\\
+  \email{solodusha@isem.irk.ru}
+  }
+% etc
+
+\maketitle
+
+\begin{abstract}
+Volterra integral equations of the first kind with polynomial nonlinearity are considered. They arise in the problem of identifying the input signal of a dynamic system.
+
+\keywords{identification, nonstationary dynamical system, polynomial Volterra
+equation of the first kind} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes}
+
+\usepackage[russian]{nla}
+
+
+\begin{document}
+\fi
+
+\title{Итерационный подход к решению полиномиальных интегральных уравнений Вольтерра I рода\thanks{Работа поддержана грантом РНФ \textnumero~22-11-00173, https://rscf.ru/project/22-11-00173/.}
+}
+% Первый автор
+\author{С.~В.~Солодуша % \inst ставит циферку над автором.
+%  \and  % разделяет авторов, в тексте выглядит как запятая.
+% Второй автор
+%  И.~О.~Фамилия\inst{2}
+%  \and
+% Третий автор
+%  И.~О.~Фамилия\inst{1}
+} % обязательное поле
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{ИСЭМ СО РАН, ИДСТУ СО РАН, Иркутск, Россия\\
+  \email{solodusha@isem.irk.ru}
+}
+
+\maketitle
+
+\begin{abstract}
+Рассмотрены интегральные уравнения Вольтерра I рода с полиномиальной нелинейностью, возникающие в задаче идентификации входного сигнала динамической системы.
+
+\keywords{идентификация, нестационарная динамическая система, полиномиальные интегральные уравнения Вольтерра I рода} % в конце списка точка не ставится
+\end{abstract}
+
+%\section{Основные результаты} % не обязательное поле
+
+В докладе представлены результаты по численному решению полиномиальных интегральных уравнений Вольтерра I рода \cite{solodusha1, solodusha2}. Дано детальное описание итерационному подходу и разностным методам. Статьи \cite{solodusha3, solodusha4}  посвящены прикладным задачам.
+
+% Рисунки и таблицы оформляются по стандарту класса article. Например,
+
+
+% кавычки << >>.
+
+% В конце текста можно выразить благодарности, если этого не было
+% сделано в ссылке с заголовка статьи, например,
+%Работа поддержана грантом РНФ \No~22-11-00173, https://rscf.ru/project/22-11-00173/.
+%
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+\bibitem{solodusha1}  Solodusha~S. Numerical Solution of A Class of Systems of Volterra Polynomial Equations of the First Kind~//~Numerical Analysis and Applications. 2018. Vol. 11. Pp.~89--97. 
+
+\bibitem{solodusha2}  Solodusha~S. Identification of Input Signals in Integral Models of One Class of Nonlinear  Dynamic Systems~//~Bulletin of Irkutsk State University. Series Mathematics. 2019. Vol.~30. Pp.~73--82.
+
+\bibitem{solodusha3} Solodusha~S. Modeling Heat Exchangers by Quadratic Volterra Polynomials~//~Autom. Remote Control. 2014. Vol.~75.  \textnumero~1. Pp.~87--94.  
+
+\bibitem{solodusha4} Solodusha~S., Bulatov~M. Integral Equations Related to Volterra Series and Inverse Problems:
+Elements of Theory and Applications in Heat Power Engineering~//~Mathematics. 2021. Vol.~9.  \textnumero~16. Pp.~1905. 
+
+\end{thebibliography}
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок и аннотацию.
+
+
+
+
+%\end{document}

@@ -1,0 +1,192 @@
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is the template file for the 6th International conference
+% NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+% June 25-30, 2018
+% Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The preparation of the article is based on the standard llncs class
+% (Lecture Notes in Computer Sciences), which is adjusted with style
+% file of the conference.
+%
+% There are two ways of compilation of the file into PDF
+% 1. Use pdfLaTeX (pdflatex), (LaTeX+DVIPS will not work);
+% 2. Use LuaLaTeX (XeLaTeX will work too).
+% When using LuaLaTeX You will need TTF or OTF CMU fonts
+% (Computer Modern Unicode). The fonts are installed with 'cm-unicode' package in
+% a distribution of LaTeX % (https://www.ctan.org/tex-archive/fonts/cm-unicode),
+% either by downloading and installing these fonts system wide, the address of their page is
+% http://canopus.iacp.dvo.ru/%7Epanov/cm-unicode/
+% The second option won't work in XeLaTeX.
+%
+% For MiKTeX (LaTeX distribution for Windows),
+%  1. Package 'cm-unicode' is installed manually with the MiKTeX administration Console.
+%  2. For the compilation of this example, namely, the stub figure, one will also need to
+% download package 'pgf' manually. This package uses in the popular
+% package tikz.
+%  3. Tests showed that the rest of the required packages MiKTeX loads automatically (if
+%     it is allowed). The 'auto download' option is
+%     configured in 'Settings' section in MiKTeX Console.
+%
+%
+% The easiest way to compile an article is to use pdfLaTeX, but
+% the final layout of the book will be compiled with LuaLaTeX,
+% as a result will be of better quality thanks to the package 'microtype' and
+% use vector OTF instead of standard raster fonts of pdfLaTeX.
+%
+% In the case of questions and problems with the article compilation,
+% write letters to e-mail: eugeneai@irnok.net, Cherkashin Evgeny.
+%
+% New version of the correcting style file will be available at the website:
+%     https://github.com/eugeneai/nla-style
+%     file - nla.sty
+%
+% Further instructions are in the text body of the template. The template itself
+% is an article example.
+%
+% The LaTeX2e format is used!
+
+% 12 points font size is used.
+\documentclass[12pt]{llncs}
+
+% The correcting style file is added.
+\usepackage{todonotes}
+
+\usepackage{nla} % This package is needed for compiling
+                 % this template, it should be removed
+                 % from your article.
+
+% Many popular packages (amsXXX, graphicx, etc.) are already imported in the style file.
+% If there is a conflict with your packages, try disabling them and compile
+% the text.
+%
+% It would be convenient in the layout of the proceedings if the file names
+% of the figures of different authors do not clash.
+% To minimize the clash, the drawings can be placed in a separate subfolder
+% named after the author or the title of the paper.
+%
+% \graphicspath{{ivanov-petrov-pics/}} % specifies the folder with images in png, pdf formats.
+% or
+% \graphicspath{{great-problem-solving-paper-pics/}}.
+
+\begin{document}
+\fi
+
+% Text should be formatted in accordance with the 'article' class, using extensions like
+% AMS.
+%
+\title{The Cauchy problem for one pseudohyperbolic system\thanks{The work is supported by the Mathematical Center in Akademgorodok under agreement No. 075-15-2022-282 with the Ministry of Science and Higher Education of the Russian Federation.}}
+% First author
+\author{L. N. Bondar  \and  S. B. Mingnarov
+}
+\institute{Novosibirsk State University, Novosibirsk, Russia\\
+  \email{l.bondar@g.nsu.ru}, 
+\email{s.mingnarov@g.nsu.ru}}
+% etc
+
+\maketitle
+
+\begin{abstract}
+In the paper we consider the Cauchy problem for one system unsolvable with respect to the highest time derivative. The system under the study belongs to the class of pseudohyperbolic systems. It describes flexural-torsional vibrations of an elastic rod. We prove the unique solvability of the Cauchy problem in Sobolev spaces and obtain an estimate  for the solution.
+
+\keywords{pseudohyperbolic system, Cauchy problem, transverse flexural-torsi\-onal vibrations, solvability conditions}
+\end{abstract}
+In this paper we consider the Cauchy problem for a pseudohyperbolic system:
+$$
+\begin{array}{l}
+	\left(
+	\begin{array}{ccc}
+		I- D_{x}^2 & 0 & \varepsilon_1\\
+		0 & I- D_{x}^2 & -\varepsilon_2 \\
+		\varepsilon_1 & -\varepsilon_2 & I- D_{x}^2
+	\end{array}\right) D_{t}^2 U
+	+
+	\displaystyle
+	\sigma D_{x}^4 U
+	+\sum\limits_{k=0}^{3}A_kD_x^kU
+	=F(t, x), \quad t>0,\quad x\in R, 
+	\\
+	\\
+	U|_{t=0}=\Phi(x), \quad D_t U|_{t=0}=\Psi(x),
+\end{array}
+\eqno(1)
+$$
+where $\sigma >0,\ \  \varepsilon_1>0,\ \  \varepsilon_2 >0$, \ $A_k$ are constant matrices of size 
+$3\times 3$, $k=0,\dots,3$. Systems of the form (1) arise when modeling flexural-torsional vibrations of an elastic rod [1]. It is unsolvable with respect to the highest time derivative and belongs to the class of pseudohyperbolic systems introduced in [2]. In that work solvability of the
+Cauchy problem for pseudohyperbolic equations was studied in Sobolev spaces with an exponential weight.  There are no general results about solvability for pseudohyperbolic system, only some special cases have been studied.
+
+In this paper, we establish theorems on solvability of the Cauchy problem (1):
+\vskip10pt
+% at the end of the list, there should be no final dot
+{\bf Theorem 1.}\,\,
+Let $\varepsilon_1^2+\varepsilon_2^2<1$ and $\Phi(x)\in W_2^4(R),\,\Psi(x)\in W_2^3(R)$. Then there exists $\gamma_0>0$
+such that, for any  
+$F(t, x)\in W^{0, 1}_{2, \gamma}(R^2_+)$, 
+$\gamma>\gamma_0$, the Cauchy problem (1) has a unique solution 
+$U(t,x)$
+in the space of vector-functions
+$W_{2,\gamma}^{2,4}(R_+^2),\gamma>\gamma_0$, such that
+$D_t^2 D_x^2 U(t,x) \in L_{2,\gamma}(R_+^2)$;
+moreover, the following estimate holds:
+$$
+\hspace{-15pt}\begin{array}{c}
+	\| U(t, x) , W_{2,\gamma}^{2,4}(R_+^2) \|+ \| D_t^2 D_x^2U(t, x), L_{2, \gamma}(R_+^2) \|
+	\\
+	\le 
+	c_1(\gamma_0) \bigg( \| \Phi(x), W_2^4(R) \| 
+	+ \| \Psi(x), W_2^3(R) \|
+	+ \| F(t, x), W_{2, \gamma}^{0, 1}(R^{2}_{+}) \| \bigg),
+\end{array}
+$$
+where $c_1(\gamma_0)$ is a constant depending on the system coefficients and $\gamma_0$.
+\vskip10pt
+{\bf Theorem 2.} 
+Let
+$\varepsilon_1^2+\varepsilon_2^2=1$, $A_1=A_2=A_3=0$, 
+$\Phi(x)\in W_2^4(R),\,\Psi(x)\in W_2^3(R)$, let
+$F(t,x)\in W^{0, 1}_{2, \gamma}(R^2_+)$ be such that 
+$(1+x^2) F(t, x)\in L_{2, \gamma}(R_+; L_1(R))$, $\gamma>0$, and the 
+ following conditions hold:
+$$
+\varepsilon_1 \int\limits_R f^1(t, x)\, dx - \varepsilon_2 \int\limits_R f^2(t, x)\, dx -\int\limits_R f^3(t, x)\, dx=0,
+$$
+$$
+\varepsilon_1 \int\limits_R x f^1(t, x)\, dx - \varepsilon_2 \int\limits_R x f^2(t, x)\, dx -\int\limits_R x f^3(t, x)\, dx=0, 
+\quad t>0.
+$$
+Then the Cauchy problem (1) has a unique solution
+$U(t,x) \in W_{2,\gamma}^{2,4}(R_+^2),\gamma>0$, such that
+$D_t^2 D_x^2U \in L_{2,\gamma}(R_+^2)$; moreover,
+
+$$
+\| U(t, x), W_{2,\gamma}^{2,4}(R_+^2) \|+\| D_t^2 D_x^2U(t, x), L_{2, \gamma}(R_+^2) \| 
+$$
+$$ 
+\le c(\gamma)\big(\| \Phi(x), W_2^4(R) \|
++ \| \Psi(x), W_2^3(R) \|
+$$
+$$
++\|F(t, x), W_{2, \gamma}^{0,1}(R_+^2)\|
++ \| \|(1+x^2)F(t, x), L_1(R)\|, L_{2, \gamma}(R_+)\|\big),
+$$
+where $c(\gamma)$ is a positive constant independent of $f(t,x)$.
+
+\begin{thebibliography}{9} % or {99}, if there is more than ten references.
+	\bibitem{Vlasov} 
+	Vlasov V.Z. Thin-walled Elastic Beams. National Science Foundation, Washington, D.C. 1961.
+	
+	\bibitem{Demidenko}
+	Demidenko G.V., Uspenskii S.V. Partial Differential Equations and Systems Not Solvable with Respect to the Highest-Order Derivative. Nauchnaya Kniga, Novosibirsk,  1998 [in Russian]; English transl. Marcel Dekker, New York and Basel 2003.
+
+
+
+\end{thebibliography}
+%\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

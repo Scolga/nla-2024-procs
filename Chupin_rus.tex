@@ -1,0 +1,123 @@
+\begin{englishtitle}
+\title{Using the Hamilton principle in finding impulse controls for manipulation robots}
+% First author
+\author{Ilya Chupin\inst{1} \and Yurii Dolgii\inst{1,2}}
+\institute{UrFU, Yekaterinburg, Russia\\
+  \email{mr.tchupin@yandex.ru}
+  \and
+IMM UB RAS,  Yekaterinburg, Russia\\
+\email{Jury.Dolgy@urfu.ru}}
+% etc
+
+\maketitle
+
+\begin{abstract}
+A method for solving a nonlinear non-integrable problem of motion control of a manipulation robot is proposed.
+
+\keywords{canonical equations, impulse control, manipulation robot}
+\end{abstract}
+\end{englishtitle}
+
+\iffalse
+\documentclass[12pt]{llncs}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[russian]{nla}
+
+%\usepackage[english,russian]{nla}
+
+% \graphicspath{{pics/}} %Set the subfolder with figures (png, pdf).
+
+%\usepackage{showframe}
+\begin{document}
+%\selectlanguage{russian}
+\fi
+
+\title{Использование принципа Гамильтона при нахождении импульсных управлений для манипуляционных роботов}
+% Первый автор
+\author{И.~А.~Чупин\inst{1}  \and  Ю.~Ф.~Долгий\inst{1, 2}
+  \and
+} % обязательное поле
+\institute{УрФУ, Екатеринбург, Россия\\
+  \email{mr.tchupin@yandex.ru}
+  \and
+ИММ УрО РАН, Екатеринбург, Россия\\
+\email{Jury.Dolgy@urfu.ru}}
+
+\maketitle
+
+\begin{abstract}
+Предложена методика решения нелинейной неинтегрируемой задачи управления движением манипуляционного робота.
+
+\keywords{канонические уравнения, импульсное управление, манипуляционный робот}
+\end{abstract}
+
+\section{Основные результаты} % не обязательное поле
+
+В работе \cite{ul1} была предложена методика решения нелинейной задачи управления движениями многозвенного манипуляционного робота с использованием импульсных управлений. Импульсные управления позволяют в начальный момент времени выйти на траекторию свободного движения, соединяющую начальное и конечное положение в пространстве конфигураций. В конечном положении импульсные управления используются для гашения скорости. При движении по свободной траектории управления выключаются. Необходимым условием применения методики является возможность нахождения полного интеграла уравнения Гамильтона-Якоби. В работе \cite{b2} для двухзвенного инерционного манипуляционного робота траектория плоского движения в горизонтальной плоскости была получена в результате применения для канонической системы дифференциальных уравнений теоремы Якоби и теоремы Лиувилля о первых интегралах, находящихся в инволюции.
+
+В данной работе рассматривается вертикальное движение двухзвенного инерционного манипуляционного робота, описанного в \cite{b2}. В этом случае известная методика нахождения полного интеграла Гамильтона-Якоби не работает. Траектория свободного движения является прямым путем согласно принципу наименьшего действия Гамильтона. Для нахождения прямого пути используется специальная краевая задача.
+
+Система канонических уравнений Гамильтона имеет следующий вид
+\begin{equation}
+	\begin{gathered}
+		\dot{\varphi_1}=\frac{J_2 p_{\varphi_1}-J_r(\varphi_2)p_{\varphi_2}}{J_{\varphi_1}(\varphi_2)J_2-J_r^2(\varphi_2)}, \\
+		\dot{\varphi_2}=\frac{J_{\varphi_1}(\varphi_2)p_{\varphi_2}-J_r(\varphi_2)p_{\varphi_1}}{J_{\varphi_1}(\varphi_2)J_2-J_r^2(\varphi_2)},\\
+		\dot{p}_{\varphi_1}=M_1 (t) + Q_1 (\varphi_1, \varphi_2), \\
+		\dot{p}_{\varphi_2}=\frac{m_2L_1Lsin\varphi_2 }{J_{\varphi_1}(\varphi_2)J_2-J_r^2(\varphi_2)}
+		\Big( J_2(J_r(\varphi_2)-J_2)p_{\varphi_1}^2 +\\+\bigl(J_{\varphi_1}(\varphi_2)J_2-2J_r(\varphi_2)J_2+J_r^2(\varphi_2)\bigr)p_{\varphi_1}p_{\varphi_2}+\\+J_r(\varphi_2)\bigl(J_r(\varphi_2)-J_{\varphi_1}(\varphi_2)  \bigr)p_{\varphi_2}^2\Big)+M_2(t)  + Q_2 (\varphi_1, \varphi_2),
+	\end{gathered}
+	\label{sys}
+\end{equation}
+где функции $J_{\varphi_1}(\varphi_2)$, $J_{r}(\varphi_2)$, обобщенные силы тяжести $Q_1 (\varphi_1, \varphi_2)$, $ Q_2 (\varphi_1, \varphi_2)$ определяются формулами
+\begin{equation*}
+	\begin{gathered}
+		J_{\varphi_1}(\varphi_2)=J_1 + m_2\,L_1^2 + J_2+2\,m_2\,L_1\,L\, \cos \varphi_2 ,r\\
+		J_{r}(\varphi_2)=J_2+m_2\,L_1\,L\,\cos\varphi_2 , \\
+		Q_1 (\varphi_1, \varphi_2)=- \left( m_1gL_2+m_2gL_1\right) \cos{\varphi_1}-m_2gL \cos{\left( \varphi_1+\varphi_2\right)},\\
+		Q_2 (\varphi_1, \varphi_2)=-m_2gL \cos{\left( \varphi_1+\varphi_2\right)}.
+	\end{gathered}
+\end{equation*}
+Здесь $L_1=|OO_1|$ -- длина каждого звена, $L_2$ --расстояние от оси шарнира $O$ до центра масс $C_1$ первого звена, $L \leq L_2$ -- расстояние от оси шарнира $O_1$ до центра масс $C_2$ второго звена с грузом; $m_1$ -- масса первого звена, $m_2$ -- масса второго звена с грузом; $J_1$, $J_2$ -- моменты инерции первого и второго звена с грузом относительно осей шарниров $O$, $O_1$ соответственно; $g$ -- ускорение свободного падения; $\varphi_1$ -- угол между осью $Ox$ инерциальной системы координат и прямой $OO_1$, соединяющей цилиндрические шарниры. Угол $\varphi_2$  между прямыми $OO_1$ и $O_1O_2$, соединяющей второй шарнир со схватом, определяет относительное движение второго звена манипулятора относительно первого.
+
+Множество программных управлений определяется формулами
+\begin{equation*}
+	\begin{aligned}
+		M_1(t)=S_1^0 \delta (t) - \: S_1^T \delta (T-t),\\
+		M_2(t)=S_2^0 \delta (t) -\: S_2^T \delta (T-t),
+	\end{aligned}
+	\label{zv}
+\end{equation*}
+где $\delta(\cdot)$ -- функция Дирака, $T$ -- время движения манипулятора. 
+
+Для нахождения траектории свободного движения, соединяющей начальное и конечное положения манипулятора, для системы (\ref{sys}) с нулевыми управлениями решается краевая задача с условиями
+ \begin{equation*}
+	\varphi_1(0)=\varphi_1^0, \quad \varphi_2(0)=\varphi_2^0, \quad \varphi_1(T)=\varphi_1^T, \quad \varphi_2(T)=\varphi_2^T. 
+\end{equation*}
+
+% Список литературы.
+\begin{thebibliography}{99}
+\bibitem{ul1}
+Чупин И.А. Нахождение импульсных управлений для многозвенных манипуляционных роботов~// Вестник Бурятского государственного университета. Математика, информатика. 2023. \textnumero~4. С.~53-65.
+\bibitem{b2}
+Dolgii Y., Chupin I. Impulse control of the inertial manipulation robot. Proceedings of 16th International Conference on Stability and Oscillations of Nonlinear Control Systems (Pyatnitsky’s Conference). STAB 2022. Institute of Electrical and Electronics Engineers Inc. DOI: 10.1109/STAB54858.2022.9807496.
+%\bibitem{1}
+% Format for Journal Reference:
+%Author1 N., Author2 N.  Article title. Journal. Year. Vol.~Volume, No~Number. Pp.~Page numbers.
+% Format for books:
+%Author N. Book title. Place: Publisher, year.
+% Format for Russian Journal Reference:
+%\bibitem{3} Фамилия И.О. Название статьи~// Журнал. Год. Т.~том,  \textnumero~номер. С.~страницы.
+% etc
+\end{thebibliography}
+
+
+% Обязательная информация на английском языке:
+
+
+
+
+%\end{document}
+
+

@@ -1,0 +1,91 @@
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+\usepackage{todonotes}
+
+\usepackage{nla} 
+
+\begin{document}
+\fi
+
+\title{Existence and uniqueness of solutions to polyharmonic equations in weighted Sobolev spaces}
+
+\author{Dzhamil Badardinov}
+\institute{Novosibirsk State University, Novosibirsk, Russia\\
+  \email{d.badardinov@g.nsu.ru}}
+  
+\maketitle
+
+\begin{abstract}
+
+The existence and uniqueness of solutions of an equation 
+$$
+\Delta^m\, u = f(x), \; x\in \mathbb{R}^n,
+\eqno (1)
+$$
+are considered in the class of weighted Sobolev spaces \(W^{2m}_{p,\, \sigma}(\mathbb{R}^n)\).
+
+\keywords{polyharmonic operator, weighted Sobolev spaces}
+\end{abstract}
+
+\section*{The main results} %optional section
+
+\textsc{Definition.} A function \(u(x)\) belongs to weighted Sobolev space \(W^{2m}_{p,\, \sigma}(\mathbb{R}^n)\) if there exist generalized derivatives \(D^{\beta}_x u(x), \, |\beta| \leq 2m\) of \(u(x)\) in \(\mathbb{R}^n\), and
+\[\left\|(1 + | x |)^{-\sigma(2m - |\beta|)} D_x^{\beta} u(x),\, L_p(\mathbb{R}^n)\right\| < \infty.\]
+
+The norm in the space \(W^{2m}_{p,\, \sigma}(\mathbb{R}^n)\) is defined as
+\[\left\|u(x),\,W^{2m}_{p,\sigma}(\mathbb{R}^n)\right\| = \sum\limits_{0 \leq |\beta| \leq 2m}
+\left\|(1 + | x |)^{-\sigma(2m - |\beta|)} D_x^{\beta} u(x),\, L_p(\mathbb{R}^n)\right\|.\]
+
+The following results are established.
+
+\textbf{Theorem 1.}
+\textsl{If \(\sigma > \frac{n}{2mp}\), \(j \leq 2m - 1 ,\; \frac{n}{2mp} + \frac{j}{2m} < \sigma \leq 1, \;\)
+or
+\(\;\sigma \geq 1,\, \sigma > \frac{n}{(2m-j)p},\) then the solution is defined up to a polynomial \(P_j(x)\) of degree not greater than j. 
+}
+
+\textbf{Theorem 2.} 
+\textsl{If \(n>2m,\, \sigma = \frac{n}{2mp}\), then \(\forall\, f(x) \in L_p(\mathbb{R}^n),\) supp f is compact, \(\exists!\, u(x) \in W^{2m}_{p,\,\sigma}(\mathbb{R}^n)\) -- a solution of the equation (1), and the estimate takes place:
+\[
+\left\|u(x),\, W^{2m}_{p, \,\sigma}(\mathbb{R}^n)\right\|
+\leq c\left\|f(x), L_p(\mathbb{R}^n)\right\|,
+\]
+where \(c = c(supp\, f)\).}
+
+\textbf{Theorem 3.}
+\textsl{If \(n > 2m - (N+1),\; \sigma \in [0, 1-\frac{n}{2mp'}],\, N \geq 0\) -- a natural number, such that \(1-\frac{n}{2mp'} - \frac{N+1}{2m} < \sigma \leq 1- \frac{n}{2mp'} - \frac{N}{2m}\), then the conditions 
+\[\int\limits_{\mathbb{R}^n}\, x^{\beta} f(x) \,dx = 0\; \scriptstyle \forall \beta:\; |\beta| \,\leq\, N,\]
+ are necessary and sufficient for the existence of solutions \(u(x) \in W^{2m}_{p, \,\sigma}(\mathbb{R}^n)\) of the equation (1) \(\forall\, f(x) \in L_p(\mathbb{R}^n),\) supp f is compact; if the conditions are fulfilled, then there exist a unique solution of the equation (1) and the estimate takes place: 
+ \[\left\| u(x),\, W^{2m}_{p, \,\sigma}(\mathbb{R}^n)\right\| \leq c \left\|f(x),\, L_p(\mathbb{R}^n) \right\|,\]
+ where \(c = c\,(\,supp\; f).\)}
+
+The research method is based on using the fundamental solution of the
+quasielliptic operator \(L(D_x)\), which was derived from the construction of approximate solutions of the equation (1) based on the method of integral representation of functions $f(x) \in L_p(R^n)$ suggested by S.V.~ Uspenskii~[1].
+
+Similar questions for quasielliptic operators have been considered
+in the works~[2]--[5].
+
+% At the end of the text, acknowledgments are expressed, if you haven't
+% made a footnote from the title. For example, we can write
+
+\begin{thebibliography}{9} % or {99}, if there is more than ten references.
+
+\bibitem{Uspenskii1972} Uspenskii S.\,V. On representation of functions determined by a certain class of hypoelliptic operators. Trudy Mat. Inst. Steklov Akad. Nauk SSSR.~1972. Vol.~117. Pp.~292--299.
+
+\bibitem{Demidenko1993} Demidenko G.\,V. Integral operators determined by quasielliptic equations. I.
+Sibirsk. Mat. Zh.~1993. Vol.~34, no.~6, Pp.~52--67.
+
+\bibitem{Demidenko1998} Demidenko G.\,V. On quasielliptic operators in $R^n$.
+Sibirsk. Mat. Zh.~1998. Vol.~39, no.~5, Pp.~884--893.
+
+\bibitem{McOwen1979} McOwen R.\,C. The behavior of the Laplacian on weighted Sobolev spaces.
+Comm. Pure Appl. Math.~1979. Vol.~32, no~6 Pp.~783--795.
+
+\bibitem{Hile G.} Hile G. N. Fundamental Solutions and Mapping Properties of Semielliptic Operators. 
+Math. Nachrichten.~2006. Vol.~279, no~13-14. Pp.~1538--1572.
+
+\end{thebibliography}
+
+%\end{document}

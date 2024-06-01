@@ -1,0 +1,196 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{On the stability of solutions to the variational \\ Prony problem\thanks{The study was carried out within the framework of the state contract of the Sobolev Institute of Mathematics (project no. FWNF-2022-0008)}}
+% First author
+\author{Andrei Lomov
+}
+\institute{Sobolev Institute of Mathematics, Novosibirsk State University, \\ Novosibirsk, Russia, \email{lomov@math.nsc.ru}
+}
+% etc
+
+\maketitle
+
+\vspace{-1ex}
+\begin{abstract}
+Using the Mean value theorem, new
+stability constants of solutions to the variational Prony problem are obtained.
+
+\keywords{the variational Prony problem, local stability, guaranteed estimates} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  This is the template file for the 6th International conference
+%  NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+%  June 25-30, 2018
+%  Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[12pt]{llncs}  
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes} 
+
+\usepackage[russian]{nla}
+
+\begin{document}
+\fi
+\title{Об устойчивости решений вариационной задачи Прони\thanks{Работа выполнена в рамках государственного задания Института математики им. С.Л. Соболева СО РАН, проект \textnumero~FWNF-2022-0008}}
+% Первый автор
+\author{А.~А.~Ломов
+}
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{ИМ СО РАН им. С.Л. Соболева, Новосибирский государственный университет, \\ Новосибирск, Россия,
+  \email{lomov@math.nsc.ru}
+}
+
+\maketitle
+
+\begin{abstract}
+По теореме об оценке конечных приращений получены новые константы
+устойчивости решений вариационной задачи Прони.
+
+\keywords{вариационная задача Прони, локальная устойчивость, гарантированные оценки} % в конце списка точка не ставится
+\end{abstract}
+
+\newcommand{\T}{\top}
+
+\section{Основные результаты} % не обязательное поле
+
+Вариационной задачей Прони называем обратную задачу идентификации
+вектора параметров $\theta\in\mathbb{R}^{v}$ разностного уравнения
+\begin{equation}
+\alpha_{n}x_{k+n}+\alpha_{n-1}x_{k+n-1}+\ldots+\alpha_{0}x_{k}=0,\quad k=\overline{1,N-n},\label{SL/eq:RU}
+\end{equation}
+с матричными коэффициентами $\alpha_{i}=\alpha_{i}(\theta)\in\mathbb{R}^{r\times\left(r+m\right)}$,
+$i=\overline{0,n}$ по возмущенным наблюдениям
+$y=x+\delta x\in\mathbb{R}^{N\left(r+m\right)}$
+процесса $x\doteq\left[x_{1};\ldots;x_{N}\right]$. Предполагается,
+что $\alpha=D\theta+d$, где $\alpha\doteq\mathrm{vect}\left[\alpha_{0};\ldots;\alpha_{n}\right]$,
+столбцы $\left[D,d\right]$ линейно независимы, и задача вычисления $\theta$ по $x$ однозначно разрешима.
+
+Устойчивость решений
+$\hat{\theta}(x+\delta x)=\theta+\delta\theta$
+к возмущениям зависит от целевой функции; при аддитивных возмущениях предпочтительна \cite{Lomov--Rusinova-2022} вариационная ЦФ:
+\[
+\hat{\theta}=\arg\min_{\theta}J(\theta,y),\quad J(\theta,y)\doteq\left\Vert y-\hat{x}(\theta)\right\Vert ^{2},\quad\hat{x}(\theta)\doteq\left(I-GCG^{\T}\right)y,\quad C\doteq\left(G^{\T}G\right)^{-1},
+\]
+где $G^{\T}\doteq\left\backslash \alpha(\theta)\right\backslash $ есть клеточно-теплицевая
+матрица системы уравнений \eqref{SL/eq:RU}.
+
+Нас интересуют гарантированные границы для нормы отклонений
+$\left\Vert \delta\theta\right\Vert $,
+в отличие от анализа с точностью до малых более высоких порядков \cite{Abatzoglu-et-al-1991}.
+
+\smallskip
+\textbf{Теорема (об оценке конечных приращений)}
+\textsl{
+Пусть отображение $F:\Omega\to\mathbb{R}^{v}$ непрерывно
+дифференцируемо в выпуклой компактной области пространства
+$\mathbb{R}^{N\left(r+m\right)}$.
+Тогда $\left\Vert F(y)-F(x)\right\Vert \leq\sup_{\xi\in\Omega}\left\Vert F^{\prime}(\xi)\right\Vert \cdot\left\Vert y-x\right\Vert $.
+}\smallskip
+
+
+Для неявной функции $\hat{\theta}(y)\doteq F(y)$, вычисляемой из
+условия $J_{\theta}^{\prime}(\hat{\theta},y)=0$, имеем производную Фреше
+$F^{\prime}=-\left(J_{\theta\theta}^{\prime\prime}\right)^{-1}J_{\theta y}^{\prime\prime}\doteq S^{\T}$.
+Пусть $\|\cdot\|$ — операторная норма, тогда
+\[
+\|F^{\prime}(y)\|=\|S(\hat{\theta}(y),y)\|=\lambda_{\text{max}}^{1/2}\left(S^{\T}S\right).
+\]
+
+\smallskip
+\textbf{Лемма.}\textsl{
+При возмущении $R\to R+\Delta R\in\mathbb{R}^{n}$ симметричной положительно определенной матрицы $R$ верна гарантированная оценка для наименьшего
+собственного числа $\lambda_{i}\doteq\lambda_{i}\left(R\right)$,
+$\lambda_{1}<\lambda_{2}\leq\ldots\leq\lambda_{n}$
+($\left\Vert \cdot \right\Vert_{F} $ --- фробениусовская норма):
+\[
+\lambda_{1}+\Delta\lambda_{1}\in\left[\lambda_{1}\pm\left(\left\Vert \Delta R\right\Vert _{F}+\frac{2n}{\left|\lambda_{2}-\lambda_{1}\right|}\left\Vert \Delta R\right\Vert _{F}^{2}\right)\right].
+\]
+}\smallskip
+
+\textbf{Предложение.}\textsl{
+В вариационной задаче Прони
+$S^{\T}S=\left(D^{\T}\hat{V}^{\T}C\hat{V}D\right)^{-1}\doteq R^{-1}$,
+где $\hat{V}$ есть клеточно-ганкелевая матрица из отсчетов процесса
+$\hat{x}$: $G^{\T}\hat{x}\equiv\hat{V}\left(D\theta+d\right).$ Тогда
+$\lambda_{\mathrm{max}}^{1/2}\left(S^{\T}S\right)=\lambda_{\mathrm{min}}^{-1/2}\left(R\right).$
+}\smallskip
+
+Как следствие теоремы об оценке конечных приращений имеет место неравенство
+\(
+\|\delta\theta\| \leq\frac{\varepsilon}{\inf_{\|\delta x\|\leq\varepsilon,\;\left\Vert \delta\theta\right\Vert \leq\mu\varepsilon\lambda_{\mathrm{min}}^{-1/2}\left(R\right)}\,\lambda_{\mathrm{min}}^{1/2}\left(R\right)},
+\)
+где $\mu\geq1$ — априорный коэффициент.
+
+\smallskip
+\textbf{Теорема.}\textsl{
+В вариационной задаче Прони верна следующая гарантированная оценка для ошибки вектора параметров: $\left\Vert \delta\theta\right\Vert \leq\mu\frac{\varepsilon}{\sqrt{\lambda_{1}}},\quad\mu\geq1,$
+$\lambda_{1}\doteq\lambda_{\mathrm{min}}\left(R\right)$,
+при техническом условии
+$\varepsilon\leq\frac{\left(\sqrt{2}-1\right)}{5n\left\Vert D\right\Vert ^{2}\left\Vert V\right\Vert ^{2}\left\Vert C\right\Vert ^{3/2}}\cdot\frac{\left(1-\mu^{-2}\right)\lambda_{1}^{3/2}}{\left(\mu+\frac{3\sqrt{n+1}}{5n\left\Vert x\right\Vert \left\Vert C\right\Vert ^{1/2}}\sqrt{\lambda_{1}}\right)}.$
+}\smallskip
+
+Проведены расчеты для границ нормы ошибки
+$\left\Vert \delta\theta\right\Vert $
+в задаче Ланцоша восстановления экспоненциальных слагаемых из возмущенных наблюдений суммы трех экспонент \cite{Lanczos-1956} и на ряде более обусловленных примеров. Показано, что ранее полученные границы нормы
+ошибки $\left\Vert \delta\theta\right\Vert $ (ссылки в \cite{Lomov--Rusinova-2022,Lomov-2024-MTrudy}),
+основанные на оценках остаточного члена второго порядка в разложении в ряд Тейлора неявной функции $\hat{\theta}(y)$ (по сути на оценках конечных приращений производной Фреше), на несколько порядков менее эффективны, как и оценки на основе неравенств типа Уилкинсона.
+
+% В конце текста можно выразить благодарности, если этого не было
+% сделано в ссылке с заголовка статьи, например,
+% Работа выполнена при поддержке РФФИ (РНФ, другие фонды), проект \textnumero~00-00-00000.
+%
+
+
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+\bibitem{Lomov--Rusinova-2022}\emph{Ломов\,А.\,А., Русинова\,Е.\,А.}
+Сравнение целевых функций в задаче Прони для аппроксимации данных
+измерений // Вестник ЮУрГУ. Серия «Вычислительная математика и информатика».
+2022. Т. 11, № 2. С. 18-27. DOI: 10.14529/cmse220202
+
+\bibitem{Abatzoglu-et-al-1991}\emph{Abatzoglu\,T.J., Mendel\,J.M.,
+Harada\,G.A.} The Constrained Total Least Squares Technique and its
+Applications to Harmonic Superresolution // IEEE Trans. Signal Processing.
+1991. V.\,SP-39. P.\emph{\,}1070-1087.
+
+\bibitem{Lanczos-1956}\emph{Lanczos\,C}. Applied analysis. Prentice
+Hall, Englewood Cliffs, N.J., 1956. 539\,p. Пер.: \emph{Ланцош\,К}.
+Практические методы прикладного анализа. М.: ФМЛ, 1961. 524\,с.
+
+\bibitem{Lomov-2024-MTrudy}\emph{Ломов\,А.А}. О локальной устойчивости
+в полной задаче Прони // Математические труды. №1. 2024. Принято к
+публикации.
+
+\bibitem{VanHuffel--Vandewalle-1991}\emph{Van\,Huffel\,S., Vandewalle\,J}.
+The total least squares problem. SIAM, Philadelphia, 1991.
+
+\end{thebibliography}
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок.
+
+
+
+
+
+
+%\end{document}
+

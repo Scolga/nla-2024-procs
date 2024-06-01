@@ -1,0 +1,100 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{On limit sets of monotone maps on one-dimensional ramified continua}
+% First author
+\author{Elena Makhrova}
+
+
+\institute{Nizhni Novrorod State University, N. Novgorod, Russia\\
+  \email{elena\_makhrova@inbox.ru}}
+
+
+\maketitle
+
+\begin{abstract}
+Let $X$ be a dendroid or a dendrite, $f:X\to X$ be a monotone map. In the report we study the structure of the nonwandering set of $f$ and  $\omega$-limit set of a trajectory of any point $x\in X$.
+
+\keywords{dendroid, dendrite, monotone map, the nonwandering set,  $\omega$-limit set} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes}
+
+\usepackage[russian]{nla}
+
+
+
+\begin{document}
+\fi
+
+\title{О предельных множествах монотонных отображений на одномерных разветвленных континуумах\thanks{Исследование выполнено за счет гранта Российского научного фонда № 24-21-00242, https://rscf.ru/project/24-21-00242/}}
+% Первый автор
+\author{Е.~Н.~Махрова 
+} % обязательное поле
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{Нижегородский государственный университет им. Н.И. Лобачевского, г. Н. Новгород, Россия\\
+  \email{elena\_makhrova@inbox.ru}}
+
+\maketitle
+
+\begin{abstract}
+Пусть $X$ -- дендроид или дендрит, $f:X\to X$ -- монотонное отображение. В докладе изучается структура неблуждающего множества отображения $f$ и $\omega$-предельного множества  траектории любой точки $x\in X$.
+
+\keywords{дендроид, дендрит,  монотонное отображение, неблуждающее множество, $\omega$-предельное множество} % в конце списка точка не ставится
+\end{abstract}
+
+\section{Основные результаты} % не обязательное поле
+
+Под {\it континуумом} понимаем компактное связное метрическое пространство. Следуя работе \cite{EM2021}, связное подмножество континуума $X$, замыкание которого гомеоморфно отрезку $[0;\,1]$ на прямой ${\mathbb R^1}$, будем называть {\it дугой}. Континуум  $X$ называется {\it уникогерентным}, если  для любых  подконтинуумов  $A$ и $B$ в $X$, удовлетворяющих условию $A\cup B=X$, пересечение $A\cap B$ связно. Так, любой отрезок на прямой $\mathbb R^1$ уникогерентен, а окружность не является уникогерентным множеством. Континуум $X$ называется {\it дендроидом}, если $X$ -- дугообразно связно и наследственно уникогерентно, то есть любой подконтинуум  $Y$ в $X$ является уникогерентным. Отметим, что дендроид $X$~-- одномерный континуум, $X$ не содержит подмножеств, гомеоморфных окружности, и любые различные две точки $x,\,y$ в $X$ можно соединить единственной дугой (см., например, \cite{Na}). Локально связный дендроид называется {\it дендритом}.
+
+В последние годы возрос интерес  к изучению динамических систем на одномерных разветвленных континуумах, так как они появляются, например, как множества Жюлиа  в комплексных динамических системах \cite{PeRi}, как предельные множества динамических систем размерности, большей 1 \cite{AC91}, \cite{BG}, как глобальный аттрактор косого произведения   \cite{Efr23}, в задачах математической физики \cite{SakSm} и др. Но указанные одномерные континуумы имеют сложную топологическую структуру, поэтому даже простейшие отображения такие, как гомеоморфизмы или монотонные отображения имеют нетривиальную динамику (см., например, \cite{EM2001} -- \cite{Nag12}).
+
+Пусть $X$~-- дендроид. Непрерывное отображение  $f:X\to X$  называется монотонным, если для любого связного множества $A\subset f(X)$ полный прообраз $f^{-1}(A)$ связен в $X$. Определяющая роль в свойствах любой динамической системы принадлежит множеству неблуждающих точек и $\omega$-предельному множеству произвольной траектории. Точка $x\in X$ называется неблуждающей точкой отображения $f$, если для любой ее окрестности $U$ в $X$ найдется натуральное число $n\ge1$ такое, что $f^n(U)\cap U\ne\emptyset.$ Множество всех неблуждающих точек отображения $f$ называется неблуждающим множеством отображения $f$. Будем говорить, что точка $y$ принадлежит $\omega$-предельному множеству траектории точки $x\in X$ относительно отображения $f$ ($y\in\omega(x,f)$), если существует последовательность натуральных чисел $n_1<n_2<\ldots<n_j<\ldots$ такая, что $\lim\limits_{j\to\infty}f^{n_j}(x)=y$.
+
+Пусть $f:X\to X$ -- монотонное отображение дендроида $X$. В докладе изучается структура неблуждающего множества и $\omega$-предельного множества произвольной траектории отображения $f$. Приводятся также различия в свойствах указанных множеств монотонных отображений, заданных на дендритах и дендроидах, не являющихся дендритами.
+
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+ \bibitem{EM2021}
+Ефремова~Л.С., Махрова.~Е.Н.  Одномерные динамические системы~// УМН. 2021. Т.~76. \textnumero 5(461). C.~821--881.
+\bibitem{Na}
+Nadler~S. Continuum Theory.  N.-Y.: Marcel Dekker.~1992.
+\bibitem{PeRi} Peitgen~H.-O., Richter~P.H.  The beauty of fractals: Images of complex dynamical systems. Berlin: Springer,~1986.
+\bibitem{AC91} Agronsky~S.J., Ceder~J.G.  What sets can be $\omega$-limit sets in $E^n$~// Real Anal. Exchange.1991/1992. Vol.~17. P.~97–-109.
+\bibitem{BG} Balibrea~F., Guirao~Juan~L.G.  Continua with empty interior as $\omega$-limit sets~// Appl. Gen. Topol. 2005. Vol.~6. \textnumero~2. P.~195–-205.
+\bibitem{Efr23}
+Efremova~L.S.  Ramified continua as global attractors of $C^1$-smooth self-maps of a cylinder close to skew products~// Journal of Difference Equations and Applications. 2023. Vol.~28. P.~1--33.
+\bibitem{SakSm}
+Сакбаев~В.Ж., Смолянов~О.Г.  Диффузия и квантовая динамика на графах~//  Доклады РАН. 2013. Vol.~451. \textnumero~2. P.~141--144.
+\bibitem{EM2001}
+Ефремова~Л.С., Махрова~Е.Н.  Динамика монотонных отображений дендритов~// Матем. сборник. 2001. Т.~192. \textnumero~6. C.~15--30.
+\bibitem{Makh2020}
+Makhrova~E.N.  Monotone maps on dendrites~// Discontinuity, Nonlinearity  and Complexity. 2020. Vol.~9. \textnumero~4. P.~541--552.
+\bibitem{Makh2020.1}
+Makhrova~E.N.   On limit sets of monotone maps on dendroids~// Appl.~Math.~\& Nonlin.~Sciences. 2020. Vol.~5. \textnumero~2. P.~311--316.
+\bibitem{nam1} Naghmouchi~I. Dynamics of monotone graph, dendrite and dendroid maps~// I.J. Bifurcation \& Chaos. 2011. V.~21. \textnumero~1.  P.~3205--3215.
+\bibitem{Nag12}
+Naghmouchi~I. Dynamical properties of monotone dendrite maps~// Topology Applic. 2012. V.~159. \textnumero~1.  P.~144–-149.
+\end{thebibliography}
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок и аннотацию.
+
+
+
+
+%\end{document} 

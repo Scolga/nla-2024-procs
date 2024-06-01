@@ -1,0 +1,83 @@
+
+\iffalse
+\documentclass[12pt]{llncs}
+\usepackage{todonotes}
+\usepackage{nla}
+
+
+\usepackage{epsfig}
+
+\begin{document}
+\fi
+
+\title{Controllability of Time-Varying Discrete Descriptor Systems}
+
+\author{Alla Shcheglova}
+\institute{Matrosov Institute for System Dynamics and Control Theory SB RAS, Irkutsk, Russia\\
+	\email{shchegl@icc.ru}
+	}
+
+\maketitle
+
+\begin{abstract}
+	We consider nonstationary linear and nonlinear descriptor systems with discrete time. In the linear case, the state and output controllability criteria at the finite horizon are obtained, and the robust controllability conditions are found as well. Using the properties of a linear approximation, we prove the theorem on local state controllability for a nonlinear system.
+	The approach has sufficient generality and automatically solves the problem of  initial data consistency.
+	\keywords{descriptor systems, discrete systems, nonstationary, nonlinear, controllability}
+\end{abstract}
+
+\section{Statements of the Problems}
+
+Consider the descriptor systems with discrete time
+$$g(k, x^{[k-1]}, x^{[k]}, u^{[k]})=0,\;\; k \in {\rm \bf N}=\{1,2,...\},
+\eqno{(1)}$$
+where $x^{[k]}\in {\rm \bf R}^n$ are the desired vectors, $u^{[k]}\in {\rm \bf R}^l$ are the controlled inputs, $n$-dimensional vector function $g(k,\alpha, \beta, u)$ 
+with $\alpha\in {\rm \bf R}^n,\, \beta\in {\rm \bf R}^n$, $u \in {\rm \bf R}^l$ is defined on 
+${\rm \bf N}\times {\cal V}(0)\times {\cal W}(0)$, where ${\cal V}(0)$ and ${\cal W}(0)$ are some neighborhoods of points $(\alpha, \beta)=0$ and $u=0$ respectively. 
+
+ It is assumed that
+$${\rm \bf det} {{\partial g(k, \alpha, \beta, u)}\over{\partial \beta}}\equiv 0, \;\;  (k, \alpha, \beta, u)\in {\rm \bf N}\times {\cal V}(0)\times {\cal W}(0).
+$$
+
+Moreover, we analyze the linear systems
+$$A(k)x^{[k]}+B(k)x^{[k-1]}+U(k)u^{[k]}=0, 
+\eqno{(2)}$$
+$$y^{[k]}=C(k)x^{[k]}, \;\; k \in {\rm \bf N},
+$$
+where $A(k)$ and $B(k)$ are known $(n\times n)$-matrices, 
+$\det A(k)=0\;\; \forall k \in {\rm \bf N},$
+$y^{[k]}\in {\rm \bf R}^m$ are the observed outputs,
+$U(k)$ and $C(k)$ are given matrices of the dimentions $n\times l$ and $m \times n$
+respectively.
+
+
+\section{Main Results}
+
+For linear system (2), we formulate the conditions for the existence of the structural form, which is equivalent to the original system in the sense of solutions. This circumstance made it possible to obtain the form of the general solution for system (2). Under the assumptions of the theorem on the existence of solutions, the criteria of state controllability and output controllability are proved. 
+
+We obtain the conditions of robust state and robust output controllability  for the linear systems under vector uncertainty
+$$A(k, \gamma)x^{[k]}+B(k, \gamma)x^{[k-1]}+U(k, \gamma)u^{[k]}=0, 
+$$
+$$y^{[k]}=C(k, \gamma)x^{[k]}, \;\; k \in {\rm \bf N},
+$$
+where $\gamma={\rm \bf col} \left( \gamma_1, \ldots , \gamma _s \right)$ is the uncertainty parameter belonging to the
+admissible set $\Gamma=\left\{\gamma\in {\rm \bf R}^s: \; \Vert \gamma \Vert_{{\rm \bf R}^s}\le \gamma_0\right\}$,
+$$\det A(k,\gamma) = 0 \;\;\forall (k,\gamma)\in {\rm \bf N} \times \Gamma.$$ 
+
+To study the controllability of  nonlinear system (1), we construct the structural form, every solution of which starting in a sufficiently small neighborhood of the origin is a solution to system (1) with  controls small in norm, and conversely.
+This structural form amounts to a non-singular system and is a part of the components of the implicit function satisfying system (1) on some finite horizon.
+
+One of the advantages of the approach used is that it is unnecessary to find the mentioned implicit function to check the controllability conditions for system (1).
+We are able to draw a conclusion about the  local state controllability for system (1) by looking at the properties of its linear approximation.
+
+The proposed approach can be used to study other qualitative properties of linear and nonlinear discrete descriptor systems, as well as degenerate systems with continuous and discrete time.
+
+
+\begin{thebibliography}{9} 	
+	\bibitem{1} Shcheglova A.A. The Stability by Linear Approximation of Discrete-Time Nonlinear Singular Systems. Siberian Mathematical Journal.~2024. Vol.~65, no. 2. Pp.~392--410.
+		
+	\bibitem{2}  Shcheglova A.A. On the Existence of Solutions of Degenerate Discrete-Time Systems. Differential Equations.~2023. Vol.~59, no.~ 5. Pp.~688--706.
+	
+	\bibitem{3}  Shcheglova A.A. Controllabilirty of Nonlinear Algebraic-Differential Systems. Automation and Remote Control.~2008. Vol.~ 69, no.~ 10. Pp.~1700--1722.
+\end{thebibliography}
+%\end{document}
+

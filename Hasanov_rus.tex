@@ -1,0 +1,148 @@
+\begin{englishtitle}
+\title{Solving the Cauchy problem for a fractional parabolic equation using the Hankel transform method
+}
+% First author
+\author{Anvar Hasanov\inst{1} \and Hilola Yuldashova\inst{2}}
+\institute{Institute of mathematics, Tashkent, Uzbekistan\\
+  \email{anvarhasanov@yahoo.com}
+  \and
+Institute of mathematics, Tashkent, Uzbekistan\\
+\email{hilolayuldashova77@gmail.com}}
+% etc
+
+\maketitle
+
+\begin{abstract}
+In this paper, we study the Cauchy problem for a time-fractional order equation with Riemann-Liouville fractional derivatives and the Bessel operator. The solution to the problem under consideration is solved by the Hankel transformation method. 
+
+\keywords{Cauchy problem,Bessel operator, Mittag-Leffler function, Hankel transform  }
+\end{abstract}
+\end{englishtitle}
+
+\iffalse
+\documentclass[12pt]{llncs}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[russian]{nla}
+
+%\usepackage[english,russian]{nla}
+
+% \graphicspath{{pics/}} %Set the subfolder with figures (png, pdf).
+
+%\usepackage{showframe}
+\begin{document}
+%\selectlanguage{russian}
+\fi
+
+\title{Решение задачи Коши для дробного параболического уравнения методом преобразование Ханкеля}
+% Первый автор
+\author{A.~Хасанов\inst{1} \and Х.~А.~Юлдашова\inst{2}
+} % обязательное поле
+\institute{Институт математики, Ташкент, Узбекистан.\\
+  \email{anvarhasanov@yahoo.com}
+  \and
+Институт математики, Ташкент, Узбекистан.\\
+\email{hilolayuldashova77@gmail.com}}
+% Другие авторы...
+
+\maketitle
+
+\begin{abstract}
+В данной работе изучается задача Коши для уравнения дробного по времени порядка с дробными производными Римана-Лиувилля и оператором Бесселя. Решение рассматриваемой задачи решается методом преобразованием Ханкеля. 
+
+\keywords{Задача Коши, оператор Бесселя, функция Миттаг-Леффлера, преобразование Ханкеля}
+\end{abstract}
+
+\section{Введение} % не обязательное поле
+
+Известно, что процессы переноса тепла являются одним из основных разделов современной науки и имеют большое практическое значение в стационарных технологических процессах химической, строительной, легкой и других отраслей промышленности. Например, сушки, горения и других химико-технологических процессов связано с решением задач диффузии. Особое значение приобретают вопросы нестационарного теплообмена в реактивной и ракетной технике, где тепловая аппаратура работает в условиях нестационарного режима. 
+Таким образом, аналитическая теория теплопроводности находит самое широкое применение в решении различных технических проблем [1-5].
+
+Преобразования Ханкеля и другие преобразования используются для решения задач механики, теории упругости, теплопроводности, электродинамики и других разделов теоретической физики. Более подробную информация о преобразовании Ханкеля можно найти в литературе [6-13].
+\section{Основные результаты}
+Рассмотрим уравнение дробного порядка по времени
+\begin{equation} \label{GrindEQ__1_} 
+{}^{RL} {\rm {\tt D}}_{0t}^{\alpha } u\left(x,t\right)=u_{xx} \left(x,t\right)+\frac{\nu }{x} u_{x} \left(x,t\right),\, \, 0<\nu <2,\, \, 0<\alpha <1, 
+\end{equation} 
+в область $\Omega =\left\{\left(x,t\right):\, \, x>0,\, \, t>0\right\}$. Здесь ${}^{RL} {\rm {\tt D}}_{0t}^{\alpha } $— оператор дробной производной Римана–Лиувилля порядка $\alpha $  $\left(\alpha\in \mathbf{C}, \,\,n-1<\rm{Re(\alpha)}<n, \,\, n\in\mathbf{N} \right) $ определяемый формулой 
+\begin{equation} \label{GrindEQ__2_} 
+{}^{RL} {\rm {\tt D}}_{0t}^{\alpha } f\left(t\right)=\left(\frac{d}{dt} \right)^{n} \left\{{}^{{\rm RL}} { I }_{0t}^{n-\alpha } f\left(t\right)\right\} 
+\end{equation} 
+и
+\begin{equation} \label{GrindEQ__3_} 
+{}^{{\rm RL}} {I }_{0t}^{\alpha } f\left(t\right)=\frac{1}{\Gamma \left(\alpha \right)} \int _{0}^{t}\left(t-\xi \right)^{\alpha -1} f\left(\xi \right) d\xi ,\quad \left(t>0,\,\,\alpha\in \mathbf{C}, \,\,\rm{Re}(\alpha)>0\right)
+\end{equation} 
+представляет собой дробный интеграл Римана–Лиувилля [14].
+
+\textbf{Задача Коши.} Требуется найти в области   регулярное решение уравнения (1) удовлетворяющей начальному условию 
+\begin{equation} \label{GrindEQ__4_} 
+\left. t^{1-\alpha } u\left(x,t\right)\right|_{t=0} =\tau \left(x\right),\, \, \, \, 0<x<\infty , 
+\end{equation} 
+и для любого фиксированного  $t$ имеет место 
+\begin{equation} \label{GrindEQ__5_} 
+{\mathop{\lim }\limits_{x\to \infty }} \, \, u\left(x,t\right)=0, 
+\end{equation} 
+где
+\[\tau \left(t\right)\in C^{2} , \int _{0}^{\infty } \left|\tau \left(x\right)\right|x^{\frac{\nu }{2} } dx<c=const.\] 
+
+Решение поставленной задачи имеет следующий вид
+\begin{equation} \label{GrindEQ__6_} {u\left(x,t\right)=\frac{\Gamma \left(\alpha \right)}{2} x^{\frac{1-\nu }{2} } t^{\alpha -1} \int _{0}^{\infty } \rho ^{\frac{\nu -1}{2} } \tau \left(\rho \right)G\left(x,t,\rho \right)\rho d\rho ,} \end{equation} 
+\[ {G\left(x,t,\rho \right)=\int _{0}^{\infty } \left[J_{\frac{\nu -1}{2} } \left(\rho \lambda \right)J_{\frac{\nu -1}{2} } \left(\lambda x\right)+J_{\frac{1-\nu }{2} } \left(\rho \lambda \right)J_{\frac{1-\nu }{2} } \left(\lambda x\right)\right]E_{\alpha ,\alpha } \left(-\lambda ^{2} t^{\alpha } \right)\lambda d\lambda } \]
+где $J_{\mu } \left(z\right)$-функция Бесселя первого рода [15] и $E_{\alpha ,\beta } \left(z\right)$- функция Миттаг-Леффлера с двумя параметрами [16].
+
+
+
+
+
+
+
+% Список литературы.
+\begin{thebibliography}{99}
+\bibitem{1}
+Лыков А.В. Теория теплопроводности. Москва, Высшая школа, 1967, ст. 601.
+\bibitem{2}
+Solomon A, Vasilios A. Mathematical Modeling of Melting and Freezing Processes. CRC Press, Taylor  and Francis Group, 1993, p. 323.
+\bibitem{3} 
+Arena O.{\it On a singular parabolic equation related to axially symmetric heat potentials}  Ann. mat. Pura ed appl.1975.  Vol.~105, No~4. Pp.~347—393 .
+\bibitem{4} 
+Холпанов Л.П., Шкадов В.Я. Гидродинамика и тепломассообмен с поверхностью раздела. Москва, Наука, 1990, ст. 271.
+\bibitem{5} 
+V. P. Pikulin, S. I. Pokhozhaev. Practical course on mathematical equations physics. 2nd edition, Moscow, Publishing House MCNMO, 2004.
+\bibitem{6} 
+Sneddon Ian. Fourier Transforms. New York, Toronto, London. 1951. p. 668.
+\bibitem{7} 
+Davies B. Integral transforms and their applications. Springer-Verlag, New York. V.41, 2001.
+\bibitem{8} 
+Piessens, R. The Hankel Transform. The Transforms and Applications Handbook: Second Edition. Ed. Alexander D. Poularikas Boca Raton: CRC Press LLC, 2000.
+\bibitem{9} 
+A. V. Kuznetsov, D. A. Rumyantsev. Integral transformations in problems theoretical physics. Tutorial. Yaroslavl, YarSU, 2013.
+\bibitem{10}
+G. B. Arfken and H. J. Weber. Mathematical Methods for Physicists. 6 th edition, Elsevier, Oxford, 2005.
+\bibitem{11}
+Bracewell R. The Fourier Transform and Its Applications, 3rd ed. New York: McGraw-Hill, 2000.
+\bibitem{12}
+Maximon L.C. {\it On the evaluation of the integral over the product of two spherical Bessel functions}. J. Math. Phys. 1991. Vol.~32. No~3 . Pp.~642–648.
+\bibitem{13}
+Konopinski E.J. Electromagnetic Fields and Relativistic Particles. International Series in Pure and Applied Physics, McGraw-Hill Book Co., New York, 1981.
+\bibitem{14}
+K.S Miller, B.Ross, An introduction to the fractional calculus and fractional differential equations. New York: John Wiley and Sons. 1993.
+\bibitem{15}
+Erdelyi A., Magnus W., Oberhettinger F., Tricomi F. G.; Higher Transcen-
+dental Functions, vol. I, McGraw-Hill. New York, Toronto and London.  1953.
+\bibitem{16}
+A. Kilbas, H.M. Srivastava, J.J. Trujillo, Theory and Applications of Fractional Differential Equations, Elsevier, Amsterdam etc., 2006.
+
+
+\end{thebibliography}
+
+  
+
+
+
+%\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

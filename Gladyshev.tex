@@ -1,0 +1,50 @@
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+\usepackage{todonotes}
+
+\usepackage{nla} 
+
+\begin{document}
+\fi
+
+\title{Comparison optimization models for an identical
+parallel machine scheduling problem with\\ uncertain job
+durations
+}
+
+\author{Sergei Gladyshev
+%  \and
+%  Name FamilyName2\inst{2}
+%  \and
+%  Name FamilyName3\inst{1}
+}
+\institute{Moscow Institute of Physics and Technology, Moscow, Russia\\
+  \email{gladyshev.si@phystech.edu
+}
+%  \and
+%Affiliation, City, Country\\
+%\email{email@example.com}
+}
+
+\maketitle
+
+\begin{abstract}
+This study addresses an identical-parallel machine scheduling problem without workers. The expected duration of each operation must be considered while
+scheduling to minimize the makespan. However, due to unexpected events occurring during processing, the duration of the job may change. The new processing
+time is determined by a known probability distribution, set in advance for each
+job. Suppose the original schedule becomes infeasible due to the changes in the
+job duration. In that case, it can be made feasible only by moving jobs forward
+in time without assigning them to other machines or changing the execution sequence. Overlaps are determined based on the start times from the initial schedule
+and start times from the resulting schedule for each job. In our work, we mathematically formulated this problem and conducted computational experiments to
+compare the performance of various constraint, linear, and quadratic programming
+models that aim to find an initial schedule with a minimum makespan and try to
+minimize the expected maximum overlap in the resulting schedule.
+
+\keywords{identical parallel-machine scheduling problem; uncertain processing
+times}
+\end{abstract}
+
+
+%\end{document}

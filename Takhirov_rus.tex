@@ -1,0 +1,135 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{On the free boundary problem for the reaction-diffusion-advection logistic model}
+% First author
+\author{Takhirov J.O   \and  Anvarzhonov B.B.
+  %\and
+  %Name FamilyName3\inst{1}
+}
+\institute{V.I.Romanovskiy Institute of Mathematics of Uzbekistan Academy of Sciences\\ \ Tashkent, Uzbekistan\\
+  \email{prof.takhirov@yahoo.com, bunyodbek.anvarjonov@bk.ru}
+}
+% etc
+
+\maketitle
+
+\begin{abstract}
+In this paper, the free boundary problem is used to describe the process of bacterial reproduction. The existence, uniqueness and uniform estimates of the global solution are established, as well as the behavior of the components of the solution and the unknown boundary. Sufficient conditions for the spread or disappearance of bacteria have been found.
+
+\keywords{epidemic model, free border, spread and disappearance, solvability} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  This is the template file for the 6th International conference
+%  NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+%  June 25-30, 2018
+%  Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[12pt]{llncs}
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes}
+
+\usepackage[russian]{nla}
+
+\begin{document}
+\fi
+
+\title{О задаче со свободной границей для логистической модели реакция-диффузия-адвекция}
+% Первый автор
+\author{Ж.~О.~Тахиров \and Б.Б.Анваржонов
+}
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{Институт математики  АН РУз, г.~Ташкент, Узбекистан\\
+  \email{prof.takhirov@yahoo.com, bunyodbek.anvarjonov@bk.ru}
+% \and Другие авторы...
+}
+
+\maketitle
+
+\begin{abstract}
+\textbf{Аннотация.} В данной заметке задача о свободной границей используется для описания процесса размножения бактерий. Установлены существование, единственность и равномерные оценки глобального решения, а также поведение компонент решения и неизвестной границы. Найдены достаточные условия для распространения или исчезновения бактерий.
+
+\keywords{модель эпидемии, свободная граница, распространение и исчезновение, разрешимость задачи} % в конце списка точка не ставится
+\end{abstract}
+
+\section{Основные результаты} % не обязательное поле
+
+Значительные исследования по моделированию, безусловно, расширили наши знания о сложной пространственно-временной динамике инфекционных заболеваний. Однако при изучении пространственного распространения инфекционных заболеваний с использованием современных моделей остается немало трудностей и проблем.
+
+Распространение новых и вновь возникающих инфекционных бактерий обычно начинается в месте источника и распространяется на районы, где происходит контактная передача. Крайне важно и интересно изучить, как бактерии распространяются в пространстве на большую территорию, вызывая экологическую проблему.
+
+В работе \cite{Ahn} авторы рассмотрели модели с моностабильной нелинейностью и свободными границами. Они получили глобальное существование и единственность решения, а также расширяющуюся и исчезающую дихотомию. А в \cite{Zhao} иследована задача
+
+% Рисунки и таблицы оформляются по стандарту класса article. Например,
+\begin{align}
+\nonumber
+u_{t} &= du_{xx} - \beta u_{x} - au + cv,  &  g(t) < x < h(t), \ t > 0,\\
+\nonumber
+v_{t} &= -bv + G(u),  &      g(t) < x < h(t), \ t > 0,\\
+u(t,x) &= v(t,x) = 0, & \ x = g(t) \mbox{ или } x = h(t),  \ t > 0,\\
+\nonumber
+g(0) &= -h_{0}, & g'(t) = -\mu u_{x}(t; g(t)), \ t > 0,\\
+\nonumber
+h(0) &= h_{0}, &h'(t) = -\mu u_{x}(t;h(t)), \ t > 0,\\
+\nonumber
+u(0,x)& = u_{0}(x), &v(0,x) = v_{0}(x), \ -h_{0} \leq x \leq h_{0},
+\end{align}
+где  $a, b, c , \beta $ —  положительные константы, $u(t,x)$ и $v(t,x)$ обозначают концентрацию инфекционного агента в окружающей среде и инфекционной популяции человека ,соответственно. Коэффициенты $a$ и $b$ представляют собой собственные скорости распада инфекционного агента и инфекционной популяции людей соответственно, c представляет скорость размножения инфекционного агента за счет инфицированной популяции людей. Функция $G(u)$ обозначает силу заражения человеческой популяции за счет концентрации инфекционного агента ,  свободные границы $x = g(t)$ и $x = h(t)$ представляют собой фронты распространения эпидемии.
+
+В данной  работе предлагается математическая задача для изучения пространственного распространения инфекционного заболевания. Мы попытаемся обобщить известные результаты и  рассмотрим  модель эпидемии со свободной границей
+\begin{align}
+\nonumber
+k_{1}(u) u_{t} &= d_{1}u_{xx} - \beta_{1}u_{x} - au + cv, &  g(t) < x < h(t), \ t > 0,\\
+\nonumber
+k_{2}(v) v_t &= d_2v_{xx}- \beta_{2}v_x - bv + G(u),  &   g(t) < x < h(t), \ t > 0,\\
+u(t,x) &= v(t,x) = 0,                                   & x = g(t) \text{ или } x = h(t), \ t \geq 0,\\
+\nonumber
+g(0) &= -h_{0},                                     &g'(t) = -\mu u_{x}(t, g(t)), \ t > 0,\\
+\nonumber
+ h(0) &= h_{0},                         & h'(t) = -\mu u_x(t, h(t)) , \ t > 0,\\
+\nonumber
+u(0,x) &= u_{0}(x),                     & v(0,x) = v_{0}(x), \ -h_{0} \leq x \leq h_{0}.
+\end{align}
+
+Доказываются существование, единственность и равномерные оценки глобального решения, а также поведение компонент решения и неизвестной границы на больших интервалах времени. С помощью основного репродуктивного числа $R_{0}$ создаются достаточные условия для распространения или исчезновения бактерии.
+
+
+% В конце текста можно выразить благодарности, если этого не было
+% сделано в ссылке с заголовка статьи, например,
+%Работа выполнена при поддержке РФФИ (РНФ, другие фонды), проект \textnumero~00-00-00000.
+%
+
+
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+\bibitem{Ahn} Ahn I., Beak S.,   Lin Z. The spreading fronts of an infective environment in a manenvironment-man epidemic model.~// Appl. Math. Model. 2016. Vol. 40. Pp. 7082--7101.
+
+\bibitem{Zhao} Zhao Meng, Li Wan-Tong, Zhang Yang. Dynamics of an epidemic model with advection and free boundaries.~// Mathematical Biosciences and Engineering. 2019. Vщд. 16, Issue 5. Pp. 5991--6014.%DOI: 10.3934/mbe.2019300.
+
+\end{thebibliography}
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок.
+
+
+
+
+%\end{document}
+

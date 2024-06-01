@@ -1,0 +1,187 @@
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is the template file for the 6th International conference
+% NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+% June 25-30, 2018
+% Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The preparation of the article is based on the standard llncs class
+% (Lecture Notes in Computer Sciences), which is adjusted with style
+% file of the conference.
+%
+% There are two ways of compilation of the file into PDF
+% 1. Use pdfLaTeX (pdflatex), (LaTeX+DVIPS will not work);
+% 2. Use LuaLaTeX (XeLaTeX will work too).
+% When using LuaLaTeX You will need TTF or OTF CMU fonts
+% (Computer Modern Unicode). The fonts are installed with 'cm-unicode' package in
+% a distribution of LaTeX % (https://www.ctan.org/tex-archive/fonts/cm-unicode),
+% either by downloading and installing these fonts system wide, the address of their page is
+% http://canopus.iacp.dvo.ru/%7Epanov/cm-unicode/
+% The second option won't work in XeLaTeX.
+%
+% For MiKTeX (LaTeX distribution for Windows),
+%  1. Package 'cm-unicode' is installed manually with the MiKTeX administration Console.
+%  2. For the compilation of this example, namely, the stub figure, one will also need to
+% download package 'pgf' manually. This package uses in the popular
+% package tikz.
+%  3. Tests showed that the rest of the required packages MiKTeX loads automatically (if
+%     it is allowed). The 'auto download' option is
+%     configured in 'Settings' section in MiKTeX Console.
+%
+%
+% The easiest way to compile an article is to use pdfLaTeX, but
+% the final layout of the book will be compiled with LuaLaTeX,
+% as a result will be of better quality thanks to the package 'microtype' and
+% use vector OTF instead of standard raster fonts of pdfLaTeX.
+%
+% In the case of questions and problems with the article compilation,
+% write letters to e-mail: eugeneai@irnok.net, Cherkashin Evgeny.
+%
+% New version of the correcting style file will be available at the website:
+%     https://github.com/eugeneai/nla-style
+%     file - nla.sty
+%
+% Further instructions are in the text body of the template. The template itself
+% is an article example.
+%
+% The LaTeX2e format is used!
+
+% 12 points font size is used.
+\documentclass[12pt]{llncs}
+
+% The correcting style file is added.
+\usepackage{todonotes}
+
+\usepackage{nla} % This package is needed for compiling
+                 % this template, it should be removed
+                 % from your article.
+
+% Many popular packages (amsXXX, graphicx, etc.) are already imported in the style file.
+% If there is a conflict with your packages, try disabling them and compile
+% the text.
+%
+% It would be convenient in the layout of the proceedings if the file names
+% of the figures of different authors do not clash.
+% To minimize the clash, the drawings can be placed in a separate subfolder
+% named after the author or the title of the paper.
+%
+% \graphicspath{{ivanov-petrov-pics/}} % specifies the folder with images in png, pdf formats.
+% or
+% \graphicspath{{great-problem-solving-paper-pics/}}.
+
+\begin{document}
+\fi
+% Text should be formatted in accordance with the 'article' class, using extensions like
+% AMS.
+%
+\title{$p$-adic quasi Gibbs measures for the four states $p$-adic SOS model on the Cayley tree of order two}
+% First author
+\author{Muzaffar Rahmatullaev\inst{1}  \and  Olimxon Akhmedov\inst{2}
+  }
+\institute{V.I.Romanovskiy Institute of Mathematics,  Academy of Sciences of the Republic of Uzbekistan, Tashkent, Uzbekistan\\
+  \email{mrahmatullaev@rambler.ru}
+  \and
+Fergana State University, Fergana, Uzbekistan \\
+\email{olimxonaxmedov5@gmail.com}}
+% etc
+
+\maketitle
+
+\begin{abstract}
+In the present paper, we consider a $p$-adic SOS model on a Cayley tree of order two.
+The existence of translation-invariant and
+$G_k^{(2)}$-periodic $p$-adic quasi Gibbs measures of this model is investigated.
+Moreover, the boundedness of such kinds of measures is established, which yields the occurrence of a phase transition.
+\keywords{$p$-adic numbers, $p$-adic SOS model, quasi Gibbs measure, phase transition.}
+\end{abstract}
+
+% at the end of the list, there should be no final dot
+\section{The main results}
+
+Let $\mathbb Q$  be the field of rational numbers. The completion of $\mathbb Q$ with respect to the $p$-adic norm
+defines the $p$-adic field $\mathbb Q_p$  (see \cite{1}).
+
+Let $\Gamma ^{k}(V,L)$ be Cayley tree (see \cite{2}) and $\Phi=\{0,1,2,3\}$. A
+configuration $\sigma$ on $A\subset V$ is defined by the function $x \in A
+\to \sigma (x) \in \Phi $.  The set of all configurations on $A$
+is denoted by $\Omega_A = {\Phi ^A}$.
+
+A formal $p$-adic Hamiltonian $H:{\Omega} \to\mathbb Q_p$ of the $p$-adic SOS model is defined by
+$$H(\sigma)=J\sum_{\langle x,y\rangle\in L}{|\sigma(x)-\sigma(y)|_\infty}, \  \  \  \  \sigma \in \Omega_{V_n}, \eqno(1)$$
+where $0<|J|_p < p^{ - 1/(p - 1)}$ for any $ \langle x,y \rangle \in L$ and $|\cdot|_\infty$ stands for usual absolute value.
+
+We define a function ${\textbf{z}}: x\rightarrow {\textbf{z}}_x $, $\forall x\in V\setminus\{x_{0}\}$, ${\textbf{z}}_x\in \mathbb Q_p^{m+1}$ and consider $p$-adic probability distribution $\mu _{\textbf{z}}^{(n)}$ on ${\Omega _{{V_n}}}$ defined by
+
+$$
+\mu^{(n)}_{\tilde{\textbf{z}}}(\sigma_n)=Z^{-1}_{n,{\tilde{\textbf{z}}}}\exp_p\{H_n(\sigma_n)\}\prod_{x\in W_n} \tilde{z}_{\sigma_{(x),x}}, \eqno(2)
+$$
+Here, $\sigma_n:x \in V_n \rightarrow \sigma_n(x)$ where ${Z_{n,\tilde{z}}}$ is the normalizing constant
+$$
+{Z_{n,\tilde{z}}}=\sum\limits_{\sigma\in{\Omega
+_{{V_n}}}}\exp_p\{ H_n(\sigma_n )\}\prod\limits_{x \in W_n}\tilde{z}_{\sigma (x),x}.  \eqno(3)
+$$
+We say that the $p$-adic probability distributions (2) are compatible if for all $n \geq1$ and $\sigma_{n-1}\in\Phi^{V_{n-1}}:$ 
+$$
+\sum\limits_{\varphi  \in {\Omega _{{W_n}}}} {\mu
+_z^{(n)}({\sigma _{n - 1}} \vee \omega_n ) = \mu _z^{(n -
+1)}({\sigma _{n - 1}})}.  \eqno(4)
+$$
+Here ${\sigma_{n-1}} \vee \omega_n$ is the concatenation of the configurations.
+
+\textbf{Theorem 1.}(see [3]) \emph{The $p$-adic probability distributions $\mu^{(n)}_{\tilde{z}} (\sigma_n)$, which are defined by (1)
+are compatible if and only if for any $x \in V\backslash\{x^0\}$ the following system of equations
+holds:
+$$
+{z}_{i,x}=\prod_{y \in S(x)} \frac{\sum^{m-1}_{j=0}\theta^{|i-j|_\infty}{z}_{j,y}+\theta^{m-i}}
+{\sum^{m-1}_{j=0}\theta^{m-j}{z}_{j,y}+1},
+\ \ \ \  \ \ \ i=0,1,...,m-1,  \eqno(5)
+$$
+here $\theta=\exp_p(J)$ and $z_{i,x}=\tilde{z}_{i,x}/\tilde{z}_{m,x},\ i=0,1,...,m-1$}.
+
+In this case, by the $p$-adic analogue of the Kolmogorov theorem there exists a unique $p$-adic quasi Gibbs measure ${\mu _z}$ on the set $\Omega $
+such that ${\mu _z}\left( {\left\{ {\sigma {|_{{V_n}}}\equiv{\sigma
+_n}} \right\}} \right) = \mu _z^{(n)}\,\,({\sigma _{n}})$ for all $n$ and ${\sigma _{n}} \in {\Omega _{{V_{n}}}}$ (see [2]).
+
+The set of all $p$-adic quasi Gibbs measures associated with functions
+$\textbf{z} = {\textbf{z}_x, x\in V}$ is denoted by $\mathcal {QG}(H)$.
+
+\textbf{Definition 1.} \label{TR_2} [4]
+A \emph{phase transition} is said to occur if there exist at least two different $p$-adic quasi
+Gibbs measures $\mu, \nu \in \mathcal{QG}(H)$ such that $\mu$ is
+bounded and $\nu$ is unbounded. In other words,
+two different functions $s$ and $h$ may be
+found defined on $\mathbb {N}$, for which corresponding
+measures $\mu_s$ and $\mu_h$ exist; one of
+these measures is bounded, while the other is unbounded.
+
+
+In this paper we consider translation-invariant $p$-adic quasi Gibbs measures for the four states $p$-adic SOS model on the Cayley tree of order two and we get the following results:
+
+\textbf{Theorem 2.} \label{TR_2}
+\emph{If $p\equiv 1 (\operatorname{mod }4)$, then for the four states $p$-adic  SOS model on the Cayley tree of order two,
+there are at least three translation-invariant and two $G^{(2)}_2$-periodic quasi Gibbs measures.}
+
+\textbf{Theorem 3.} \label{phase tra_2}
+\emph{If $p\equiv 1 (\operatorname{mod }4)$, a phase transition occurs for the four state p-adic SOS model on a Cayley tree of order two.}
+
+\begin{thebibliography}{9} % or {99}, if there is more than ten references.
+\bibitem{1} V. S. Vladimirov, I. V. Volovich and E. V. Zelenov, \textsl{p -Adic Analysis and Mathematical Physics} (World Sci. Publ., Singapore,1994).\\
+\bibitem{2}  U. A. Rozikov, \textsl{Gibbs Measures on Cayley Trees} (World Sci. Publ., Singapore, 2013).\\
+\bibitem{3}  O. N. Khakimov, \textsl{"On $p$-adic Solid-On-Solid model on a Cayley tree"}, Theor. Math.Phys. 193(3), pp.547-562 (2017).
+\bibitem{4} Mukhamedov F., \textsl{On dynamical systems and phase
+transitions for $q+1$-state $p$-adic Potts model on the Cayley tree},
+Math. Phys. Anal. Geom. 16 (2013) pp.49-87.
+\bibitem{5} N. N. Ganikhodjayev, F. M. Mukhamedov, U. A. Rozikov, \textsl{Existence
+of phase transition for the Potts $p$-adic model on the set $Z$.}
+ Theor. Math. Phys.  130 (2002), No.3, pp.425--431.
+
+\end{thebibliography}
+%\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

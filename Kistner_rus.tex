@@ -1,0 +1,86 @@
+\begin{englishtitle}
+\title{Generalized Heilbronn problem}
+% First author
+\author{Vladimir Kistner, Vsevolod Voronov}
+\institute{Caucasus Mathematical Center, Maikop, Russia\\
+\email{vovakistner1@gmail.comm}
+\and
+Moscow Institute of Physics and Technology, \\
+Dolgoprudniy, Russia,\\
+\email{v-vor@yandex.ru}
+}
+% etc
+
+\maketitle
+
+\begin{abstract}
+The paper deals with the following optimisation problem: we need to locate points inside a given subset of Euclidean space in such a way that the smallest possible area of triangles (simplex volumes) with vertices at these points is as large as possible. In other words, we need to find $k$ points of the most general position in the compact $X \subset \mathbb{R}^n$, where the degeneracy criterion is the smallest of the volumes of $n$-simplexes. The paper will present an algorithm for finding local minima and some results obtained when $X$ is a flat torus and a sphere.
+
+\keywords{discrete geometry, stochastic gradient descent}
+\end{abstract}
+\end{englishtitle}
+
+
+\iffalse
+\documentclass[12pt]{llncs}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[russian]{nla}
+
+%\usepackage[english,russian]{nla}
+
+% \graphicspath{{pics/}} %Set the subfolder with figures (png, pdf).
+
+%\usepackage{showframe}
+\begin{document}
+%\selectlanguage{russian}
+\fi
+
+\title{Обобщенная задача Хейльбрённа%\thanks{Работа выполнена при поддержке РФФИ (РНФ, другие фонды), проект \textnumero~00-00-00000.}
+}
+% Первый автор
+\author{В.~Д.~Кистнер\inst{1}
+  \and
+% Второй автор
+  В.~А.~Воронов\inst{1,2}
+%  \and
+% Третий автор
+%  И.~О.~Фамилия\inst{2}
+} 
+ \institute{Кавказский математический центр\\ Адыгейского государственного университета, Майкоп, Россия\\
+   \email{vovakistner1@gmail.comm}
+  \and
+  Московский физико-технический институт\\ Долгопрудный, Россия\\
+   \email{v-vor@yandex.ru}
+  }
+
+
+\maketitle
+
+\begin{abstract}
+В докладе рассматривается следующая оптимизационная задача: требуется расположить точки внутри заданного подмножества евклидова пространства таким образом, чтобы наименьшая из площадей треугольников (объемов симплексов) с вершинами в этих точках была как можно больше [1-3]. Иными словами, требуется найти  $k$ точек как можно более общего положения в компакте $X \subset \mathbb{R}^n$, где критерием <<почти вырожденности>> является наименьший из объемов $n$-симплексов. В докладе будет представлен алгоритм поиска локальных минимумов и некоторые результаты, полученные в случаях, когда $X$ является плоским тором и сферой.
+\keywords{дискретная геометрия, стохастический градиентный спуск}
+\end{abstract}
+
+
+% Список литературы.
+\begin{thebibliography}{99}
+\bibitem{vv1}
+Roth, K. F.  On a problem of Heilbronn. Journal of the London Mathematical Society. 1951. Vol.~1. No.~3. Pp.~198-204.
+
+\bibitem{vv2}
+Komlós, J., Pintz, J.,  Szemerédi, E.  On Heilbronn's triangle problem. Journal of the London Mathematical Society. 1981.  Vol.~2. No.~3. Pp.~385-396.
+
+\bibitem{vv3}
+Cohen, A., Pohoata, C.,  Zakharov, D.  A new upper bound for the Heilbronn triangle problem. 2023. arXiv preprint arXiv:2305.18253.
+
+\end{thebibliography}
+
+
+% Обязательная информация на английском языке:
+
+
+
+
+%\end{document}

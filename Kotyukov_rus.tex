@@ -1,0 +1,113 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{Equilibrium as a coincidence point of two mappings}
+% First author
+\author{Alexander Kotyukov\inst{1}  \and  Natalya Pavlova\inst{2}
+}
+\institute{ICS RAS, Moscow, Russia\\
+  \email{amkotyukov@mail.ru}
+  \and
+ICS RAS, Moscow, Russia\\
+RUDN University, Moscow, Russia\\
+MPTI, Dolgoprydniy, Russia
+\email{natasharussia@mail.ru}}
+% etc
+
+\maketitle
+
+\begin{abstract}
+The report is dedicated to a research on equilibrium in complex systems using the results from the theory of covering mappings and coincidence points which is a extension of fixed point theory. Existence conditions for equilibrium in open market model are obtained. Equilibrium in this model is considered as a coincidence point for covering and Lipschitz-continuous mappings.
+
+\keywords{coincidence point, covering mapping, equilibrium, supply, demand} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+
+\ifflase
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  This is the template file for the 6th International conference
+%  NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+%  June 25-30, 2018
+%  Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[12pt]{llncs}  
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes} 
+
+\usepackage[russian]{nla}
+
+\begin{document}
+\fi
+
+\title{Положение равновесия как точка совпадения \\ двух отображений\thanks{Работа выполнена при поддержке РНФ, проект \textnumero~22-11-00042, https://rscf.ru/project/22-11-00042/, в ИПУ РАН.}}
+% Первый автор
+\author{А.М. Котюков\inst{1}    \and    Н.Г. Павлова\inst{2}
+}
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{ИПУ РАН, Москва, Россия \\
+  \email{amkotyukov@mail.ru}
+  \and   % Разделяет институты и присваивает им номера по порядку.
+ИПУ РАН, Москва, Россия\\
+РУДН, Москва, Россия\\
+МФТИ, Долгопрудный, Россия
+  \email{natasharussia@mail.ru}
+% \and Другие авторы...
+}
+
+\maketitle
+
+\begin{abstract}
+Доклад посвящен исследованию равновесия в сложных системах с помощью результатов теории накрывающих отображений и точек совпадения, которые являются обобщением понятия неподвижной точки. Получены условия существования положения равновесия в модели открытого рынка. Положение равновесия рассмотрено как точка совпадения накрывающего и липшицевого отображений.
+
+\keywords{точка совпадения, накрывающее отображение, равновесие, спрос, предложение} % в конце списка точка не ставится
+\end{abstract}
+
+\section{Основные результаты} % не обязательное поле
+
+В исследовании различных моделей систем большую роль занимает вопрос об устойчивости системы. Под устойчивостью понимается способность системы возвращаться в исходное состояние после какого-либо изменения, вызванного либо самой системой, либо внешним воздействием. Устойчивость тесно связана с понятием равновесия системы. Равновесием называется способность системы поддерживать свое существование без внешнего воздействия. Часто при исследовании вопроса о существовании равновесия возникают системы неявных алгебраических или дифференциальных уравнений. Прежде всего интересно получить условия существования решений для этих систем, затем найти само решение. В докладе предложен подход к решению этих задач, основанный на использовании результатов теории накрывающих отображений и точек совпадения. Данный подход продемонстрирован для исследования вопроса о положении равновесия в математической модели рынка.
+
+Пусть на рынке присутствует $n\in\mathbb{N}$ товаров, цены на которые описываются вектором $p\in\mathbb{R}^n, \ p=(p_1,...,p_n)$ таким, что $p_i\in[c_{1i},...,c_{2i}], i =\overline{1,n}$, где $c_1=(c_{11},...,c_{1n}), c_2 = (c_{21},...,c_{2n})\in\mathbb{R}: 0<c_{1i}<c_{2i}, i =\overline{1,n}$. Обозначим $P = [c_{11},...,c_{21}]\times...\times[c_{1n},c_{2n}]$. В рассматриваемой модели отображения спроса и предложения $D,S:P\to\mathbb{R}^n_+ = \left\{x=(x_1,...,x_n)\in\mathbb{R}^n \ | \ x_i > 0 \forall i = \overline{1,n}\right\}$ имеют специальный вид. Вектор $p\in P$ называется положением равновесия в модели открытого рынка, если
+$$
+S(p) = D(p).
+$$
+
+
+
+Работа выполнена при поддержке РНФ, проект \textnumero~22-11-00042,  https://rscf.ru/project/22-11-00042/, в ИПУ РАН.
+%
+
+
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+\bibitem{JMS23} Kotyukov A.M., Pavlova N.G. Equilibrium in Dynamic Market Models with Known Elasticity // Journal of Mathematical Sciences. 2023. 269. Pp. 847-852.
+
+\bibitem{UBS24} Котюков А.М., Павлова Н.Г. Алгоритм поиска точек совпадения в сложных системах // Управление большими системами. 2024. Вып.107. С. 6-27.
+
+\bibitem{MLSD23} Kotyukov A.M., Pavlova N.G. Equilibrium in Open Market Models with Nonconstant Elastisities / Proceedings of the 16th International Conference Management of Large-Scale System Development (MLSD). М.: IEEE, 2023. С. https://ieeexplore.ieee.org/document/10303986.
+
+
+\end{thebibliography}
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок.
+
+
+
+
+%\end{document}
+

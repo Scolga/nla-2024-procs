@@ -1,0 +1,181 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{Flat sub-Lorentzian problems on the Martinet distribution}
+% First author
+\author{Yuri Sachkov
+}
+\institute{PSI RAS, Pereslavl-Zalessky, Russia\\
+  \email{yusachkov@gmail.com}
+}
+\maketitle
+
+\begin{abstract}
+Two flat (nilpotent) problems of sub-Lorentzian geometry on
+Martinet distribution in 3-dimensional space are considered. For the first problem, the reachable set has
+non-trivial intersection with the Martinet plane, but not for the second one.
+Reachable sets, optimal trajectories, sub-Lorentzian
+distances and spheres are described. For the first problem, the sub-Lorentzian sphere is a topological
+manifold with boundary, and for the second problem it is an analytic manifold.
+
+\keywords{sub-Lorentzian geometry, geometric control theory, optimal control} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  This is the template file for the 6th International conference
+%  NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+%  June 25-30, 2018
+%  Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[12pt]{llncs}  
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+%\def\A{\mathcal{A}}
+%\def\D{\Delta}
+%\def\R{{\mathbb R}}
+%\newcommand{\spann}{\operatorname{span}\nolimits}
+%\newcommand{\pder}[2]{\frac{\partial \, #1}{\partial \, #2} }
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes} 
+
+\usepackage[russian]{nla}
+
+\begin{document}
+\fi
+
+\title{Плоские сублоренцевы задачи на  распределении Мартине\thanks{Работа выполнена при поддержке  РНФ, проект \textnumero~22-11-00140.}}
+% Первый автор
+\author{Ю.~Л.~Сачков
+}
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{ИПС РАН, Переславль-Залесский, Россия \\
+  \email{yusachkov@gmail.com}
+}
+
+\maketitle
+
+\begin{abstract}
+Исследуются две плоские (нильпотентные) задачи сублоренцевой геометрии  на
+распределении Мартине в 3-мерном пространстве. Для первой задачи множество достижимости имеет
+нетривиальное пересечение с плоскостью Мартине, а для второй нет.
+Описаны множества достижимости, оптимальные траектории, сублоренцевы
+расстояния и сферы. Для первой задачи сублоренцева сфера есть топологическое 
+многообразие с краем, а для второй задачи это аналитическое многообразие.
+
+
+\keywords{сублоренцева геометрия, геометрическая теория управления, оптимальное управление} 
+\end{abstract}
+
+
+\section{Первая задача}
+Пусть $M = {\mathbb R}^3_{x, y, z}$, $X_1 = \frac{\partial \,  }{\partial \, x}$, $X_2 = \frac{\partial \,  }{\partial \, y} + \frac{x^2}{2} \frac{\partial \,  }{\partial \, z}$. Распределение $\Delta = \operatorname{span}\nolimits(X_1, X_2)\subset TM$  называется распределением Мартине \cite{mont_book,ABCK,ABB,UMN2}. Плоскость $\Pi = \{x=0\}\subset M$ называется поверхностью Мартине. 
+
+Первая сублоренцева задача на распределении Мартине ставится как следующая задача оптимального управления \cite{notes,intro}:
+\begin{align}
+&\dot q = u_1 X_1 + u_2 X_2, \qquad q \in M, \label{pr11} \\
+&u= (u_1, u_2) \in U_1 = \{u_2 \geq |u_1|\}, \label{pr12}\\
+&q(0) = q_0 = (0, 0, 0), \qquad q(t_1) = q_1, \label{pr13}\\
+&l = \int_0^{t_1} \sqrt{u_2^2-u_1^2}dt \to \max. \label{pr14}
+\end{align}
+
+\section{Вторая задача}
+
+Вторая сублоренцева задача на распределении Мартине ставится как задача оптимального управления 
+\begin{align}
+&\dot q = u_1 X_1 + u_2 X_2, \qquad q \in M, \label{pr21} \\
+&u= (u_1, u_2) \in U_2 = \{u_1 \geq |u_2|\}, \label{pr22}\\
+&q(0) = q_0 = (0, 0, 0), \qquad q(t_1) = q_1, \label{pr23}\\
+&l = \int_0^{t_1} \sqrt{u_1^2-u_2^2}dt \to \max. \label{pr24}
+\end{align}
+
+\section{Полученные результаты}
+
+Для обеих задач получены следующие результаты:
+\begin{itemize}
+\item
+Описаны множества достижимости,   
+\item
+Получена параметризация экстремальных траекторий эллиптическими функциями Якоби,
+\item
+Доказано существование оптимальных траекторий,
+\item
+Описаны оптимальные траектории,
+\item
+Описаны сублоренцевы
+расстояния и их свойства,
+\item
+Описаны сублоренцевы сферы и их свойства.
+\end{itemize}
+
+
+\section{Заключение}
+Первая задача принципиально отличается от второй следующими особенностями 
+оптимального синтеза:
+\begin{itemize}
+\item
+некоторые оптимальные траектории меняют каузальный тип,
+\item
+экстремальные траектории имеют точки разреза на поверхности Мартине $\Pi$,
+\item
+оптимальный синтез двузначен на $\Pi$,
+\item
+сублоренцево расстояние негладко на $\Pi$ и терпит разрыв первого рода в некоторых точках границы множества достижимости $\partial \mathcal{A}_1$,
+\item
+сублоренцева сфера есть многообразие с краем.
+\end{itemize}
+Эти особенности связаны с нетривиальным  
+пересечением множества достижимости $\mathcal{A}_1$ (каузального будущего начальной точки $q_0$) и 
+поверхности Мартине 
+$\Pi$.   
+
+Оптимальный синтез во второй задаче качественно не отличается от синтеза в сублоренцевой задаче на группе Гейзенберга    \cite{sl_heis}.
+
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+\bibitem {mont_book}
+R. Montgomery, {\em A tour of subriemannnian geometries, their geodesics and applications}, Amer. Math. Soc., 2002
+\bibitem{ABB}
+A. Agrachev, D. Barilari, U. Boscain, {\em A Comprehensive Introduction to
+sub-Riemannian Geometry from Hamiltonian viewpoint}, Cambridge Studies in Advanced Mathematics, Cambridge Univ. Press, 2019
+ \bibitem{ABCK}
+A.Agrachev, B. Bonnard, M. Chyba, I. Kupka,
+Sub-Riemannian sphere in Martinet flat case. J. ESAIM: Control, Optimisation and Calculus of Variations, 1997, v.2,
+377--448 
+\bibitem{UMN2}
+Ю. Л. Сачков, Левоинвариантные задачи оптимального управления на группах Ли, интегрируемые в эллиптических функциях,  УМН, 78:1(469) (2023),  67--166
+\bibitem{notes}
+А.А.~Аграчев, Ю. Л. Сачков,  
+{\em Геометрическая теория управления},
+Физматлит, 2005.
+Перевод: A.A.~Agrachev, Yu.L. Sachkov. Control Theory from the Geometric Viewpoint,
+Springer, 2004.
+\bibitem{intro}
+Сачков Ю.Л. {\em Введение в геометрическую теорию управления}, М.: URSS, 2021.
+Расширенный перевод:
+Yu. Sachkov, Introduction to geometric control, Springer, 2022.
+ \bibitem{sl_heis}	Yu. L. Sachkov, E.F. Sachkova, Sub-Lorentzian distance and spheres on the Heisenberg group, Journal of Dynamical and Control Systems volume 29, pages 1129–1159 (2023)
+\end{thebibliography}
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок.
+
+
+
+%\end{document}
+

@@ -1,0 +1,211 @@
+
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is the template file for the 6th International conference
+% NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+% June 25-30, 2018
+% Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The preparation of the article is based on the standard llncs class
+% (Lecture Notes in Computer Sciences), which is adjusted with style
+% file of the conference.
+%
+% There are two ways of compilation of the file into PDF
+% 1. Use pdfLaTeX (pdflatex), (LaTeX+DVIPS will not work);
+% 2. Use LuaLaTeX (XeLaTeX will work too).
+% When using LuaLaTeX You will need TTF or OTF CMU fonts
+% (Computer Modern Unicode). The fonts are installed with 'cm-unicode' package in
+% a distribution of LaTeX % (https://www.ctan.org/tex-archive/fonts/cm-unicode),
+% either by downloading and installing these fonts system wide, the address of their page is
+% http://canopus.iacp.dvo.ru/%7Epanov/cm-unicode/
+% The second option won't work in XeLaTeX.
+%
+% For MiKTeX (LaTeX distribution for Windows),
+%  1. Package 'cm-unicode' is installed manually with the MiKTeX administration Console.
+%  2. For the compilation of this example, namely, the stub figure, one will also need to
+% download package 'pgf' manually. This package uses in the popular
+% package tikz.
+%  3. Tests showed that the rest of the required packages MiKTeX loads automatically (if
+%     it is allowed). The 'auto download' option is
+%     configured in 'Settings' section in MiKTeX Console.
+%
+%
+% The easiest way to compile an article is to use pdfLaTeX, but
+% the final layout of the book will be compiled with LuaLaTeX,
+% as a result will be of better quality thanks to the package 'microtype' and
+% use vector OTF instead of standard raster fonts of pdfLaTeX.
+%
+% In the case of questions and problems with the article compilation,
+% write letters to e-mail: eugeneai@irnok.net, Cherkashin Evgeny.
+%
+% New version of the correcting style file will be available at the website:
+%     https://github.com/eugeneai/nla-style
+%     file - nla.sty
+%
+% Further instructions are in the text body of the template. The template itself
+% is an article example.
+%
+% The LaTeX2e format is used!
+
+% 12 points font size is used.
+\documentclass[12pt]{llncs}
+
+% The correcting style file is added.
+\usepackage{todonotes}
+
+\usepackage{nla} % This package is needed for compiling
+                 % this template, it should be removed
+                 % from your article.
+
+% Many popular packages (amsXXX, graphicx, etc.) are already imported in the style file.
+% If there is a conflict with your packages, try disabling them and compile
+% the text.
+%
+% It would be convenient in the layout of the proceedings if the file names
+% of the figures of different authors do not clash.
+% To minimize the clash, the drawings can be placed in a separate subfolder
+% named after the author or the title of the paper.
+%
+% \graphicspath{{ivanov-petrov-pics/}} % specifies the folder with images in png, pdf formats.
+% or
+% \graphicspath{{great-problem-solving-paper-pics/}}.
+
+\begin{document}
+\fi
+% Text should be formatted in accordance with the 'article' class, using extensions like
+% AMS.
+%
+%\title{Title of the Paper\thanks{The research is supported by RFBR (RNF, other funds), project No.~00-00-00000.}}
+\title{Solutions of problems for the semilinear wave equation with a Dirac potential}
+% First author
+\author{Viktor Korzyuk\inst{1}  \and  Jan Rudzko\inst{2}
+}
+\institute{Belarusian State University, Minsk, Belarus\\
+  \email{korzyuk@bsu.by}
+  \and
+  Institute of Mathematics of the National Academy of Sciences of Belarus, Minsk, Belarus\\
+\email{janycz@yahoo.com}}
+% etc
+
+\maketitle
+
+\begin{abstract}
+  We study the solvability and uniqueness of the Cauchy problem in the upper half-plane and the first mixed problem in the first quadrant for the nonlinear wave equation with a Dirac potential.
+  
+\keywords{classical solution, mild solution, semilinear wave equation, Cauchy problem, first mixed problem, matching conditions}
+\end{abstract}
+
+% at the end of the list, there should be no final dot
+%\section{The main results}
+
+In the present report, we shall consider the question of global solvability of the Cauchy problem
+\begin{equation}\label{korzyuk_cauchy_problem}
+    \begin{cases} 
+      \Box_a u(t,x) - \Theta(t, x) \delta_{(t_0, x_0)}[u](t, x) = f(t,x,u(t,x)), \quad (t,x) \in (0, \infty) \times \mathbb{R}, \\
+      u(0, x) = \varphi(x), \quad \partial_t u(0, x) = \psi(x), \quad x \in \mathbb{R},
+    \end{cases}
+\end{equation}
+and of the first mixed problem
+\begin{equation}\label{korzyuk_fm_problem}
+  \begin{cases} 
+    \Box_a u(t,x) - \Theta(t, x) \delta_{(t_0, x_0)}[u](t, x) = f(t,x,u(t,x)), \quad (t,x) \in (0, \infty) \times (0, \infty), \\
+    u(0, x) = \varphi(x), \quad \partial_t u(0, x) = \psi(x), \quad x \in [0, \infty), \\
+    u(t, 0) = \mu(t), \quad t \in [0, \infty),
+  \end{cases}
+\end{equation}
+where $\Box_a = \partial_t^2 - a^2 \partial_x^2$ is the d'Alembert operator ($a > 0$ for definiteness), $(t_0, x_0)$ is a point from the interior of the set, where we consider problems, $\delta_{(t_0, x_0)}$ is the Dirac delta distribution concentrated at the point $(t_0, x_0)$ (i.e., $\delta_{(t_0, x_0)}[u](t, x) = u(t_0, x_0)$).  
+
+Let us introduce the notation
+$
+\Delta( {{t}_{P}},{{x}_{P}})=\left\{ \left( t,x \right) : 0 \leq t \leq {{t}_{P}}\wedge | x-{{x}_{P}} |\leq a| t-{{t}_{P}} | \right\}
+$
+and
+$
+\widetilde{\Delta}( {{t}_{P}},{{x}_{P}})=\left\{ \left( t,x \right) : 0 \leq t \leq {{t}_{P}}\wedge | x-{{x}_{P}} |\leq a| t-{{t}_{P}} | \wedge x \geq 0 \right\}\!.
+$
+
+We state the main results of this report.
+
+\begin{theorem}\label{korzyuk_theo_cau_solve_cl} Let the smoothness conditions
+  \begin{equation*}
+      \begin{gathered}
+          f\in C^1([0, \infty) \times \mathbb{R}^2), \quad \varphi \in C^2(\mathbb{R}), \quad \psi \in C^1(\mathbb{R}), \quad \Theta \in C([0, \infty) \times \mathbb{R}), \\
+          \left([0, \infty) \times \mathbb{R} \ni (t,x)\mapsto \int\limits_{0}^{t}{\Theta ( \tau ,x\pm a( t-\tau  ))\, d\tau }\in \mathbb{R} \right)\in C([0, \infty) \times \mathbb{R}),
+      \end{gathered}
+  \end{equation*}
+  and one of the following conditions be satisfied:
+  \begin{enumerate}
+      \item The function $f$ satisfies the Lipschitz condition $|f(t, x, z_1) - f(t, x, z_2)| \leq k(t, x)|z_1 - z_2|$, where $k \in L^2_\mathrm{loc}([0, \infty) \times \mathbb{R})$ and the smallness condition
+      $$
+      \iint\limits_{\Delta ( {{t}_{0}},{{x}_{0}} )} \big(|\Theta(\tau, \xi)| + |k(\tau, \xi)|\big) d\tau d\xi < 2 a
+      $$
+      be satisfied.
+      \item The function $f$ satisfies the Lipschitz condition $|f(t, x, z_1) - f(t, x, z_2)| \leq k(t, x)|z_1 - z_2|$, where $k \in L^2_\mathrm{loc}([0, \infty) \times \mathbb{R})$, the trace condition $f(t, x, 0) = 0$, and the smallness conditions
+      $$
+        \frac{1}{2 a} \exp\!\bigg(\frac{1}{2 a}\iint\limits_{\Delta ( {{t}_{0}},{{x}_{0}} )} |k(\tau, \xi)| d\tau d\xi \bigg) \iint\limits_{\Delta ( {{t}_{0}},{{x}_{0}} )} |\Theta(\tau, \xi)| d\tau d\xi < 1
+      $$
+      be satisfied.
+      \item The functions $f$ and $\Theta$ satisfy the sign conditions $\partial_u f(t, x, u) \geq 0$ and $\Theta(t,x) \leq 0$ for all $(t,x) \in [0, \infty) \times \mathbb{R}$ and the growth condition $|f(t,x,u)| \leq \beta(t,x) |u|^\alpha$, where $\beta \in L^1_\mathrm{loc}([0, \infty) \times \mathbb{R})$ and $\alpha \in [0, 1)$.
+  \end{enumerate}
+\noindent Then the Cauchy problem~\eqref{korzyuk_cauchy_problem} has a unique solution in the class $C^2([0, \infty) \times \mathbb{R})$.
+\end{theorem}
+
+\begin{theorem}\label{korzyuk_fmp_cau_solve_cl} Let the smoothness conditions
+\begin{equation*}
+    \begin{gathered}
+      f\in C^1([0, \infty)^2 \times \mathbb{R}), \quad \varphi \in C^2([0,\infty)), \quad \psi \in C^1([0,\infty)), \quad \mu \in  C^2([0,\infty)), \\
+      \Theta \in C([0, \infty)^2),\quad \left( [0, \infty)^2\ni (t,x)\mapsto \int\limits_{0}^{t}{\Theta ( \tau ,|x\pm a( t-\tau  )|)\, d\tau }\in \mathbb{R} \right)\in C([0, \infty)^2),
+    \end{gathered}
+\end{equation*}  
+the trace condition $\Theta(0, 0) = 0$, and one of the following conditions be satisfied:
+	\begin{enumerate}
+		\item The function $f$ satisfy the Lipschitz condition $|f(t, x, z_1) - f(t, x, z_2)| \leq k(t, x)|z_1 - z_2|$, where $k \in L^2_\mathrm{loc}([0, \infty)^2)$ and the smallness condition
+    $$
+    \iint\limits_{\widetilde{\Delta} ( {{t}_{0}},{{x}_{0}} )} \big(|\Theta(\tau, \xi)| + |k(\tau, \xi)|\big) d\tau d\xi < 2 a
+    $$ 
+    be satisfied.
+		\item The functions $f$ and $\Theta$ satisfy the sign conditions $\partial_u f(t, x, u) \geq 0$ and $\Theta(t,x) \leq 0$ for all $(t,x) \in [0, \infty)^2$ and the growth condition $|f(t,x,u)| \leq \beta(t,x) |u|^\alpha$, where $\beta \in L^1_\mathrm{loc}([0, \infty)^2)$ and $\alpha \in [0, 1)$.
+	\end{enumerate}
+\noindent Then the first mixed problem~\eqref{korzyuk_fm_problem} has a unique solution $u$ in the class $C^2([0, \infty)^2)$ if and only if conditions $\mu(0) = \varphi(0)$, $\mu'(0) = \psi(0)$, and $\mu''(0) = a^2 \varphi''(0) + f(0, 0, \varphi(0))$ are satisfied.
+\end{theorem}
+
+% At the end of the text, acknowledgments are expressed, if you haven't
+% made a footnote from the title. For example, we can write
+%The research is carried on with support of RFBR (RNF, other funds), project No.~00-00-00000.
+
+\begin{thebibliography}{9} % or {99}, if there is more than ten references.
+
+\bibitem{Korzyuk2023_d} Korzyuk V.I., Rudzko J.V. Classical solution of the initial-value problem for a semilinear wave equation with a Dirac potential. In Proceedings of the 7th International Scientific Conference: Non-Local Boundary Value Problems and Related Problems of Mathematical Biology, Informatics and Physics (B{\&}NAK 2023), Nalchik, Russia, 2023. Pp.~346--347.
+
+\bibitem{Korzyuk2023} Korzyuk V.I., Rudzko J.V. Classical and Mild Solution of the First Mixed Problem for the Telegraph Equation with a Nonlinear Potential. Izv. Irkutsk. Gos. Univ., Ser. Mat.~2023. Vol.~43. Pp.~48--63. 
+
+\bibitem{Moiseev} Moiseev E.I., Yurchuk N.I. Classical and Generalized Solutions of Problems for the Telegraph Equation with a Dirac Potential. Diff. Equat. 2015. Vol.~51. Pp.~1330--1337.
+
+\bibitem{tikhonov} Tikhonov A.N., Samarskii A.A. Equations of Mathematical Physics. Dover Publications, New York, 2011.
+
+\bibitem{trenogin} Trenogin V.A. Global invertibility of nonlinear operators and the method of continuation with respect to a parameter. Dokl. Math., 1996, Vol.~54, no.~2, Pp.~730--732.
+
+\bibitem{Zeidler1990} Zeidler E. Nonlinear Functional Analysis and its Applications. II/B: Nonlinear Monotone Operators. Springer, New York, 1990. 
+
+%%bibitem{DLions1976} Duvaut D., Lions J.L. Inequalities in Mechanics and Phisics. Springer, Berlin, 1976.
+
+%%\bibitem{Gur1997}  Gurman V.I. The Extension Principle in Optimal Control Problems. 2nd~ed. Fizmatlit, Moscow, 1997.~[In Russian]
+
+%%\bibitem{Moreau1977} Moreau J.-J. Evolution problem associated with a moving convex set in a Hilbert space. J. Differential Eq.~1977. Vol.~26. Pp.~347--374.
+
+%%\bibitem{BrKr2013}  Brokate M., Krej\u{c}\'{\i} P. Optimal control of ODE systems involving a rate independent variational inequality. Disc. Cont. Dyn. Syst. Ser.~B. 2013. Vol.~18, no~2. Pp.~331--348.
+
+%%\bibitem{Karpinski2014} Kapinski J., Deshmukh J, Sankaranarayanan S., Arechiga N. Simulation-guided Lyapunov analysis for hybrid dynamical systems. In Proceedings of the 17th International Conference on Hybrid Systems: Computation and Control (HSCC 2014), Berlin, Germany, 2014. Pp.~133--142.
+
+%%\bibitem{Forsman1991} Forsman K. Construction of Lyapunov functions using Grobner bases. In Proceedings of the 30th IEEE Conference on Decision and Control, Brighton, UK, 1991. Vol.~1. Pp.~798--799.
+
+\end{thebibliography}
+%\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

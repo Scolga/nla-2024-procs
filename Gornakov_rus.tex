@@ -1,0 +1,113 @@
+\begin{englishtitle}
+\title{One variant of particle random placement}
+% First author
+\author{Daniil E. Gornakov \and Nataliya A. Kolokolnikova}
+\institute{Irkutsk State University, Irkutsk, Russia\\
+  \email{daniil.gornakov@mail.ru}
+}
+% etc
+
+\maketitle
+
+\begin{abstract}
+In this work, the mathematical expectation of the number of non-empty cells in an occupancy problem is obtained. A new method of using the A-scheme of sequential tests is proposed.
+
+\keywords{mathematical expectation, A-scheme of sequential trials, occupancy problem}
+\end{abstract}
+\end{englishtitle}
+
+
+\iffalse
+\documentclass[12pt]{llncs}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[russian]{nla}
+
+
+
+%\usepackage[english,russian]{nla}
+
+% \graphicspath{{pics/}} %Set the subfolder with figures (png, pdf).
+
+%\usepackage{showframe}
+\begin{document}
+%\selectlanguage{russian}
+\fi
+
+\title{Об одном варианте случайного размещения частиц%\thanks{Работа выполнена при поддержке РФФИ (РНФ, другие фонды), проект \textnumero~00-00-00000.}
+}
+% Первый автор
+\author{Д.~Е.~Горнаков \and  Н.~А.~Колокольникова%\inst{2}
+%  \and
+% Третий автор
+%  И.~О.~Фамилия\inst{2}
+} 
+\institute{Институт математики и информационных технологий\\ Иркутский государственный университет, Иркутск, Россия\\
+  \email{daniil.gornakov@mail.ru}
+  }
+.
+
+\maketitle
+
+\begin{abstract}
+В работе получена формула для математического ожидания числа непустых ячеек в задаче о дробинках. Предложен новый способ использования A-схемы последовательных испытаний.  
+\keywords{математическое ожидание, A-схема последовательных испытаний, задача о дробинках}
+\end{abstract}
+
+%\section{Основные результаты} 
+
+В докладе рассматривается классическая задача о дробинках и ее обобщения \cite{G1,G2}. Получен вариант формулы
+математического ожидания для числа непустых ячеек. При доказательстве использована A-схема последовательных испытаний \cite{G3}.
+
+
+Пусть проводятся последовательные испытания по схеме <<успех-неуспех>>. После каждого успеха вероятность успеха, а значит, и неуспеха может меняться. После неуспеха изменение вероятности не происходит. Такая схема называется А-схемой последовательных испытаний.
+
+
+Пусть $\xi_n$ -- число успехов в n испытаниях, проводимых в условиях A-схемы, $p_i$ -- вероятность $(i+1)$-го успеха, т.е.
+$$p_i=P\{\xi_{n+1}=i+1\ | \ \xi_n=i\}, \quad i=\overline{0,n}.$$
+При этом
+$$q_i=P\{\xi_{n+1}=i\ |\ \xi_n=i\}=1-p_i.$$
+
+Рассмотрим классическую задачу о дробинках. Пусть имеется N ячеек, в которые независимо друг от друга бросают n частиц. Под успехом понимается попадание очередной частицы в пустую ячейку. Вероятность $(i+1)$-го успеха в таком случае равна.
+$$p_i=\frac{N-i}{N},\quad i=\overline{0,\min(n,N)}.$$
+
+Исследуем случайную величину $\xi_n$ -- число успехов в n испытаниях.  Представим её в виде суммы случайных индикаторов:
+$$\xi_n=\theta_1+\theta_2+...+\theta_n,$$
+где $\theta_i = 1$, если в $i$-м испытании  наблюдался успех.
+
+Математическое ожидание числа успехов в $n$ испытаниях в таком случае будет равно
+$$M\xi_n=M\theta_1+M\theta_2+\ldots +M\theta_n.$$
+Будем считать, что $\xi_0 = 0$.
+
+Заметим, что математические ожидания индикаторов могут быть представлены в виде
+$$M\theta_i=\frac{N-\xi_{i-1}}{N},\quad i=\overline{1,n}.$$
+Тогда
+$$M\xi_n=\sum_{i=0}^{n-1}\frac{N-M\xi_i}{N}=n-\frac{1}{N}\sum_{i=0}^{n-1}M\xi_n.$$
+Преобразуя правую часть, получим:
+$$M\xi_n=n-\frac{n(n-1)}{2N}+\frac{n(n-1)(n-2)}{6N^2}-\frac{(n-1)(n-2)(n-3)}{6N^3}.$$
+Окончательно формула математического ожидания числа успехов в $n$ испытаниях запишется так: 
+$$M\xi_n=n-\frac{n(n-1)}{2N}+\sum_{i=3}^n\frac{(-1)^{i+n}i(i-1)(i-2)N^{i-3}}{6N^{n-1}}.$$
+Это характеристика среднего числа непустых ячеек при размещении $n$ частиц.
+
+% Список литературы.
+\begin{thebibliography}{99}
+\bibitem{G1}
+% Format for Journal Reference:
+Колчин В.Ф., Севастьянов Б.А., Чистяков В.П. Случайные размещения. М.:
+Наука, 1976. 223 с. 
+% Format for books:
+\bibitem{G2} Селиванов Б.И. Об одном обобщении классической задачи
+о дробинках // Теория вероятн. и ее примен.  1998. Т. 43,
+выпуск 2. С. 315--330.
+\bibitem{G3} Колокольникова Н.А. Две схемы последовательных испытаний с эффектом последействия // Итоги науки и техн. Сер. Соврем. мат. и ее прил. Темат.
+обз.  2023. Т. 224. С. 89--96. 
+\end{thebibliography}
+
+
+% Обязательная информация на английском языке:
+
+
+
+
+%\end{document}

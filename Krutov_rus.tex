@@ -1,0 +1,196 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{On the possibility of constructing an explicit formula of the fundamental solution for the density of the generalized Ornstein-Uhlenbeck process}
+% First author
+\author{Nikolai Krutov
+}
+\institute{Lomonosov Moscow State University, Moscow, Russia\\
+  \email{kru.tov@outlook.com}
+}
+% etc
+
+\maketitle
+
+\begin{abstract}
+The density of a generalized Ornstein-Uhlenbeck process on a half-axis, in which the Wiener process is replaced by a jump process with distribution density of jumps being linear combination of exponents, is considered. A similar process can be used in biology to model gene expression. For certain parameter ratios the formula of the Green function for the Kolmogorov-Feller equation,
+which describes the density of the process, is obtained explicitly. This allows to find a solution to the equation with any initial data.
+
+\keywords{Kolmogorov–Feller equation, probability density, Green's function} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  This is the template file for the 6th International conference
+%  NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+%  June 25-30, 2018
+%  Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[12pt]{llncs}  
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes} 
+
+\usepackage[russian]{nla}
+
+\begin{document}
+\fi
+
+
+\title{О возможности построения явного вида фундаментального решения для плотности обобщённого процесса Орнштейна-Уленбека}
+% Первый автор
+\author{Н.~А.~Крутов  
+}
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{МГУ имени М.В.Ломоносова, Москва, Россия \\
+  \email{kru.tov@outlook.com}
+}
+
+\maketitle
+
+\begin{abstract}
+Рассмотрена плотность заданного на полуоси обобщённого процесса \\ Орнштейна-Уленбека, в котором винеровский процесс заменён на чисто скачкообразный процесс с ядром, представляющим собой линейную комбинацию экспонент. Подобный процесс может применяться в биологии при моделировании экспрессии генов. Для определённых соотношений параметров получена в явном виде формула функции Грина для уравнения Колмогорова-Фёллера, описывающего плотность процесса. Это даёт возможность находить решение этого уравнения при различных начальных данных.
+
+\keywords{уравнение Колмогорова–Фёллера, плотность вероятности, функция Грина} % в конце списка точка не ставится
+\end{abstract}
+
+\section{Введение и обзор литературы} % не обязательное поле
+Изучаемый в биологии процесс преобразования наследственной информации, хрянящейся в нуклеиновых кислотах, в молекулы белка, называется экспрессией генов. Этот процесс носит случайный характер, и в результате концентрация белка в генетически одинаковых живых клетках, сформировавшихся в идентичных условиях, различается. В работе \cite{phis_basic} предложено моделировать концентрацию белка в клетке как случайный процесс, удовлетворяющий следующему стохастическому дифференциальному уравнению:
+\begin{equation}\label{sde}
+    dX_t=-\beta X_t dt + \lambda d \Gamma_t,\ \ \  t\ge0,
+\end{equation}
+где $t$ - время, $X_t \ge 0$ - концентрация белка в зависимости от времени, $\beta, \lambda$ - положительные константы, 
+$\Gamma_t$ - скачкообразный процесс с экспоненциально распределёнными моментами скачков и величинами скачков, представляющими собой независимо одинаково распределённые по экспоненциальному закону случайные величины. Если обозначить плотность процесса $X_t$, удовлетворяющего СДУ (\ref{sde}), за $P(t,x)$ (где $t>=0$ – переменная, отвечающая времени, $x$ – переменная, отвечающая значению, принимаемому процессом), то $P(t,x)$ удовлетворяет следующему интегро-дифференциальному уравнению: 
+\begin{equation}\label{KF}
+    \frac{\partial}{\partial t} P(t,x) - 
+    \frac{\partial}{\partial x}(\beta x  P(t,x)) -\lambda \Big( \int_{0}^{x} P(t, z) p(x-z) \,dz - P(t,x) \Big) = 0,
+   \ x\ge0, t\ge 0,
+\end{equation}
+где $\lim\limits_{\substack{\\x \to \infty}}  xP(t,x)=0; \ 
+\lambda, \beta > 0 $ - константы;\ \  $p(z), z \ge 0$ - вероятностная плотность на положительной полуоси, описывающая распределение независимых случайных величин, задающих величину скачков, 
+$ \int_{0}^{+\infty} p(x) dx =1$. В работе \cite{phis_basic} принимается 
+$p(x)=k \cdot e^{-k x},\\ k>0.$ Эта предложенная модель подтверждена экспериментально \cite{first_exp}, \cite{second_exp}. Существует большое количество исследований, посвящённых этой модели и её модификациям (например, \cite{mod1}, \cite{mod2}). Как правило, при исследовании решений уравнения (\ref{KF}) уделяется внимание стационарным решениям и свойствам решений при $x \rightarrow \infty$, а также применению численных методов. Аналитические методы для изучения свойств решений (\ref{KF}) применяются в \cite{main}. В этой работе для случая $p(x)=k \cdot e^{-k x}, k>0,$ найдена явная формула функции Грина в виде суммы ряда, состоящего из сингулярной и регулярной компонент.
+Показано, что для некоторых соотношений параметров этот ряд становится конечной суммой. Полученная аналитически функция Грина позволяет
+находить решение уравнения Колмогорова-Фёллера для любых допустимых
+начальных данных как интеграл от произведения функции Грина и $P(t,x)|_{t=0}=0$.
+
+\section{Основной результат}
+В настоящей работе находится явный вид функции Грина для уравнения (\ref{KF}) для двух случаев, когда плотность распределения скачков $p(x)$ представляет собой линейную комбинацию экспонент. 
+\begin{theorem}
+Пусть $p(z)=a k_1 e^{-k_1 z} +(1-a) k_2 e^{-k_2 z}, 0<a<1, k_1>0, k_2>0$.\\
+Тогда функция Грина $\mathcal{G}(t,x,y)$ для (\ref{KF}), т.е. решение уравнения Колмогорова-Фёллера с начальными данными 
+\begin{equation}\label{init}
+    P|_{t=0}=\delta(x-y),\ \  0 \le y,
+\end{equation}    
+    имеет вид:
+  \begin{equation}\label{green}
+  \begin{gathered}
+    \mathcal{G}(t,x,y)=\mathrm{e}^{-\lambda t} \delta(x')
+    +\sum\limits_{i=0}^{\infty}\sum\limits_{
+    \substack{j=0\\i+j\ge 1}}^{\infty}
+    \bigg( C_{\frac{a \lambda}{\beta}}^i
+    C_{\frac{(1-a) \lambda}{\beta}}^j
+    (\mathrm{e}^{-\beta t}-1)^{i+j} \cdot\\
+    \cdot \sum\limits_{s=0}^{i}
+    \sum\limits_{\substack{r=0\\s+r\ge 1}}^{j}
+    (-1)^{s+r}
+    C_i^s C_j^r
+    \Big[\Big(\frac{k_1}{w+k_1}\Big)^s   \Big(\frac{k_2}{w+k_2}\Big)^r \Big](x') \bigg),
+  \end{gathered}
+\end{equation}
+где $x'=x - y\mathrm{e}^{-\beta t}$, $[\cdot]$ - обратное преобразование Лапласа,\\
+$C_{\frac{a \lambda}{\beta}}^i,
+C_{\frac{(1-a) \lambda}{\beta}}^j,
+C_i^s, C_j^r$ - биномиальные коэффициенты,
+при этом 
+\begin{equation}
+\begin{gathered}
+    \Big[\Big(\frac{k_1}{w+k_1}\Big)^s   \Big(\frac{k_2}{w+k_2}\Big)^r \Big](x')=\frac{1}{(s+r+1)!}
+    (x')^{-2+\frac{r}{2}+\frac{s}{2}} {k_2}^{r} {k_1}^{s} \cdot \\
+    \cdot
+    \Big(\left(1+s \right) \left(s +r \right) M_{\frac{s}{2}-\frac{r}{2}+1,\frac{s}{2}+\frac{r}{2}+\frac{1}{2}}\! \left(x' \left({k_1} -{k_2} \right)\right) + \\ 
+    + r \left(r +s +x' \left({k_1} -{k_2} \right)\right)M_{\frac{s}{2}-\frac{r}{2},\frac{s}{2}+\frac{r}{2}+\frac{1}{2}}\! \left(x' \left({k_1} -{k_2} \right)\right)\bigg) \cdot \ {\mathrm e}^{-\frac{x' \left({k_2} +{k_1} \right)}{2}} \left({k_1} -{k_2} \right)^{-1-\frac{s}{2}-\frac{r}{2}},
+\end{gathered}
+\end{equation}     
+     где
+     $M_{\mu,\nu}(z)$ - обозначение для функций Уиттекера.
+\end{theorem}
+
+\begin{theorem}
+ Пусть $p(z)=\frac{1}{n} k_1 e^{-k_1 z} +...
+ +\frac{1}{n} k_n e^{-k_n z}=
+ \sum\limits_{i=0}^{n}\frac{1}{n} k_i e^{-k_i z},
+ \frac{\lambda}{\beta} = n, n \in \mathbb{N}.$
+ Тогда функция Грина $\mathcal{G}(t,x,y)$ для (\ref{KF}) находится следующим образом:
+\begin{equation} \label{green2}
+    \mathcal{G}(t,x,y) = \sum\limits_{\substack{m=1}}^{n} 
+(-1)^m (e^{-\beta t}-1)^m e^{-\beta t (n-m)}
+\sum\limits_{\substack{j_1,..,j_n \in \{ 0,1 \}\\
+j_1+..+j_n=m}}^{} 
+\Big[\Big(\frac{k_1}{w+k_1}\Big)^{j_1} ...  \ \Big(\frac{k_2}{w+k_2}\Big)^{j_n} \Big](x'),
+\end{equation}
+где $x'=x-y e^{-\beta t},\ [\cdot]$ - обозначение для обратного преобразование Лапласа, для нахождения которого в данном случае можно воспользоваться формулой
+\begin{equation} \label{inv2}
+    \left[   \frac{k_{i_1}}{k_{i_1}+w}\cdot...
+    \cdot \frac{k_{i_n}}{k_{i_n}+w}
+    \right](x')=
+    k_{i_1}\cdot...\cdot k_{i_n}
+    \sum\limits_{p=1}^{n} \left(
+    \frac{(-1)^{n+1}e^{-k_{i_p}x'}}
+    {\prod\limits_{\substack{v=1\\v\ne p}}^{n}
+    (k_{i_p}-k_{i_v})} \right)
+\end{equation} 
+ввиду того, что все $j_k, k=1,..,n$, в формуле (\ref{green2}) равны $0$ или $1$.
+\end{theorem}
+% Рисунки и таблицы оформляются по стандарту класса article. Например,
+
+
+
+
+% В конце текста можно выразить благодарности, если этого не было
+% сделано в ссылке с заголовка статьи, например,
+
+%
+
+
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+\bibitem{phis_basic} Friedman N., Cai L., Xie X.S. Linking stochastic dynamics to population distribution: an analytical framework of gene expression // Phys. Rev. Lett. 2006. 97(16). 168302.
+
+\bibitem{first_exp} Cai L., Friedman N., Xie X.S. Stochastic protein expression in individual cells at the single molecule level // Nature. 2006. 440(7082). 358-362.
+
+\bibitem{second_exp} Yu J., Xiao J., Ren X., Lao K., Xie X.S. Probing gene expression in live cells, one protein molecule at a time // Science. 2006. 311(5767). 1600-1603.
+
+\bibitem{mod1} Huang G.R., Saakian D.B., Rozanova O.S., Yu J.L., Hu C.K. Exact solution of master equation with Gaussian
+and compound Poisson noises // J. Stat. Mech.: Theory and Experiment. 2014. 11. 11033.
+
+\bibitem{mod2} Bokes P. Heavy-tailed distributions in a stochastic gene autoregulation \newline model // J. Stat. Mech.: Theory and
+Experiment. 2021. 11. 113403.
+
+\bibitem{main} Розанова О.С. О решении уравнения Колмогорова–Феллера, возникающего в модели биологической эволюции // Вестн.
+Моск. ун-та. Сер. 1. Матем., мех. 2023. 6. 23–27.
+
+\end{thebibliography}
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок.
+
+
+
+%\end{document}
+

@@ -1,0 +1,95 @@
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+\usepackage{todonotes}
+
+\usepackage{nla} 
+
+\begin{document}
+\fi
+
+\title{
+On the exact solutions to the Vlasov-Poisson system in  cylindrical domains\thanks{This work is supported by the Ministry of Science and Higher Education of the Russian Federation (megagrant agreement No. 075-15-2022-1115)
+}}
+
+\author{Julia Belyaeva  
+}
+\institute{RUDN University, Moscow, Russia \\
+  \email{yilia-b@yandex.ru, belyaeva-yuo@rudn.ru} 
+ }
+
+\maketitle
+
+\begin{abstract}
+We consider the Vlasov-Poisson system which 
+describes the kinetics of charged plasma particles. 
+New classes of stationary solutions to the problem with a nontrivial electric field potential are constructed. 
+
+
+\keywords{The Vlasov-Poisson system, external magnetic field}
+\end{abstract}
+
+There are several approaches to the description of high-temperature plasma. One of them is related to the consideration of the distribution functions of charged particles. Thus, not each particle is considered separately, but their concentration in the phase space.
+Let $f^\beta=f^\beta(x,v,t)$
+be the distribution functions
+of  positively charged ions (for $\beta=+1$) 
+and electrons (for $\beta=-1$) at a point~$x$ with velocity~$v$
+at the time~$t$.
+Let also $\varphi=\varphi(x,t)$ be the potential of the self-consistent electric field. 
+By $B(x)$ we denote the external magnetic field induction, 
+$m_{\beta}$ are the masses of charged particles, 
+$c$ is the speed of light. Let $\Omega$ be a finite or infinite cylinder.
+We consider the Vlasov-Poisson system, which describes the kinetics of plasma particles:
+
+
+\begin{gather}
+- \Delta \varphi= 4 \pi e \int \limits_{R^3} (f^{+1}-f^{-1})dv, \ v \in R^3,\ x \in \Omega, \ t \in (0,T),  \\
+ \frac{\partial f^{\beta}}{\partial t}+\left( v, \nabla_{\!x}f^{\beta}\right)
++\left( 
+-\frac{\beta e}{m_\beta}
+\nabla_{\!x}\varphi+\frac{\beta e}{m_\beta c}\big[v,
+B(x)\big], \nabla_{\!v}f^{\beta}\right)=0,  \ v \in R^3,\ x \in \Omega, \ t \in (0,T),\\
+f^{\beta}(x,v,0)= \mathring{f}^{\beta}, \ v \in R^3,\ x \in \bar{\Omega},\\
+\varphi |_{\partial \Omega}=0,  \ v \in R^3,\ x \in \partial \Omega, \ t \in [0,T).
+   \end{gather}
+   
+Here we assume that $f^\beta=f^\beta(x,v,t)$ and 
+$\varphi=\varphi(x,t)$ are unknown functions and 
+$B(x)$ is given.
+There are obtained new classes of stationary solutions to problem (1)-(4)
+with a nonzero electric field potential.
+
+Let $Q=B_{r_0}(0) \subset \mathbb{R}^2$
+be the two-dimensional disc of radius $r_0>0$ centered at 0. 
+
+For $\Omega=Q\times \mathbb{R}$ and 
+homogeneous magnetic field corresponding stationary problem is reduced to a cross-section of the cylinder (an auxiliary problem) through a special substitution. Using the method of characteristics for the Vlasov equation and the methods of sub- and super-solutions for nonlinear elliptic boundary problems, it is proved that the auxiliary problem has smooth stationary solutions. The distribution functions of these solutions are compactly supported. Returning to the original problem through the use of special substitutions, a new class of stationary solutions to the problem (1)-(4) is obtained. The supports of the distribution functions of the constructed solutions lie at a distance from the boundary of the cylinder.
+
+
+For  $\Omega=Q\times (-l,l)$, where $l>0$,  an inhomogeneous external magnetic field of
+a special configuration is considered. There are constructed the stationary solutions
+with distribution functions which satisfy the following property: the supports touch
+the boundary of the domain only in two small prescribed discs at the top and the
+bottom of the cylinder. It corresponds to a two-component plasma confined in a Mirror trap. 
+
+This work is supported by the Ministry of Science and Higher Education of the Russian Federation (megagrant agreement No. 075-15-2022-1115).
+
+\begin{thebibliography}{9} 
+
+\bibitem{Sk}
+Skubachevskii A.L., Vlasov-Poisson equations for a two-component plasma in a homogeneous
+magnetic field. Russ. Math. Surv. 2014, ~69, Pp.~291-330.
+
+\bibitem{Bel}
+
+Belyaeva Yu.O., Stationary solutions of the Vlasov-Poisson system for twocomponent
+plasma under an external magnetic field in a half-space.
+Mathematical Modelling of Natural Phenomena. 2017. Vol.~12.~\textnumero~6.
+Pp.~37-50.
+
+\bibitem{BelGebSkub}
+Belyaeva Yu.O., Gebhard B., Skubachevskii A.L. 
+A general way to confined stationary Vlasov-Poisson plasma configurations. Kinetic and Related Models. 2021. Vol.~14. \textnumero~2.  Pp.~257--282.
+\end{thebibliography}
+%\end{document}

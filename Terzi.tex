@@ -1,0 +1,100 @@
+
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+\usepackage{todonotes}
+
+\usepackage{nla}
+
+\begin{document}
+\fi
+
+\title{On one optimality criterion for solving the  traveling salesman problem}
+
+\author{D.G. Terzi}
+
+ \institute{Moldova State University, Chisinau, Moldova,\\
+ \email{terzidg@gmail.com} }
+
+\maketitle
+
+
+
+\begin{abstract}
+    The paper describes a method for solving the traveling salesman problem using a
+    three-element replacement operation. The technology for solving transport problems using a modified distribution method is used. The necessary criterion for optimality is formulated. The possibilities of constructing effective algorithms for solving the traveling salesman problem are indicated. A method has been developed for conducting massive computational experiments on automatically generated problems with a previously known optimal solution.
+
+\keywords{keywords}optimality of solution, traveling salesman problem, three-element replacement operation
+\end{abstract}
+
+\section{The main results}
+ Introduction. The study relates to the problem of a traveling salesman, which consists in finding the most profitable route passing through each of the specified cities once and then returning to the original city. The purpose of a bypass is to minimize the function associated with transportation costs, distance traveled, or time spent.
+
+     According to its mathematical formulation, the traveling salesman problem is a transport type problem.
+     It occurs in many situations that are not very similar to transport ones: in computer science to optimize data paths between
+     different nodes, to create cost-effective manufacturing, to plan drone missions, to develop better software systems useful for technologies
+     such as self-driving cars, and helping companies save money. The need to solve the traveling salesman problem arises when developing software
+      for processing large amounts of information.
+
+In general, methods for solving the traveling salesman problem can be considered approximate, not always providing an optimal solution in an acceptable time, with the exception of the exhaustive search method for small problems.
+
+\textbf{Purpose.} The purpose of the research is to develop a computational algorithm for solving the traveling salesman problem,
+ based on the use of a three-element replacement operation and technology for solving transport problems using the potentials method.
+
+     \textbf{Results.} Let \textit{c} be the matrix of transport costs, $x_{a_{1} b_{1} } ,x_{a_{2} b_{2} } ,...,x_{a_{n} b_{n} }$
+      arbitrary admissible cyclic solution
+     to the traveling salesman problem. We form combinations of three non-zero elements from this solution.
+     If for any combination $x_{i_{1} j_{1} }=1,\, x_{i_{2} j_{2} } =1$ and $x_{i_{3} j_{3} } =1$ the following relation holds
+
+                               $$c_{i_{1} j_{1} } +c_{i_{2} j_{2} } +c_{i_{3} j_{3} }  \leq
+                               \min(c_{i_{2} j_{1} }  +c_{i_{3} j_{2} } +c_{i_{1} j_{3} } ,  \ c_{i_{3} j_{1} } +c_{i_{1} j_{2} } +c_{i_{2} j_{3} } )$$,
+
+then the solution to the problem has been found. If
+
+                               $$c_{i_{1} j_{1} } +c_{i_{2} j_{2} } +c_{i_{3} j_{3} }  >
+                               \min(c_{i_{2} j_{1} }  +c_{i_{3} j_{2} } +c_{i_{1} j_{3} } ,  \ c_{i_{3} j_{1} } +c_{i_{1} j_{2} } +c_{i_{2} j_{3} } )$$,
+
+then a three-element replacement operation is performed $x_{i_{2} j_{1} } =1,\,
+  x_{i_{3} j_{2} } =1,\ x_{i_{1} j_{3} } =1$ or
+$x_{i_{3} j_{1} } =1,\, \, x_{i_{1} j_{2} } =1,\, \, x_{i_{2} j_{3} } =1$ depending on which of the two terms is smaller and, in any case,
+$x_{i_{1} j_{1} } =0,\, x_{i_{2} j_{2} } =0,\, x_{i_{3} j_{3} } =0.$
+
+     This three-element replacement operation is used to obtain a new feasible cyclic solution with a lower cost value, and the solution is again tested for the final one.
+
+     The criterion for the optimality of a solution is that for any cyclic solution it is impossible to carry out a three-element replacement operation.
+     Based on this optimality criterion, it is possible to construct schemes for solving the traveling salesman problem within the framework of the potentials
+     method technology for solving the transport problem \cite{Terzi1}.
+
+
+
+      For example, for a positive element of the evaluation matrix corresponding to the zero element of the
+     matrix $x$, a cycle is constructed
+     $$(i_{1} ,j_{1} ),(i_{2} ,j_{2} ),(i_{3} ,j_{3} ),(i_{4} ,j_{4} ),\,...\,,(i_{k-1} ,j_{k-1} ),(i_{k} ,j_{k} ),$$
+     where
+      $k$ is even and $k \leq 2n$. Next, the unit elements of the matrix $x$ are selected, standing at the even positions
+      $(i_{2} ,j_{2} ), \, (i_{4} ,j_{4} ),\,  ...\, , (i_{k} ,j_{k} )$ of this cycle. In this way, a cyclic (for $k=2n$) or partially cyclic (for $k<2n$)
+       solution is formed $x_{i_{2} j_{2} } =1, \,x_{i_{4} j_{4} } =1,\,...\,, x_{i_{k} j_{k} } =1$,
+       for which the fulfillment of the optimality criterion is checked.
+
+     Testing of algorithms built on the basis of the optimality criterion and massive computational experiments were carried out on automatically
+     generated traveling salesman problems with a previously known optimal solution \cite{Terzi2}.
+
+
+\textbf{Conclusions.} The conducted computational experiments based on the optimality criterion showed that the developed schemes for solving traveling
+ salesman problems can be classified as optimal in terms of calculations due to the efficiency of the three-element replacement operation and the choice
+  of different initial cyclic solutions at each iteration of the modified distribution method. Such algorithms are recommended for use for the accelerated
+  and acceptable solution of traveling salesman problems in conditions of processing a sufficiently large amount of information.
+
+     The work was carried out in accordance with project No. 23.00208.5007.09/PD II of the State Register of Projects in the Field of Science and Innovation.
+  \begin{thebibliography}{9} % or {99}, if there is more than ten references.
+
+    \bibitem{Terzi1} Terzi D.-G. An approach to solving the traveling saleman problem using the potentials method.~In:~Studia Universitatis (Exact and Economic Sciences Series). 2019. Vol. 122, No. 2.  P. 64--68.
+
+         \bibitem{Terzi2} Terzi D.-G. A natural approach to solving the traveling salesman problem. Cybernetics and Computer Technologies. 2023.  Vol. 4. P. 43--51.
+     \end{thebibliography}
+
+%\end{document}
+ 
+
+

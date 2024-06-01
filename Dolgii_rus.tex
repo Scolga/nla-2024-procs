@@ -1,0 +1,115 @@
+\begin{englishtitle}
+\title{Construction of approximations of optimal impulse stabilizing control for a delayed system}
+% First author
+\author{Y.F. Dolgii, A.N. Sesekin}
+\institute{IMM UB RAS, Ekaterinburg, Russia\\
+  \email{yurii.dolgii@imm.uran.ru}
+  \and
+UrFU, Ekaterinburg, Russia\\
+\email{a.n.sesekin@urfu.ru}}
+% etc
+
+\maketitle
+
+\begin{abstract}
+The problem of optimal impulse stabilization for an autonomous linear system of differential equations with delay is considered. A method for constructing approximations for optimal impulse stabilizing control is proposed.
+
+\keywords{optimal stabilization, impulse controls, retard}
+\end{abstract}
+\end{englishtitle}
+
+\iffalse
+\documentclass[12pt]{llncs}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[russian]{nla}
+
+%\usepackage[english,russian]{nla}
+
+% \graphicspath{{pics/}} %Set the subfolder with figures (png, pdf).
+
+%\usepackage{showframe}
+\begin{document}
+%\selectlanguage{russian}
+\fi
+
+\title{Построение приближений оптимального импульсного стабилизирующего управления для системы с запаздыванием}
+% Первый автор
+\author{Ю.~Ф.~Долгий   \and  А.~Н.~Сесекин } % обязательное поле
+\institute{ИММ УрО РАН, Екатеринбург, Россия\\
+  \email{yurii.dolgii@imm.uran.ru}
+  \and
+УрФУ, Екатеринбург, Россия\\
+\email{a.n.sesekin@urfu.ru}}
+% Другие авторы...
+
+\maketitle
+
+\begin{abstract}
+Рассматривается задача оптимальной импульсной стабилизации для автономной линейной системы дифференциальных уравнений с запаздыванием. Предлагается метод построения  приближений для оптимального импульсного стабилизирующего управления.
+
+\keywords{оптимальная стабилизация, импульсные управления,  запаздывание}
+\end{abstract}
+
+Объект управления описывается автономной
+линейной системой дифференциальных уравнений с запаздыванием и импульсными управлениями
+\begin{equation}\label{eq1}
+\frac{dx(t)}{dt}=A_{0}x(t)+A_{\tau}x(t-\tau)+Bu.
+\end{equation}
+Здесь $t\in\mathbb{R}^{+}=(0,+\infty)$,  $x:[-\tau,+\infty)\rightarrow\mathbb{R}^{n}$, положительное число $\tau$ --- запаздывание; $A_{0}, A_{\tau}$ --- матрицы размерности $n\times n$, $B$ --- матрица размерности $n\times r$. Импульсные управления являются обобщенными функциями, определяемыми формулами  $u(t)=\frac{dv(t)}{dt},\,t\in \bar{\mathbb{R}}^{+},$ в которых импульсы управления $v: [0, +\infty)\rightarrow\mathbb{R}^{r}$ имеют ограниченные вариации на любом конечном отрезке положительной полуоси,  $v(0)=0$.
+
+Требуется найти импульсное управление, формируемое по принципу  обратной связи, которое обеспечивает устойчивую работу системы
+~\eqref{eq1}  и минимизирует заданный критерий качества переходных процессов
+\begin{equation}\label{eq2}
+ J=\int\limits_{0}^{+\infty}\left( x^{\top}(t)C_{x}x(t)+v^{\top}(t)C_{v}v(t)\right)\,dt,
+\end{equation}
+где  $C_{x}$, $C_{v}$  --- положительно определенные матрицы.
+
+В работе \cite{1} получена система уравнений, определяющая непосредственно коэффициенты оптимального импульсного стабилизирующего управления. Найдены асимптотические решения регуляризованной задачи оптимальной стабилизации автономной линейной системы с запаздыванием для  импульсных управлений с вырожденным критерием качества \cite{2}. 
+
+ В настоящей работе  изучаются конечномерные аппроксимации задачи оптимальной импульсной стабилизации автономной линейной системы с запаздыванием. Для управляемой системы с запаздыванием ~\eqref{eq1} рассматривается конечномерная аппроксимирующая система обыкновенных дифференциальных уравнений
+\begin{equation}\label{eq8}
+\frac{dx_{0}^{N}}{dt}=A_{0}x_{0}^{N}+A_{\tau}x_{N}^{N}+Bu(t),
+\end{equation}
+\begin{equation*}
+\frac{dx_{k}^{N}}{dt}=\frac{N}{\tau}\left(x_{k-1}^{N}-x_{k}^{N}\right),\quad k=\overline{1,N},\,N\geq 3.
+\end{equation*}
+Для аппроксимирующей управляемой импульсной системы используем показатель качества переходных процессов
+\begin{equation}\label{eq9}
+ J^{N}=\int\limits_{0}^{+\infty}\left( x_{0}^{N\top}(t)C_{x}x_{0}^{N}(t)+v^{\top}(t)C_{v}v(t)\right)dt,\,N\geq 3.
+\end{equation}
+Применяя замены
+\begin{equation*}
+y_{0}^{N}(t)=x_{0}^{N}(t)-Bv(t),\,y_{k}^{N}(t)=x_{k}^{N}(t),\,t\in \mathbb{\bar{R}}^{+},\,k=\overline{1,N},\,N\geq 3,
+\end{equation*}
+переходим от конечномерной задачи импульсной стабилизации  ~\eqref{eq8}, ~\eqref{eq9}  к вспомогательной задаче  не импульсной стабилизации для автономной линейной системы обыкновенных дифференциальных уравнений.
+
+Построены  приближения   оптимального импульсного стабилизирующего управления для  автономной линейной системы дифференциальных уравнений с запаздыванием.  Предложена система алгебраических уравнений для нахождения коэффициентов  приближенных импульсных управлений. Размерность этой системы существенно меньше размерности матричного уравнения Риккати.
+
+
+
+
+
+
+% Список литературы.
+\begin{thebibliography}{99}
+% Format for Russian Journal Reference
+\bibitem{1}
+Долгий Ю.Ф. {\it Оптимальная импульсная стабилизация линейных автономных систем с запаздыванием}. Материалы международной конференции «Устойчивость, управление, дифференциальные игры (SCDG2019)», посвященной 95-летию со дня рождения академика Н.Н. Красовского. Екатеринбург: ИММ УрО РАН. 2019. С.  119—122.
+\bibitem{2}
+Долгий Ю.Ф., Сесекин А.Н.  {\it Исследование регуляризации вырожденной задачи импульсной стабилизации системы с запаздыванием}. Тр. Ин-та математики и механики УрО РАН. 2022. Т.~28, №~1. С.~74--95.
+% etc
+\end{thebibliography}
+
+
+
+
+
+
+%\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

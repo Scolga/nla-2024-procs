@@ -1,0 +1,101 @@
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+\usepackage{todonotes}
+
+\usepackage{nla} 
+
+\begin{document}
+\fi
+
+\title{Asymptotic behavior of solutions to a linear delay differential equation\thanks{This work was supported by the Mathematical Center in Akademgorodok, Agreement No. 075-15-2022-282 with the Ministry of Science and Higher Education of the Russian Federation.}}
+% First author
+\author{Ivan~D.~Ilyinykh}
+\institute{Novosibirsk State University, Novosibirsk, Russia\\
+\email{i.ilinykh@g.nsu.ru}}
+
+\maketitle
+
+\begin{abstract}
+  We consider solutions to a linear delay equation,
+	as well as their relation 
+  with the last components of solutions to high-dimensional 
+  systems of ordinary differential equations. The aim of 
+  the work is to obtain estimates for the convergence rate 
+  of solutions to the delay equation
+	to zero as $t \to \infty$. 
+  To achieve this, stability regions of the zero solution to 
+  corresponding systems are investigated 
+  and a sequence of Lyapunov equations is solved.
+  
+  \keywords{delay equation, stability, Lyapunov equation, matrix spectrum} % No period at the end of the list
+\end{abstract}
+
+Consider the following delay differential equation
+$$
+\frac{dy(t)}{dt} = ay(t) + by(t-\tau), \quad t > 0,
+\eqno (1)
+$$
+where $a, b, \tau \in \mathbb{R}$ are constants, $\tau > 0$. Consider also a sequence of high-dimensional systems of ordinary differential equations
+$$
+\frac{dx(t)}{dt} = A_nx(t),
+\eqno (2)
+$$
+where 
+$$
+A_n = \left(
+\begin{array}{ccccc}
+-\frac{n-1}{\tau} & 0 & \ldots & \ldots & b\\
+\frac{n-1}{\tau} & -\frac{n-1}{\tau} & \ddots & \ddots & 0\\
+0 & \ddots & \ddots & \ddots & \vdots\\
+\vdots & \ddots & \ddots & -\frac{n-1}{\tau} & 0\\
+0 & \ldots & 0 & \frac{n-1}{\tau} & a
+\end{array}
+\right),
+\quad
+x(t) = \left(
+\begin{array}{c}
+x_1(t)\\
+x_2(t)\\
+\vdots\\
+x_n(t)
+\end{array}
+\right).
+%\eqno (3)
+$$
+
+It should be noted that G.V.~Demidenko established connections
+between solutions to some classes  of nonlinear systems
+of ordinary differential equations of large dimensions and solutions
+to delay differential equations (see, for, example, [1--3]).
+
+We define regions of the asymptotic stability of the zero solutions to 
+(1) and (2) in the parameter space $(a, b)$. We 
+establish that, for any $n \geq 2$, 
+the regions of the asymptotic stability for (2) contain 
+the region of the asymptotic stability for 
+(1) and converge to it as $n \to \infty$. Solutions 
+to Lyapunov equations for (2) are found; moreover, we define a limit 
+function to which they converge as $n \to \infty$.
+
+% At the end of the text, acknowledgments are expressed, if you haven't
+% made a footnote from the title. For example, we can write
+
+\begin{thebibliography}{9} % or {99}, if there are more than ten references.
+
+\bibitem{LiFaDeMa_2004}
+Likhoshvai V.A., Fadeev S.I., Demidenko G.V., Matushkin Yu.G.
+Modeling nonbranching multistage synthesis by an equation with retarded argument. Sib. Zh. Ind. Mat. 2004. Vol.~7, no.~1. Pp.~73--94.
+
+\bibitem{De_2012}
+Demidenko G.V. Systems of differential equations of higher dimension and delay equations. Siberian Math. J. 2012. Vol.~53, no.~6. Pp.~1021--1028.
+
+\bibitem{DeUv_2016}
+Demidenko G.V., Uvarova I.A.
+On a class of systems of ordinary differential equations of large dimension.
+J. Appl. Industr. Math. 2016. Vol.~10, no.~2. Pp.~179--191.
+
+\end{thebibliography}
+
+%\end{document}

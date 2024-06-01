@@ -1,0 +1,108 @@
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+\usepackage{todonotes}
+
+\usepackage{nla}
+
+\begin{document}
+\fi
+
+\title{Stabilization of discrete-time generalized quasi-one-sided Lipschitz nonlinear systems with multiple delays}
+
+\author{Wenqiang Dong
+}
+\institute{Shanghai Customs College, Shanghai, China\\
+  \and
+Sobolev Institute of Mathematics, Novosibirsk, Russia\\
+\email{dongwenqiangshu@163.com}}
+
+
+\maketitle
+
+\begin{abstract}
+In this article, a generalized quasi-one-sided Lipschitz condition is introduced to investigate the stabilization problem for a kind of discrete-time nonlinear systems with multiple delays. The feedback stabilization and observer-based stabilization for discrete-time nonlinear multiple delays systems are studied, respectively. It is shown that the nonlinear terms of systems will yield a beneficial impact on the whole systems for stabilization under generalized quasi-one-sided Lipschitz condition. A simulation example is given to illustrate the feasibility of the obtained results.
+\keywords{discrete-time nonlinear systems with multiple delays, generalized quasi-one-sided Lipschitz condition, feedback stabilization, observer-based feedback stabilization}
+\end{abstract}
+
+\section{The main results} %optional section
+
+
+Consider discrete-time nonlinear systems with multiple delays as follows:
+\begin{equation}\label{eq:sys1}
+  \left\{
+    \begin{array}{ll}
+      x(k+1)=A_{0}x(k)+\sum_{j=1}^{m}A_{j}x(k-d_{j})+Bu(k)+F(x(k),x(k-d_{1}),\cdots,x(k-d_{m})),  \\
+      y(k)=Cx(k),
+    \end{array}
+  \right.
+\end{equation}
+where constant matrices $A_{0},A_{j}\in \mathbb R^{n\times n}$, $B\in\mathbb R^{n\times p}$, $C\in\mathbb R^{q\times n}$, state vector $x(k)\in \mathbb R^{n}$, delayed state vector $x(k-d_{j})\in \mathbb R^{n}$, constant delays $d_{j}>0$ for $j=1,2,\cdots,m$, output vector $y(k)\in \mathbb R^{q}$, control vector $u(k)\in \mathbb R^{p}$, $F(x(k),x(k-d_{1}),\cdots,x(k-d_{m}))$ is a nonlinear function with respect to $x(k),x(k-d_{1}),\cdots, x(k-d_{m})$, assume that $F(0,0,\cdots,0)=0$.
+\par At first, a state feedback controller is designed to achieve feedback stabilization for discrete-time nonlinear systems with multiple delays (\ref{eq:sys1}). Let the structure of the feedback controller of systems (\ref{eq:sys1}) be
+\begin{equation}\label{eq:controller}
+  u(k)=-K_{0}x(k)-\sum_{j=1}^{m}K_{j}x(k-d_{j}),
+\end{equation}
+where $K_{0},K_{1},\cdots,K_{m}\in \mathbb R^{p\times n}$ are the controller gain matrices. By (\ref{eq:sys1}) and (\ref{eq:controller}), the nonlinear closed-loop systems with multiple delays can be obtained as:
+\begin{equation}\label{eq:clo1}
+  \left\{
+  \begin{array}{ll}
+    x(k+1)=(A_{0}-BK_{0})x(k)+\sum_{j=1}^{m}(A_{j}-BK_{j})x(k-d_{j})+F(x(k),x(k-d_{1}),\cdots,x(k-d_{m})), \\
+    y(k)=Cx(k).
+  \end{array}
+\right.
+\end{equation}
+\par The sufficient condition for asymptotic stability of zero solutions of multiple delays closed-loop systems is derived under the generalized weak quasi-one-sided Lipschitz condition.
+\par Subsequently, we will achieve the observer-based stabilization for systems (\ref{eq:sys1}). Firstly, a state observer is designed for estimating the state of systems (\ref{eq:sys1}). then, a observer-based controller is designed for achieving the stabilization of the systems.
+\par Consider the following structure of state observer of systems (\ref{eq:sys1}):
+\begin{equation}\label{eq:obs1}
+  \left\{
+  \begin{array}{ll}
+  \begin{split}
+    \hat{x}(k+1)&=A_{0}\hat{x}(k)+\sum_{j=1}^{m}A_{j}\hat{x}(k-d_{j})+Bu(k)+F(\hat{x}(k),\hat{x}(k-d_{1}),\cdots,\hat{x}(k-d_{m}))\\
+      &\quad+L_{0}(y(k)-C\hat{x}(k))+\sum_{j=1}^{m}L_{j}(y(k-d_{j})-C\hat{x}(k-d_{j})), \\
+  \end{split}
+\\
+    \hat{y}(k)=C\hat{x}(k),
+  \end{array}
+\right.
+\end{equation}
+where $L_{0},L_{1},\cdots,L_{m}\in \mathbb R^{n\times q}$ are observer gain matrices.
+
+\par By Lyapunov-Krasovskii theory, the sufficient condition that observer (\ref{eq:obs1}) is a asymptotically stable observer for systems (\ref{eq:sys1}) is presented.
+\par Next, combining the controller
+\begin{equation}\label{eq:controller2}
+  u(k)=-K_{0}\hat{x}(k)-\sum_{j=1}^{m}K_{j}\hat{x}(k-d_{j})
+\end{equation}
+with the observer (\ref{eq:obs1}), by construct the series Lyapunov-Krasovskii functional
+\begin{equation}
+\begin{split}
+V(x(k),e(k))=&a[x^{T}(k)Q_{0}x(k)+\sum_{j=1}^{m}\sum_{i=1}^{d_{j}}x(k-d_{j})Q_{j}x(k-d_{j})]+e^{T}(k)P_{0}e(k)\\
+&+\sum_{j=1}^{m}\sum_{i=1}^{d_{j}}e^{T}(k-d_{j})P_{j}e(k-d_{j}), \\
+\end{split}
+\end{equation}
+We will proof that the feedback controller and state observer can be designed separately when discrete-time systems with multiple delays and nonlinearities carried out the control based on observer under the generalized quasi-one-sided condition. Finally, an illustrative numerical example is given to show the feasibility and superiority of the proposed methods.\\
+
+
+
+The research is carried on with support of the Mathematical Center in Akademgorodok under agreement No. 075-15-2022-281 with the Ministry of Science and Higher Education of the Russian Federation, the National Natural Science Foundation of China (Grant No.12371399), Shanghai Science and Technology Talents Sailing Plan (22YF1415300).
+
+
+\begin{thebibliography}{9} % or {99}, if there is more than ten references.
+
+
+\bibitem{Hale1993} Hale J.K., Lunel S. M. V. Introduction to Functional Differential Equations. New York: Springer, 1993.
+
+\bibitem{Hu2008} Hu G.D. A note on observer for one-sided Lipschitz non-linear systems. IMA J. Math. Control Inf.~2008. Vol.~25, no~2, Pp.~297--303.
+
+\bibitem{Demidenko2017} Demidenko G.V., Baldanov D. Sh. Asymptotic stability of solutions to delay difference equations. J. Math. Sci.~2017. Vol.~221, no~6, Pp.~815-825.
+
+\bibitem{Hu2020} Hu G.D., Dong W.Q., Cong Y.H. Separation principle for quasi-one-sided Lipschitz nonlinear systems with time delay. Int. J. Robust Nonlinear Control 2020, Vol.~30, Pp.~2430-2442.
+
+
+
+
+
+
+\end{thebibliography}
+%\end{document}

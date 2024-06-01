@@ -1,0 +1,116 @@
+\begin{englishtitle}
+\title{Analysis of a model of average and median nominal wages using the example of the Russian economy for 2017-2023}
+% First author
+\author{Darina I. Gurskaya}
+\institute{Institute of Mathematics and Information Technologies\\Irkutsk State University, Irkutsk, Russia\\
+  \email{darina.gurskaya@gmail.com}
+}
+% etc
+
+\maketitle
+
+\begin{abstract}
+This report presents the results of an analysis of the average and median nominal wages in the Russian economy for 2017-2023. The analysis was carried out based on the autoregressive integrated moving average (ARIMA) model and the seasonally adjusted model (SARIMA).
+
+\keywords{time series analysis, the autoregressive integrated moving average model ARIMA, average and median nominal wages}
+\end{abstract}
+\end{englishtitle}
+
+\iffalse
+\documentclass[12pt]{llncs}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[russian]{nla}
+
+%\usepackage[english,russian]{nla}
+
+% \graphicspath{{pics/}} %Set the subfolder with figures (png, pdf).
+
+%\usepackage{showframe}
+\begin{document}
+%\selectlanguage{russian}
+\fi
+
+\title{Анализ модели средней и медианной номинальной заработной платы на примере экономики РФ за 2017-2023 годы%\thanks{Работа выполнена при поддержке РФФИ (РНФ, другие фонды), проект \textnumero~00-00-00000.}
+}
+% Первый автор
+\author{Д.~И.~Гурская%\inst{1}
+%  \and
+% Второй автор
+%  И.~О.~Фамилия\inst{2}
+%  \and
+% Третий автор
+%  И.~О.~Фамилия\inst{2}
+} 
+\institute{Институт математики и информационных технологий\\ Иркутский государственный университет, Иркутск, Россия\\
+  \email{darina.gurskaya@gmail.com}
+  }
+
+
+\maketitle
+
+\begin{abstract}
+
+ 
+
+В докладе представлены результаты анализа средней и медианной номинальной заработной платы в целом по экономике РФ за 2017-2023 годы. Анализ проведен на основе модели авторегрессионного интегрированного скользящего среднего  (ARIMA) и модели, учитывающей сезонную изменчивость (SARIMA).
+
+\keywords{анализ временных рядов, модель авторегрессионного интегрированного скользящего среднего  ARIMA, средняя и медианная номинальной заработной платы}
+\end{abstract}
+
+В докладе представлены результаты анализа средней и медианной номинальной заработной платы в целом по экономике РФ за 2017-2023 годы. Анализ проведен на основе модели авторегрессионного интегрированного скользящего среднего  (ARIMA) и модели, учитывающей сезонную изменчивость (SARIMA). Модели типа ARIMA имеют преимущества по сравнению с другими методами анализа временных рядов и способны прогнозировать тенденцию изменения качественных параметров. Такие модели используется для краткосрочного и среднесрочного прогнозирования и подходят для различных видов шаблонов данных. 
+
+На основе данных \cite{gg1,gg2} была выполнена  программная реализация на языке программирования R  моделей ARIMA и SARIMA. Для подбора успешных моделей потребовались настройка начальных данных и адаптация временных рядов. Был построен прогноз для средней и медианной
+заработной платы на 2024 год.
+
+
+
+
+
+
+%Подход к прогнозированию с использованием временных рядов является одним из таких подходов, который зависит от структуры прошлых данных во временных рядах для прогнозирования будущих данных. Подход временных рядов анализируется, чтобы понять поведение прошлой модели данных и спрогнозировать будущие значения, дать возможность анализировать или лицам, принимающим решения, предоставлять четкую информацию другим [3]. Отличный обзор методов временных рядов в прогнозировании. Есть экспоненциальное сглаживание, скользящее среднее и т. д., но одним из сложных методов, который можно использовать во многих формах шаблонов данных, является Box and Jenkins или ARIMA. Все методы временных рядов используются для прогнозирования будущих данных, а модель авторегрессионного интегрированного скользящего среднего (ARIMA) была успешно реализована для решения задач прогнозирования, например. потребительский спрос, эконометрика, социальные науки и другие проблемы [4]. Множество методов прогнозирования временных рядов, одним из них является модель ARIMA. Модель ARIMA имеет преимущества по сравнению с другими методами временных рядов, которые принимают все типы моделей данных [5]. Хотя процесс сначала должен быть стационарным. Модели ARIMA используются для прогнозирования прошлых данных за коротк ий период времени, имеют быстрые изменения и/или имеют качественные параметры. Прогнозирование делает глядя на прошлые данные, чтобы оценить будущие события для поддержки своей деятельности по принятию решений и тактических операций. Модель ARIMA также используется в обрабатывающей промышленности [6]. Модель временных рядов ARIMA способна прогнозировать тенденцию изменения качественных параметров [7]. Например, ARIMA можно использовать для прогнозирования дневной цены на золото в Лондоне [4][8] и спроса на первичную энергию на ископаемое топливо [9]. Модель ARIMA была использована для оценки сезонной изменчивости комплексов макробентоса [10]. Метод авторегрессионного интегрированного скользящего среднего (ARIMA) способен быстро собирать необходимую информацию при изменении и справляться с нестабильностью. В данной статье описывается модель ARIMA для оценки спроса в каждом распределительном центре (РЦ), а также потребность в РЦ, удовлетворяемая вовремя. В этой статье используется модель ARIMA для прогнозирования спроса каждого распределительного центра, поскольку она хорошо используется для краткосрочного и среднесрочного прогнозирования и подходит для различных форм шаблонов данных. Каждый запрос ДЦ выполняется в короткие сроки, поэтому выбрана модель ARIMA. До сих пор в распределительных центрах прогнозирования спроса обычно проводилось с использованием модели ARIMA. 
+
+%Шаги по внедрению метода ARIMA: [1]:
+%а. Идентификация модели
+%Модель ARIMA можно использовать только для данных стационарных временных рядов. По этой причине первый шаг, который необходимо сделать, — это выяснить, являются ли данные временных рядов стационарными или нет. Если данные нестационарны, необходимо проверить разницу и то, насколько данные будут стационарными.
+%б. Идентификация параметров (ACF и PACF)
+%Чтобы использовать модель ARIMA, необходимо определить значение d (стационарные данные), количество значений остаточного лага (q) и зависимое значение лага (p), используемое в модели. Основными инструментами, используемыми для определения q и p, являются ACF и PACF (функция частичной автокорреляции) и корреляция, которая показывает график значений ACF и PACF для задержки. Коэффициент частичной автокорреляции измеряет степень близости связи между Xt и Xt-k, при этом времена лабораторного эффекта 1, 2, 3, ..., k-1 считаются постоянными.
+%в. Выбор лучшей модели ARIMA
+%По результатам стационарной идентификации и идентификации АКФ и ПАКФ возникнет несколько альтернативных моделей ARIMA. В дальнейшем оценим параметры авторегрессии.
+%д. Прогнозирование
+%После получения лучшей модели можно сделать прогноз на будущий период. В различных случаях прогнозирование с помощью этого метода более надежно, чем прогнозирование с использованием других методов временных рядов.
+
+%The steps to adopt ARIMA method are [1]:
+%a. Model identification
+%The ARIMA model can only be used on stationary time series data. For this reason, the first step that must be done is to investigate whether the time series data is stationary or not. If the data is not stationary, it must be checked the difference and how much data will be stationary.
+%b. Identification of parameters (ACF and PACF) 
+%To use the ARIMA model the value of d (stationery data) must be determined, the number of residual lag values (q) and the dependent lag value (p) used in the model. The main tools used to identify q and p are ACF and PACF (Partial Auto Correlation Function), and correlation which shows the plot of ACF and PACF values for lag. The partial auto correlation coefficient measures the degree of closeness of the relationship between Xt and Xt-k, while the lab effect times 1, 2, 3, ..., k-1 are considered constant.
+%c. Selection of the best ARIMA model
+%From the results of stationary identification and identification of ACF and PACF, there will be several alternative models of ARIMA. Hereafter, estimate the auto regressive parameters.
+%d. Forecasting
+%After the best model is obtained, forecasting for the future period can be done. In various cases, forecasting with this method is more reliable than forecasting with other time series methods.
+
+
+
+
+% Список литературы.
+\begin{thebibliography}{99}
+\bibitem{gg1}
+Федеральная служба государственной статистики : официальный
+сайт. \\ URL: https://rosstat.gov.ru/(дата обращения 26.02.2024)
+% Format for books:
+\bibitem{gg2}
+Статистический сервис «СберИндекс». URL:
+https://sberindex.ru/ru (дата обращения 26.02.2024)
+%\bibitem{gg3} Фамилия И.О. Название статьи~// Журнал. Год. Т.~том,  \textnumero~номер. С.~страницы.
+% etc
+\end{thebibliography}
+
+
+% Обязательная информация на английском языке:
+
+
+
+
+%\end{document}

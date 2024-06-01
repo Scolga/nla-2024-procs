@@ -1,0 +1,97 @@
+
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+\usepackage{todonotes}
+
+\usepackage{nla} 
+
+\begin{document}
+\fi
+
+\title{On a feedback control system described by a fractional differential inclusion and a sweeping process\thanks{The research is supported by RNF, project No.~22-71-10008.}}
+
+\author{Garik Petrosyan 
+ }
+\institute{Voronezh State Pedagogical University, Voronezh, Russia\\
+  \email{garikpetrosyan@yandex.ru}
+  }
+
+\maketitle
+
+\begin{abstract}
+For systems described by fractional semilinear differential inclusions with feedback in the form of a sweeping process in Hilbert space, controllability conditions are found.
+
+\keywords{differential inclusion, sweeping process, controllability, fixed point, multivalued map}
+\end{abstract}
+
+
+\section{The main results} %optional section
+
+Let $E$ be a Banach space and $H$ be a Hilbert space. We consider controllability problem for a system governed by the following differential inclusion and the sweeping process 
+\begin{equation}\label{eq p 1}
+^{C}D^{\alpha}_0 x(t)\in Ax(t)+F(t,x(t),y(t))+Bu(t), \,\, t\in [0,a],
+\end{equation}
+\begin{equation}\label{eq p 11}
+x(0)=x_0,
+\end{equation}
+\begin{equation}\label{eq p 2}
+-y'(t)\in N_{C(t)}(y(t))+g(t,x(t),y(t))+l y(t), \,\, t\in [0,a],
+\end{equation}
+\begin{equation}\label{eq p 21}
+y(0)=y_0\in C(0),
+\end{equation}
+\begin{equation}
+\label{eq p 3}
+x(a)=x_{1},
+\end{equation}
+where $^{C}D^{\alpha}_0$ is Caputo--Gerasimov fractional derivative of an order $\alpha\in(0,1)$, $C:[0,a]\to P(H)$ is a multimap with closed convex values, $A: D(A)\subset E\to E$ is a linear closed operator generating a uniformly bounded $C_{0}$--semigroup $\lbrace T(t), t\geq 0 \rbrace $ in $E.$ A control function $u(\cdot)$ belongs to the space $L^{\infty}([0,a];U),$ where $U$ is a Banach space of controls, $B:U\rightarrow E$ is a bounded linear operator, $l$ is a positive number,  $N_{C(t)}(y)$ denotes a normal cone defined for a closed convex $C(t)\subset H$ as
+\begin{equation}\label{conus}
+N_{C(t)} (y)=
+ \begin{cases}
+   \lbrace \xi \in H: \langle \xi, c-y \rangle\leq 0 \,\, \mbox{for all}\, c\in C(t)\rbrace, &\text{if $y \in C(t)$},\\
+  \emptyset,  &\text{if $y \notin C(t)$},
+ \end{cases}
+\end{equation}
+$F: [0,a]\times E \times H \to P(E)$ is a Caratheodory type multimap, $g: [0,a]\times E \times H \to H$ is a nonlinear single valued map, and $x_0, x_1\in E, y_0\in H.$ 
+
+The controllability problem which we study may be formulated in the following way: for a given  $x_0, x_{1}$ we will consider of a solution $x \in C([0,a];E), y \in C([0,a];H)$    of the above system \eqref{eq p 1}-\eqref{eq p 21} and a control $u \in L^{\infty}([0,a];U)$ such that condition \eqref{eq p 3} is satisfied.
+
+
+
+\begin{thebibliography}{9} % or {99}, if there is more than ten references.
+
+
+\bibitem{BaDa} Balachandran K., Dauer J.P. Controllability of nonlinear systems in Banach spaces: a survey. J. Optim. Theory Appl. 2002. Vol.~115. Pp.~7--28.
+
+
+\bibitem{BeObZe} Benedetti I., Obukhovskii V., Zecca P. Controllability for impulsive semilinear functional differential inclusions with a non-compact evolution operator. Discuss. Math. Differ. Incl. Control Optim. 2011. Vol.~31. Pp.~39--69.
+
+\bibitem{CaMM} Castaing V., Monteiro Marques M. BV periodic solutions of an evolution problem associated with continuous moving convex sets. Set-Valued Anal. 1995. Vol.~3:4. Pp.~381--399.
+
+
+\bibitem{ChLiNi} Chang Y.-K., Li W.-T., Nieto J.J. Controllability of evolution differential inclusions in Banach spaces. Nonlinear Anal. 2007. Vol.~67. Pp.~623--632.
+
+
+\bibitem{GoNtRe} G\'orniewicz L., Ntouyas S.K., O'Regan D. Controllability of semilinear differential equations and inclusions via semigroup theory in Banach spaces. Rep. Math. Phys. 2005. Vol.~56. Pp.~437--470.
+
+
+
+\bibitem{KMWR} Kamenskii M., Makarenkov O., Wadippuli L.N., Raynaud de Fitte P. Global stability of almost periodic solutions to monotone sweeping processes and their response to non-monotone perturbations. Nonlinear Analysis: Hybrid Systems. 2018. Vol.~30. Pp.~213--224.
+
+\bibitem{KOZ} Kamenskii M., Obukhovskii V., Zecca P. Condensing Multivalued Maps and Semilinear Differential Inclusions in Banach Spaces. Walter de Gruyter, Berlin--New-York, 2001.
+
+\bibitem{KP}	Kamenskii M., Petrosyan G. On a controllability problem for a feedback control system governed by a semilinear differential equation and a sweeping process. Communications in Nonlinear Science and Numerical Simulation. 2024. Vol.~132. Pp.~107889.
+
+
+\bibitem{MoMa} Monteiro Marques M.D.P. Differential inclusions in nonsmooth mechanical problems. Shocks and dry friction, in: Progress in Nonlinear Differential Equations and their Applications. 1993. Vol.~9.
+
+\bibitem{OG} Obukhovskii V., Gel'man B. Multivalued maps and differential inclusions. Elements of theory and applications. World Scientific, Hackensack, NJ, 2020.
+
+\bibitem{ObZe} Obukhovskii V., Zecca P. Controllability for systems governed by semilinear differential inclusions in a Banach space with a noncompact semigroup. Nonlinear Anal. 2009. Vol.~70. Pp.~3424--3436.
+
+\bibitem{Val} Valadier M. Rafle et viabilite (The sweeping process and viability), Sém. Anal. Convexe Exp. 1992. Vol.~22:17.~[in French]
+
+\end{thebibliography}
+%\end{document}

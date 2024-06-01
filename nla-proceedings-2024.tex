@@ -1,0 +1,810 @@
+\documentclass[12pt,final]{llncs}
+\usepackage{iftex}
+\usepackage{calc}
+\usepackage{lastpage}
+
+%\fi % above for final
+
+%\documentclass[12pt]{llncs}
+%\usepackage{todonotes}
+%\usepackage{nla}
+
+\ifPDFTeX
+\usepackage{amsmath,amssymb}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\fi
+\usepackage{amscd}
+\usepackage{amsfonts,amsmath,array}
+\usepackage{amssymb}
+%\usepackage[dvips]{graphicx}
+\usepackage{graphicx}
+\usepackage{longtable,cite,wrapfig}
+% \usepackage{makeidx}
+
+
+ \usepackage[russian]{nla}
+ \usepackage{bm}
+ \usepackage{euscript}
+ \usepackage{upgreek}
+ \usepackage{fancyhdr}
+ \usepackage{lastpage}
+ \usepackage{tabularx}
+ \usepackage{enumitem}
+ \usepackage{pifont}
+
+ \setlist[itemize]{label=\ding{113}}
+
+%\usepackage{showframe}
+%
+%\usepackage{makeidx}  % allows for indexgeneration
+%
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{\normalsize{\textrm{\thepage}}}
+\rfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\pagestyle{fancy}
+% \usepackage{etoolbox} % for "\patchcmd" macro
+% \makeatletter
+% \patchcmd{\ps@headings}{\rlap{\thepage}}{}{}{}
+% \patchcmd{\ps@headings}{\llap{\thepage}}{}{}{}
+% \makeatother
+% \pagestyle{headings}
+
+\RequirePackage{algorithm}
+\RequirePackage{algpseudocode}
+
+\newtheorem{hp}{Hypothesis}   % for Raghuwanshi.tex
+
+\begin{document}%
+%
+\frontmatter          % for the preliminaries
+\setcounter{page}{1}
+%
+%\pagestyle{headings}  % switches on printing of running heads
+%\addtocmark{~} % additional mark in the TOC
+%
+
+\begin{center}
+{\bf
+  \thispagestyle{empty}
+  \pagestyle{fancy}
+
+   	Matrosov Institute for System Dynamics and Control Theory of  SB RAS\\[0.3em]
+
+ 	Sobolev Institute of Mathematics  of SB RAS\\[0.3em]
+
+  Krasovskii Institute of Mathematics and Mechanics of UrB RAS\\[0.3em]
+
+ 	Irkutsk State University\\[0.3em]
+ 	Mathematical center in Akademgorodok 
+ 	  }
+
+
+%\vspace{2cm}
+\vfill
+
+{  \Large Proceedings of the 8th International School--seminar on\\[0.3em]
+
+Nonlinear Analysis and Extremal Problems\\[0.3em]
+
+  (NLA-2024)\\[0.2em] }
+
+{\Large  Irkutsk, Russia, June 24--28, 2024 }
+
+% \vspace{4cm}
+\vfill
+\vfill
+
+
+
+Irkutsk\\
+ISDCT SB RAS\\
+2024
+
+\end{center}
+
+\newpage
+
+\thispagestyle{empty}
+\noindent{}UDC \ 517.9
+
+ \vspace{3cm}
+
+Proceedings of the 8th International School--seminar on Nonlinear
+Analysis and Extremal Problems  (NLA-2024). Irkutsk\;:
+ISDCT SB RAS, 2024, \pageref{LastPage}~p.\\
+ISBN 978-5-6041814-5-4
+
+ \vspace{1cm}
+
+This volume contains proceedings of the 8th International school--seminar ``Nonlinear Analysis and Extremal Problems'' (NLA-2024).  
+The 8th International school-seminar ``Nonlinear Analysis and Extremal Problems'' is a biennial scientific event that takes place in Irkutsk, Russia. The school-seminar  will be held on 24-28 June 2024. NLA-2024 aims at sharing recent advances in various areas of modern nonlinear analysis and exposing young researchers to some fast-paced topics in the field. The 8th International School-Seminar is dedicated to the 300th anniversary of the Russian Academy of Sciences and the 75th anniversary of science in Eastern Siberia.
+
+The 8th International School-Seminar is supported by the Mathematical Center in Akademgorodok under the agreement No. 075-15-2022-282 with the Ministry of Science and Higher Education of the Russian Federation.
+
+The conference talks present recent developments in
+various fields of nonlinear analysis, calculus of variations and control theory,  partial differential equations, optimization, dynamical systems,
+ and  numerical methods.
+
+This volume is intended for researchers specializing in the corresponding fields of  ma\-the\-ma\-tics.
+
+  \vspace{1cm}
+
+
+
+ \vfill
+
+  \vfill
+
+ Scientific Editor: Prof. A.\;A. Tolstonogov\\[0.3em]
+
+ Editors: E.\;Yu. Baturina, O.\;N. Samsonyuk\\[0.3em]
+
+ Computer layout by E.\;A. Cherkashin
+
+ \vfill
+
+
+
+ \begin{flushright}
+ \copyright ISDCT SB RAS, 2024
+
+
+
+\chapter*{Preface}
+%
+
+
+
+
+ \begin{englisharticle}
+
+This volume contains proceedings of the 8th International school--seminar ``Nonlinear Analysis and Extremal Problems'' (NLA-2024).  
+The 8th International school-seminar ``Nonlinear Analysis and Extremal Problems'' is a biennial scientific event that takes place in Irkutsk, Russia. The school-seminar  will be held on 24-28 June 2024. NLA-2024 aims at sharing recent advances in various areas of modern nonlinear analysis and exposing young researchers to some fast-paced topics in the field. The 8th International School-Seminar is dedicated to the 300th anniversary of the Russian Academy of Sciences and the 75th anniversary of science in Eastern Siberia.
+
+
+The main topics of the  school--seminar are
+\begin{itemize}
+\item Nonlinear analysis and its applications,
+\item Calculus of variations and Control theory,
+\item Partial differential equations,
+\item Optimization,
+\item Dynamical systems,
+\item  Numerical methods.
+
+\end{itemize}
+The school--seminar featured seven lecture courses devoted to various aspects of theoretical and applied nonlinear analysis and control theory:
+\begin{itemize}
+\item \emph{``Optimal control of traveling profiles and moving sets’’}\\ by  \textbf{Alberto Bressan} (Pennsylvania State University, USA)\smallskip
+\item \emph{``Nonlinear Kantorovich problems of the optimal transportation’’}\\ by  \textbf{Vladimir I. Bogachev} (Lomonosov Moscow State University, Russia)\smallskip
+\item \emph{``Convexity of images of (non-)convex sets under nonlinear mappings’’, ``Harmonic analysis and optimal control’’}\\ by \textbf{Yuri S. Ledyaev} (Western Michigan University, USA)\smallskip
+\item \emph{``On limiting optimization problems’’}\\ by  \textbf{Dmitrii V. Khlopin } (Krasovskii Institute of Mathematics and Mechanics of UrB RAS, Russia)\smallskip
+\item \emph{``Recent advances on the optimal control of Moreau's sweeping process’’}\\ by \textbf{Giovanni Colombo} (University of Padova, Italy)\smallskip
+\item \emph{``Spectral theory and asymptotic behavior of solutions for differential-algebraic equations’’}\\ by \textbf{Linh Vu Hoang} (Vietnam National University, Vietnam)\smallskip
+\item \emph{``Recent advances on partial differential variational inequalities’’, ``A differential system consisting of an evolution equation and a doubly nonlinear inclusion’’, ``Periodic subdifferential evolution inclusions in reflexive Banach spaces’’}\\ by \textbf{Zhenhai Liu} (Guangxi Minzu University, China)\smallskip
+\end{itemize}
+
+\end{englisharticle}
+
+%
+\chapter*{Organization}
+\vspace{-2em}
+ \begin{englisharticle}
+The 8th International school-seminar ``Nonlinear Analysis and Extremal Problems'' is organized by Matrosov
+Institute for System Dynamics and Control Theory of SB RAS in cooperation with
+Sobolev Institute of Mathematics  of SB RAS,
+  Krasovskii Institute of Mathematics and Mechanics of UB RAS,
+ 	Irkutsk State University, and Mathematical center in Akademgorodok (Novosibirsk).
+ \end{englisharticle}
+
+
+%
+\vspace{-1em}
+\section*{Program Commitee}
+ \begin{englisharticle}
+
+\textbf{Chairs:   }
+
+\begin{tabular}{@{}p{6cm}@{}p{10cm}@{}}
+  Alexander A. Tolstonogov &   Matrosov
+Institute for System Dynamics and Control Theory of SB RAS (Russia)\\
+Igor V. Bychkov &   Matrosov
+Institute for System Dynamics and Control Theory of SB RAS (Russia)
+\end{tabular}
+
+\textbf{Committee members:}
+
+\begin{tabular}{@{}p{5.5cm}@{}p{0.5cm}@{}p{10cm}@{}}
+Vladimir I. Bogachev & & Lomonosov Moscow State University  (Russia)\\[0.5em]
+Alberto Bressan && Penn State University (USA) \\[0.5em]
+Giovanni Colombo && University of Padova (Italy)\\[0.5em]
+Gennadii V. Demidenko &&  Sobolev Institute of Mathematics of SB RAS (Russia)\\[0.5em]
+Ivan A. Finogenko &&  Matrosov
+Matrosov  Institute for System Dynamics and Control Theory of SB RAS (Russia)  (Russia)\\[0.5em]
+Alexander Gornov && Matrosov  Institute for System Dynamics and Control Theory of SB RAS (Russia) \\[0.5em]
+Linh Vu Hoang && Vietnam National University (Vietnam)\\[0.5em]
+Alexander L. Kazakov &&  Matrosov
+Matrosov  Institute for System Dynamics and Control Theory of SB RAS (Russia) (Russia)\\[0.5em]
+Yuri S. Ledyaev && Western Michigan University  (USA)	\\[0.5em]
+Lev Lokutsievskiy && Steklov Mathematical Institute (Russia)\\[0.5em]
+Nikolai Yu. Lukoyanov &&  Krasovskii Institute of Mathematics and Mechanics of UrB RAS (Russia)\\[0.5em]
+Zhenhai Liu && Guangxi Minzu University, (China)\\[0.5em]
+Boris Sh. Mordukhovich &&  Wayne State University  (USA)\\[0.5em]
+Alla A. Shcheglova &&  Matrosov  Institute for System Dynamics and Control Theory of SB RAS (Russia)\\[0.5em]
+\end{tabular}
+
+
+
+
+\end{englisharticle}
+
+\vspace{-1em}
+%
+
+%
+\section*{Organizing Committee}
+
+ \begin{englisharticle}
+{\bf Chair:}   Vladimir A. Dykhta\\[0.5em]
+%${}$\hspace{\parindent}
+{\bf Secretary:}   Tatiana S. Zarodnyuk\\[0.5em]
+${}$\hspace{\parindent}\textbf{Committee members:\\[0.5em]}
+\begin{tabular}{@{${}$\hspace{\parindent}}p{5cm}@{}p{5cm}@{}p{5cm}@{}}
+Anton S. Anikin&
+  Elena V. Chistyakova &
+  Alexey A. Kumachev\\
+Anna A. Lempert &
+Taras I. Madzhara &
+Tatiana Gruzdeva \\
+Pavel S. Petrenko &
+Olga N. Samsonyuk&
+Stepan P. Sorokin \\
+Pavel S. Sorokovikov &
+Maksim V. Staritsyn&
+Lubov S. Solovarova\\
+Pavel A. Kuznetsov & 
+Svetlana V. Svinina
+\end{tabular}
+
+
+
+
+ \end{englisharticle}
+
+
+
+ \begin{englisharticle}
+  \tableofcontents
+ \end{englisharticle}
+\thispagestyle{fancy}
+%
+\mainmatter              % start of the contributions
+
+%
+
+
+
+\input{Akmanova_rus}
+
+\input{Aksenenko_rus}
+
+\begin{englisharticle}
+\input{Alves}
+\end{englisharticle}
+
+\input{Andrianova_rus}
+
+\begin{englisharticle}
+\input{Arguchintsev}
+\end{englisharticle}
+
+\input{Artemeva_rus}
+
+\begin{englisharticle}
+\input{Asadov}
+\end{englisharticle}
+
+\input{Babadzanjanz_rus}
+
+\begin{englisharticle}
+\input{Badardinov}
+\end{englisharticle}
+
+\input{Balandin_rus}
+
+\begin{englisharticle}
+\input{Baltaeva}
+\end{englisharticle}
+
+\input{Barinov_rus}
+
+\input{Barotov_rus}
+
+\input{Bekhovskiy_rus}
+
+\input{Beklaryan_rus}
+
+\begin{englisharticle}
+\input{Belyaeva}
+\end{englisharticle}
+
+\input{Bogarev_rus}
+
+\begin{englisharticle}
+\input{Bondar}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Bongay}
+\end{englisharticle}
+
+\input{Budnikova_rus}
+
+\input{Bulatov_rus}
+
+\input{Burkin_rus}
+
+\input{Buterin_rus}
+
+\input{Chentsov_rus}
+
+\input{Cherkashin_rus}
+
+\begin{englisharticle}
+\input{Chistyakov}
+\end{englisharticle}
+
+\input{Chudinov_rus}
+
+\input{Chupin_rus}
+
+\begin{englisharticle}
+\input{Danik}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Demidenko}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{DemidenkoNurmakhmatov}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Denisiuk}
+\end{englisharticle}
+
+\input{Dolgii_rus}
+
+\begin{englisharticle}
+\input{Dong}
+\end{englisharticle}
+
+\input{Dresvyanskaya_rus}
+
+\begin{englisharticle}
+\input{Dryuma}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Dykhta}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Dzhamalov}
+\end{englisharticle}
+
+\input{Fankina_rus}
+
+\begin{englisharticle}
+\input{Feng}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Finogenko}
+\end{englisharticle}
+
+\input{Gabdrakhmanova_rus}
+
+\begin{englisharticle}
+\input{Gabidullina}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Gaiko}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Gebreslasie}
+\end{englisharticle}
+
+\input{Germider_rus}
+
+\input{Getmanova_rus}
+
+\input{Goncharova_rus}
+
+\begin{englisharticle}
+\input{Gladyshev}
+\end{englisharticle}
+
+\input{Gorchakov_rus}
+
+\input{Gornakov_rus}
+
+\input{Gornov_rus}
+
+\begin{englisharticle}
+\input{Gorokhovik}
+\end{englisharticle}
+ 
+\input{Grazhdantseva_rus}
+
+\begin{englisharticle}
+\input{Gruzdeva}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Gurevich}
+\end{englisharticle}
+
+\input{Gurskaya_rus}
+
+\input{Gusev_rus}
+
+\input{Hasanov_rus}
+
+\begin{englisharticle}
+\input{Huseyin}
+\end{englisharticle}
+
+\input{Ilyasov_rus}
+
+\begin{englisharticle}
+\input{Ilyinykh}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Iskakov}
+\end{englisharticle}
+
+\input{Ivanov_rus}
+
+\input{Izmestev_rus}
+
+\begin{englisharticle}
+\input{Jonnalagadda}
+\end{englisharticle}
+
+\input{Karamzin_rus}
+
+\input{Kazantsev_rus}
+
+\input{Khamisov_rus}
+
+\input{Kistner_rus}
+
+\input{Kornev_rus}
+
+\input{Korpusov_rus}
+
+\begin{englisharticle}
+\input{Korzyuk}
+\end{englisharticle}
+
+\input{Kosyanov_rus}
+
+\input{Kotyukov_rus}
+
+\input{Krutov_rus}
+
+\input{Kulagin_rus}
+
+\begin{englisharticle}
+\input{Kumar}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Kuznetsov}
+\end{englisharticle}
+
+\input{Larionova_rus}
+
+\begin{englisharticle}
+\input{Lazarev}
+\end{englisharticle}
+
+\input{Levanova_rus}
+
+\begin{englisharticle}
+\input{LiLvMa}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Linh}
+\end{englisharticle}
+
+\input{Livanov_rus}
+
+\input{Lomov_rus}
+
+\begin{englisharticle}
+\input{Lutoshkin}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{LvLiWei}
+\end{englisharticle}
+
+\input{Makarov_rus}
+
+\input{Makhrova_rus}
+
+\input{Malozemov_rus}
+
+\input{Malygina_rus}
+
+\input{Mamaeva_rus}
+
+\input{Mamatov_rus}
+
+\begin{englisharticle}
+\input{Matveeva}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Melnikov}
+\end{englisharticle}
+
+\input{Miller_rus}
+
+\input{Minarchenko_rus}
+
+\begin{englisharticle}
+\input{Mukhutdinova}
+\end{englisharticle}
+
+\input{Mutigullina_rus}
+
+\input{Naimov_rus}
+
+\input{Nesterov_rus}
+
+\input{Nikolaeva_rus}
+
+\input{Novikov_rus}
+
+\input{Obukhovskii_rus}
+
+\begin{englisharticle}
+\input{ObukhovskiiSoroka}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{OsipovAndrey}
+\end{englisharticle}
+ 
+\input{Pavlenko_rus}
+
+\input{Perevaryukha_rus}
+
+\begin{englisharticle}
+\input{Petrenko}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Petrosyan}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Podobryaev}
+\end{englisharticle}
+
+\input{Podryadchikov_rus}
+
+\input{Postanogova_rus}
+
+\begin{englisharticle}
+\input{Prokhorov}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Prudnikov}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Raghuwanshi}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Rahmatullaev}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Ratushnyi}
+\end{englisharticle}
+
+\input{Rogalev_rus}
+
+\input{Rykov_rus}
+
+\input{Sabatulina_rus}
+
+\input{Sachkov_rus}
+
+\input{Sedykh_rus}
+
+\input{Shaihiev_rus}
+
+\input{Shamolin_rus}
+
+\begin{englisharticle}
+\input{Shavlukov}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Shcheglova}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Shemetova}
+\end{englisharticle}
+
+\input{Shevchenko_rus}
+
+\begin{englisharticle}
+\input{Shorokhov}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Shperling}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Shukla}
+\end{englisharticle}
+
+\input{Sidorov_rus}
+
+\input{Simakov_rus}
+
+\input{Siniukov_rus}
+
+\input{Skurygina_rus}
+
+\begin{englisharticle}
+\input{Skvortsova}
+\end{englisharticle}
+
+\input{Solodusha_rus}
+
+\input{Sorokovikov_rus}
+
+\input{Srochko_rus}
+
+\input{Subbotina_rus}
+
+\begin{englisharticle}
+\input{Sukacheva}
+\end{englisharticle}
+
+\input{Surkov_rus}
+
+\begin{englisharticle}
+\input{Svinin}
+\end{englisharticle}
+
+\input{Takhirov_rus}
+
+\begin{englisharticle}
+\input{Terzi}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Trusov}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Turgunboyeva}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Tverdyi}
+\end{englisharticle}
+
+\input{Vasilev_rus}
+
+\begin{englisharticle}
+\input{Vasin}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Volkan}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Wang}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Xin}
+\end{englisharticle}
+
+\input{Yakovlev_rus}
+
+\begin{englisharticle}
+\input{Yang}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Yarullin}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Yufereva}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Zhang}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{ZhangHuang}
+\end{englisharticle}
+
+\begin{englisharticle}
+\input{Zvereva}
+\end{englisharticle}
+
+
+\newpage
+
+\newpage
+\thispagestyle{empty}
+ \begin{englisharticle}
+\begin{center}
+${}$
+\vfill
+
+
+
+
+{\bf  Proceedings of the 8th International School--seminar on\\[0.3em]
+ Nonlinear Analysis and Extremal Problems\\[0.3em]  (NLA-2024)}
+
+\vfill\vfill
+
+
+%Passed for printing May 31, 2024.\\ Format $60\times 84$ $1/8$. Conventional printed sheets 19,65.\\[0.5em]
+
+Published in Matrosov Institute for System Dynamics and Control Theory  
+of\\ the Siberian Branch of the Russian Academy of Science\\[0.5em]
+
+Publisher's address: 134, Lermontova str., Irkutsk, Russia, 664033
+
+%\label{lastpage}
+\end{center}
+
+ \end{englisharticle}
+
+\iffalse
+\clearpage
+\addtocmark[2]{Author Index} % additional numbered TOC entry
+\renewcommand{\indexname}{Author Index}
+%\printindex
+\clearpage
+\addtocmark[2]{Subject Index} % additional numbered TOC entry
+\markboth{Subject Index}{Subject Index}
+\renewcommand{\indexname}{Subject Index}
+%\input{subjidx.ind}
+\fi
+
+\end{document}

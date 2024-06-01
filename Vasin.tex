@@ -1,0 +1,190 @@
+
+
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is the template file for the 6th International conference
+% NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+% June 25-30, 2018
+% Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The preparation of the article is based on the standard llncs class
+% (Lecture Notes in Computer Sciences), which is adjusted with style
+% file of the conference.
+%
+% There are two ways of compilation of the file into PDF
+% 1. Use pdfLaTeX (pdflatex), (LaTeX+DVIPS will not work);
+% 2. Use LuaLaTeX (XeLaTeX will work too).
+% When using LuaLaTeX You will need TTF or OTF CMU fonts
+% (Computer Modern Unicode). The fonts are installed with 'cm-unicode' package in
+% a distribution of LaTeX % (https://www.ctan.org/tex-archive/fonts/cm-unicode),
+% either by downloading and installing these fonts system wide, the address of their page is
+% http://canopus.iacp.dvo.ru/%7Epanov/cm-unicode/
+% The second option won't work in XeLaTeX.
+%
+% For MiKTeX (LaTeX distribution for Windows),
+%  1. Package 'cm-unicode' is installed manually with the MiKTeX administration Console.
+%  2. For the compilation of this example, namely, the stub figure, one will also need to
+% download package 'pgf' manually. This package uses in the popular
+% package tikz.
+%  3. Tests showed that the rest of the required packages MiKTeX loads automatically (if
+%     it is allowed). The 'auto download' option is
+%     configured in 'Settings' section in MiKTeX Console.
+%
+%
+% The easiest way to compile an article is to use pdfLaTeX, but
+% the final layout of the book will be compiled with LuaLaTeX,
+% as a result will be of better quality thanks to the package 'microtype' and
+% use vector OTF instead of standard raster fonts of pdfLaTeX.
+%
+% In the case of questions and problems with the article compilation,
+% write letters to e-mail: eugeneai@irnok.net, Cherkashin Evgeny.
+%
+% New version of the correcting style file will be available at the website:
+%     https://github.com/eugeneai/nla-style
+%     file - nla.sty
+%
+% Further instructions are in the text body of the template. The template itself
+% is an article example.
+%
+% The LaTeX2e format is used!
+
+% 12 points font size is used.
+\documentclass[12pt]{llncs}
+
+% The correcting style file is added.
+\usepackage{todonotes}
+
+\usepackage{nla} % This package is needed for compiling
+                 % this template, it should be removed
+                 % from your article.
+
+% Many popular packages (amsXXX, graphicx, etc.) are already imported in the style file.
+% If there is a conflict with your packages, try disabling them and compile
+% the text.
+%
+% It would be convenient in the layout of the proceedings if the file names
+% of the figures of different authors do not clash.
+% To minimize the clash, the drawings can be placed in a separate subfolder
+% named after the author or the title of the paper.
+%
+% \graphicspath{{ivanov-petrov-pics/}} % specifies the folder with images in png, pdf formats.
+% or
+% \graphicspath{{great-problem-solving-paper-pics/}}.
+
+\begin{document}
+\fi
+% Text should be formatted in accordance with the 'article' class, using extensions like
+% AMS.
+%
+\title{On identity for dyadic coverings of closed sets with zero measure\thanks{The research is supported by RNF, project No.~23-11-00171.}}
+% First author
+\author{Andrei Vasin 
+}
+\institute{Admiral Makarov State University of Maritime and Inland Shipping, St-Petersburg, Russia\\
+  \email{vasinav@gumrf.ru}
+  }
+
+
+\maketitle
+
+\begin{abstract}
+We relate a dyadic covering of a closed  set  with zero measure in Euclidean space and a  dyadic covering of its complement. We apply an identity proved for certain porous and weakly porous sets
+
+\keywords{ entropy, Dyn'kin inequality, Borichev-Nicolau-Thomas characteristic}
+\end{abstract}
+
+% at the end of the list, there should be no final dot
+\section{Background}
+
+
+A set $E$ of the unit circle $\mathbb{T} $ is called porous if there exists $C$ such that for any arc  $I\subset\mathbb{T}$ there
+is  a subarc $M(I)\subset I$ containing no points of $E$ and satisfying
+\[
+|M(I)|> C | I|.
+\]
+  Dyn'kin proved  uniform  discrete entropy characteristization of the porous set \cite{D}:
+\begin{equation}\label{e_pri}
+ \sum_{J \subset I,\;J\cap E=\emptyset}|J| \log \frac{1}{|J|}\leq |I|\left( \log \frac{1}{|I|} + C\right)
+\end{equation}
+where $C$ is not depending on $I$. 
+
+
+
+The porosity condition  and estimate (\ref{e_pri})  appear naturally
+in the free interpolation problems for different classes of analytic functions
+smooth up to the boundary of the unit disc $\mathbb{D} \subset \mathbb{R}^2$ (see \cite{D}).
+
+Another characterization of porosity with application  for the  weak embedding property  of singular inner functions  on the unit circle $\mathbb{T}$  was found  by Borichev, Nicolau and Thomas in \cite[Lemma7]{BNT}: a set $E$ is porous if and only if there exists $C$ such that  for  any arc $I \subset \mathbb{T}$ one has
+\begin{equation}\label{e_prdya}
+\sum_{J \cap E \neq \emptyset,\; J \in \mathcal{D}(I)}|J|\leq C |I|,
+\end{equation}
+ where $\mathcal{D}(I)$ is a dyadic decomposition  of $I$.
+
+
+So, in  the Dyn'kin inequality, the description of a porous set involves arcs free from points of the set, while in the Borichev-Nicolau-Thomas characteristization,  arcs intersecting this set are used.
+Our main goal in this paper is to extend   the related characterization  
+on the higher dimensional case. 
+In fact, we will show that the  discrete  Dyn'kin inequality (\ref{e_pri}) coincides, in a sense, with   the
+Borichev-Nicolau-Thomas property (\ref{e_prdya}).
+
+\section{Main results}
+We deal  with a certain generalization, and consider  general closed sets of zero Lebesgue measure  in $\mathbb{R}^d$.
+The dyadic formulation is convenient from the point of view of our
+proofs. 
+The dyadic decomposition of a cube $R\in \mathbb{R}^d $ is
+\[ \mathcal{D}(R)= \bigcup_{j\geq 0} \mathcal{D}_j(R)\]
+where each $\mathcal{D}_j(R)$ consists of the $2^{jd}$  pairwise disjoint (half-open) cubes $Q$, with side length
+$\ell(Q) = 2^{-j}\ell(R)$, such that
+\[R= \bigcup_{Q \in \mathcal{D}_j(R)} Q\]
+for every $j =0,1, \dots $.
+
+\begin{theorem}\label{p_id}
+  Let $E \in \mathbb{R}^d$ be a closed set with $|E|=0$, and let $R \in \mathbb{R}^d$ be a cube.
+
+  Define two families of dyadic cubes.
+      The first one   $\mathcal{D}(R,E)=\{Q \in \mathcal{D}(R): \:  Q \cap E \neq \emptyset\}$ is a family of all dyadic cubes intersecting $E$.
+    The second family
+  $\mathcal{F}(R,E)$  consists of all  pairwise disjoint dyadic cubes $Q' \in \mathcal{D}(R)$  such that
+  $Q'\cap E=\emptyset$, but $\pi Q'\cap E \neq \emptyset$. Then
+   $Q'\cap E=\emptyset$, but $\pi Q'\cap E \neq \emptyset$. Then
+ \begin{equation}\label{e_id}
+ \sum_{Q \in \mathcal{D}(E,R)}|Q|
+ = \sum_ {Q'\in \mathcal{F}(R,E) }|Q'|\log \frac{|R|}{2^d|Q'|}
+\end{equation}
+\end{theorem}
+
+\begin{remark}
+  The sums in (\ref{e_id}) are bounded for  a set  $E$  of finite entropy over $R$:
+  \[\int_{R}\log\frac{1}{dist(x, E)}dx < \infty,\]
+  otherwise, both the sums diverge to  infinity.
+\end{remark}
+We apply  Theorem \ref{p_id}  two precise characterization of    weakly porous sets.
+
+% At the end of the text, acknowledgments are expressed, if you haven't
+% made a footnote from the title. For example, we can write
+
+
+\begin{thebibliography}{9} % or {99}, if there is more than ten references.
+
+
+\bibitem{BNT} 
+Borichev, A., Nicolau, A.,  Thomas, P. J., Weak embedding property, inner functions and entropy,
+ Math. Ann.~2017.Vol. ~368(3). Pp.~ 987-1015.
+ 
+\bibitem{D}
+Dyn'kin, E.M. Free interpolation sets for H\"{o}lder classes. Mat. Sb.  ~1979. Vol.~109. Pp.~ 107-128  [In Russian]
+[English translation in Math. USSR Sb.~1980. Vol.~37. Pp.~ 97-117].
+
+
+
+
+\end{thebibliography}
+%\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

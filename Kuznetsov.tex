@@ -1,0 +1,91 @@
+
+
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+\usepackage{todonotes}
+
+\usepackage{nla} 
+
+\begin{document}
+\fi
+
+\title{On exact solutions with zero fronts to the parabolic predator-prey system%\thanks{The research is supported by RFBR (RNF, other funds), project No.~00-00-00000.}
+}
+
+\author{Pavel Kuznetsov 
+%  \and
+%  Name FamilyName2\inst{2}
+%  \and
+%  Name FamilyName3\inst{1}
+}
+\institute{Matrosov Institute for System Dynamics and Control Theory
+	of Siberian Branch of Russian Academy of Sciences, Irkutsk, Russian Federation\\
+  \email{kuznetsov@icc.ru}
+%  \and
+%Affiliation, City, Country\\
+%\email{email@example.com}
+}
+
+\maketitle
+
+\begin{abstract}
+We consider the quazi-linear parabolic predator-prey system with degeneracy. According to predator-prey model we investigate solutions with sufficiently smooth zero fronts. These fronts are curves where unknown functions vanish and they bound habitats of predators and prey. We construct new exact solutions with zero fronts to the system by ansatz method in special cases. Thus, we generalize previously obtained results.
+
+\keywords{predator-prey system, zero-front solution, exact solution, ansatz method}
+\end{abstract}
+
+
+\section{Formulation} %optional section
+
+We consider the quazi-linear parabolic predator-prey system \cite{Mur2003}
+\begin{equation}\label{Kuz01}
+%\begin{array}{lc}
+u_t-c_1u_x=h_1\left(uv_{xx}+u_xv_x\right)+f(u,v),~~%\\
+%~\\
+v_t-c_2v_x=-h_2\left(vu_{xx}+v_xu_x\right)+g(v,u).
+%\end{array}
+\end{equation}
+Here $c_{1,2}\in(0;+\infty)$, $h_{1,2}\in(-\infty;+\infty)$ are constants, $u(t,x)$, $v(t,x)$ are unknown functions, and $f$, $g$ are sufficiently smooth specified functions, which satisfy the condition $f(0,0)=g(0,0)=0$.
+
+According to predator-prey model \cite{Mur2003} we consider solutions with zero fronts:
+$$u(t,x)|_{x=a(t)}=0,~~v(t,x)|_{x=b(t)}=0.$$
+Sufficiently smooth curves $x=a(t)$, $x=b(t)$ bound habitats of prey $u$ and predators $v$ respectively. Parabolic type of system \eqref{Kuz01} degenerate on these curves, because the terms multiplying the higher derivatives vanish.
+
+In the case $u=v$, every equation of system \eqref{Kuz01} is similar to nonlinear heat (diffusion) equation\cite{Sam1995} in structure and qualitative properties. Wave solutions form an essential class of solutions of such equations\cite{Sam1995} and its systems (like a reaction-diffusion system\cite{Kaz2020}). Wave solution is a special case of zero-front solution characterized by non-negative main parts.
+
+We construct new exact solutions with zero fronts to system \eqref{Kuz01} by ansatz method. Thus, we generalize the results obtained in articles \cite{Kaz2020,Kuz2022}.
+
+\section{The main results}
+
+We construct exact solutions in the form (ansatz)
+\begin{equation}\label{Kuz02}
+u=\alpha_1(t)x^2+\beta_1(t)x+\gamma_1(t),~~
+v=\alpha_2(t)x^2+\beta_2(t)x+\gamma_2(t).
+\end{equation}
+Unknown functions $\alpha_{1,2}(t)$, $\beta_{1,2}(t)$, $\gamma_{1,2}(t)$ have sufficiently smoothness.
+
+Advantage of substitution \eqref{Kuz02} lies in the possibility to reduce system \eqref{Kuz01} to systems of ordinary differential equations (ODE). These systems can be integrable in quadrature in special cases, namely,
+$$h_1=h_2=1,~~f(u,v)=6u,~~g(v,u)=-6v;~~
+h_1=h_2=1,~~f(u,v)=-g(v,u)=3(u+v);$$
+$$h_1=-h_2=1,~~f(u,v)=6v,~~g(v,u)=6u.$$
+
+Solving the systems ODE we find functions $\alpha_{1,2}(t)$, $\beta_{1,2}(t)$, $\gamma_{1,2}(t)$ and obtain zero fronts formulas:
+\begin{equation}\label{Kuz03}
+x_i=\frac{-\beta_i\pm\sqrt{\beta^2_i-4\alpha_i\gamma_i}}{2\alpha_i},~~i=1,2.
+\end{equation}
+
+From equalities \eqref{Kuz03}, it follows that functions $u$ and $v$ have two fronts both.
+
+\begin{thebibliography}{9} 
+\bibitem{Mur2003} Murray J. Mathematical Biology II: Spatial Models and Biomedical Applications. Springer, New York, 2003.
+
+\bibitem{Sam1995} Samarskii A.A., Galaktionov V.A., Kurdyumov S.P., Mikhailov A.P. Blow-up in Quasilinear Parabolic Equations. Walter de Gruyte, Berlin, 1995.
+
+\bibitem{Kaz2020} Kazakov A.L., Kuznetsov P.A., Lempert A.A. Analytical solutions to the singular problem for a system of nonlinear parabolic equations of the reaction-diffusion type. Symmetry. 2020. Vol.~12, no.~6. Art. no.~999. 
+
+\bibitem{Kuz2022} Kuznetsov P.A. Analytic diffusion waves in a nonlinear parabolic ``predator-prey'' model. Proceedings of Krasovskii Institute of Mathematics and Mechanics UB RAS. 2022. Vol.~28, no.~2. Pp.~158--167~[In Russian]
+
+\end{thebibliography}
+%\end{document}

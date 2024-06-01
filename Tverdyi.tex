@@ -1,0 +1,79 @@
+
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+\usepackage{todonotes}
+
+\usepackage{nla} 
+
+\begin{document}
+\fi
+
+\title{The inverse problem of determining the optimal coefficients of mathematical models based on a nonlinear fractional equation with a Gerasimov-Caputo operator of variable order\thanks{The research was funded by a grant from the Russian Science Foundation, project number 23-71-01050, which can be found at https://rscf.ru/project/23-71-01050/}}
+
+\author{Dmitriy Tverdyi  \and  Roman Parovik
+}
+\institute{Institute of Cosmophysical Research and Radio Wave Propagation FEB RAS, Paratunka village, Russia\\
+  \email{tverdyi@ikir.ru}}
+
+\maketitle
+
+\begin{abstract}
+The paper considers the direct and corresponding inverse problems for a quadratically nonlinear fractional equation with a Gerasimov-Caputo type differentiation operator of variable order. In mathematical modeling of various processes using the mathematical apparatus of fractional calculus, the parameter that determines, for example, the order of the fractional is usually unknown. The inverse problem is formulated in order to restore the order of the fractional derivative or its defining function, based on experimental data. For this purpose, the Newtonian method of unconditional optimization is used, implemented in the form of the Levenberg-Marquardt algorithm. The test examples show that it is indeed possible to restore the value or type of a function of the order of a fractional derivative in mathematical models based on the fractional analogue of the Riccati equation.
+
+\keywords{inverse problems, unconditional optimization, Levenberg-Marquardt, fractional derivatives, memory effect, nonlinear, implicit finite difference schemes}
+\end{abstract}
+
+\section{The main results} %optional section
+
+Fractional derivatives allow us to describe the memory effect and the heredity observed in many dynamic processes \cite{Volterra_1912_equations}. Therefore, there is interest in using methods to find optimal values for the model parameters that are responsible for this effect, based on observed data.
+For example, when describing geological and geophysical processes, where direct measurements deep underground are impossible, the order of the fractional derivative can be related to the intensity of the process due to changes in the characteristics of the medium\cite{Tarantola_1987_Inv_theor}.
+
+The Cauchy problem for a nonlinear fractional equation in the domain $\Omega=\left\lbrace(t) : 0\leq t\leq T\right\rbrace$ is considered as a direct problem of the form:
+\begin{equation}
+	\frac{1}{\Gamma(1 - \alpha(t))} \int_{0}^{t} \frac{\dot{u}(\sigma) }{(t - \sigma)^{\alpha(t)}} d\sigma = - a(t)u(t)^2 + b(t)u(t) + c(t), \quad 0<\alpha(t)<1, \quad u(0) = u_0,
+\end{equation}
+where, on the left is a fractional derivative of the Gerasimov-Caputo type of variable order $\alpha(t)$; $ u(t)\in C^2[0,T] $, $ a(t)$, $b(t)$, $c(t)$ $\in C[0,T]$, $ \alpha(t) \in C (0,1)$; $\Gamma(\cdot)$ -- Euler's gamma function; $\dot{u}=\frac{d u}{d t}$; $T$ -- simulation time; $t$ -- current simulation time; $u_0$ -- constant. Task (1) serves as the basis for a mathematical model of the volumetric activity of radon gas (RVA) \cite{DA_Solid_2022_Q1_hered_mod_anomaly_RVA_62}. RVA is considered an informative and operational precursor of seismic events, which determines the relevance and importance of solving inverse problems for (1).
+
+Let $\alpha(t)\in\mathbb{A}$ be a function of some known class, and its type is determined by a certain set of parameters. Then, according to \cite{Tihonov_1977_eq_math_phys}, the solution to the inverse problem boils down to finding $\overrightarrow{X} = \left[X_{0}, ..., X_{K-1}\right]$, $\overrightarrow{X} \in\mathbb{ R }^{K} \in \mathbb{ R }$ -- unknown parameters characterizing $\alpha(t)$.
+
+Let in a uniform lattice domain $\widehat{\Omega} =\left\lbrace (t_{i}=i\tau) : 0\leq i <N\right\rbrace$ with a sampling step $\tau=T/N$, where classes of lattice functions $\widehat{ \mathbb{U} } \in \widehat{\Omega}$ and $\widehat{\mathbb{A} } \in \widehat{\Omega}$, the forward and inverse problems are discretized: $u(t) =u(t_{i}) = u_{i} \in \widehat{ \mathbb{U} } $, $ \alpha(t) = \alpha(t_{i}) = \alpha_{i} \in \widehat{ \mathbb{A} }$, similar to $a_{i}, b_{i}, c_{i} \in \widehat{ \mathbb{A} } $. The difference direct problem is represented by a non-local implicit finite difference scheme (IFDS) \cite{DA_Solid_2022_Investigation_of_Finite_42}. Then the difference inverse problem can be represented as:
+\begin{eqnarray} \label{implicit_sheme_FEQ__inverse_DIFF}
+	\begin{gathered}
+		A_i \sum_{j=0}^{i-1} w^{i}_{j} \left( u_{i-j} - u_{i-j-1} \right) + a_i u_{i}^{2}  - b_i u_i - c_i = 0, \qquad u_0 = \theta_{0}, \qquad u_{i} = \theta_{i}, \\
+		A_i = \frac{\tau^{-( \alpha( \overrightarrow{X} ) )}}{\Gamma ( 2 - ( \alpha( \overrightarrow{X} ) ) ) }, \qquad w^{i}_{j} = (j+1)^{1-( \alpha( \overrightarrow{X} ) )} - j^{1-( \alpha( \overrightarrow{X} ) )}, \qquad 1 \leq i < N,
+	\end{gathered}
+\end{eqnarray}
+where, $u_{i} = \theta_{i}$ -- known experimental data $\overrightarrow{\theta} = \left[ \theta_{0}, ..., \theta_{N-1}\right] $ about the solution (1) in the domain of $\widehat{\Omega}$. Let $ \omega (\overrightarrow{X}) = \left[ \omega_{0}, ..., \omega_{N-1}\right] $ be the solution of the difference direct problem (1) for some given $\overrightarrow{X}$, then in terms of the theory of unconditional optimization \cite{Dennis_1983_unconstr_optim}, the solution of the difference inverse problem (2) is reduced to minimizing the $\Psi$ bias functional:
+\begin{equation}\label{diff_non-gomogen_FEQ_reverse_MIN__2}
+	\min\limits_{ \overrightarrow{X} \in \mathbb{ R }^{K} } \Psi \left( \overrightarrow{\theta} - \omega ( \overrightarrow{X} ) \right) = M \left( \eta (\overrightarrow{X}) \right), \qquad M \left( \eta (\overrightarrow{X}) \right) = \frac{1}{2} \sum_{i=0}^{N-1} \left( \theta_{i} - \omega_{i} \right)^{2},
+\end{equation}
+Assuming that at least $\Psi (\overrightarrow{X} ) \in C^1 (G\subset\mathbb{ R }^{K}) $, $G$ -- convex set, the minimization problem (3) is solved by the Levenberg-Marquardt method \cite{More_1978_the_Lev_Mar_alg}, in the form of an iterative procedure:
+\begin{equation*}
+	\overrightarrow{\Delta X} = \left( -\left( J^{T} \times J + \gamma E \right)^{-1} \right) \times \left(  J^{T} \times \overrightarrow{ \eta } \right),
+\end{equation*}
+where, $ J = J (\overrightarrow{X}) = \partial \eta_{i}^{(n)} / \partial X_{k}^{(n)}, i = 0..N-1, k = 0..K-1$ -- Jacobi matrix approximated by finite difference; $\overrightarrow{ \delta X }$ --small increments $\overrightarrow{X}$; $\overrightarrow{X^{(0)}}$ -- initial estimate for $\overrightarrow{X}$; $n$ -- iteration number; $\gamma$ -- regularization parameter defining the step and the direction of convergence of the method.
+
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+	
+	%\bibitem{Kilbas_Srivastava_2006_Theory}	Kilbas~A.A., Srivastava~H.M., Trujillo~J.J. Theory and Applications of Fractional Differential Equations. Amsterdam: Elsevier, 2006.
+	
+	\bibitem{Volterra_1912_equations} Volterra V. Sur les {\'e}quations int{\'e}gro-diff{\'e}rentielles et leurs applications~// Acta Mathematica. 1912. Vol.~35, no~1, Pp.~295--356.
+	
+	\bibitem{Tarantola_1987_Inv_theor} Tarantola A.	Inverse problem theory : methods for data fitting and model parameter estimation. Amsterdam: Elsevier, 1987.
+	
+	\bibitem{DA_Solid_2022_Q1_hered_mod_anomaly_RVA_62} Tverdyi~D.A., Makarov~E.O., Parovik~R.I. Hereditary Mathematical Model of the Dynamics of Radon Accumulation in the Accumulation Chamber~// Mathematics. 2023. Vol.~11, no~4.
+	
+	\bibitem{Tihonov_1977_eq_math_phys} Tihonov~A.N., Samarskij~A.A. Mathematical physics equations. Science: Moscow, 1977.
+	
+	\bibitem{DA_Solid_2022_Investigation_of_Finite_42} Tverdyi~D.A., Parovik~R.I. Investigation of Finite-Difference Schemes for the Numerical Solution of a Fractional Nonlinear Equation~// Fractal and Fractional. 2022. Vol.~6, no~1.
+	
+	\bibitem{Dennis_1983_unconstr_optim} Dennis~J.E., Robert~Jr., Schnabel~B. Numerical methods for unconstrained optimization and nonlinear equations. Philadelphia: SIAM, 1983.
+	
+	
+	\bibitem{More_1978_the_Lev_Mar_alg} More~J.J. The Levenberg-Marquardt algorithm: Implementation and theory~// In: Watson, G.A. (eds) Numerical Analysis. Lecture Notes in Mathematics. 1978. Vol.~630, no~2, Pp.~105--116.
+	
+\end{thebibliography}
+%\end{document}

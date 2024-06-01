@@ -1,0 +1,163 @@
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is the template file for the 6th International conference
+% NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+% June 25-30, 2018
+% Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The preparation of the article is based on the standard llncs class
+% (Lecture Notes in Computer Sciences), which is adjusted with style
+% file of the conference.
+%
+% There are two ways of compilation of the file into PDF
+% 1. Use pdfLaTeX (pdflatex), (LaTeX+DVIPS will not work);
+% 2. Use LuaLaTeX (XeLaTeX will work too).
+% When using LuaLaTeX You will need TTF or OTF CMU fonts
+% (Computer Modern Unicode). The fonts are installed with 'cm-unicode' package in
+% a distribution of LaTeX % (https://www.ctan.org/tex-archive/fonts/cm-unicode),
+% either by downloading and installing these fonts system wide, the address of their page is
+% http://canopus.iacp.dvo.ru/%7Epanov/cm-unicode/
+% The second option won't work in XeLaTeX.
+%
+% For MiKTeX (LaTeX distribution for Windows),
+%  1. Package 'cm-unicode' is installed manually with the MiKTeX administration Console.
+%  2. For the compilation of this example, namely, the stub figure, one will also need to
+% download package 'pgf' manually. This package uses in the popular
+% package tikz.
+%  3. Tests showed that the rest of the required packages MiKTeX loads automatically (if
+%     it is allowed). The 'auto download' option is
+%     configured in 'Settings' section in MiKTeX Console.
+%
+%
+% The easiest way to compile an article is to use pdfLaTeX, but
+% the final layout of the book will be compiled with LuaLaTeX,
+% as a result will be of better quality thanks to the package 'microtype' and
+% use vector OTF instead of standard raster fonts of pdfLaTeX.
+%
+% In the case of questions and problems with the article compilation,
+% write letters to e-mail: eugeneai@irnok.net, Cherkashin Evgeny.
+%
+% New version of the correcting style file will be available at the website:
+%     https://github.com/eugeneai/nla-style
+%     file - nla.sty
+%
+% Further instructions are in the text body of the template. The template itself
+% is an article example.
+%
+% The LaTeX2e format is used!
+
+% 12 points font size is used.
+\documentclass[12pt]{llncs}
+
+% The correcting style file is added.
+\usepackage{todonotes}
+
+\usepackage{nla} % This package is needed for compiling
+                 % this template, it should be removed
+                 % from your article.
+
+% Many popular packages (amsXXX, graphicx, etc.) are already imported in the style file.
+% If there is a conflict with your packages, try disabling them and compile
+% the text.
+%
+% It would be convenient in the layout of the proceedings if the file names
+% of the figures of different authors do not clash.
+% To minimize the clash, the drawings can be placed in a separate subfolder
+% named after the author or the title of the paper.
+%
+% \graphicspath{{ivanov-petrov-pics/}} % specifies the folder with images in png, pdf formats.
+% or
+% \graphicspath{{great-problem-solving-paper-pics/}}.
+
+\begin{document}
+\fi
+% Text should be formatted in accordance with the 'article' class, using extensions like
+% AMS.
+%
+\title{Equilibrium Problem for a Timoshenko Plate Contacting by the Side Edge and the Bottom Boundary\thanks{The research is
+supported by the Ministry of Education and Science of the Russian
+Federation within the framework of the base part of the state
+task, project No.~FSRG-2023-0025.}}
+% First author
+\author{Nyurgun Lazarev\inst{1}   \and  Djulustan Nikiforov\inst{1,2}  \and  Natalya Romanova\inst{1,3}
+}
+\institute{North-Eastern Federal University, Yakutsk, Russia\\
+  \email{nyurgunlazarev@yandex.ru}
+  \and
+ \email{dju92@mail.ru}
+  \and
+   \email{romnatan@mail.ru}
+ }
+% etc
+
+\maketitle
+
+\begin{abstract}
+Contact problems for solids with inequality type constraints have
+attracted the attention of scientists since 1933s
+\cite{Sign,KhludnevKovtunenko}. Problems of this kind are
+associated with the use of boundary conditions that describe
+non-penetration constraints on the contact surfaces or curves
+\cite{KhludnevKovtunenko,RudoyESIAM}. We propose a new nonlinear
+equilibrium model for a Timoshenko plate which may come into
+contact either on the side edge or on the bottom surface with a
+rigid obstacle of a certain given configuration. A corresponding
+variational problem is formulated as a minimization problem for an
+energy functional over a nonconvex set of admissible displacements
+subject to a nonpenetration condition. In contrast to problems for
+Timoshenko plates in the framework of nonlinear boundary
+conditions \cite{laz1,laz2}, we consider two surfaces of possible
+contacts. Namely, the inequality type nonpenetration condition is
+given as a system of inequalities describing two cases of possible
+contacts of the plate and the rigid obstacle. These two cases
+correspond to different types of contacts by the plate side edge
+and by the plate bottom. The solvability of the problem is
+established. In particular case, when contact zones is previously
+known, an equivalent differential statement is obtained under the
+assumption of additional regularity for the solution to the
+variational problem.
+
+\keywords{contact problem, non-penetration condition, non-convex
+set, variational problem}
+\end{abstract}
+
+% at the end of the list, there should be no final dot
+%\section{The main results}
+
+
+%The text of the report.
+
+
+% At the end of the text, acknowledgments are expressed, if you haven't
+% made a footnote from the title. For example, we can write
+%The research is carried on with support of RFBR (RNF, other funds), project No.~00-00-00000.
+
+\begin{thebibliography}{9} % or {99}, if there is more than ten references.
+
+\bibitem{Sign} Signorini  A. Questioni di elasticità
+non linearizzata e semilinearizzata. Rend. Mat. e Appl.~1959.
+Vol.~18, no.~5. Pp.~95--139.
+
+
+\bibitem{KhludnevKovtunenko} Khludnev A.M., Kovtunenko V.A. {Analysis of Cracks in Solids.}
+WIT-Press, Southampton, 2000.
+
+\bibitem{RudoyESIAM} Rudoy E. Domain decomposition method for crack problems with
+nonpenetration condition. ESAIM: Mathematical Modelling and
+Numerical Analysis~2016. Vol.~50, no.~4. Pp.~995--1009.
+
+\bibitem{laz1} Lazarev N.P., Semenova G.M. Equilibrium problem for a Timoshenko
+plate with a geometrically nonlinear condition of nonpenetration
+for a vertical crack. J. Appl. Ind. Math.~2020. Vol.~14.
+Pp.~532--540.
+
+\bibitem{laz2} Lazarev N.P. Equilibrium problem for a Timoshenko plate with an
+oblique crack. J. Appl. Mech. Tech. Phy.~2013. Vol.~54, no.~4. Pp.
+662--671.
+
+
+\end{thebibliography}
+%\end{document}

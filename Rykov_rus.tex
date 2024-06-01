@@ -1,0 +1,222 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{Variational formulation for one-dimensional systems of conservation laws}
+% First author
+\author{Yuri Rykov
+%  \and
+%  Name FamilyName2\inst{2}
+%  \and
+%  Name FamilyName3\inst{1}
+} 
+\institute{Keldysh Institute of Applied Mathematics RAS, Moscow,
+Russia\\
+  \email{yu-rykov@yandex.ru}
+%  \and
+%Affiliation, City, Country\\
+%\email{email}
+}
+% etc
+\maketitle
+
+\begin{abstract}
+The report provides alternative formulations of the concept of a
+generalized solution for systems of quasi-linear conservation laws.
+The system of equations is associated with some nonlinear
+functional on trajectories in the space of independent variables
+and the concept of a generalized solution is defined through the
+extreme properties of this functional. It is also possible to give
+a formulation with functional minimization in a certain function
+space. The latter formulation makes it possible to interpret
+solutions for Keyfitz-Kranzer type systems with delta singularity.
+
+\keywords{conservation laws, generalized solutions, quasi-linear systems,
+shock waves, delta singularities, variational formulation} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes}
+
+\usepackage[russian]{nla}
+
+\begin{document}
+\fi
+\title{Вариационная формулировка для одномерных систем законов сохранения
+%\thanks{Работа выполнена при поддержке РФФИ (РНФ, другие фонды), проект \textnumero~00-00-00000.}
+}
+% Первый автор
+\author{Ю.~Г.~Рыков  % \inst ставит циферку над автором.
+%  \and  % разделяет авторов, в тексте выглядит как запятая.
+% Второй автор
+%  И.~О.~Фамилия\inst{2}
+%  \and
+% Третий автор
+%  И.~О.~Фамилия\inst{1}
+} % обязательное поле
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{ИПМ им. М.В. Келдыша РАН, Москва, РФ\\
+  \email{yu-rykov@yandex.ru}
+%  \and   % Разделяет институты и присваивает им номера по порядку.
+%Институт (название в краткой форме), Город, Страна\\
+%\email{email@examle.com}
+% \and Другие авторы...
+}
+
+\maketitle
+
+\begin{abstract}
+В докладе приведены альтернативные формулировки понятия обобщенного
+решения для систем квазилинейных законов сохранения. Система
+уравнений ассоциируется с некоторым нелинейным функционалом на
+траекториях в пространстве независимых переменных и понятие
+обобщенного решения определяется через экстремальные свойства этого
+функционала. Также возможно привести формулировку с минимизацией
+функционала в некотором пространстве функций. Последняя
+формулировка позволяет интерпретировать решения для систем типа
+Кейфитц-Кранзера с дельта особенностью.
+
+
+\keywords{законы сохранения, обобщенные решения, квазилинейные системы, ударные волны, дельта особенности,
+вариационная формулировка} % в конце списка точка не ставится
+\end{abstract}
+
+
+Будем рассматривать задачу Коши для следующей системы квазилинейных
+уравнений, которая предполагается строго гиперболической,
+\begin{equation}\label{1}
+\mathbf{U}_{t}+\mathbf{F}(\mathbf{U})_{x}=0\,,\quad\mathbf{U}(0,x)=\mathbf{U}_{0}(x)\,,
+\end{equation}
+здесь
+$(t,x)\in\prod_{T}\equiv\{(t,x):(t,x)\in[0,T]\times\mathbb{R}\}$,
+$\mathbf{U}(t,x)=(u_{1}(t,x),\ldots,u_{n}(t,x))$, а
+$\mathbf{F}=(f_{1}\ldots,f_{n})$ -- достаточно гладкая (по крайней
+мере, $\mathbf{F}\in C^{1}(\mathbb{R}^{n})$) вектор-функция
+переменных $(u_{1},\ldots,u_{n})$. Здесь и далее жирным шрифтом в
+формулах будут обозначаться векторные величины. Решения
+системы~\ref{1}, принимающие заданные начальные значения, как
+правило, понимаются в обобщенном смысле, т.е. в смысле выполнения
+соответствующего интегрального тождества.
+
+Системы уравнений типа~(\ref{1}) изучались очень интенсивно,
+включая и многомерный случай, общее представление о предмете
+приведено, например, в \cite{LTP}. Однако многие вопросы, связанные
+с существованием обобщенного решения (кратко: о.р.), все же
+остаются открытыми. Ниже приведен альтернативный взгляд на понятие
+о.р. для систем типа~(\ref{1}), основанный на вариационном подходе.
+Отметим, что понятие энтропийного о.р. и вопрос единственности
+здесь не рассматриваются.
+
+Рассмотрим функционал $\mathbf{J}$ такой, что
+$\mathbf{J}:\chi(\tau)\in C^{1}\rightarrow\mathbb{R}^{n}$,
+\begin{equation}\label{2}
+\mathbf{J}\equiv\int\limits_{0}^{T}\mathbf{L}(\dot{\chi},\mathbf{U})d\tau;\quad\mathbf{L}(\dot{\chi},\mathbf{U})\equiv\mathbf{U}(\tau,\chi(\tau))
+\,\dot{\chi}(\tau)-\mathbf{F}\circ\mathbf{U}(\tau,\chi(\tau))\,.
+\end{equation}
+ПРЕДЛОЖЕНИЕ 1. Пусть $\mathbf{U}(t,x)$ является кусочно
+непрерывно-дифференцируемой, и пусть существует траектория
+$\hat{\chi}$ такая, что для этой траектории $\delta\mathbf{J}=0$.
+Тогда в тех точках $\hat{\chi}$, где $\mathbf{U}(t,x)$ является
+гладкой, выполняется~(\ref{1}) в классическом смысле, а в точках
+пересечения $\hat{\chi}$ и линий разрыва функции $\mathbf{U}(t,x)$
+выполняются соотношения Ренкина-Гюгонио для~(\ref{1}).
+
+На основе данного факта можно предложить следующее определение, см.
+также \cite{R1}.
+
+ОПРЕДЕЛЕНИЕ 1. Пусть $\mathbf{J}$ определено соотношением
+~\eqref{2}. Назовем функцию $\mathbf{U}(t,x)$ из подходящего класса
+функций о.р. системы~(\ref{1}), если для любого пути $\chi(\tau)$
+вариация $\delta\mathbf{J}=0$, т.е. любая точка функционала
+$\mathbf{J}$ является критической.
+
+Из Предложения 1 возможно получить и другое определение, см. также
+\cite{R2}.
+
+ОПРЕДЕЛЕНИЕ 2. Рассмотрим функцию $\mathbf{V}(t,x)\in
+W^{1,\infty}(\prod_{T})\equiv B$ и начальное условие
+$\mathbf{V}_{0}(x)\in W^{1,\infty}(\mathbb{R})$,
+$\mathbf{V}_{0}^{\prime}(x)=\mathbf{U}_{0}(x)$. Обозначим через
+$\mathcal V$ подмножество $B$, такое что
+$\mathbf{V}(+0,x)=\mathbf{V}_{0}(x)$. Также на пространстве $B$
+рассмотрим функционал ${\mathcal L}(\mathbf{V})\equiv\underset
+{t}{ess\,sup}\ \sum_{i=1}^{n}\underset{x}{Var}\left(\frac{\partial
+v_{i}}{\partial t}+f_{i}\left(\frac{\partial\mathbf{V}}{\partial
+x}\right)\right)\,,$
+%\begin{equation}\label{3}
+%{\mathcal L}(\mathbf{V})\equiv\underset {t}{ess\,sup}\ \sum_{i=1}^{n}\underset{x}{Var}\left(\frac{\partial v_{i}}{\partial t}+
+%f_{i}\left(\frac{\partial\mathbf{V}}{\partial x}\right)\right)\,,
+%\end{equation}
+где $\mathbf{V}=\left(v_{1},\ldots,v_{n}\right)$, а
+$\underset{x}{Var}$ обозначает вариацию выражения по переменной
+$x$. Тогда функцию $\mathbf{U}=\partial\mathbf{V}/\partial x$
+назовем о.р.~(\ref{1}), если функция $\mathbf{V}$ реализует минимум
+функционала $\mathcal L$ на множестве $\mathcal V$.
+
+ПРЕДЛОЖЕНИЕ 2. Пусть минимум $m$ функционала $\mathcal L$
+достигается. Тогда, если $m=0$, то
+$\mathbf{U}=\partial\mathbf{V}/\partial x$ является о.р.~(\ref{1})
+в смысле интегрального тождества.
+
+Если же $m\neq 0$, то Определение 2 можно использовать для
+интерпретации решений систем типа Кейфитц-Кранзера, см. \cite{Key}.
+
+% Рисунки и таблицы оформляются по стандарту класса article. Например,
+
+%\begin{figure}[htb]
+%  \centering
+  % Поддерживаются два формата:
+  %\includegraphics[width=0.7\linewidth]{figure.pdf} % Растровый формат
+  %\includegraphics[width=0.7\linewidth]{figure.png} % Векторный и растровый формат
+  %
+  % Векторные рисунки можно рисовать в редакторе Inkscape
+  % https://inkscape.org/ru/download/
+  % Основной формат этого редактора - SVG, поэтому рисунки необходимо экспортировать в
+  % PDF или PNG (с разрешением - минимум 150 dpi, максимум - 300dpi).
+%  \begin{center}
+%    \missingfigure[figwidth=0.7\linewidth]{Уберите меня из статьи!}
+%  \end{center}
+%  \caption{Заголовок рисунка}\label{fig:example}
+%\end{figure}
+
+% кавычки << >>.
+
+% В конце текста можно выразить благодарности, если этого не было
+% сделано в ссылке с заголовка статьи, например,
+%Работа выполнена при поддержке РФФИ (РНФ, другие фонды), проект \textnumero~00-00-00000.
+%
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+\bibitem{LTP} Liu~Tai-Ping. Shock waves. American Math. Soc.
+    Providence. Rhode Island, 2021. 458 P.
+\bibitem{R1} Рыков~Ю.Г. О вариационном подходе к системам
+    квазилинейных законов сохранения~// Труды МИАН. 2018. Т.~301.
+    С.~225--240.
+\bibitem{R2} Рыков~Ю.Г. Вариационная постановка задачи поиска
+    обобщенных решений для квазилинейных гиперболических систем законов
+    сохранения~// Математические заметки. 2021. Т.~110:6. С.~944--947.
+\bibitem{Key} Keyfitz~B.L. Singular shocks, retrospective and
+    prospective~// Confl. Math. 2011. V.~3:3. Pp.~445-–470.
+\end{thebibliography}
+
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок и аннотацию.
+
+
+
+
+%\end{document}

@@ -1,0 +1,129 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{Control of autonomous vehicles on the basis of the observation of surrounding landscape}
+% First author
+\author{Alexander Miller 
+  \and
+  Boris Miller 
+  \and
+Alexey Popov 
+  \and
+  Karen Stepanyan 
+}
+\institute{IITP RAS, Moscow, Russia\\
+\email{amiller@iitp.ru,bmiller@iitp.ru,ap@iitp.ru,KVStepanyan@iitp.ru}
+}
+% etc
+
+\maketitle
+
+\begin{abstract}
+Navigation based on observations of the current video image is one of the most promising means of navigation and control of unmanned vehicles in conditions of limited use of satellite navigation tools. 
+In autonomous motion mode, simply adding a video camera in the absence of recognition and interpretation tools to the inertial navigation system does not have a significant effect. In this case the optical flow remains one of the main navigation tools.%~\cite{LucasKanade}.
+Therefore, extracting navigation information from a sequence of images plays a key role. An important characteristic of the observed images is the evolution
+generated information flow. Examples are optical flow during video surveillance, Doppler measurement of absolute velocity, and the evolution of the relief of the measured range using multipath sonars. From an algorithmic point
+of view, they are very close, which allows us to combine their discussion in this report.
+
+\keywords{unmanned vehicles, navigation, optical flow, estimation}
+\end{abstract}
+
+\end{englishtitle}
+
+\iffalse
+\documentclass[12pt]{llncs}  
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes} 
+
+\usepackage[russian]{nla}
+
+\begin{document}
+\fi
+
+\title{Control of autonomous vehicles on the basis of the observation of surrounding landscape}
+% Первый автор
+\author{А.~Б.~Миллер 
+  \and  
+% Второй автор
+  Б.~М.~Миллер 
+  \and
+% Третий автор
+  А.~К.~Попов 
+  \and
+% Четвертый автор
+  К.~В.~Степанян 
+}
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{Федеральное государственное бюджетное учреждение науки Институт проблем передачи информации им. А.А. Харкевича Российской академии наук (ИППИ РАН), Москва, Россия \\
+  \email{amiller@iitp.ru,bmiller@iitp.ru,ap@iitp.ru,KVStepanyan@iitp.ru}
+}
+
+\maketitle
+
+\begin{abstract}
+Навигация по наблюдениям текущего видеоизображения является одним из наиболее перспективных средств навигации и управления беспилотными аппаратами в условиях ограниченного применения спутниковых средств навигации. В режиме автономного движения простое добавление видеокамеры при отсутствии средств распознавания и интерпретации к системе инерциальной навигации не дает значимого эффекта. Поэтому извлечение навигационной информации из последовательности изображений играет ключевую роль. Важной характеристикой наблюдаемых изображений является эволюция порождаемого информационного потока. Примерами являются оптический поток при видеонаблюдении, доплеровское измерение абсолютной скорости и эволюция рельефа измеренной дальности при использовании многолучевых сонаров. С алгоритмической точки
+зрения они весьма близки, что позволяет объединить их обсуждение в данном докладе.
+
+\keywords{беспилотный аппарат, навигация, оптический поток, оценивание} % в конце списка точка не ставится
+\end{abstract}
+
+\section*{Структура доклада}
+\begin{enumerate}
+\item
+Управление БПЛА на основе пеленгационных измерений
+\begin{itemize}
+\item Геометрия оптико-электронной системы наблюдения. Модель камеры-обскуры {\it pinhole camera}
+\item Угловые преобразования
+\item Координатные преобразования
+\item Модель пеленгационных измерений
+\item Задачи и методы оценивания
+\item Модифицированный метод псевдоизмерений
+\end{itemize}
+\item Управление БПЛА на основе видеопоследовательностей.
+\begin{itemize}
+\item Видеопоследовательность и оптический поток
+\item Методы расчета оптического потока
+\item Связь оптического потока с положением и движением БПЛА \item Примеры использования оптического потока
+\end{itemize}
+\item Заключение и выводы
+\end{enumerate} 
+
+{\bf Задачи и методы оценивания}
+\begin{itemize}\item Разведка и целеуказание
+\item Навигация БПЛА
+\item Слежение за подвижными целями и определение их скоростей
+\end{itemize}
+
+{\bf Особенности задачи оценивания, различные методы}
+\begin{itemize}
+\item Линеаризованный и расширенный фильтр Калмана
+\item Particle filter
+\item Метод псевдоизмерений
+\item Условно-оптимальный фильтр В. С. Пугачева
+\end{itemize}
+
+{\bf Комплексирование пеленгационных измерений со стандартными системами ИНС требует:}
+
+\begin{itemize}
+\item Несмещенности оценок
+\item Знание их качества (средне-квадратических ошибок оценивания)
+\item Учета случайности средне-квадратических характеристик ошибок оценивания
+\end{itemize}
+
+
+
+
+
+%\end{document}
+
+

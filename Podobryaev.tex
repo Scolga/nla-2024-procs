@@ -1,0 +1,130 @@
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+\usepackage{todonotes}
+
+\usepackage{nla}
+
+\begin{document}
+\fi
+
+\title{Existence of the longest paths for sub-Lorentzian problems\thanks{The research was supported by the Russian Science Foundation under grant 22-11-00140 (https://rscf.ru/en/project/22-11-00140/) and performed in Ailamazyan Program Systems Institute of Russian Academy of Sciences.}}
+
+\author{Alexey Podobryaev
+}
+\institute{A.\,K.~Ailamazyan Program Systems Institute of RAS, Pereslavl-Zalesskiy, Russia\\
+  \email{alex@alex.botik.ru}
+}
+
+\maketitle
+
+\begin{abstract}
+We provide the existence theorem for longest paths in sub-Lorentzian problems, which generalizes the classical theorem for globally hyperbolic Lorentzian manifolds. In particular, we prove that longest paths exist for any left-invariant sub-Lorentzian structures on Carnot groups.
+
+\keywords{sub-Lorentzian geometry, anti-norm, existence theorem, Carnot group.}
+\end{abstract}
+
+\begin{definition}
+\label{def-antinorm}
+An anti-norm associated with a cone $C$ in a vector space $V$ is an upper semicontinuous homogeneous of degree 1 concave function
+$\nu : V \rightarrow \mathbb{R} \cup \{-\infty\}$ such that
+$\nu|_{C} \ge 0$, $\nu(V \setminus C) = -\infty$.
+\end{definition}
+
+\begin{definition}
+\label{def-reg-sl}
+Assume that at each point of a smooth manifold $M$ there is given a non-empty closed convex pointed cone $C^+_x \subset T_xM$ equipped with an anti-norm $\nu_x$, such that
+the following two conditions are satisfied.
+\begin{enumerate}
+	\item[\emph{(1)}] The set $\mathcal{C}^+=\bigcup\limits_{x\in M}C^+_x\subset TM$ is closed.
+    \item[\emph{(2)}] The anti-norm $\nu$ is upper semicontinuous as a function from $TM$ to $\mathbb{R}\cup\{-\infty\}$.
+\end{enumerate}
+Then the triple $(M, C^+, \nu)$ is called a regular sub-Lorentzian manifold.
+\end{definition}
+
+Consider the optimal control problem (the sub-Lorentzian problem) on a regular sub-Lorentzian manifold $(M, C^+, \nu)$:
+\begin{equation}
+\label{eq-controlproblem}
+\begin{array}{ll}
+x \in \mathrm{Lip}{([0,1], M)}, & u \in L^\infty{([0,1], \mathcal{C}^+)},\\
+x(0) = x_0, \ x(1) = x_1, \ \ \ & \dot{x}(t) = u(t) \in C_{x(t)}^+,\\
+\end{array}
+\qquad
+\int\limits_0^1{\nu_{x(t)}(u(t)) \, dt} \rightarrow \max.
+\end{equation}
+
+A classical Lorentzian structure on a manifold $M$ of dimension $n+1$ is defined by a non-degenerate quadratic form $q$ of signature $(1,n)$ smoothly depending on manifold's point. The quadratic form $q_x$ defines a cone $C_x =\{\xi \in T_xM \, | \, q(\xi) \geq 0\} = C_x^+ \cup C_x^-$. 
+The convex \emph{future cone} $C_x^+$ can be chosen with the help of 1-form $\tau$ such that $\mathrm{Ker}\,\tau_x \cup C_x = 0$:
+$$
+C_x^+ = \{\xi \in C_x \, | \, \tau_x(\xi) \geq 0\}.
+$$
+In this case 1-form $\tau$ is called \emph{a time orientation}.
+
+Problem~\eqref{eq-controlproblem} generalizes the classical Lorentzian problem in two directions.
+Firstly, the circular cone $C^+_x$ is replaced by an arbitrary (not necessarily solid) closed convex cone in $T_xM$.
+Secondly, the quadratic form $q$ is replaced by an arbitrary anti-norm on this cone.
+
+Does the solution of problem~\eqref{eq-controlproblem} exists?
+The classical Filippov theorem is unapplicable in this case,
+since the control set is not compact and the integral function $\nu_x(t)$ is concave.
+
+Assume that $M$ is equipped with a Riemannian manifold structure.
+We denote the Riemannian distance by $\mathrm{dist}_R(x, y)$ and by $|\cdot|$ the length of tangent vectors in this structure.
+
+\begin{theorem}
+\label{th-exist}
+Let $(M,C^+,\nu)$ be a regular sub-Lorentzian manifold, and $M$ is a complete Riemannian manifold.
+Let $A \in M$ be any fixed point. Suppose there exists a time orientation 1-form $\tau$ such that
+$\forall x\in M$ $\forall \xi\in C^+_x$ we have $\tau_x(\xi)\ge |\xi|/(1+\mathrm{dist}_R(A,x))$.
+Assume that the form $\tau$ is exact on the reachable set from the point $x_0$.
+Then there exists a longest path going from a point $x_0 \in M$ to a point $x_1 \in M$ if and only if there is at least one admissible path from $x_0$ to $x_1$.
+\end{theorem}
+
+Let's denote by $\mathcal{A}^+_{x_0} \subset M$ the reachable set from the point $x_0$, and by $\mathcal{A}^-_{x_1} \subset M$ the set of points from which the point $x_1$ is reachable.
+There is classical result~\cite{beem-ehrlich-easley} in Lorentzian geometry which is generalized to sub-Lorentzian case~\cite{grochowski,sachkov} where the sub-Lorentzian structure is defined by a subbundle $\Delta \subset TM$ and a non-degenerate sign changing quadratic form $q_x$ on $\Delta_x$ smoothly depending on manifold's point $x \in M$.
+
+Namely, assume that $x_1 \in \mathcal{A}^+_{x_0}$, the set $\mathcal{A}^+_{x_0} \cap \mathcal{A}^-_{x_1}$ is compact, and there are no closed admissible paths on the manifold $M$.
+Then there exists a longest path going from the point $x_0$ to the point $x_1$.
+
+The novelty of the Theorem~\ref{th-exist} is in the requirement of the time direction 1-form $\tau$,
+while the explicit description of reachable sets for systems with control in a cone can be a computationally challenging task.
+However, if such a form $\tau$ exists, then the classical theorem is a direct consequence of Theorem~\ref{th-exist}.
+
+For invariant sub-Lorentzian structures the inequality in Theorem~\ref{th-exist} is satisfied automatically.
+In particular, the required time orientation 1-form can be constructed for Carnot groups.
+Moreover, sub-Lorentzian problem on Carnot group of step 2 have the following interpretation:
+the goal is to maximize the intrinsic time of a material point moving from one given point to another, with given average per-coordinate deviations from uniform rectilinear motion.
+
+\begin{corollary}
+\label{crl-carnot}
+Let $G$ be a Carnot group. Consider a closed convex pointed cone $C^+$ in the first layer of the corresponding Lie algebra and an antinorm $\nu$ associated with it. Then for the left-invariant sub-Lorentzian problem
+$$
+\begin{array}{ll}
+x \in \mathrm{Lip}{([0,1], G)}, & u \in L^\infty{([0,1], C^+)},\\
+x(0) = x_0, \ x(1) = x_1, \ \ \ & \dot{x}(t) = x(t)_* u(t),\\
+\end{array}
+\qquad
+\int\limits_0^1{\nu(u(t))\, dt} \rightarrow \max
+$$
+there exists a longest path from $x_0$ to $x_1$ if and only if there is at least one admissible path from $x_0$ to $x_1$.
+\end{corollary}
+
+This talk is based on the join work with L.\,V.~Lokutsievskiy~\cite{sub-lorentzian-existence}.
+
+\begin{thebibliography}{9}
+
+\bibitem{beem-ehrlich-easley}
+Beem J.\,K., Ehrlich P.\,E., Easley K.\,L.. Global Lorentzian Geometry. Monographs Textbooks Pure Appl. Math. 202. Marcel Dekker Inc. 1996.
+
+\bibitem{grochowski}
+Grochowski M. Geodesics in the sub-Lorentzian geometry. Bull. Polish. Acad. Sci. Math. 2002, Vol.~50.
+
+\bibitem{sachkov}
+Sachkov Yu.\,L.. Existence of the longest sub-Lorentzian paths. Differential equations. 2023. Vol.~59, no~12, Pp.~1769--1777.
+
+\bibitem{sub-lorentzian-existence}
+Lokutsievskiy L.\,V., Podobryaev A.\,V.. Existence theorem for sub-Lorentzian problems. Journal of Dynamical and Control Systems (to appear). arXiv:2401.07975, 2024.
+
+\end{thebibliography}
+%\end{document}

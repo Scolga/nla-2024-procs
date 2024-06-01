@@ -1,0 +1,229 @@
+
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+\usepackage{todonotes}
+
+\usepackage{nla} 
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\begin{document}
+\fi
+
+\title{Complex wave solutions to the M-fractional Kuralay-IIA equation via unified solver method}
+
+\author{Volkan ALA 
+  }
+\institute{Mersin University, Science Faculty, Mathematics Department, Mersin, Turkiye\\
+  \email{volkanala@mersin.edu.tr}
+  }
+
+\maketitle
+
+\begin{abstract}
+In this study, one of the complex wave solutions of M-fractional Kuralay-IIA equation is get by unified solver method in terms of  He's variations method. In accordance with basic properties of proposed technique, it extracts vital solutions in explicit way. It is an easy-to-use method applied to obtain various exact solutions of nonlinear partial differential equations arising in mathematical physics. 
+
+\keywords{M-fractional derivative, wave Solutions, Kuralay-IIA equation}
+\end{abstract}
+\section{Statement of Problem}
+ 
+
+Consider the M-fractional Kuralay-IIA equation given as\cite{Zafar}:%
+\begin{equation}
+	iD_{M,t}^{\alpha ,\gamma }u- D_{M,x}^{\alpha ,\gamma }\left( D_{M,t}^{\alpha
+		,\gamma }u\right) -vu=0,
+\end{equation}%
+\begin{equation}
+	D_{M,x}^{\alpha ,\gamma }v-2\epsilon D_{M,t}^{\alpha ,\gamma }\left
+	\vert
+	u\right\vert ^{2}=0,
+\end{equation}
+here $u=u\left( x,t\right) $ is a complex valued function while $v=v\left(
+x,t\right) $ is a real valued function. The conjugate of complex valued
+function $u$ is $u^{\ast },$ $\epsilon =\pm 1$ where $x$ and $t$ are the
+spatio-temporal real variables. 
+
+\section{Unified Solver Method}
+\quad This section contains description of unified solver technique\cite{volkan}.
+Consider the nonlinear partial differential equation of the following form:
+\begin{equation}\label{2.1}
+	F\left( \phi,\phi_{t},\phi_{x},\phi_{tt},\phi_{xx},...\right).
+\end{equation}
+Applying the wave transformation $\phi\left( x,y,t\right) =\phi\left( \xi \right),\text{ }\xi =k_1x+k_2y+k_3t$, (where  $k_i=\overline{1,3}$ are velocity of the  wave ) into (\ref{2.1}) the following equation is obtained:
+\begin{equation}\label{2.3}
+	N\left( \phi,\phi^{2},\phi^{\prime },\phi^{\prime \prime },...\right) =0,
+\end{equation}
+here $N$ is  a nonlinear ordinary differential equation that has partial derivatives of $\phi$ dependent on $\xi$.  Based on He's semi-inverse method \cite{He:1997,He:2006,N.Kudryashov:2009},  the variational model for (\ref{2.3}) can be obtained by the semi-inverse method \cite{N.Kudryashov:2009} which reads:%
+\begin{equation}
+	I(\phi)=\int \mathcal{L}d\xi ,
+\end{equation}
+where $\mathcal{L}$ is  Lagrangian function connected with the derivative of $\phi$ given in the form:
+\begin{equation}
+	\mathcal{L}=\frac{1}{2}\left( \phi^{\prime }\right) ^{2}-Q,
+\end{equation}
+here $Q$ is the potential function. 
+We look for a solitary wave solution in the form%
+\begin{equation}\label{2.6}
+	\phi\left( x,y,t\right) =\lambda  \sech\left( \mu\xi \right) ,\phi\left( x,y,t\right)
+	=\lambda \sech^{2}\left( \mu\xi \right) ,\phi\left( x,y,t\right) =\lambda
+	\tanh\left( \mu \xi \right),
+\end{equation}
+where $\lambda 
+$ and $\mu $ are constants determined later.
+Assume that systems of equations can be reduced to the form:%
+\begin{equation}\label{2.7}
+	L_{1}\phi^{\prime \prime }+L_{2}\phi^{3}+L_{3}\phi=0,
+\end{equation}%
+in which $L_{i},$ $i=\overline{1,3}$ are real coefficients. Multiplying (\ref{2.7}) by $%
+\phi^{\prime }$ and taking integral according to $\xi$:%
+\begin{equation}\label{2.8}
+	\frac{1}{2}\left( \phi^{\prime }\right) ^{2}+\gamma _{2}\frac{L_{2}}{4L_{1}}
+	\phi^{4}+\frac{L_{3}}{2L_{1}}\phi^{2}+L_{0}=0,
+\end{equation}%
+where $L_{0}$ is a constant of integration. Thus (\ref{2.7}) can be written in the
+form:%
+\begin{equation}\label{2.9}
+	\phi^{\prime \prime }=-\frac{\partial Q}{\partial \phi},\text{ }Q=-\left( \gamma
+	_{2}\phi^{4}+\gamma _{1}\phi^{2}+\gamma _{0}\right) ,
+\end{equation}%
+where 
+\begin{equation}\label{2.10}
+	\gamma _{2}=-\frac{L_{2}}{4L_{1}},\text{ }\gamma _{1}=-\frac{L_{3}}{2L_{1}}, 
+	\text{ }\gamma _{0}=-L_{0}.
+\end{equation}%
+Implementing the semi-inverse method \cite{He:1997,He:2006,N.Kudryashov:2009}  to solve (\ref{2.7}) that constructs
+the following variational formulation from (\ref{2.8}):%:
+\begin{equation}\label{2.11}
+	I=\int \left[ \frac{1}{2}\left( \phi^{\prime }\right) ^{2}+\gamma
+	_{2}\phi^{4}+\gamma _{1}\phi^{2}+\text{ }\gamma _{0}\right] d\xi .
+\end{equation}
+Substituting (\ref{2.6}) into (\ref{2.11}) then making $I$ stationary according
+to $\lambda $ and $\mu $:%
+\begin{equation}\label{2.12}
+	\frac{\partial I}{\partial \lambda}=0;\text{ }\frac{\partial I}{\partial
+		\mu}=0.
+\end{equation}
+Solving (\ref{2.12}), we get $\lambda $ and $\mu.$ Thus the solitary wave solution given by (\ref{2.6})
+is well determined. 
+
+
+
+\subsection{The first family}
+First family of solution is as follows:%
+\begin{equation}\label{2.25}
+	\phi\left( \xi \right) =\lambda\tanh \left( \theta \right) ,\theta =\mu \xi .
+\end{equation}
+Substituting from (\ref{2.25}) into (\ref{2.11}), we have%
+\begin{eqnarray*}
+	I &=&\frac{1}{\mu}\overset{\infty }{\underset{0}{\int }}\left[ \frac{1}{2}%
+	\lambda ^{2}\mu ^{2}\sech^{4}\theta +\gamma _{2}\lambda ^{4}\tanh ^{4}\theta
+	+\gamma _{1}\lambda ^{2}\tanh ^{2}\theta +\gamma _{0}\right] d\theta 
+	\\
+	&=&\frac{1}{\mu}\overset{\infty }{\underset{0}{\int }}\left[ \lambda
+	^{2}\left( \gamma _{2}\lambda ^{2}+\frac{1}{2}\mu ^{2}\right)
+	\sech^{4}\theta -\lambda ^{2}\left( 2\gamma _{2}\lambda ^{2}+\gamma _{1}\right)
+	\sech^{2}\theta \right] d\theta  \\
+	&&+\frac{1}{\mu }\left( \gamma _{2}\lambda ^{4}+\gamma _{1}\lambda
+	^{2}+\gamma _{0}\right) \overset{\infty }{\underset{0}{\int }}d\theta .
+\end{eqnarray*}
+Under the condition%
+\begin{equation}
+	\gamma _{0}=-\lambda ^{2}\left( \gamma _{2}\lambda ^{2}+\gamma _{1}\right) ,
+\end{equation}
+we find that 
+\begin{equation}
+	I=\frac{-\lambda ^{2}}{3\mu }\left[ 4\gamma _{2}\lambda ^{2}+3\gamma
+	_{1}-\mu ^{2}\right] .
+\end{equation}
+By resolving the two requirements, the values of $\lambda $ and $\mu $ that  makes $I$  to be stationary with respect 
+to $\lambda $ and $\mu$ are found:
+\begin{equation}\label{2.27}
+	\frac{\partial I}{\partial \lambda}=\frac{-\lambda }{3\mu }\left[ 16\gamma
+	_{2}\lambda ^{2}+6\gamma _{1}-2\mu ^{2}\right] =0,
+\end{equation}%
+\begin{equation}\label{2.28}
+	\frac{\partial I}{\partial \mu }=-\frac{\lambda ^{2}}{3\mu ^{2}}\left[
+	4\gamma _{2}\lambda^{2}+3\gamma _{1}+\mu^{2}\right] =0.
+\end{equation}
+Solving (\ref{2.27})-(\ref{2.28}) and using (\ref{2.25}), solution of (\ref{2.9}) take the form:
+\begin{equation}
+	\phi(\xi )=\pm \sqrt{\frac{-\gamma _{1}}{2\gamma _{2}}}\tanh \left( \pm \sqrt{%
+		-\gamma _{1}}\xi \right) .
+\end{equation}
+As a result, the first family of solution in (\ref{2.7}) has the following structure: 
+\begin{equation}
+	\phi(\xi )=\pm \sqrt{\frac{-L_{3}}{L_{2}}}\tanh \left( \pm \sqrt{\frac{L_{3}}{%
+			2L_{1}}}\xi \right) .
+\end{equation}
+\section{Implementation of the proposed method}
+Let us consider the following travelling wave transformations:%
+\begin{equation}
+	u\left( x,t\right) =U\left( \xi \right) \times \exp \left( i\left( \frac{%
+		\Gamma \left( 1+\gamma \right) }{\alpha }\left( \tau x^{\alpha }+\mu
+	t^{\alpha }\right) \right) \right) ,
+\end{equation}
+$$\text{ }v\left( x,t\right) =v\left( \xi
+	\right) ,\text{ }\xi =\frac{\Gamma \left( 1+\gamma \right) }{\alpha }\left(
+	\Omega x^{\alpha }+\lambda t^{\alpha }\right) ,$$
+here $\tau ,\mu ,\Omega $ and $\lambda $ are the parameters. By using (21)
+into (1) and (2), we gain the real and imaginary parts respectively as:%
+\begin{equation}
+	2\lambda\epsilon U^{3}-\left( \Omega \left( \mu \left( \tau -1\right)
+	-c\right) \right) U+\lambda \Omega ^{2}U^{\prime \prime }=0,
+\end{equation}%
+\begin{equation}
+	\left( \lambda -\tau \lambda -\mu \Omega \right) U^{\prime }=0.
+\end{equation}
+From (23) , we get the speed of soliton given as:%
+\begin{equation}
+	\lambda =\frac{\mu \Omega }{1-\tau }.
+\end{equation}
+
+\subsection{The first family solution}
+
+Considering (20),(21) and (24) the first family complex solution of (1) is obtained as:
+\begin{eqnarray*}
+	u\left( x,t\right)  &=&\pm i \sqrt{\frac{\mu \tau ^{2}-2\mu \tau -c\tau +\mu+ c}{%
+			2\mu\epsilon  }}\\
+			&&\tanh \left( \sqrt{\frac{\mu \tau ^{2}-2\mu \tau -c\tau +\mu+ c}{2\mu \Omega ^{2}}}%
+	\frac{\Gamma \left( 1+\gamma \right) }{\alpha }\left( \Omega x^{\alpha
+	}+\left( \frac{\mu \Omega }{\left( 1-\tau \right) }t^{\alpha }\right)
+	\right) \right)  \\
+	&&\times e^{\left( i\left( \frac{\Gamma \left( 1+\gamma \right) }{\alpha }%
+		\right) \left( \tau x^{\alpha }+ \mu t^{\alpha }\right) \right) }.
+\end{eqnarray*}%
+
+\begin{thebibliography}{9} % or {99}, if there is more than ten references.
+	\bibitem{Zafar} Zafar A, Raheel M, Ali MR, Myrzakulova Z, Bekir A, Myrzakulov R. Exact Solutions of M-Fractional Kuralay Equation via Three Analytical Schemes, Symmetry, 15(10),(2023). 
+	
+	
+
+	
+	
+	
+		\bibitem{volkan} Ala V. 
+ Examination of dark and bright solitons of (2+1)-dimensional Kundu-Mukherjee-Naskar equation via unified solver technique,Sinop University Journal of Natural Sciences, Volume: 8 Issue: 1, 65-74, 
+ (2023).
+	
+	
+	
+\bibitem{He:1997} %For journal article
+He, J.   Semi-inverse method of establishing generalized variational principles for fluid mechanics with emphasis on turbo machinery aerodynamics. International Journal of Turbo and Jet Engines, \emph{14}, 23-28,(1997).
+
+
+\bibitem{He:2006} %For journal article
+He, J.  Some asymptotic methods for strongly nonlinear equations,International Journal of Modern Physics B,\emph{20}, 1141-1199,(2006).
+
+
+\bibitem{N.Kudryashov:2009} %For journal article
+Kudryashov, N.  Seven common errors in finding exact solutions of nonlinear differential equations. Communications in Nonlinear Science and Numerical Simulation. 2009. Vol.{14}. P. 3507--3529.
+
+
+
+
+
+
+
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,139 @@
+
+\iffalse
+\documentclass[12pt]{llncs}  
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\fi
+
+
+% Добавляется корректирующий стилевой файл строго после babel, если он был включен.
+% В параметре необходимо указать russian, что установит не совсем стандартные названия
+% разделов текста, настроит переносы для русского языка как основного и т.п.
+
+\usepackage{todonotes} % Этот пакет нужен для верстки данного шаблона, его
+                       % надо убрать из вашей статьи.
+
+\usepackage[russian]{nla}
+
+
+% Было б удобно при верстке сборника, чтобы названия рисунков разных авторов не пересекались.
+% Чтоб минимизировать такое пересечение, рисунки нужно поместить в отдельную подпапку с
+% названием - фамилией автора или названием статьи.
+%
+% \graphicspath{{ivanov-petrov-pics/}} % Указание папки с изображениями в форматах png, pdf.
+% или
+% \graphicspath{{great-problem-solving-paper-pics/}}.
+
+
+\begin{document}
+\fi
+% Текст оформляется в соответствии с классом article, используя дополнения AMS.
+
+\title{Шаблонизация для динамической задачи упаковки в контейнеры с группами размещения\thanks{Исследование выполнено в рамках государственного задания ИМ СО РАН (проект FWNF–2022–0019).}}
+
+\author{
+А.~В.~Ратушный\inst{1} \and A.~A.~Панин\inst{2}  \and Е.~А.~Бражников\inst{3}
+}
+
+
+\institute{
+ИМ СО РАН, Новосибирск, Россия\\
+\email{alexeyratushny@gmail.com}
+  \and
+ИМ СО РАН, Новосибирск, Россия\\
+\email{aapanin1988@gmail.com}
+  \and
+Новосибирский Государственный Университет, Новосибирск, Россия\\
+\email{brazhnikov.eugene@gmail.com}
+}
+
+\maketitle
+
+\begin{abstract}
+
+Мы рассматриваем NP-трудную задачу динамической упаковки в контейнеры, которая возникла в облачных вычислениях.
+Каждый предмет представляет собой виртуальную машину, которая определяется временными метками её создания и удаления, а также вектором запросов на выделение ресурсов.
+Виртуальные машины делятся на две категории: большие и маленькие.
+Каждый контейнер представляет собой сервер, состоящий из нескольких NUMA-узлов.
+Маленькая виртуальная машина может быть полностью размещена на одном узле, в то время как большая виртуальная машина разделяется на две идентичные половины, которые размещаются на разных узлах.
+Серверы располагаются в стойках фиксированного размера.
+Некоторые виртуальные машины объединены в группы, каждая из которых далее разделяется на подгруппы, называемые партициями.
+Виртуальные машины из разных партиций в рамках одной группы конфликтуют друг с другом, т.е. они не могут совместно размещаться на серверах из одной стойки в один и тот же момент времени.
+Это ограничение имеет решающее значение для обеспечения отказоустойчивости системы.
+Наша цель состоит в том, чтобы эффективно разместить все виртуальные машины в минимальное количество стоек.
+Для решения задачи мы используем метод генерации столбцов для создания шаблонов упаковки виртуальных машин, которые затем распределяются по серверам.
+Шаблоны адаптированы таким образом, чтобы учитывать конфликты, связанные с существованием партиций.
+Эффективность подхода протестирована на обширном открытом наборе примеров \cite{benchmark}, которые содержат до 70 тысяч виртуальных машин.
+
+\keywords{упаковка в контейнеры, конфликты, генерация столбцов, распределение ресурсов, жадный алгоритм} % в конце списка точка не ставится
+\end{abstract}
+
+
+% Список литературы оформляется подобно ГОСТ-2008.
+% Примеры оформления находятся по этому адресу -
+%     https://narfu.ru/agtu/www.agtu.ru/fad08f5ab5ca9486942a52596ba6582elit.html
+%
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+
+\bibitem{benchmark}
+Temporal Bin Packing Problem with Placement Groups. \url{http://old.math.nsc.ru/AP/benchmarks/Temporal\%20Bin\%20Packing/binpack.html}
+
+% \bibitem{Gantmakher} Гантмахер~Ф.Р. Теория матриц. М.:~Наука,~1966.
+
+\end{thebibliography}
+\hfill \break
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок.
+
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{
+Template-based Approach to Dynamic Bin Packing with Placement Groups
+}
+
+
+\author{
+A. V. Ratushnyi\inst{1}  \and A. A. Panin\inst{2}  \and E. A. Brazhnikov\inst{3}
+}
+\institute{
+Sobolev Institute of Mathematics of SB RAS, Novosibirsk, Russia\\
+\email{alexeyratushny@gmail.com}
+    \and
+Sobolev Institute of Mathematics of SB RAS, Novosibirsk, Russia\\
+\email{aapanin1988@gmail.com}
+    \and
+Novosibirsk State University, Novosibirsk, Russia\\
+\email{brazhnikov.eugene@gmail.com}
+}
+\maketitle
+
+
+\begin{abstract}
+
+We consider an NP-hard temporal bin packing problem that arises in cloud computing.
+Each item represents a virtual machine, defined by its creation and deletion timestamps, as well as a vector of resource allocation requests.
+Virtual machines are divided into two categories: large and small.
+Each container represents a server consisting of multiple NUMA nodes.
+A small virtual machine can be fully placed on one node, while a large virtual machine is split into two identical halves that are placed on different nodes.
+Servers are located in fixed-size racks.
+Some virtual machines are grouped together, and each group is further divided into subgroups called partitions.
+Virtual machines from different partitions within the same group conflict with each other, meaning they cannot be co-located on servers from the same rack at the same time.
+This constraint is crucial for ensuring system fault tolerance.
+Our goal is to efficiently pack all virtual machines into a minimum number of racks.
+To solve the problem, we use a column generation method to create packing templates for virtual machines, which are then distributed across servers.
+The templates are adapted to take into account conflicts related to partition existence.
+The effectiveness of the approach has been tested on an extensive open benchmark \cite{benchmark}, which contains up to 70,000 virtual machines.
+
+\keywords{bin packing, conflicts, column generation, resource allocation, greedy algorithm} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+
+%\end{document}

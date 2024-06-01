@@ -1,0 +1,140 @@
+\begin{englishtitle}
+\title{Mixed problem for a system of first order differential equations}
+% First author
+\author{E.Yu. Grazhdantseva}
+\institute{Irkutsk State  University, Institute of Mathematics and Information Technologies, Irkutsk, 664003 Russia;\\
+Melentiev Energy Systems Institute Siberian Branch of the Russian Academy of Sciences, Irkutsk, 664033 Russia\\
+  \email{grelyur@mail.ru}}
+ % etc
+
+\maketitle
+
+\begin{abstract}
+An exact solution to a mixed problem for a system of first-order linear differential equations is constructed.
+
+\keywords{partial derivative, trigonometric series}
+\end{abstract}
+
+\end{englishtitle}
+
+\iffalse
+\documentclass[12pt]{llncs}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[russian]{nla}
+
+%\usepackage[english,russian]{nla}
+
+% \graphicspath{{pics/}} %Set the subfolder with figures (png, pdf).
+
+%\usepackage{showframe}
+\begin{document}
+%\selectlanguage{russian}
+\fi
+
+\title{Смешанная задача для системы дифференциальных уравнений первого порядка\thanks{Работа выполнена при поддержке гранта FWEU-2021-0006 программы фундаментальных исследований РФ на 2021-2030 гг.} 
+ }
+% Первый автор
+\author{Е.~Ю.~Гражданцева }
+
+\institute{ИГУ, Институт математики и информационных технологий, Иркутск, Россия;\\
+Институт систем энергетики им. Л.\,А.\,Мелентьева СО РАН, Иркутск, Россия\\
+  \email{grelyur@mail.ru}}
+
+% Другие авторы...
+
+\maketitle
+
+\begin{abstract}
+Построено точное решение смешанной задачи для системы линейных дифференциальных уравнений первого порядка. 
+
+\keywords {частная производная, тригонометрический ряд}
+\end{abstract}
+
+\section{Основные результаты} % не обязательное поле
+
+Рассматривается система дифференциальных уравнений  вида
+\begin{equation} \label{1} 
+\left\lbrace \begin{array}{cc}
+\displaystyle\frac{\partial u}{\partial x}+ a \frac{\partial v}{\partial t}=0, \\
+\\
+\displaystyle\frac{\partial v}{\partial x}+ c \frac{\partial u}{\partial t}=0,
+\end{array} \right.
+\end{equation}
+где 
+$u=u(x,y),$
+$v=v(x,y)$ ,   - неизвестные функции независимых переменных 
+$x$ 
+ и 
+ $t,$
+ таких, что $x \in (0,l),$
+ $l$
+ и
+ $t$
+ - действительные положительные числа,
+ $a$
+ и
+ $c$
+ - действительные числа, причем
+ $ac>0.$ 
+
+Пусть функции
+$u=u(x,t)$
+и
+$v=v(x,t)$
+удовлетворяют условиям
+\begin{equation}
+u|_{x=0}=0 ,\,\,\,\,\, v|_{x=l} =0 
+\end{equation}
+\begin{equation}
+u|_{t=0}=\varphi (x), \,\,\,\, v|_{t=0} =\psi (x).
+\end{equation}
+
+Данная система (1) является системой гиперболического типа, условия (2) - краевыми условиями для неизвестной функции 
+$u=u(x,t)$
+данной системы, условия (3) - начальными (Коши) условиями для обеих неизвестных функций. Таким образом, задачу (1)-(3) можно рассматривать как начально-краевую (смешанную) задачу.
+
+Используя принцип построения решения дифференциального уравнения методом разделения переменных (методом Фурье) [1-4] для рассматриваемой задачи построено точное решение в виде тригонометрического ряда, а именно, решением задачи (1)-(3) можно считать функции 
+$$u=u(x,y)=\sum\limits_{n=1}^{\infty} \left( \varphi_n cos\frac{\pi nt}{l\sqrt{ac}} + \sqrt{\frac{a}{c}} \psi_n sin \frac{\pi nt}{l\sqrt{ac}} \right) sin \frac{\pi nx}{l}, $$
+$$v=v(x,t)= \sum\limits_{n=1}^{\infty} \left( \psi_n cos\frac{\pi nt}{l\sqrt{ac}} - \sqrt{\frac{c}{a}} \varphi_n sin \frac{\pi nt}{l\sqrt{ac}} \right) cos \frac{\pi nx}{l} $$
+где
+$\varphi_n,$ $n=1,2,...,$
+являются коэффициентами Фурье разложения функции
+$\varphi (x)$
+в ряд Фурье по синусам, а 
+$\psi_n$
+ - коэффициентами Фурье разложения функции   
+$\psi(x)$ 
+ в ряд Фурье по косинусам при
+$x \in (0,l),$
+т.е.
+$$\varphi_n=\frac{2}{l}\int\limits_{0}^{l} \varphi (x) sin \frac{\pi nx}{l} dx, \,\,\,\,\, \psi_n=\frac{2}{l}\int\limits_{0}^{l} \psi (x) cos \frac{\pi nx}{l} dx. $$					
+
+% Список литературы.
+\begin{thebibliography}{99}
+\bibitem{1}
+% Format for books
+Владимиров~В.С. Уравнения математической физики. М.:~Наука,~1988.
+
+\bibitem{2}
+Курант~Р. Уравнения с частными производными.М.:~Мир,~1964.
+
+\bibitem{3}
+Михлин~С.Г. Курс математической физики.М.:~Наука,~1968.
+
+\bibitem{4}
+Тихонов~А.Н., Самарский~А.А. Уравнения математической физики.М:~Наука,~1999.
+
+\end{thebibliography}
+
+
+
+
+
+%\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

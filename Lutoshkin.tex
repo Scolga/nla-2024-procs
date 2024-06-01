@@ -1,0 +1,76 @@
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+\usepackage{todonotes}
+
+\usepackage{nla} 
+
+\begin{document}
+\fi
+
+\title{Optimal control of the economic system in conditions of mass disease with vaccination\thanks{The research was financially supported by the Russian Science Foundation No. 24-28-00542, https://rscf.ru/en/project/24-28-00542/}}
+
+\author{Igor Lutoshkin  \and   Maria Rybina
+}
+\institute{Ulyanovsk State University, Ulyanovsk, Russian Federation\\
+  \email{lutoshkiniv@ulsu.ru}}
+
+\maketitle
+
+\begin{abstract}
+The development of a model for managing the economic system in conditions of mass disease is proposed. A special feature of this model is the simultaneous consideration of socio-biological and socio-economic factors. In the model, control influences include costs for: construction of hospitals, refurbishment of existing beds, conducting an information campaign, vaccination. The model is formulated in terms of an optimal control problem with delay.
+
+\keywords{optimal control, economic system, mass disease, vaccination}
+\end{abstract}
+
+
+\section{The model} %optional section
+
+Mathematical modeling of the development of mass disease has resulted in a number of models aimed mainly at predicting, for example, \cite{BraurCastChav2012,Gets2018,SietRus2013}. Control models have also been proposed \cite{GomRubMon2023,LueGPCerv2023,CastBlowDri2002}.  They are formulated in terms of optimal control problems. At the same time, these models are medical and/or biological; they poorly reflect social indicators.
+
+The works \cite{LutoshRyb2023,LutoshRyb2023_2} proposed a mathematical model for managing a socio-economic system in conditions of a mass disease. It simultaneously takes into account socio-biological and economic factors. The present study is aimed at developing the model proposed in \cite{LutoshRyb2023,LutoshRyb2023_2} by adding a vaccination factor.
+
+Let $P$ -- number of people complying with restrictions measures; $S$ -- number of people who do not comply with restrictive measures; $E$ -- number of infected people; $I$ -- number of sick people; $Q$ -- number of hospitalized people; $R$ -- number of recovered; $D$ -- number of deaths; $Z$ -- number of beds; $V_i$ -- number of people who have received artificial immunity to the disease due to being vaccinated with the vaccine $i$, $i=\overline{1,n}$; $N$ -- population size; $Y$ -- gross output; $\pi$ -- profit; $K$ -- cost of fixed assets; $L$ -- representation of the working population. Control variables: $u_1$ -- intensity of costs for refurbishment of existing beds; $u_2$ -- cost intensity for the construction of new hospitals; $u_3$ -- intensity of costs for the information campaign; $u_{3+i}$ -- intensity of costs for a campaign to vaccinate the population with the vaccine $i$, $i=\overline{1,n}$.
+
+Let's introduce differential equations:
+$$\begin{array}{c}
+   \displaystyle\frac{dS}{dt}=k_{PS}P(t)+k_{RS}R(t-\tau)- \left(k_{SE}\left(\frac{I(t)}{N(t)}\right)+k_{SP}(u_3(t))-\rho\right)S(t)+\\ \displaystyle\sum_{i=1}^{n}V_i(t-\widetilde{\tau_i})- \sum_{i=1}^{n}\frac{u_{3+i}(t-\widehat{\tau_i})}{c_i}; \\ \displaystyle\frac{dP}{dt}=k_{SP}(u_3(t))S(t)-k_{PS}P(t); \\ \displaystyle\frac{dE}{dt}=k_{SE}\left(\frac{I(t)}{N(t)}\right) \left(S(t)+\sum_{i=1}^{n}(1-\widetilde{e_i}\frac{u_{3+i}(t-\widehat{\tau_i})}{c_i}) \right)-k_{EI}E(t);
+\end{array}$$  
+
+$$\begin{array}{c}
+   \displaystyle\frac{dI}{dt}= k_{EI}E(t)-(k_{IQ}+k_{IR}+k_{ID})I(t); \quad \displaystyle\frac{dQ}{dt}= k_{IQ}I(t)-(k_{QD}+k_{QR})Q(t);\\ \displaystyle\frac{dR}{dt}= k_{IR}I(t)+k_{QR}Q(t)-k_{RS}R(t); \quad \displaystyle\frac{dD}{dt}= k_{QD}Q(t)+k_{ID}I(t);\\
+   \displaystyle\frac{dZ}{dt}= g(u_2(t-\tilde{\tau}))-\mu Z(t)+ku_1(t); \\
+   \displaystyle\frac{dV_i}{dt}= \left(1-(1-\widetilde{e_i})k_{SE}\left(\frac{I(t)}{N(t)}\right)\right) \frac{u_{3+i}(t-\widehat{\tau_i})}{c_i}-V_i(t-\widetilde{\tau_i}),\quad i=\overline{1,n}.
+  \end{array}
+$$
+
+Let's take into account the vaccination factor in the algebraic connections:  $Q(t)\leq Z(t)$; $L(t)=\displaystyle m\left(e_PP(t)+e_SS(t)+e_EE(t)+e_RR(t)+\sum_{i=1}^{n}e_{V_i}V_i(t)\right)$; $N(t)=P(t)+S(t)+E(t)+I(t)+Q(t)+R(t)+\displaystyle\sum_{i=1}^{n}V_i(t)$;
+$Y(t)=F(K(t),L(t))$; $\pi(t)=Y(t)-\displaystyle\sum_{i=1}^{n+3}u_i(t)$;
+$u_i(t)\geq 0$, $\displaystyle\int_{t_0}^T u_i(t)dt\leq B_i$, $i=\overline{1,n+3}$. 
+
+The functional can be represented as
+$$J=\min_{u_1,...,u_{n+3}}\int_{0}^{T}\left(\alpha_1\frac{E(t)}{N(0)}-\alpha_2\frac{\pi(t)}{Y(0)}\right)dt.$$
+Here $\alpha_1+\alpha_2=1$.
+
+
+\begin{thebibliography}{9} % or {99}, if there is more than ten references.
+
+\bibitem{BraurCastChav2012} Brauer~F., Castillo-Chavez~C. Mathematical models in population biology and epidemiology. 2012. Vol.~40. New York, Springer. 508~p.
+
+\bibitem{Gets2018} Modeling epidemics: A primer and Numerus Model Builder implementation / W.~M.~Getz, R.~Salter, O.~Muellerklein [et al.].  Epidemics. 2018.  Vol.~25.  Pp.~9–19. https://doi.org/10.1016/j.epidem.2018.06.001
+
+\bibitem{SietRus2013} Siettos~C.~I., Russo~L. Mathematical modeling of infectious disease dynamics. Virulence. Taylor and Francis Inc, 2013.  Vol.~4. no~4. Pp.~295–306.
+
+\bibitem{GomRubMon2023} Gomez~M.~C., Rubio~F.~A., Mondragon~E.~I. Qualitative analysis of generalized multistage epidemic model with immigration // Mathematical Biosciences and Engineering. 2023. Vol.~20. Iss.~9. Pp.~15765-15780.  https://doi.org/10.3934/mbe.2023702
+
+\bibitem{LueGPCerv2023} Luebben~G., Gonzalez-Parra~G.,  Cervantes~B. Study of optimal vaccination strategies for early COVID-19 pandemic using an age-structured mathematical model:  A case study of the USA // Mathematical Biosciences and Engineering, 2023. Vol.~20. Iss.~6. Pp.~10828-10865.  https://doi.org/10.3934/mbe.2023481
+
+\bibitem{CastBlowDri2002} Mathematical Approaches for Emerging and Reemerging Infectious Diseases: Models, Methods and Theory, Edited by Castillo-Chavez~C. with S.~Blower P.~van~den~Driessche, D.~Kirschner, A.~A.~Yakubu. New York, Springer, 2002. 377~p. https://doi.org/10.1007/978-1-4613-0065-6.
+
+\bibitem{LutoshRyb2023} Lutoshkin~I.~V., Rybina~M.~S. Modelling of Regional Economic Management in Conditions of Mass Diseases.  Economy of regions, 2023, Vol.~19, no.~2, Pp.~299-313. https://doi.org/10.17059/ekon.reg.2023-2-1 [in Russian]
+
+\bibitem{LutoshRyb2023_2} Lutoshkin~I.~V., Rybina~M.~S. Optimal solution in the model of control over an economic system in the condition of a mass disease. Izvestiya of Saratov University.  Mathematics. Mechanics. Informatics, 2023, Vol.~23, no.~2, Pp.~264-273. https://doi.org/10.18500/1816-9791-2023-23-2-264-273
+
+\end{thebibliography}
+%\end{document}

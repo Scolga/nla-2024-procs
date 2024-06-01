@@ -1,0 +1,148 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{Problem of Control of transportation of elastic beams by carts composition in the presence of uncertainty}
+% First author
+\author{Nikita Livanov\inst{1} \and  Igor Izmestev\inst{2}
+}
+\institute{Chelyabinsk State University, Chelyabinsk, Russia\\
+  \email{nikita.livanov.mail@gmail.com}
+  \and
+Chelyabinsk State University, Chelyabinsk, Russia\\
+\email{j748e8@gmail.com}}
+% etc
+
+\maketitle
+
+\begin{abstract}
+We consider the problem of controlling a hyperbolic system that describes the stretching of $n$ elastic beams in a non-inertial reference frame during their transportation by a locomotive with a train of $n$ bogies. The control is the traction force of the locomotive, limited in magnitude. The uncertainty consists of the influence of external disturbances on each beam and the totality of forces opposing the movement of the locomotive. On each cart, one beam of length $l$ is rigidly attached to the right end. The left ends of the beams are not secured. The goal of choosing a control is to ensure that at a fixed moment in time the modulus of the linear function, determined using the average values of the beam tensions, does not exceed a given value for any acceptable realizations of uncertainty. A technique has been developed for reducing this problem to a one-dimensional control problem in the presence of uncertainty. Necessary and sufficient conditions for termination are found.
+
+\keywords{control, hyperbolic system, guaranteed result, uncertainty} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  This is the template file for the 6th International conference
+%  NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+%  June 25-30, 2018
+%  Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[12pt]{llncs}  
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes} 
+
+\usepackage[russian]{nla}
+
+\begin{document}
+\fi
+
+\title{Задача управления транспортировкой упругих балок составом тележек при наличии неопределенности }
+% Первый автор
+\author{Н.~Д.~Ливанов\inst{1} \and И.~В.~Изместьев\inst{2}
+  \and
+}
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{Челябинский государственный университет (ФГБОУ ВО ЧелГУ), Челябинск, Россия \\
+  \email{nikita.livanov.mail@gmail.com}
+  \and   % Разделяет институты и присваивает им номера по порядку.
+Челябинский государственный университет (ФГБОУ ВО ЧелГУ), Челябинск, Россия\\
+  \email{j748e8@gmail.com}
+% \and Другие авторы...
+}
+
+\maketitle
+
+\begin{abstract}
+Рассматривается задача управления гиперболической системой, которая описывает растяжение $n$ упругих балок  в неинерциальной системе отсчета во время их транспортировки локомотивом с составом из $n$ тележек. Управлением является ограниченная по величине сила тяги локомотива. Неопределенность складывается из воздействия внешних возмущений на каждую балку и совокупности сил противодействующих движению локомотива. На каждой тележке жестко закреплена за правый конец одна балка длины $l$. Левые концы балок не закреплены. Цель выбора управления заключается в том, чтобы в фиксированный момент времени модуль линейной функции, определяемой с помощью средних величин растяжений балок, не превышал заданного значения при любых допустимых реализациях неопределенности. Разработана методика сведения данной задачи к одномерной задаче управления при наличии неопределенности. Найдены необходимые и достаточные условия окончания.
+
+
+\keywords{управление, гиперболическая система, гарантированный результат, неопределенность} % в конце списка точка не ставится
+\end{abstract}
+
+Зададим систему $n$ уравнений продольных колебаний в неинерциальной системе отсчета [1], описывающих транспортировку упругих балок на составе тележек локомотивом:  
+\begin{eqnarray} \label{eq:sVJ}
+\frac{\partial^2 U_i(t,x)}{\partial t^2} = \frac{\partial^2 U_i(t,x)}{\partial x^2} + f_i(t,x)-\rho(F(t)-W(t)), \quad i=\overline{1,n},
+\end{eqnarray} 
+где $0\leq t \leq p$ и $0\leq x \leq l$, функции $U_i(t,x)$, $i=\overline{1,n}$ описывают изменение растяжения балок, число $\rho \in (0;1)$. Система (1) рассматривается при заданных начальных условиях
+$$
+U_i(0,x) = g_i(x), \quad \frac{\partial U_i(0,x)}{\partial t} = G_i(x), \quad i= \overline{1,n},
+$$
+где функции $g_i(x), G_i(x)$ $i= \overline{1,n}$ являются непрерывными. Плотность совокупности внешних сил, действующих на $i$-балку, задается непрерывной функцией $f_i(x,t)$. Из условий того, что правый конец каждой балки жестко закреплен, а левый свободен, следует, что граничные условия принимают вид 
+$$
+U_i(t,l) = 0,\quad \frac{\partial U_i(t,0)}{\partial x} = 0,\quad i= \overline{1,n}. 
+$$
+Считаем, что на локомотив воздействует сила тяги $F(t)$ и внешние силы препятствующие движению $W(t)$ [2], которые изменяются согласно уравнениям
+\begin{eqnarray} \label{eq:U}
+    F(t) = a_1(t) + b_1(t)\xi(t), \quad |\xi(t)|\leq 1,
+    \\\label{eq:P}
+    W(t) = a_2(t) + b_2(t)\eta(t), \quad |\eta(t)|\leq 1.
+\end{eqnarray}
+Функции $a_j(t)$, $b_j(t)\geq 0$, $j= 1,2$, непрерывны при $t \in [0,p]$; $\xi(t)$ и $\eta(t)$ являются управлением и помехой, соответственно.
+
+Известны оценки непрерывных функций $f_i(t,x)$:
+\begin{eqnarray} \label{eq:f_i}
+    \hat{f}_i(t,x)\leq f_i(t,x) \leq \tilde{f}_i(t,x), \quad i=\overline{1,n}
+\end{eqnarray}
+Функции $\hat{f}_i(t,x)$, $\tilde{f}_i(t,x)$ являются непрерывными.
+Заданы числа $\alpha \in \mathbb{R}$, $\varepsilon \geq 0$ и вектор $\overline{\lambda} = (\lambda_1, \lambda_2, \ldots, \lambda_n)^\top \in \mathbb{R}^n$ такой, что $\overline{\lambda} \neq \overline{0}$. Цель выбора управления  $\xi(t)$ (2) заключается в том, чтобы осуществить неравенство 
+\begin{eqnarray} \label{eq:Cel}
+    \left| \sum_{i=1}^n \lambda_i\int_0^l \left(U_i(t,x)\sigma(x) \right) dx - \alpha\right | \leq \varepsilon
+\end{eqnarray}
+для любой реализации помехи $\eta(t)$ (3) и для любых непрерывных функций $f_i(t,x)$ (4), $i=\overline{1,n}$. Здесь $\sigma: [0,1] \to \mathbb{R}$ заданная непрерывная функция, удовлетворяющая условиям
+$\sigma(0)=\sigma(l) = 0$.
+
+
+После замены переменных задача (1)--(5) сводится к одномерной однотипной задаче управления при наличии неопределенности [3]:
+\begin{eqnarray} \label{eq:Y1}
+    \dot{z} = -a(t)u+b(t)v,  \quad |u|\leq1,\quad |v|\leq 1, \quad |z(p)|\leq \varepsilon.
+\end{eqnarray}
+
+Здесь $u$~--- одномерное управление, $v$~--- неопределенность; функции $a(t) \geq 0$,  $b(t) \geq 0$ являются непрерывными при $t \leq p$.
+
+Используя метод оптимизации гарантированного результата \cite{Kras}, найдены необходимые и достаточные условия окончания в задаче (6). Кроме того, построено соответствующее управление $\xi$, решающее задачу (1)--(5).
+
+
+
+
+
+
+
+
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+\bibitem{Koshlyakov} Кошляков~Н.С. Основные дифференциальные уравнения математической физики. ОНТИ,~1936.
+
+\bibitem{Frolov} Фролов~Н.О. ТЯГА ПОЕЗДОВ~/Конспект лекций
+по дисциплине «Тяга поездов» для студентов. Екатеринбург:~ УрГУПС,~2020.
+
+\bibitem{Uxobotov} Ухоботов~В.И. Метод одномерного проектирования в линейных дифференциальных играх с интегральными ограничениями~/ Учеб. пособие. Челябинск:~Челябинский государственный университет,~2005.
+
+\bibitem{Kras} Красовский~Н.Н. Управление динамической системой. М.:~Наука,~1985.
+
+
+\end{thebibliography}
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок.
+
+
+
+
+%\end{document}
+
+

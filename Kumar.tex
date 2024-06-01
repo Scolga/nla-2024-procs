@@ -1,0 +1,201 @@
+
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is the template file for the 6th International conference
+% NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+% June 25-30, 2018
+% Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The preparation of the article is based on the standard llncs class
+% (Lecture Notes in Computer Sciences), which is adjusted with style
+% file of the conference.
+%
+% There are two ways of compilation of the file into PDF
+% 1. Use pdfLaTeX (pdflatex), (LaTeX+DVIPS will not work);
+% 2. Use LuaLaTeX (XeLaTeX will work too).
+% When using LuaLaTeX You will need TTF or OTF CMU fonts
+% (Computer Modern Unicode). The fonts are installed with 'cm-unicode' package in
+% a distribution of LaTeX % (https://www.ctan.org/tex-archive/fonts/cm-unicode),
+% either by downloading and installing these fonts system wide, the address of their page is
+% http://canopus.iacp.dvo.ru/%7Epanov/cm-unicode/
+% The second option won't work in XeLaTeX.
+%
+% For MiKTeX (LaTeX distribution for Windows),
+%  1. Package 'cm-unicode' is installed manually with the MiKTeX administration Console.
+%  2. For the compilation of this example, namely, the stub figure, one will also need to
+% download package 'pgf' manually. This package uses in the popular
+% package tikz.
+%  3. Tests showed that the rest of the required packages MiKTeX loads automatically (if
+%     it is allowed). The 'auto download' option is
+%     configured in 'Settings' section in MiKTeX Console.
+%
+%
+% The easiest way to compile an article is to use pdfLaTeX, but
+% the final layout of the book will be compiled with LuaLaTeX,
+% as a result will be of better quality thanks to the package 'microtype' and
+% use vector OTF instead of standard raster fonts of pdfLaTeX.
+%
+% In the case of questions and problems with the article compilation,
+% write letters to e-mail: eugeneai@irnok.net, Cherkashin Evgeny.
+%
+% New version of the correcting style file will be available at the website:
+%     https://github.com/eugeneai/nla-style
+%     file - nla.sty
+%
+% Further instructions are in the text body of the template. The template itself
+% is an article example.
+%
+% The LaTeX2e format is used!
+
+% 12 points font size is used.
+\documentclass[12pt]{llncs}
+
+% The correcting style file is added.
+\usepackage{todonotes}
+
+\usepackage{nla} % This package is needed for compiling
+                 % this template, it should be removed
+                 % from your article.
+
+% Many popular packages (amsXXX, graphicx, etc.) are already imported in the style file.
+% If there is a conflict with your packages, try disabling them and compile
+% the text.
+%
+% It would be convenient in the layout of the proceedings if the file names
+% of the figures of different authors do not clash.
+% To minimize the clash, the drawings can be placed in a separate subfolder
+% named after the author or the title of the paper.
+%
+% \graphicspath{{ivanov-petrov-pics/}} % specifies the folder with images in png, pdf formats.
+% or
+% \graphicspath{{great-problem-solving-paper-pics/}}.
+
+%\theoremstyle{plain}
+%\newtheorem{thm}{Theorem}
+
+%\newtheorem{df}{Definition}
+
+%\usepackage[
+%    top    = 1.50in,
+%    bottom = 1.50in,
+%    left   = 1.50in,
+%    right  = 1.50in]{geometry}
+
+\newtheorem{asmp}{Assumption}
+
+\begin{document}
+\fi
+
+\title{Controllability of nonlinear delay differential control systems in Hilbert spaces}
+
+\author{S. Kumar }
+\institute{Department of Mathematics, IGNTU Amarkantak, Madhya Pradesh, India \\
+\email{ksumanrm@gmail.com, suman@igntu.ac.in}}
+
+\maketitle
+
+\begin{abstract}
+This work presents a study on the class of nonlinear delay differential control systems in Hilbert spaces. Sufficient conditions for the existence of unique mild solution and the controllability have been established. The linearized control system is obtained by the linear approximation of the nonlinear control system. The main result proves that the nonlinear delay control system is approximately (exactly) controllable under the established conditions if the linearized control system is approximately (exactly) controllable. The results are applicable to partial differential equations.
+%
+%Chukwu \cite{CL91,Chukwu91delay} established the controllability of nonlinear delay systems. The concept of perturbation of a linear operator by time-dependent operator was presented by Lutz \cite{Lutz81perturbation} for second order evolution equations. Matsumoto \cite{Matsumoto96perturbation} established the time-dependent perturbation theory for the first order evolution equation. These are motivation to obtain the mild solution of the linearized control system which is nonautonomous.
+
+\keywords{Controllability, delay differential systems, control systems, nonlinear control problems.}
+
+\end{abstract}
+
+% at the end of the list, there should be no final dot
+
+\section{The main results}
+
+Let $X$ and $U$ be Hilbert spaces of state and control variables with norms $||\cdot||$ and $||\cdot||_U$, respectively. Consider the nonlinear control system as follows
+\begin{subequations}\label{eqn-main-nls-main}
+\begin{align}
+\dot{x}(t) &= A x(t) + f(t, x_t, u(t)), ~ t \in (0,T], \label{eqn-main-nls} \\
+x(\theta) &= \phi(\theta) \quad \text{for  } \theta \in [-\tau,0], \label{eqn-main-ic}
+\end{align}
+\end{subequations}
+where $\tau>0$, $x(t) \in X$, $u(t) \in U$, $x_t \in C([-\tau,0];X)$, $A : D(A) \subset X \rightarrow X$ is densely defined closed linear operator, $f: [0,T] \times C([-\tau,0];X) \times U \rightarrow X$ is nonlinear map, and $\phi \in C([-\tau,0];X)$.
+
+The motivation of this work came from the pioneer works of Chukwu \cite{Chukwu91delay} and Hernandez \emph{et al.} \cite{hernandez2020alka}.
+
+\begin{asmp}\label{asmp-A}
+The system operator $A$ generates a strongly continuous semigroup $\{S(t)\}_{t \ge 0}$ with $||S(t)|| \le M e^{\omega t}$ for $M \ge 1$ and $\omega > 0$.
+\end{asmp}
+
+\begin{asmp}\label{asmp-f-Lips}
+$f$ is continuous on $[0,T]$ and Lipschitz in $C([-\tau,0];X) \times U$, i.e. there is $L_f > 0$ such that
+        \begin{equation*}
+          ||f(t,x_t,u(t)) - f(t,y_t,v(t))|| \le L_f (||x_t - y_t||_{C([-\tau,0];X)} + ||u(t) - v(t)||_U),
+        \end{equation*}
+                and $f(t,\phi,0)=0$ for all $t$.
+\end{asmp}
+
+The unique mild solution of \eqref{eqn-main-nls-main} exists under Assumptions \ref{asmp-A} - \ref{asmp-f-Lips}, and is given as
+\begin{equation*}
+x(t,\phi,u) = \begin{cases}
+                \phi(t), & \mbox{if } t \in [-\tau,0], \\
+                S(t)\phi(0) + \int_{0}^{t} S(t-s) f(s,x_s,u(s))ds , & \mbox{if } t > 0.
+              \end{cases}
+\end{equation*}
+
+\begin{asmp}\label{asmp-f-Frechet}
+$f$ is Frechet differentiable %in $[0,T] \times C([-\tau,0];X) \times U$
+with derivatives $D_i f(0,\phi,0)$ for $i = 1,2,3$, where $D_1$, $D_2$ and $D_3$ are derivatives in $[0,T]$, $C([-\tau,0];X)$ and $U$, respectively.
+\end{asmp}
+
+Under the Assumption \ref{asmp-f-Frechet}, the linear approximation of \eqref{eqn-main-nls} is
+\begin{equation}\label{eqn-lin-approx}
+\dot{x}(t) = A x(t) + D_2 f(0,\phi,0)x_t + D_3 f(0,\phi,0)u(t).
+\end{equation}
+Take $P = D_2 f(0,\phi,0)$ and $C = D_3 f(0,\phi,0)$. Then, $P$ would be a bounded perturbation operator and $C$ is control operator. Let us define the controllability grammian $G_t : L^2([0,T];U) \rightarrow X$, $t \ge 0$, as
+\begin{equation}\label{eqn-cg-dfn}
+G_t u = \int_{0}^{t} S(t-s) B B^* S^*(t-s)u(s)ds,
+\end{equation}
+where $*$ denotes the adjoint of operator.
+
+\begin{asmp}\label{asmp-cg-inv}
+The controllability grammian $G_T$ is bounded below, i.e. there exists $\gamma > 0$ such that $||G_T u|| \ge \gamma ||u||$ for all $u \in L^2([0,T];U)$.
+\end{asmp}
+
+\begin{definition}
+The linearized control system \eqref{eqn-lin-approx} is approximately (or exactly) controllable on $[0,T]$ if $\overline{Ran(G_T)} = X~ (\text{or } Ran(G_T) = X)$.
+\end{definition}
+
+\begin{definition}
+The nonlinear delay control system \eqref{eqn-main-nls-main} is approximately (or exactly) controllable on $[0,T]$ if for each $\phi \in C([-\tau,0];X)$, $\bar{x} \in X$ there is a control $u \in L^2([0,T];U)$ such that $x(0,\phi,u) = \phi(0)$ and $x(T,\phi,u) = \bar{x}$.
+\end{definition}
+
+\begin{asmp}\label{asmp-f-bound}
+There exists $\xi \in L^1([0,T];(0,\infty))$ such that $||f(t,x_t,u(t))|| \le \xi(t)$.
+\end{asmp}
+
+\begin{theorem}
+Suppose that Assumptions \ref{asmp-A} - \ref{asmp-f-bound} hold. If the linearized control system \eqref{eqn-lin-approx} is approximately (exactly) controllable on $[0,T]$, then the nonlinear control system is approximately (exactly) controllable on $[0,T]$.
+\end{theorem}
+
+
+
+\begin{thebibliography}{9} % or {99}, if there is more than ten references.
+
+%\bibitem{Moreau1977} Moreau J.-J. Evolution problem associated with a moving convex set in a Hilbert space. J. Differential Eq.~1977. Vol.~26. Pp.~347--374.
+%
+%\bibitem{BrKr2013}  Brokate M., Krej\u{c}\'{\i} P. Optimal control of ODE systems involving a rate independent variational inequality. Disc. Cont. Dyn. Syst. Ser.~B. 2013. Vol.~18, no~2. Pp.~331--348.
+
+\bibitem{Chukwu91delay}
+Chukwu E.N. Nonlinear delay systems controllability. Journal of Mathematical Analysis and Applications.~1991. Vol.~162, no~2. Pp.~564--576.
+
+\bibitem{hernandez2020alka}
+Hernandez E.M., Wu J., Chadha A. Existence, uniqueness and approximate controllability of abstract differential equations with state-dependent delay. Journal of Differential Equations.~2020. Vol.~269, no~10. Pp.~8701--8735.
+
+\end{thebibliography}
+
+
+%
+%\bibliographystyle{unsrt}
+%\bibliography{references}
+
+
+%\end{document}

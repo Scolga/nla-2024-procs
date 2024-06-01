@@ -1,0 +1,232 @@
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+\usepackage{todonotes}
+
+\usepackage{nla}
+
+\begin{document}
+\fi
+
+% Text should be formatted in accordance with the 'article' class, using extensions like
+% AMS.
+%
+\title{The star sets and solution of DC problem}
+% First author
+\author{Igor Prudnikov 
+}
+\institute{Scientific Center of Smolensk State Medical University, Smolensk, Russia\\
+  \email{prudnik09@yandex.ru}}
+
+
+\maketitle
+
+\begin{abstract}
+%Insert your english abstract here. Include 3-6 keywords below.
+
+The author considers star sets on the plane and studies their
+connection with the formulated problem of representing a Lipschitz
+function of two variables as a difference of two convex functions.
+A geometric interpretation is also given.
+
+\keywords{Lipschitz functions, convex functions, variation of a
+function, curvature of a curve, turn of a curve.}
+\end{abstract}
+
+% at the end of the list, there should be no final dot
+\section{The main results}
+
+The solution to this problem is very interesting for the fields of
+optimization ( for quasidifferential calculus ) and geometry. In
+\cite{aleksandrov1} A.D. Aleksandrov began to study surfaces,
+which are graphs of functions representing a difference of two
+convex functions (so-called DC functions), to construct internal
+geometry of such surfaces. This problem has been studied by many
+authors (\cite{aleksandrov2}-\cite{zalgaller1}).
+
+The necessary and sufficient conditions for such a representation
+of a function of one variable are well known. These conditions can
+be written in the following way.
+
+Let $x \rightarrow f(x): [a,b] \rightarrow \mathbb{R}$ be a
+Lipschitz function. Define a set, where the function $f(\cdot)$ is
+differentiable, as $N_f$. Since the function $ f(\cdot)$  is
+Lipschitz, $N_f$ is the set  of full measure on [a,b].
+
+
+In order for the function $f(\cdot): [a,b] \rightarrow \mathbb{R}$
+to be representable as a difference of two convex functions, it is
+necessary and sufficient that the following condition be satisfied
+$$
+sup_{ \{x_i\} \subset N_f} \,\, \sum_i \mid f'(x_i) - f'(x_{i-1})
+\mid \equiv  \vee (f'; a,b) < \infty
+$$
+where the derivatives are taken where they exist. The sign  $\vee$
+means the variation of the function $ f'$ on the segment  [a,b].
+
+
+In \cite{aleksandrov1} A.D. Aleksandrov formulated the problem of
+representing a function as a difference of two convex functions if
+it is  DC on any line in the domain of definition. The answer to
+this question is negative \cite{vesely}.
+
+
+According to the Aleksandrov's terminology we define a many-sided
+function as a function whose graph consists of finite number of
+parts of planes.
+
+In the article \cite{proudconvex1} the necessary and sufficient
+conditions for a representation of any one degree homogeneous
+Lipschitz function of three  variables as a difference of two
+convex functions are given. This result can be extended to the
+$m^{th}$ degree homogeneous functions. Now I ignore the
+homogeneity condition and will consider any Lipschitz function
+$f(\cdot): (x,y) \rightarrow D $ with Lipschitz constant $L$,
+where $D$ is an open bounded convex set in $\mathbb{R} ^2$ such
+that its closure $\bar{D}$ is compact. I will describe a
+representation with an algorithm giving a sequence of pairs of
+convex functions. These convex functions converge uniformly on $D$
+to a pair of convex functions if the conditions of the theorems
+formulated below are satisfied.
+
+Let $\wp(D)$ be a class of curves on the plane  $XOY$  such that
+bound star regions  in the region D. Any curve $r \in \wp(D)$ will
+be parameterized in natural way i.e. the parameter $\tau$  of a
+point M on the curve  $r(\cdot)$ is equal to the length of the
+curve $r(\cdot)$ between an initial point and the point M. I will
+denote such a curve by $r(t), t \in [0,T_r]$.
+
+Note that the class of curves on the $XOY$ plane that bound closed
+convex sets in the domain $D$ belongs to the class $\wp(D)$. Let
+us denote such a class of curves by $\varrho(D)$.
+
+With the help of the curves $r \in \wp (D)$  the necessary and
+sufficient conditions for a representation of the function
+$f(\cdot)$  as a difference of two convex functions can be written
+in the following way.
+
+{\bf Theorem 1.} {\em In order that a Lipschitz function $z
+\rightarrow f(z):D \rightarrow \mathbb{R}$ was represented as a
+difference of two convex functions it is necessary and sufficient
+that for any curve $r(\cdot) \in \wp(D)$ and any its subregions
+the inequality
+$$
+ (\exists c_1(D,f), c_2(D,f)>0) (\forall r \in \wp(D)) ,
+$$
+\begin{equation}
+ \vee (\Phi'; 0,T_r)<  c_1(D,f) + c_2(D,f) \vee (r';
+ 0,T_r), \label{difconv3}
+\end{equation} was correct where $\Phi(t)=f(r(t)) \;\;\;\; \forall t \in
+[0,T_r]$. \label{difconvexthm1}}
+
+
+{\bf Remark 1.} {\em The condition of Theorem \ref{difconvexthm1}
+means the following. Some constants  $ c_1(D,f)$, $c_2(D,f)>0 $ exist
+that for any $r \in \wp(D)$ and any subregions $[T_i, T_{i+1} ]
+\subset [0, T_r] $, $i \in 1:m,$
+$$
+ \sum_1^m \vee (\Phi'; T_i,T_{i+1})<  c_1(D,f) + c_2(D,f) \sum_1^m \vee (r';
+ T_i,T_{i+1}).
+$$
+We included the mention on subregions in Theorem
+\ref{difconvexthm1} for which  \ref{difconv3} is correct,  since
+the variation $\vee (r'; 0,T_r)$ can be unlimited.}
+
+{\bf Remark 2.} {\em The similar conditions for the variation of
+$\Phi (\cdot)$ on curves $r(\cdot)$ were written the first time in
+\cite{proudconvex1}}.
+
+\section{Geometric interpretation of Theorem 1}
+
+
+I will give another geometrical interpretation of  Theorem 1. Let
+me introduce a turn of the curve $ r(\cdot)$  on the graph
+$\Gamma_f = \{(x,y,z) \in \mathbb{R}^3 \mid z = f(x , y)\} .$
+
+Consider on $\Gamma_f$  the curve $ R(t)=(r(t),f(r(t)))$  where
+$r(\cdot) \in \wp(D).$  As the function $f(\cdot,\cdot)$ is
+Lipschitz, the derivative $R'(\cdot)$  exists almost everywhere on
+$[0,T_r]$,  which I will denote by $\tau(\cdot)=R'(\cdot).$
+
+{\bf Definition.} {\em The turn of the curve $R(\cdot)$  on the
+manifold $\Gamma_f$ is called the value
+$$
+sup_{ \{t_i\} \subset N_r} \,\, \sum_i \Vert
+\frac{\tau(t_i)}{\Vert \tau (t_i) \Vert }  -
+\frac{\tau(t_{i-1})}{\Vert \tau(t_{i-1}) \Vert } \Vert = O_r
+$$ }
+
+{\bf Theorem 2.} {\em For any Lipschitz function $z \rightarrow
+f(z) :D \rightarrow R$ to be DC function on the compact set $ D
+\in \mathbb{R}^2$ it is necessary and sufficient that some
+constants $c_2(D,f), c_3(D,f)>0$ existed for all $r(\cdot) \in
+\wp(D)$ such that the turn of the curve $R(\cdot)$ and any subsets
+of $R(\cdot)$ on the $\Gamma_f$ were bounded from above
+\begin{equation} O_r \leq c_2(D,f) + c_3(D,f) \vee(r';0,T_r)
+\;\; \forall r \in \wp(D). \label{difconv6} \end{equation}
+\label{difconvexthm2} }
+
+{\bf Corollary 1.} {\em In order that a Lipschitz function $z
+\rightarrow f(z):D \rightarrow \mathbb{R}$ was represented as a
+difference of two convex functions it is necessary  that for any
+curve $r(\cdot) \in \varrho(D)$  the inequality
+$$
+ (\exists c_5(D,f)>0) (\forall r \in \varrho(D)) ,
+ \vee (\Phi'; 0,T_r)<  c_5(D,f)
+$$
+was correct where $\Phi(t)=f(r(t)) \;\;\;\; \forall t \in
+[0,T_r]$.}
+
+
+
+{\bf Corollary 2}. {\em For any Lipschitz function $z \rightarrow
+f(z) :D \rightarrow R$ to be DC function on the compact set $ D
+\in \mathbb{R}^2$ it is necessary that some constant $c_6(D,f)>0$
+existed for all $r(\cdot) \in \varrho(D)$ such that the turn of
+the curve $R(\cdot)$  on the $\Gamma_f$ was bounded from above
+$$
+O_r \leq c_6(D,f)  \;\; \forall r \in \varrho(D).
+$$ }
+
+The article \cite{veselyzajicek} provides an example confirming
+the incorrectness of the sufficiency of the statements of
+Consequences. In fact, the authors of the article gave an example
+proving that the curves of the set $\varrho(D)$ are not enough to
+check the representability of a function as a difference of convex
+functions. The class of curves $\wp(D)$ is much wider than the
+class of curves $\varrho(D)$.
+
+
+
+\begin{thebibliography}{13}
+
+\bibitem{aleksandrov1} Aleksandrov A.D. About the surfaces represented
+in a view of a difference of two convex functions, Izvestiya
+Kazakh. Akad. Sci.  Math. 1949. no~3.  Pp.~3-20. ~[In Russian].
+\bibitem{aleksandrov2} Aleksandrov A.D. Surfaces represented as a difference
+of two convex   functions,  Russian Acad. Sci. Dokl. Math. 1950,
+no~1. ~[In Russian].
+\bibitem{vesely} L. Vesely, L. Zajicek. Delta-convex mappings between Banach
+spaces and applications, Dissertationes Math. (Rozprawy Mat.).
+1989. Vol.~289.
+\bibitem{Hartman} Hartman P. On functions representable as a difference of convex
+functions. Pacific J.Math. 1959. no~9. Pp.~707-713.
+\bibitem{proudconvex2} Prudnikov I.M. On the question of the representability
+of a function of two variables as a difference of convex
+functions. Sibirsk. Mat. Zh.  2014. Vol.~55, no~6. Pp.~1368-1380.
+~[In Russian].
+\bibitem{proudconvex1} Proudnikov I.M. The necessary and sufficient
+conditions of a representation of a homogeneous function in a view
+of a difference of two convex functions.  Izvestiya Russian Acad.
+Sci. Math. 1992. Vol.~59, no~5.  Pp.~1116-1128. ~[In Russian].
+\bibitem{veselyzajicek} L.Vesely, L.Zajicek. A non-DC function which is DC
+along all convex curves. J. Math. Anal. Appl. 2018. Vol.~463.
+Pp.~167-175.
+\bibitem{zalgaller1} Zalgaller V.A. About representation of a function
+of two variables in a view of a difference of two convex
+functions. Vestnik of Leningrad University. 1963. Vol.~1.
+Pp.~44-45. ~[In Russian].
+\end{thebibliography}
+
+%\end{document}

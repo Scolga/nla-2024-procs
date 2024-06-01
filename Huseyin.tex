@@ -1,0 +1,127 @@
+
+
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is the template file for the 6th International conference
+% NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+% June 25-30, 2018
+% Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The preparation of the article is based on the standard llncs class
+% (Lecture Notes in Computer Sciences), which is adjusted with style
+% file of the conference.
+%
+% There are two ways of compilation of the file into PDF
+% 1. Use pdfLaTeX (pdflatex), (LaTeX+DVIPS will not work);
+% 2. Use LuaLaTeX (XeLaTeX will work too).
+% When using LuaLaTeX You will need TTF or OTF CMU fonts
+% (Computer Modern Unicode). The fonts are installed with 'cm-unicode' package in
+% a distribution of LaTeX % (https://www.ctan.org/tex-archive/fonts/cm-unicode),
+% either by downloading and installing these fonts system wide, the address of their page is
+% http://canopus.iacp.dvo.ru/%7Epanov/cm-unicode/
+% The second option won't work in XeLaTeX.
+%
+% For MiKTeX (LaTeX distribution for Windows),
+%  1. Package 'cm-unicode' is installed manually with the MiKTeX administration Console.
+%  2. For the compilation of this example, namely, the stub figure, one will also need to
+% download package 'pgf' manually. This package uses in the popular
+% package tikz.
+%  3. Tests showed that the rest of the required packages MiKTeX loads automatically (if
+%     it is allowed). The 'auto download' option is
+%     configured in 'Settings' section in MiKTeX Console.
+%
+%
+% The easiest way to compile an article is to use pdfLaTeX, but
+% the final layout of the book will be compiled with LuaLaTeX,
+% as a result will be of better quality thanks to the package 'microtype' and
+% use vector OTF instead of standard raster fonts of pdfLaTeX.
+%
+% In the case of questions and problems with the article compilation,
+% write letters to e-mail: eugeneai@irnok.net, Cherkashin Evgeny.
+%
+% New version of the correcting style file will be available at the website:
+%     https://github.com/eugeneai/nla-style
+%     file - nla.sty
+%
+% Further instructions are in the text body of the template. The template itself
+% is an article example.
+%
+% The LaTeX2e format is used!
+
+% 12 points font size is used.
+\documentclass[12pt]{llncs}
+
+% The correcting style file is added.
+\usepackage{todonotes}
+
+\usepackage{nla} % This package is needed for compiling
+                 % this template, it should be removed
+                 % from your article.
+
+% Many popular packages (amsXXX, graphicx, etc.) are already imported in the style file.
+% If there is a conflict with your packages, try disabling them and compile
+% the text.
+%
+% It would be convenient in the layout of the proceedings if the file names
+% of the figures of different authors do not clash.
+% To minimize the clash, the drawings can be placed in a separate subfolder
+% named after the author or the title of the paper.
+%
+% \graphicspath{{ivanov-petrov-pics/}} % specifies the folder with images in png, pdf formats.
+% or
+% \graphicspath{{great-problem-solving-paper-pics/}}.
+
+\begin{document}
+\fi
+
+% Text should be formatted in accordance with the 'article' class, using extensions like
+% AMS.
+%
+\title{On the robustness of the trajectories of nonlinear control systems with respect to the remaining control resource}
+% First author
+\author{Anar Huseyin\inst{1} \and Nesir Huseyin\inst{2} \and Khalik G. Guseinov\inst{3}
+}
+\institute{Department of Statistics and Computer Sciences, Sivas Cumhuriyet University, Sivas, Turkey\\
+  \email{ahuseyin@cumhuriyet.edu.tr}
+  \and
+Department of Mathematics and Science Education, Sivas Cumhuriyet University, Sivas, Turkey\\
+\email{nhuseyin@cumhuriyet.edu.tr}
+\and
+Department of Mathematics, Eskisehir Technical University, Eskisehir, Turkey\\
+\email{kguseynov@eskisehir.edu.tr}}
+% etc
+
+\maketitle
+
+\begin{abstract}
+ The control system described  by Urysohn type integral equation
+\begin{equation*} \label{sys1}
+\displaystyle x(\xi)=f\left(\xi,x\left(\xi\right)\right)+\int_{\Omega} K\left(\xi,s,x\left(s\right),u(s)\right)  ds, \ \xi \in \Omega \eqno{(1)}
+\end{equation*} is considered where  $x(s)\in \mathbb{R}^n$ is the state vector, $u(s)\in
+\mathbb{R}^m$ is the control vector, $(\xi,s) \in \Omega \times \Omega,$ $\Omega\subset \mathbb{R}^k$ is a Lebesgue measurable set with finite Lebesgue measure. The control functions $u(\cdot)$ are chosen from the closed ball centered at the origin with radius $r$ in the space $L_p(\Omega;\mathbb{R}^m)$, $p\in (1,\infty)$. Note that this kind of control functions arise in the case when the control resource is exhausted by consumption, such as, energy, fuel, finance, etc. (see, e.g., \cite{NKrasovskii1968}). 
+
+In general, the robustness of a considered system with respect to a given parameter means that variation of the parameter on the given set causes a small changes in the system's state. In this work, under appropriate conditions, the robustness of continuous and $p$-integrable trajectories  of the system (1) with respect to the fast consumption of the remaining control resource is discussed. It is shown that consuming the remaining control resource in the domain with a sufficiently small Lebesgue measure, generates an insignificant deviation of the trajectory. This result allows to approximate every trajectory with trajectory, obtained by full consumption of given control resource. From this result it also follows that if you have an undesired extra control resource and you need to get rid of this resource, then spending the remaining resource in the domain with a small measure, you will get insignificant deviation from the initial trajectory. The proved theorem permits to state that for a significant change in the trajectory of the system, it is advisable to avoid the aggressive consumption of the control resource and to spend the control resource in economy mode, i.e. to consume the control resource in small portions.  Possibility of the approximation of each trajectory with trajectory, generated by full and fast consumption of the control resource permits in numerical construction methods of the set of trajectories to construct only the trajectories generated by full consumption of the control resource.
+
+\keywords{control system, integral equation, integral constraint, robustness}
+\end{abstract}
+
+% at the end of the list, there should be no final dot
+%\section{The main results}
+
+
+
+\begin{thebibliography}{9} % or {99}, if there is more than ten references.
+
+\bibitem{NKrasovskii1968}
+Krasovskii N.N. Theory of Control of Motion: Linear Systems. Nauka, Moscow, 1968.~[In Russian]
+
+\end{thebibliography}
+%\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

@@ -1,0 +1,96 @@
+\begin{englishtitle}
+\title{Security market prediction using decision tree}
+% First author
+\author{Maxim Kazantsev}
+\institute{Institute of Mathematics and Information Technologies\\Irkutsk State University, Irkutsk, Russia\\
+\email{kazmat123321@gmail.com}}
+% etc
+
+\maketitle
+
+\begin{abstract}
+In this report, we analyse various tools used to predict stock prices. The aim is to construct and study a model based on the decision tree method. The implementation was carried out on the  programming language Python.
+
+\keywords{stock price, decision tree, modeling}
+\end{abstract}
+\end{englishtitle}
+
+
+\iffalse
+\documentclass[12pt]{llncs}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[russian]{nla}
+
+%\usepackage[english,russian]{nla}
+
+% \graphicspath{{pics/}} %Set the subfolder with figures (png, pdf).
+
+%\usepackage{showframe}
+\begin{document}
+%\selectlanguage{russian}
+\fi
+
+\title{Прогнозирование цен ценных бумаг посредством деревьев принятия решений%\thanks{Работа выполнена при поддержке РФФИ (РНФ, другие фонды), проект \textnumero~00-00-00000.}
+}
+% Первый автор
+\author{М.~М.~Казанцев%\inst{1}
+%  \and
+% Второй автор
+%  И.~О.~Фамилия\inst{2}
+%  \and
+% Третий автор
+%  И.~О.~Фамилия\inst{2}
+} 
+\institute{Институт математики и информационных технологий\\ Иркутский государственный университет, Иркутск, Россия\\
+  \email{kazmat123321@gmail.com}
+  }
+.
+
+\maketitle
+
+\begin{abstract}
+ В докладе изучаются различные инструменты, используемые  для прогнозирования цен на акции. Представлены результаты анализа модели, основанной на методе построения дерева принятия решений. Выполнена реализация на языке программирования Python. 
+
+\keywords{цены на акции, дерево принятия решений, моделирование}
+\end{abstract}
+
+%\section{Основные результаты} % не обязательное поле
+
+
+%В настоящее время прогнозирование цен на акции стало популярной темой исследований, многие исследователи пытаются прогнозировать цены на акции различными способами.
+%существует множество различных инструментов, но не все из них обладают хорошей производительностью, поэтому исследователям необходимо оценивать и сравнивать разные инструменты. В этой статье для достижения цели точного прогнозирования цены акций основным выбранным подходом является построение моделей глубокого обучения и их использование для прогнозирования. В этом исследовании используются два метода: дерево решений и нейронная сеть с длинной краткосрочной памятью (LSTM). В модели, использующей классификатор дерева решений, ежедневное состояние акций делится на два типа: рост и падение цены акции. Задача модели — делать прогнозы относительно ежедневные цены на акции и классифицировать их. Другая модель использует сеть LSTM, которая используется для точного прогнозирования цен закрытия. В конце оценивается производительность двух моделей для дальнейшей работы.
+
+% there are many different tools, but not all of them have good performance, so it is necessary for researchers to evaluate and compare different tools. In this paper, to achieve the goal of predicting stock price precisely, the main approach chosen is building deep learning models and use them to make predictions. Two methods, decision tree and long short-term memory (LSTM) neural network, are used in this study. In the model using the decision tree classifier, the daily state of the stock is divided into two types: the rise and fall of the stock price. The task of the model is to make predictions about daily stock prices and classify them. The other model uses the LSTM network, which is used to make accurate closing price predictions. In the end, the performance of the two models is assessed for further work.
+
+
+%Груздев, А. В. Прогнозное моделирование в IBM SPSS Statistics, R и Python: метод деревьев решений и случайный лес : руководство / А. В. Груздев. Москва : ДМК Пресс, 2018. — 642 с. — ISBN 978-5-97060-539-4.  Текст : электронный // Лань : электронно-библиотечная система.  URL: https://e.lanbook.com/book/123700 (дата обращения: 22.04.2024).
+
+%scikit-learn Machine Learning in Python.   URL: https://scikit-learn.org/stable/index.html (дата обращения: 22.04.2023).
+
+%FinamTrade: инвестиции в акции URL: https://trading.finam.ru/ (дата обращения: 22.04.2023)
+
+%Hongyi Xu. Stock price prediction using decision tree classifier and LSTM network // Proceedings of the 2023 International Conference on Machine Learning and Automation DOI: 10.54254/2755-2721/37/20230512
+
+
+% Список литературы.
+%\begin{thebibliography}{99}
+%\bibitem{1}
+% Format for Journal Reference:
+%Author1 N., Author2 N.  Article title. Journal. Year. Vol.~Volume, No~Number. Pp.~Page numbers.
+% Format for books:
+%\bibitem{2}
+%Author N. Book title. Place: Publisher, year.
+% Format for Russian Journal Reference:
+%\bibitem{3} Фамилия И.О. Название статьи~// Журнал. Год. Т.~том,  \textnumero~номер. С.~страницы.
+% etc
+%\end{thebibliography}
+
+
+% Обязательная информация на английском языке:
+
+
+
+
+%\end{document}

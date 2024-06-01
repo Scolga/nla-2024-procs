@@ -1,0 +1,192 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{On estimates of solutions for systems of linear autonomous differential equations with aftereffect}
+% First author
+\author{Tatyana Sabatulina
+%  \and
+%  Name FamilyName2\inst{2}
+%  \and
+%  Name FamilyName3\inst{1}
+}
+\institute{Perm National Research Polytechnic University, Perm, Russia\\
+  \email{tlsabatulina@list.ru}
+%  \and
+%Affiliation, City, Country\\
+%\email{email}
+}
+% etc
+
+\maketitle
+
+\begin{abstract}
+Estimates of the rate at which solutions tend to zero are found for systems of linear autonomous functional differential equations with aftereffect. The study is based on the idea of constructing a so-called ``comparison system'', which, on the one hand, has a simpler structure, and on the other hand, the same asymptotic properties as the original system. The effectiveness of the results obtained is illustrated by a number of examples in which FDE with different types of aftereffects are selected as comparison systems.
+
+\keywords{systems of functional differential equations, exponential stability, fundamental matrix, estimation of the rate of decreasing for solution, monotone operators} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes}
+
+\usepackage[russian]{nla}
+
+\begin{document}
+\fi
+% Текст оформляется в соответствии с классом article, используя дополнения
+% AMS.
+%
+
+\title{Об оценках решений систем линейных автономных дифференциальных уравнений c последействием\thanks{Работа выполнена при поддержке Министерства науки и высшего образования Российской Федерации, проект \textnumero~FSNM-2023-0003.}}
+% Первый автор
+\author{Т.~Л.~Сабатулина  % \inst ставит циферку над автором.
+%  \and  % разделяет авторов, в тексте выглядит как запятая.
+% Второй автор
+%  И.~О.~Фамилия\inst{2}
+%  \and
+% Третий автор
+%  И.~О.~Фамилия\inst{1}
+} % обязательное поле
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{Пермский национальный исследовательский политехнический университет (ПНИПУ), Пермь, Россия\\
+  \email{tlsabatulina@list.ru}
+%  \and   % Разделяет институты и присваивает им номера по порядку.
+%Институт (название в краткой форме), Город, Страна\\
+%\email{email@examle.com}
+% \and Другие авторы...
+}
+
+\maketitle
+
+\begin{abstract}
+Для систем линейных автономных функционально-дифферен\-циальных уравнений с последействием найдены оценки скорости стремления решений к нулю. Исследование базируется на идее построения так называемой «системы сравнения», которая, с одной стороны, имеет более простую структуру, а с другой стороны~--- те же асимптотические свойства, что и исходная система. Эффективность полученных результатов иллюстрируются рядом примеров, в которых в качестве систем сравнения выбираются ФДУ с различными видами последействия.
+
+
+\keywords{системы функционально-дифференциальных уравнений, экспоненциальная устойчивость, фундаментальная матрица, оценка скорости убывания решения, монотонные операторы} % в конце списка точка не ставится
+\end{abstract}
+
+%\section{Основные результаты} % не обязательное поле
+
+Рассмотрим линейную автономную систему функционально-диф\-фе\-рен\-ци\-аль\-ных уравнений (ФДУ)
+\begin{equation}
+\label{eq_main_sab}
+\dot x(t)+\int_0^\tau dQ(s)x(t-s)=f(t),\quad t\in\mathbb R_+,
+\end{equation}
+где $\tau\in\mathbb R_+$,  $Q\colon[0,\tau]\to\mathbb R^n$~--- матрица-функция ограниченной вариации, $Q(0)=\Theta$, интегралы понимаются в смысле Римана~--- Стилтьеса, вектор-функция $f\colon\mathbb R_+\to\mathbb R^n$ локально суммируема. Начальную функцию, не нарушая общности~\cite[с.\,9--10]{bib_amr_sab}, считаем частью внешнего возмущения $f$.
+Запись системы ФДУ в виде~\eqref{eq_main_sab} с использованием интеграла Римана~--- Стилтьеса включает в себя уравнения с разными видами последействия.
+
+Следуя~\cite[с.\,9--10]{bib_amr_sab}, назовём {\it решением} системы~\eqref{eq_main_sab} локально абсолютно непрерывную вектор-функцию, удовлетворяющую~\eqref{eq_main_sab} почти всюду. В указанных выше предположениях система~\eqref{eq_main_sab} с заданным начальным условием $x(0)\in\mathbb R^{n}$ однозначно разрешима и ее решение представимо в виде~\cite[с.\,84]{bib_amr_sab}:
+\begin{equation}
+\label{eq_Cauchy formula_sab}
+x(t)=X(t)x(0)+\int_0^t X(t-s)f(s)\,ds.
+\end{equation}
+
+Матрица-функция $X\colon\mathbb R\to\mathbb R^{n\times n}$, называется {\it фундаментальной матрицей} системы~\eqref{eq_main_sab}. Она однозначно определяется как решение матричного уравнения
+\begin{equation*}
+%\label{eq_X_sab}
+\dot X(t)+\int_0^\tau dQ(s)X(t-s)=\Theta,\quad t\in\mathbb R_+,
+\end{equation*}
+дополненного начальными условиями $X(0)=I$, $ X(\xi)=\Theta$ при $\xi<0.$
+Из~\eqref{eq_Cauchy formula_sab} следует, что поведение любого решения полностью определяется свойствами фундаментальной матрицы.
+
+Выделим в матрице $Q$ часть элементов главной диагонали и перепишем систему~\eqref{eq_main_sab}:
+\begin{equation}
+\label{eq_m_sab}
+\dot x(t)+Ax(t)+\int_0^\omega dR(s)x(t-s)=\int_0^\sigma dP(s)x(t-s)+f(t),\quad t\in\mathbb R_+.
+\end{equation}
+Здесь $A=\mathop{\mathrm{diag}}\{a_1,a_2,\ldots,a_n\}$, $a_k\in \mathbb R$; $R(s)=\mathop{\mathrm{diag}}\{r_1(s),r_2(s),\ldots,r_n(s)\}$, $r_k(s)$~--- монотонные функции; $\omega,\sigma\in\mathbb R_+$.
+Обратим внимание, что в отличие от~\cite{bib_sab_mal_sbam_sab} элементы матрицы-функции $P$ не обязательно неубывающие.
+Как и в~\cite{bib_sab_mal_sbam_sab}, систему, которая определяется левой частью~\eqref{eq_m_sab}
+назовём {\it системой сравнения}.
+Так как матрицы $A$ и $R(s)$ диагональные, то систему сравнения можно рассматривать как совокупность независимых скалярных уравнений, для фундаментальных решений которых в работе \cite{bib_MCh_sab} были получены точные двусторонние оценки, дающие оценку для фундаментальной матрицы системы сравнения:
+\begin{equation}\label{eq_es_0_sab}
+\Theta \le X_0(t)\le Ne^{-\zeta_0 t},
+\end{equation}
+где $\zeta_0=\min{}\{\zeta_1,\zeta_2,\ldots,\zeta_n\}$, $N=\mathop{\mathrm{diag}}{}\{-\frac1{g'_1(\zeta_1)},\ldots,-\frac1{g'_m(\zeta_m)},1,\ldots,1\}$, $g_m$~--- характеристические функции упомянутых скалярных уравнений.
+
+В силу~\cite[с.~205, теорема 6]{bib_Natanson_sab} матрица-функцию $P$ представима в виде разности двух матриц, все компоненты которых являются возрастающими функциями: $P(s)=P_1(s)-P_2(s)$.
+Под $|dP(s)|$ будем понимать $d(P_1(s)+P_2(s))$.
+Введём вспомогательную систему
+\begin{equation*}
+%\label{eq_m_abs_sab}
+\dot x(t)+Ax(t)+\int_0^\omega dR(s)x(t-s)=\int_0^\sigma |dP(s)|x(t-s)+f(t),\quad t\in\mathbb R_+,
+\end{equation*}
+и обозначим через $Y$ её фундаментальную матрицу.
+В работе~\cite{bib_sab_mal_sbam_sab} была получена точная двусторонняя экспоненциальная оценка на матрицу $Y$.
+
+%\begin{lemma}
+{\bf Лемма}
+{\it
+Справедливо следующее неравенство:
+$
+|X(t)|\le Y(t).
+$
+%\end{lemma}
+}
+
+Пусть $H(\gamma)=I-G_0^{-1}(\gamma)\left(G_0(\gamma)-\int_0^\sigma e^{\gamma s}|dP(s)|\right)$, $G_0(\gamma)=\mathop{\mathrm{diag}}{}\{g_{1}(\gamma),g_{2}(\gamma),\dots, g_{n}(\gamma)\}$.
+
+%\begin{theorem}
+{\bf Теорема.}
+{\it Пусть для фундаментальной матрицы системы сравнения выполнены оценки~\eqref{eq_es_0_sab}, матрица $H(0)$ положительно обратима, а $\gamma_0$~--- первый положительный нуль уравнения $\det H(\gamma)=0$. Тогда для фундаментальной матрицы системы~\eqref{eq_m_sab} при всех $\gamma\in[0,\gamma_0)$ справедлива оценка
+$|X(t)|\le H^{-1}(\gamma) Ne^{-\gamma t}$, $t\in\mathbb R_+.$}
+%\end{theorem}
+
+% Рисунки и таблицы оформляются по стандарту класса article. Например,
+
+%\begin{figure}[htb]
+%  \centering
+  % Поддерживаются два формата:
+  %\includegraphics[width=0.7\linewidth]{figure.pdf} % Растровый формат
+  %\includegraphics[width=0.7\linewidth]{figure.png} % Векторный и растровый формат
+  %
+  % Векторные рисунки можно рисовать в редакторе Inkscape
+  % https://inkscape.org/ru/download/
+  % Основной формат этого редактора - SVG, поэтому рисунки необходимо экспортировать в
+  % PDF или PNG (с разрешением - минимум 150 dpi, максимум - 300dpi).
+%  \begin{center}
+%    \missingfigure[figwidth=0.7\linewidth]{Уберите меня из статьи!}
+%  \end{center}
+%  \caption{Заголовок рисунка}\label{fig:example}
+%\end{figure}
+
+% Современные издательства требуют использовать кавычки-елочки << >>.
+
+% В конце текста можно выразить благодарности, если этого не было
+% сделано в ссылке с заголовка статьи, например,
+%
+
+% Список литературы оформляется подобно ГОСТ-2008.
+% Примеры оформления находятся по этому адресу -
+%     https://narfu.ru/agtu/www.agtu.ru/fad08f5ab5ca9486942a52596ba6582elit.html
+%
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+\bibitem{bib_amr_sab} Азбелев~Н.В., Максимов~В.П., Рахматуллина~Л.Ф. Введение в теорию функ\-ци\-о\-наль\-но-дифференциальных уравнений. М.:~Наука,~1991.
+
+\bibitem{bib_sab_mal_sbam_sab} Сабатулина~Т.Л., Малыгина~В.В. Экспоненциальная устойчивость и оценки решений систем функционально-дифференциальных уравнений~// Математические труды. 2023. Т.~26. \textnumero~1. С.~130--149.
+
+\bibitem{bib_MCh_sab} Малыгина~В.В., Чудинов~К.М. О точных двусторонних оценках устойчивых решений автономных функционально-дифференциальных уравнений~// Сиб. матем. журн. 2022. Т.~63. \textnumero~2. С.~360--378.
+
+\bibitem{bib_Natanson_sab} Натансон~И.П. Теория функций вещественной переменной. М.:~Наука,~1974.
+\end{thebibliography}
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок.
+
+
+
+
+%\end{document}

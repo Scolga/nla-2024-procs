@@ -1,0 +1,141 @@
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is the template file for the 6th International conference
+% NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+% June 25-30, 2018
+% Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The preparation of the article is based on the standard llncs class
+% (Lecture Notes in Computer Sciences), which is adjusted with style
+% file of the conference.
+%
+% There are two ways of compilation of the file into PDF
+% 1. Use pdfLaTeX (pdflatex), (LaTeX+DVIPS will not work);
+% 2. Use LuaLaTeX (XeLaTeX will work too).
+% When using LuaLaTeX You will need TTF or OTF CMU fonts
+% (Computer Modern Unicode). The fonts are installed with 'cm-unicode' package in
+% a distribution of LaTeX % (https://www.ctan.org/tex-archive/fonts/cm-unicode),
+% either by downloading and installing these fonts system wide, the address of their page is
+% http://canopus.iacp.dvo.ru/%7Epanov/cm-unicode/
+% The second option won't work in XeLaTeX.
+%
+% For MiKTeX (LaTeX distribution for Windows),
+%  1. Package 'cm-unicode' is installed manually with the MiKTeX administration Console.
+%  2. For the compilation of this example, namely, the stub figure, one will also need to
+% download package 'pgf' manually. This package uses in the popular
+% package tikz.
+%  3. Tests showed that the rest of the required packages MiKTeX loads automatically (if
+%     it is allowed). The 'auto download' option is
+%     configured in 'Settings' section in MiKTeX Console.
+%
+%
+% The easiest way to compile an article is to use pdfLaTeX, but
+% the final layout of the book will be compiled with LuaLaTeX,
+% as a result will be of better quality thanks to the package 'microtype' and
+% use vector OTF instead of standard raster fonts of pdfLaTeX.
+%
+% In the case of questions and problems with the article compilation,
+% write letters to e-mail: eugeneai@irnok.net, Cherkashin Evgeny.
+%
+% New version of the correcting style file will be available at the website:
+%     https://github.com/eugeneai/nla-style
+%     file - nla.sty
+%
+% Further instructions are in the text body of the template. The template itself
+% is an article example.
+%
+% The LaTeX2e format is used!
+
+% 12 points font size is used.
+\documentclass[12pt]{llncs}
+
+% The correcting style file is added.
+\usepackage{todonotes}
+
+\usepackage{nla} % This package is needed for compiling
+                 % this template, it should be removed
+                 % from your article.
+
+% Many popular packages (amsXXX, graphicx, etc.) are already imported in the style file.
+% If there is a conflict with your packages, try disabling them and compile
+% the text.
+%
+% It would be convenient in the layout of the proceedings if the file names
+% of the figures of different authors do not clash.
+% To minimize the clash, the drawings can be placed in a separate subfolder
+% named after the author or the title of the paper.
+%
+% \graphicspath{{ivanov-petrov-pics/}} % specifies the folder with images in png, pdf formats.
+% or
+% \graphicspath{{great-problem-solving-paper-pics/}}.
+
+\begin{document}
+\fi
+% Text should be formatted in accordance with the 'article' class, using extensions like
+% AMS.
+%
+\title{Sparse Optimal Control Problem Governed by Cyber-physical Systems Using PQA Method}
+% First author
+\author{Dongyao Yang  \and  Jinlong Yuan
+}
+
+  \institute{Department of Applied Mathematics, School of Science, Dalian Maritime University, Dalian 116026, PR China\\
+  \email{yuanjinlong@dlmu.edu.cn}
+}
+% etc
+
+\maketitle
+
+\begin{abstract}
+We examine a linear time-invariant system influenced by a static state feedback control mechanism. Its form can be written as $Kx(t-\tau(||K||_0))$, where $K$ represents its gain matrix and $||K||_0$ means the number of nonzero entries of the matrix $K$. And the varying delay $\tau(||K||_0)$ is arises due to the time required for the transmission of the state information and the computation of the control input. Governed by this linear time-invariant system, we minimize the conventional cost functions, which are written as $J^{0}(K)$ in this study, to obtain the optimal feedback matrices $K_1^{*}$. Nevertheless, the resulting $K_1^{*}$ matrix obtained by conventional computational methods is always dense.
+The objective of this paper is to minimize $||K||_0$ while satisfying the constraint $|J^{0}(K)-J^{0}(K_1^{*})|\leq \varepsilon$.
+The sparsity of the gain matrix is approximated by a piecewise quadratic approximation (PQA) model.
+Then, we formulate an iterative algorithm to solve the transformed problem, and undertake a numerical experiment to illustrate its practical utility and efficacy.
+\keywords{Sparse optimal control, Sparse feedback matrix, Iterative thresholding algorithm.}
+\end{abstract}
+
+% at the end of the list, there should be no final dot
+%\section{The main results}
+
+
+%The text of the report.
+
+% The figures and tables are drawn according to the standard class 'article'.
+%\begin{figure}[htb]
+%  \centering
+
+% Two picture formats are supported:
+%\includegraphics[width=0.7\linewidth]{figure.pdf} % Raster format
+%\includegraphics[width=0.7\linewidth]{figure.png} % Vector and raster format
+%
+% Vector drawings can be drawn in Inkscape editor
+% https://inkscape.org/ru/download/
+% The usual format of the editor is SVG, so the drawings must be exported in
+% PDF or PNG (with a resolution of minimum 150 dpi, and maximum of 300 dpi).
+%  \begin{center}
+%    \missingfigure[figwidth=0.7\linewidth]{Remove me from the article!} \end{center}
+%  \caption{Caption of the figure}\label{fig:example}
+%\end{figure}
+
+% At the end of the text, acknowledgments are expressed, if you haven't
+% made a footnote from the title. For example, we can write
+%The research is carried on with support of RFBR (RNF, other funds), project No.~00-00-00000.
+
+
+\begin{thebibliography}{9} % or {99}, if there is more than ten references.
+
+\bibitem{YuanZhaoYang2024} Jinlong Yuan, Shuang Zhao, Dongyao Yang, Chongyang Liu, Changzhi Wu, Tao Zhou, Sida Lin, Yuduo Zhang, Wanli Cheng, Koopman modeling and optimal control for microbial fed-batch fermentation with switching operators£¬Nonlinear Analysis: Hybrid Systems 52 (2024) 101461.
+
+\bibitem{YuanWuTeo2023} Jinlong Yuan, Changzhi Wu*, Kok Lay Teo, Jun Xie£¬Song Wang, Computational method for feedback perimeter control of multiregion urban traffic networks with state-dependent delays, Transportation Research Part C 153 (2023) 104231.
+
+\bibitem{YuanZhaoliu2023} Jinlong Yuan, Changzhi Wu*, Chongyang liu,Kok Lay Teo, Jun Xie, Robust suboptimal feedback control for a fed-batch nonlinear time-delayed switched system, Journal of the Franklin Institute 360 (2023) 1835-1869.
+
+\bibitem{YuanWuTeo2022} Jinlong Yuan, Changzhi Wu*, Kok Lay Teo, Shuang Zhao and Lixia Meng, Perimeter Control With State-Dependent Delays: Optimal Control Model and Computational Method, IEEE Transactions on Intelligent Transportation Systems, 23(11), 20614-20627, 2022.
+
+\bibitem{YuanWangZhai2021} Jinlong Yuan, Lei Wang*, Jingang Zhai, Kok Lay Teo, Changjun Yu, Ming Huang, Jun Xie, Robust optimal control for a batch nonlinear enzyme-catalytic switched time-delayed process with noisy output measurements. Nonlinear Analysis: Hybrid Systems, 41(2021), 101059.
+
+\end{thebibliography}
+%\end{document}

@@ -1,0 +1,107 @@
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+\usepackage{todonotes}
+
+\usepackage{nla} 
+
+\begin{document}
+\fi
+
+\title{Solvability of a problem with the integral gluing condition for a loaded integro-differential equation }
+
+\author{Umida Baltaeva\inst{1} \and Yulduz Babajanova\inst{2} \and Boburjon Khasanov\inst{3}
+}
+\institute{Khorezm Mamun Academy, \\Khorezm, Uzbekistan\\
+  \email{umida{\underline{ }}baltayeva@mail.ru}
+  \and
+Khorezm Mamun Academy, \\Khorezm, Uzbekistan\\
+\email{yulduzb90@gmail.com}
+ \and
+Khorezm Mamun Academy, \\Khorezm, Uzbekistan\\
+\email{xasanovboburjon.1993@gmail.com}}
+
+\maketitle
+
+\begin{abstract}
+\keywords{Mixed type equation, parabolic-hyperbolic type, integral condition, Riemann-Liouville fractional integral operator.}
+\end{abstract}
+
+Let $ D $ be a domain bounded by segments $ y = 0$, $x = 1$, $y = 1$
+and $x = -1$. We introduce the following notations
+$$D_{1}=D\cap\{x>0\},\,\ D_{2}=D\cap\{x<0\},\,\,I=\{ (x,y):x=0,
+0<y<1\}.$$
+
+We consider the following linear loaded [1],[2] integro-differential
+equation
+
+
+\begin{equation}
+u_{xx} - {\frac{{1 - sgny}}{{2}}}u_{yy} - {\frac{{1 +
+			sgny}}{{2}}}u_{y} + M u=0,\,\textrm{ in }\ D_{k},
+\end{equation}
+where $M u\equiv\sum\limits_{i=1}^{n}a_{i}(x,y)D_{0y}^{\alpha_{i}}
+u(0,y)$ in $D_{1}$ and $M
+u\equiv\sum\limits_{i=1}^{n}b_{i}(x,y)D_{0y}^{\beta_{i}}u(0,y)$ in
+$D_{2}$, respectively, $D_{0y}^{\gamma }$ Riemann-Liouville
+fractional integral operator of order
+$\gamma\,(\gamma=\alpha_{i},\beta_{i})$.
+ We assume that the functions  $a_{i}(x,y) and $  $ b_{i}(x,y)  (i=1,n) $ have a Holder continuous derivative on the closure of domain $\overline{D}$.
+
+Consider the following mixed problem with integral gluing conditions
+for a loaded integro-differential equation (1).
+
+$\textbf{Problem 1.}$ Find a function $u(x,y)$ satisfying the
+conditions:
+
+1) $u(x,y)\in C (\bar{D_{k}})\cap C^{1}(D_{k}\cup I)$;
+
+2) $u(x,y)$ is a regular solution of (1) in the domains $D_{k}(k=1,2)$;
+
+3) the following gluing conditions
+\begin{equation}
+\left.\begin{aligned}
+\tau_{1}(y)&=\mu(y)\tau_{2}(y)+\sigma(y),\\
+\nu_{1}(y)&=\int\limits_{0}^{y}\gamma(y,\eta)\nu_{2}(\eta)d\eta+\delta(y)\nu_{2}(y)+\xi(y)\tau_{2}(y)+\theta(y),
+\end{aligned} \right\}
+\end{equation}
+are satisfied on $I$, $ \tau_{1}(y)=u(+0,y),\,
+\nu_{1}(y)=u_{x}(+0,y), $
+$\tau_{2}(y)=u(-0,y),\,\nu_{2}(y)=u_{x}(-0,y); $
+
+4) satisfies boundary conditions:
+\begin{equation}
+u(-1,y)=\varphi_{1}(y), \ \ \ u_{x}(1,y)=\varphi_{2}(y),\ \ \ 0\leq y\leq 1,
+\end{equation}
+\begin{equation}
+u(x,0)=\psi_{1}(x), \ \ \ u_{y}(x,0)=0,\ \ \ -1\leq x\leq 0,
+\end{equation}
+\begin{equation}
+u(x,0)=\psi_{2}(x),  \ \ \ 0\leq x\leq 1,
+\end{equation}
+where $ \varphi _1 (y),\varphi _2 (y),\psi _1 (x),\psi _2 (x),$ $
+\mu(y),$ $ \sigma(y),$
+$  \delta(y),$ $ \gamma_{y}(y,\eta),$ $  \xi(y),  \theta(y) $ are given
+functions, $\mu(y)\neq 0,$ $ \gamma^{2}(y,\eta)+\delta^{2}(y)\neq 0, $ moreover,
+\begin{equation*}
+\varphi_{1}(0)=\psi_{1}(-1), \,\,  \varphi_{2}(0)=\psi'_{2}(1),\,\,
+\psi_{2}(0)=\mu(0)\psi_{1}(0)+\sigma(0).
+\end{equation*}
+
+\begin{theorem}
+If $\psi''_{1}(x),$ $  \varphi''_{1}(y),$ $  \psi''_{2}(x),$ $ \varphi_{2}(y),$ $  c_{1}(x,y),$  $  \mu'(y),$ $  \sigma'(y),$ $  \delta'(y),$ $ \gamma_{y}(y,\eta),$ $  \xi'(y),  \theta'(y) $ are Holder continuous and 
+\begin{equation}\left.\begin{aligned}
+\delta(0)\psi'_{1}(0)+\xi(0)\psi_{1}(0)+\theta(0)-\psi'_{2}(0)=0,\ \ \text{if} \ \ \delta(y)\neq 0,\\
+\xi(0)\psi_{1}(0)+\theta(0)-\psi_{2}(0)=0,\ \ \sigma'(0)+\mu'(0)\psi_{1}(0)=0,\ \ \  \text{if}\ \ \ \delta(y)\equiv 0,\\	\varphi_{1}(0)=\psi_{1}(-1),\ \ \ \varphi_{2}(0)=0,
+\end{aligned} \right\}
+\end{equation}
+	then there exists a unique solution to problem 1.
+\end{theorem}
+
+\begin{thebibliography}{9} % or {99}, if there is more than ten references.
+\bibitem{ ANakhushev2012}Nakhushev A. M. Loaded Equations and Their Application, Moscow, Nauka, 2012.~[In Russian]
+\bibitem{Baltaeva2021}Baltaeva U.I. Alikulov Y., Baltaeva I.I., Ashirova A. Analog of
+the Darboux problem for a loaded integro-differential equation involving the Caputo fractional derivative.  Nanosystems physics, chemistry, mathematics.~2021. Vol.~4. Pp.~418--424.
+\end{thebibliography}
+%\end{document}

@@ -1,0 +1,124 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{On Numerical Solution of Optimal Control Problems of the McKean-Vlasov type}
+% First author
+\author{Denis Sidorov\inst{1} \and Maksim Staritsyn\inst{2}
+}
+\institute{Irkutsk National Research Technical University, Irkutsk, Russia\\
+  \email{dsidorov@isem.irk.ru}
+  \and
+ISDCT, SB RAS, Irkutsk, Russia\\
+\email{starmax@icc.ru}}
+% etc
+
+\maketitle
+
+\begin{abstract}
+We present an approach to the numerical solution of nonlinear stochastic control problems involving generalized moments of the law of the state distribution as cost functionals. The approach is based on non-local representations of the cost increment formula and finds application in management of power microgrids.
+
+\keywords{stochastic equations, optimal control, numerical methods}
+\end{abstract}
+\end{englishtitle}
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  This is the template file for the 6th International conference
+%  NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+%  June 25-30, 2018
+%  Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[12pt]{llncs}  
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes} 
+
+\usepackage[russian]{nla}
+
+\begin{document}
+\fi
+
+\title{Об одном подходе к численному решению задач оптимального управления типа Маккина-Власова\thanks{Работа выполнена при поддержке Минобрнауки России, проект \textnumero~FZZS-2024-0003.%.
+}}
+% Первый автор
+\author{Д.~Н.~Сидоров\inst{1} \and М.~В.~Старицын\inst{2}
+}
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{ИРНИТУ, Иркутск, Россия \\
+  \email{dsidorov@isem.irk.ru}
+  \and   % Разделяет институты и присваивает им номера по порядку.
+ИДСТУ СО РАН, Иркутск, Россия\\
+  \email{starmax@icc.ru}
+% \and Другие авторы...
+}
+
+\maketitle
+
+\begin{abstract}
+
+Обсуждается подход к численному решению нелинейных задач стохастического управления с целевым функционалом, содержащим обобщенные моменты закона распределения фазового состояния. Подход опирается на нелокальные представления приращения целевого функционала и находит применение в задачах управления электрическими микросетями.
+
+\keywords{стохастические уравнения, оптимальное управление, численные методы оптимизации} % в конце списка точка не ставится
+\end{abstract}
+
+\section{Основные результаты} % не обязательное поле
+
+Речь в докладе пойдет о частном (и довольно нестандартном) классе задач оптимального стохастического управления вида
+\begin{align*}
+  (P) \quad & I[u] = \ell(\mathbb E \psi(X_T)) + \int_I r(s,\mathbb E R(s, X_s), u_s)d s  \to \min,\\
+    &X_t = X_0 + \int_0^t f(s, X_s, u_s) d s + \int_0^t\sigma(s, X_s) \, d W_s, \quad t \in I \doteq [0,T];\\
+    & u \in L_\infty(I; U).
+\end{align*}
+Здесь $W_t$ --- многомерный винеровский процесс на некотором вероятностном пространстве с естественной фильтрацией; векторная и матричная функции $f$ и $\sigma$ удовлетворяют стандартным предположениям регулярности, обеспечивающим существование сильного решения стохастического уравнения; целевые функции $\ell$, $\psi$, $r$ и $R$, момент времени $T$, а также множество $U$ заданы; случайная величина $X_0$ независима от винеровского процесса и имеет известное распределение. 
+
+Постановка $(P)$ представляет собой специальный случай т.н. задачи типа Маккина-Власова или задачи управления в среднем поле --- класса задач стохастического оптимального управления, в котором динамика и/или целевой функционал зависят (в общем случае, нелинейным образом) от закона распределения случайной величины $X_t$ \cite{1}. Нестандартным является выбор класса управлений: мы проводим оптимизацию в классе программных (зависящих только от переменной времени) стратегий~--- измеримых функций $u\colon I \to U$. При этом можно считать, что компоненты $u_j$ управления $u$ есть ``настраиваемые'' коэффициенты марковской стратегии $w(t, x) = \sum_j u_i(t) \phi_j(x)$ предписанной структуры.  
+
+Наш интерес к подобного рода постановкам обусловлен потребностями решения некоторых задач управления электрическими микросетями, имеющими в своем составе резервные источники питания \cite{2} (хотя круг возможных приложений значительно шире); целевой функционал $I$ может моделировать, к примеру, компромисс между ожидаемым отклонением заряда батареи от референтного значения (эффект старения) и вариабельностью (дисперсией) нагрузки на внешнюю электрическую сеть.
+
+Специальный вид задачи $(P)$ позволяет обобщить на нее подход \cite{3}, основанный на точных формулах приращения целевого функционала. Этот подход оперирует специальной ``экстремальной'' конструкцией обратной связи по закону распределения вектора $X_t$ и приводит к нелокальным методам спуска. В сообщении будет представлена реализация одного из таких методов, а также приведены результаты применения этой реализации к численному исследованию прикладных моделей указанного содержания.    
+
+
+
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+
+\bibitem{1} Acciaio B., Backhoff-Veraguas J. and Carmona  R. Extended mean field control problems: stochastic maximum principle and transport perspective // SIAM J. Control Optim. 2019. \textnumero~57. P. 3666--3693.
+
+\bibitem{2} Gobet E., Grangereau M. Extended McKean-Vlasov optimal stochastic control applied
+to smart grid management // ESAIM: Control, Optimisation and Calculus of Variations. 2022. V. 28. \textnumero~40.
+
+\bibitem{3} Staritsyn M., Pogodaev N. and Lobo~Pereira F. Linear-Quadratic Problems of Optimal Control in the Space of Probabilities // IEEE Control Systems Letters. 2022. V. 6. P. 3271-3276.
+
+% \bibitem{Gantmakher} Гантмахер~Ф.Р. Теория матриц. М.:~Наука,~1966.
+
+% \bibitem{Kholl} Современные численные методы решения обыкновенных дифференциальных уравнений~/ Под~ред.~Дж.~Холл, Дж.~Уатт. М.:~Мир,~1979.
+
+% \bibitem{Aleksandrov1} Александров~А.Ю. Об устойчивости сложных систем в критических случаях~// Автоматика и телемеханика. 2001. \textnumero~9. С.~3--13.
+
+% \bibitem{Moreau1977} Moreau~J.-J. Evolution problem associated with a moving convex set in a Hilbert space~// J.~Differential~Eq. 1977. Vol.~26. Pp.~347--374.
+
+% \bibitem{Semenov} Семенов~А.А. Замечание о вычислительной сложности известных предположительно односторонних функций~// Тр.~XII Байкальской междунар. конф. <<Методы оптимизации и их приложения>>. Иркутск, 2001. С.~142--146.
+
+\end{thebibliography}
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок.
+
+
+
+
+%\end{document}
+

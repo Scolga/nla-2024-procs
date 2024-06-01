@@ -1,0 +1,98 @@
+\iffalse
+\documentclass[12pt]{llncs}
+
+\usepackage{todonotes}
+
+\usepackage{nla}
+
+\begin{document}
+
+
+\title{Numerical Solution of the Optimal Control Problem Describing Separation Processes in a Distillation Column\thanks{The reported study was financially supported by the Russian Science Foundation, Project No 23-21-00296, https://rscf.ru/project/23-21-00296.}}
+
+
+\author{Alexander Arguchintsev   \and   Daniil Kopylov
+}
+
+\institute{Irkutsk State University, Irkutsk, Russia\\
+  \email{arguch@math.isu.ru}
+  }
+
+\maketitle
+\fi
+
+\begin{abstract}
+Optimal control methods are developed to solve optimization problem that arises when modeling the rectification process in the column. The process is described by a system of first-order hyperbolic equations. A specific peculiarity of the model is in the boundary conditions of a special dynamic type. Comparison of maximum principle methods, gradient methods and mathematical programming methods for the discrete variant is carried out.
+
+\keywords{distillation column, hyperbolic systems, dynamic boundary conditions, optimal control}
+\end{abstract}
+
+
+The mathematical model of separation processes of mixtures can be described by the following first-order system of hyperbolic equations \cite{Dem}:
+\begin{equation*}
+    \frac{\partial (H_x x_i)}{\partial t} -
+    \frac{\partial (L x_i)}{\partial s} =
+    kV (y_i - p(s,t)x_i) + \Phi_{x_i},
+\end{equation*}
+
+\begin{equation*}
+    \frac{\partial (H_y y_i)}{\partial t} +
+    \frac{\partial (V y_i)}{\partial s} =
+    kV (p(s,t)x_i - y_i) + \Phi_{y_i},
+\end{equation*}
+
+\begin{equation*}
+    \sum_{i=1}^N x_i =1, \; \sum_{i=1}^N y_i = 1, \; i=1, \dots, N.
+\end{equation*}
+Here $t$ is a time variable, $t \in [t_0, t_1]$; $s$ is a spatial variable, $s \in [s_0, s_1]$; $x_i(s,t)$ and $y_i(s,t)$ are
+$i$-th component concentrations in liquid and steam phases; functions $L(s,t), V(s,t)$  specify the flows of liquid and steam in the column; functions $H_k(s,t), H_y(s,t)$ determine the retention capacity of the column with respect to liquid and steam;
+$\Phi_{x_i}(s,t), \Phi_{y_i}(s,t)$ are the densities of input flows of $i$-th components of the initial mixture; constant $k$ is a steam mass transfer coefficient. Functions $L(s,t), V(s,t), H_k(s,t), H_y(s,t), \Phi_{x_i}(s,t), \Phi_{y_i}(s,t)$ and constant $k$ are given.
+
+The incoming mixture is subjected to evaporation and condensation procedures.
+
+Initial conditions at $t=t_0$ are given:
+\begin{equation*}
+    x(s, t_0) = x_0(s),\quad y(s, t_0) = y_0(s).
+\end{equation*}
+
+
+At the bottom of the column ($s=s_0$), the inlet liquid flow ($L(s_0,t)$) enters the evaporator. Part of this stream evaporates and returns to the bottom of the column ($V(s_0,t)$), and the other part of liquid exits the system as the bottom liquid product ($W(t)$) of the bottom column. Boundary conditions at $s=s_0$ are defined by the following material balance equations:
+\begin{multline*}
+    \frac{d(H_{x}(s_0, t)y_{i}(s_0, t))}{dt} = L(s_0, t)x_i(s_0, t) \\
+    -V(s_0, t)y_i(s_0, t) - W(t)y_{i}(s_0, t), \\
+    \frac{dH_{x}(s_0, t)}{dt} = L(s_0, t)-V(s_0, t) - W(t),\\
+    x_{i}(s_0, t_0) = x_{i0}(s_0), H_{x}(s_0, t_0) = H_{xk0},  \; i=1, \dots, N.
+\end{multline*}
+
+At the top of the column ($s=s_1$) part of the flow of liquid leaving the condenser returns to the column as a reflux ($L(s_1,t)$), and the other part exits the system as the finished product ($W(t)$):
+\begin{multline*}
+    \frac{dH_{x}(s_1, t)x_{i}(s_1, t)}{dt} = V(s_1, t)y_{i}(s_1, t) \\
+    - (L(s_1, t)+D(t))x_{i}(s_1, t), \\
+    \frac{dH_{x}(s_1, t)}{dt} = V(s_1, t) - (L(s_1, t)+D(t)),\\ x_{i}(s_1, t_0) = x_{i0}(s_1), H_{x}(s_1, t_0) = H_{xd0}, \;
+     i=1, \dots, N.
+\end{multline*}
+
+Controls (flows $D(t), W(t)$) satisfy the additional constraints
+constraints defining the balance of raw material and finished product flows in the column for the whole period of operation.
+
+The goal is to achieve the specified parameters $\theta_{1i},\;\
+\theta_{2i}$ at a finite moment of time 
+\begin{equation*}
+J=\sum\limits_{i=1}^{N}\int\limits_{t_0}^{t_1}[K_{1i}(x_{i}(s_1,t)-
+\theta_{1i})^2+K_{2i}(y_{i}(s_0,t)-\theta_{2i})^2]\,dt\rightarrow
+\min. 
+\end{equation*}
+Here $K_{1i},\;\ K_{2i}$ are the coefficients determining the value of the
+of the product.
+
+A specific peculiarity of the model is in the boundary conditions of a special dynamic type. At each of the boundaries, boundary conditions are determined from a system of ordinary differential equations, which also includes unknown values of functions on another boundary. Therefore, the initial-boundary value problem cannot be solved by solving the initial value problems first for ordinary differential equations, and then by integrating the hyperbolic system. A modification of the numerical method of characteristics is developed in \cite{Arg} to solve this initial-boundary value problem.
+
+Several variants of methods of numerical solution of the considered optimal control problem are realized. Comparison of maximum principle methods, gradient methods and mathematical programming methods for the discrete variant is carried out.
+
+\begin{thebibliography}{9} % or {99}, if there is more than ten references.
+\bibitem{Dem} Demidenko N. Optimal control of thermal-engineering processes in tube furnace. Chem. Petrol. Eng. ~2006. Vol.~142. Pp.~128--130.
+    
+\bibitem{Arg} Arguchintsev A. V., Kopylov D. E. Numerical solution of the initial-boundary value problem describing separation processes in a distillation column. Cybernetics and Physics. ~2023. Vol.~12, no~3. Pp.~169--173.
+
+\end{thebibliography}
+%\end{document}

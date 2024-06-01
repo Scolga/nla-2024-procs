@@ -1,0 +1,103 @@
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+% The correcting style file is added.
+
+\usepackage{todonotes}
+
+%\usepackage{tabularx}
+
+\usepackage{nla} % This package is needed for compiling
+                 % this template, it should be removed
+                 % from your article.
+
+% Many popular packages (amsXXX, graphicx, etc.) are already imported in the style file.
+% If there is a conflict with your packages, try disabling them and compile
+% the text.
+%
+% It would be convenient in the layout of the proceedings if the file names
+% of the figures of different authors do not clash.
+% To minimize the clash, the drawings can be placed in a separate subfolder
+% named after the author or the title of the paper.
+%
+% \graphicspath{{ivanov-petrov-pics/}} % specifies the folder with images in png, pdf formats.
+% or
+% \graphicspath{{great-problem-solving-paper-pics/}}.
+
+\begin{document}
+\fi
+% Text should be formatted in accordance with the 'article' class, using extensions like
+% AMS.
+%
+\title{Bin-by-bin strategy for the two-dimensional irregular bin packing problem}
+% First author
+\author{Sofia Shperling}
+
+\institute{Novosibirsk State University, Novosibirsk, Russia\\
+  \email{s.shperling@g.nsu.ru}}
+% etc
+
+\maketitle
+
+\begin{abstract}
+
+We are study the two-dimensional bin packing problem for irregular items and rectangular bins. A finite set of irregular items and unlimited number of identical rectangular bins with a predefined length and width are given.  Items presented as two-dimensional, possibly non-convex polygons. The rotations of items by 0, 90, 180, and 270 angles are allowed. Our goal is to pack all items into the bins to minimise the number of used bins and maximize the utilization of them. 
+
+In the packing algorithm, we apply a fitness function based on the gravity center of the packing area and the idea of the well-known sky-line approach to build intermediate packing. For the result packing construction, we developed special bin-by-bin strategy. When some packing was received, we select the bin with the smallest value of the residuals and add to the result packing. We repeat the algorithm until all items are placed. So the result packing consisted of the best bins received for intermediate packing. To improve the result, we developed an algorithm to fill the corner (or corners) of the bin. We evaluate all corners of all polygons to find items and their rotation angle, which are better fits in corners. The computational results with filling of one, two, three, and four corners of some bins before packing are presented. Experiments were carried out on the real test instances from Novosibirsk company with up to 50 items.
+
+\keywords{2D bin packing problem, irregular items,  fitness function based
+algorithm}
+\end{abstract}
+
+\section{The main results}
+
+In this research, we apply the following objective function proposed by Osogami and Okano~\cite{Osogami} and Lopez-Camacho et al.~\cite{LopezCamacho}
+
+\begin{equation}
+ \max \frac{ \sum_{i=1}^N U_i^2}{N},
+ \label{eq9}
+\end{equation}
+where $U_i$ is utilisation ratio of bin $i$, $N$ is a number of the used bins.  The  $U_i$  is defined as  $U_i = \frac{\sum _{i=1}^n Sqr(p_i) }{LW}$, where $Sqr(p_i)$ is the area of the item $p_i$ if it is packed in the bin $i$, $0$ otherwise, $L$ and $W$ are the length and width of the bin.
+
+The most common evaluation of the bin packing is the number of used bins. Though, this strategy does not distinguish solutions with the same number of bins, but with the different percent of the residuals at the last bin. For a more accurate comparison, we need to apply~(1). In this work, we apply a fitness function based algorithm for the packing phase. Our fitness function is defined as a ratio of the polygon area and the coordinates of the gravity center of the partial packing~\cite{OurFF}. 
+
+Mixed strategy at every step of the packing construction algorithm gets the best bin by fitness function based algorithm with packing construction with 0, 1, 2, 3 or 4 field corners. Mixed algorithm chooses the bin with the smallest value of the residuals obtained of these algorithms. Comparison of the mean values of the objective function~(1) for fitness function based algorithm (FitFunc), fitness function based algorithm with packing construction (FitFunc+PC) and fitness function based algorithm with packing construction and corners filling (FitFunc+PC+CF) and mixed strategy are presented at the Table~\ref{table_results}. 
+
+\begin{table}[]
+\caption{Obtained results}\label{table_results}
+    \begin{center}
+    \begin{tabularx}{400pt}{c|c|c|XXXX|c}
+    \hline
+    Data set& FitFunc & FitFunc+PC &\multicolumn{4}{c|}{ FitFunc+PC+CF } & mixed\\
+    &&&1 corner& 2 corner& 3 corner& 4 corner&\\[0.3cm]\hline
+    car\_mats\_1& 0.398 & 0.402 & 0.404 & 0.408 & \textbf{0.417} & 0.401 & \textbf{0.421} \\ [0.3cm]
+    car\_mats\_2& 0.383 & 0.405 &\textbf{ 0.415} & 0.409 & 0.404 & 0.402 & \textbf{0.417}\\ [0.3cm]
+    car\_mats\_3& 0.401 &\textbf{0.412} & 0.403 & 0.407& 0.399 & 0.400 & \textbf{0.414} \\ [0.3cm]
+    car\_mats\_4& 0.392 & 0.401 & \textbf{0.409} & 0.403 & 0.408 & 0.407 & \textbf{0.416} \\ [0.3cm]
+    car\_mats\_5& 0.341 & 0.395 & \textbf{0.416} & 0.415& 0.403 & 0.409 &\textbf{ 0.419} \\ [0.3cm]
+    car\_mats\_6& 0.403 & 0.421 & \textbf{0.422} & 0.418 & 0.413 & 0.413 & \textbf{0.427} \\ [0.3cm]
+    car\_mats\_7& 0.387 & 0.396 & 0.402 & \textbf{0.403} & 0.396& 0.401 & \textbf{0.412}\\ [0.3cm]
+    car\_mats\_8& 0.332 & 0.391 & 0.397 & \textbf{0.405} & 0.399 & 0.391 & \textbf{0.410} \\ [0.3cm]
+    car\_mats\_9& 0.398 & 0.402 & 0.401 & 0.400 & 0.403 & \textbf{0.407} & \textbf{0.415} \\ [0.3cm]
+    car\_mats\_10& 0.386 & \textbf{0.417} & 0.414 & 0.416& 0.413 & 0.412 & \textbf{0.425} \\
+[0.3cm]\hline
+    \end{tabularx}
+    \end{center}
+\end{table}
+
+As we can see at the Table~\ref{table_results} the packing construction algorithm significantly improves the results. For the corner filling strategy, we can not choose the best number of prefilled corners for every test instance. For all data sets, we obtained the best results using the mixed strategy. This happens because we have the opportunity to select the best bin at each step from a larger number of options. At each step, it may choose the best packing strategy for the next bin.
+
+All experiments were carried out on PC AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx, 2.10 GHz, RAM 16 Gb under Windows 11 operating system. The program was implemented in Python language applying CPython. Average implementation time is 4.30 min, except mixed algorithm - 5.40 min.
+
+
+\begin{thebibliography}{9} % or {99}, if there is more than ten references.
+
+\bibitem{LopezCamacho} Lopez-Camacho, E., Terashima-Marín, H., Ochoa, G., Conant-Pablos, S.E.  Understanding the structure of bin packing problems through principal component analysis. International Journal of Production Economics. 2013b. Vol. 145. Pp. 488--499. 
+
+\bibitem{Osogami} Osogami, T., Okano, H.   Local search algorithms for the bin packing problem and their relationships to various construction heuristics. Journal of Heuristics. 2003. Vol. 9. 29--49. 
+
+\bibitem{OurFF} Shperling, S., Kochetov, Y., 2023. A Fitness Functions Based Algorithm for the Two-Dimensional Irregular Strip Packing Problem, 2023 19th International Asian School-Seminar on Optimization Problems of Complex Systems (OPCS), Novosibirsk, Moscow, Russian Federation, Pp. 104--109.
+
+\end{thebibliography}
+%\end{document}

@@ -1,0 +1,119 @@
+\begin{englishtitle} 
+\title{On stability of a linear difference equation with complex coefficients}
+
+\author{Ilya Aksenenko}
+\institute{Perm National Research Polytechnic University, Perm, Russia \\
+  \email{ilya156@list.ru}}
+
+
+\maketitle
+
+\begin{abstract}
+The stability of a linear autonomous difference equation with two (generally speaking, complex) coefficients and various delays is investigated. To construct an exponential stability domain in the parameter space, the D-partition method is used for the above-mentioned difference equation: geometric stability criteria are found and exponential stability domains in the four-dimensional space of coefficients, as well as their three-dimensional sections, are described.
+
+\keywords{difference equations, stability, D-decomposition} 
+\end{abstract}
+\end{englishtitle}
+
+\iffalse
+
+\documentclass[12pt]{llncs}  
+\usepackage{iftex}
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} 
+\usepackage[english,russian]{babel}
+\fi
+\usepackage{todonotes} 
+\usepackage[russian]{nla}
+
+\renewcommand{\Re}{\mathop{\rm Re}\nolimits}
+\renewcommand{\Im}{\mathop{\rm Im}\nolimits}
+
+
+\begin{document}
+\fi
+
+\title{Об устойчивости линейного разностного уравнения с~комплексными коэффициентами\thanks{Работа выполнена при поддержке Министерства науки и высшего образования Российской Федерации, проект \textnumero~FSNM-2023-0005.}}
+% Первый автор
+\author{И.~А.~Аксененко}
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{Пермский национальный исследовательский политехнический университет (ПНИПУ), Пермь, Россия \\
+  \email{ilya156@list.ru}
+}
+
+\maketitle
+
+\begin{abstract}
+Исследуется устойчивость линейного автономного разностного уравнения с двумя комплексными коэффициентами.
+С помощью метода D-разбиений описаны области экспоненциальной и равномерной устойчивости в четырехмерном действительном пространстве коэффициентов и их трехмерные сечения. 
+
+\keywords{линейное разностное уравнение, устойчивость, D-разбиение, области устойчивости}
+\end{abstract}
+
+Целью работы является исследование устойчивости разностного уравнения вида
+$$
+x(n) + ax(n - 1) + bx(n - k) = 0,\quad n \in \mathbb{N},\eqno(1)
+$$
+для произвольных $k\in\mathbb{N}$ и $a,b \in \mathbb{C}$.
+
+Очевидно, что в случае $k=1$ уравнение (1) экспоненциально устойчиво, если и только если $|a+b|<1$, и равномерно устойчиво, если и только если $|a+b| \leq 1$.
+Поэтому ниже считаем, что $k>1$.
+
+Сначала рассмотрим случай $a \ge 0$, $b \in \mathbb{C}$.
+Положим $b=\alpha + i\beta$.
+Поверхность D-разбиения~[1] пространства параметров уравнения (1) задается параметрическими уравнениями
+$$
+	\begin{cases}
+		\alpha  = a\cos ((k-1)\varphi) - \cos (k\varphi),& \\
+		\beta  = a\sin((k-1)\varphi) - \sin (k\varphi).& 
+	\end{cases}
+$$
+где $\varphi \in [-\pi, \pi]$.
+Эта поверхность разбивает пространство параметров на конечное число областей, среди которых следует выбрать область устойчивости.
+
+Обозначим через ${C}_{k}$ открытую область, границы которой определяются изменением параметров $a$ и $\varphi$ в пределах $a \in [0,\frac{k}{k-1}]$, $\varphi \in [-\arccos {t_{0}},\arccos {t_{0}}]$, где ${t_0}$~--- первый положительный корень уравнения 
+$$
+a{U_{k - 2}}(t) = {U_{k - 1}}(t),
+$$
+a $U_k$ -- многочлены Чебышёва 2-го рода.
+
+Через $[{C}_{k}]$ обозначим замыкание области ${C}_{k}$.
+
+%Теперь сформулируем критерии экспоненциальной устойчивости и устойчивости по Ляпунову.
+
+\textbf{Теорема 1.} \textit{Пусть $a \ge 0$ и $b \in \mathbb{C}$.
+Уравнение~{\rm (1)} экспоненциально устойчиво, если и только если точка с координатами $\{\mathop{\rm Re}\nolimits b,\mathop{\rm Im}\nolimits b,a\}$ принадлежит области~${C}_{k}$.}
+
+\textbf{Теорема 2.} \textit{Пусть $a \ge 0$ и $b \in \mathbb{C}$.
+Уравнение~{\rm (1)} равномерно устойчиво, если и только если точка с координатами $\{\mathop{\rm Re}\nolimits b,\mathop{\rm Im}\nolimits b,a\}$ принадлежит множеству $$[C_{k}] \setminus \{ \frac{1}{k-1},0,\frac{k}{k-1}\}.$$}
+
+Теперь рассмотрим общий случай $a,b\in\mathbb{C}$.
+Обозначим $a =|a|{e^{i\omega }}$. % и сделаем замену $x(n) = {e^{i\omega n}}y(n)$.
+Поверхность D-разбиения задается параметрическими уравнениями
+$$
+\begin{cases}
+	\alpha  = |a|\cos ((k-1)\varphi + k\omega) - \cos (k\varphi + k\omega),& \\
+	\beta  = |a|\sin((k-1)\varphi+ k\omega) - \sin (k\varphi + k\omega).& 
+\end{cases}
+$$
+При фиксированном параметре $\omega$ эта поверхность разбивает пространство параметров на конечное число областей.
+ Назовем $C_{k\omega}$ открытую область, ограниченную поверхностью D-разбиения при тех же изменениях параметров $a$ и $\varphi$, что и в случае $a\ge 0$. Легко видеть, что область $C_{k\omega}$ получается из $C_{k}$ поворотом на угол $k\omega$.
+
+\textbf{Теорема 3.} \textit{Пусть $a,b \in \mathbb{C}$.
+Уравнение~{\rm (1)} экспоненциально устойчиво, если и только если точка с координатами $\{\mathop{\rm Re}\nolimits b,\mathop{\rm Im}\nolimits b,|a|\}$ принадлежит области~${C}_{k\omega}$.}
+
+\textbf{Теорема 4.} \textit{Пусть $a,b \in \mathbb{C}$.
+Уравнение~{\rm (1)} равномерно устойчиво, если и только если точка с координатами $\{\mathop{\rm Re}\nolimits b,\mathop{\rm Im}\nolimits b,|a|\}$ принадлежит множеству $$[C_{k\omega}] \setminus \{ \frac{\cos k\omega}{k-1},\frac{\sin k\omega}{k-1},\frac{k}{k-1}\}.$$}
+
+\begin{thebibliography}{9} 
+
+\bibitem{Neymark} Неймарк Ю.И. Устойчивость линеаризованных систем (дискретных и распределенных). Л.: ЛКВВИА, 1949.% – 140 с. 
+
+\end{thebibliography}
+ 
+
+
+%\end{document}
+

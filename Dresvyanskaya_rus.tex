@@ -1,0 +1,173 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{Application of piece-wise linear support functions in linear bilevel programming problems}
+% First author
+\author{N.~V.~Dresvyanskaya}
+
+\institute{Melentiev Energy Systems Institute SB RAS, Irkutsk, Russia\\
+  \email{nadyadresvyanskaya@gmail.com}
+}
+% etc
+
+\maketitle
+
+\begin{abstract}
+The linear bilevel programming problem in the optimistic formulation is considered. 
+It is reduced to a single-level linear programming problem with an additional inverse-convex constraint. 
+A local search method based on the application of piece-wise linear convex support functions is proposed for solving the single-level problem. 
+The convergence of the proposed method to the local minimum is established. Results of computational experiments are given.
+
+\keywords{bilevel optimization, local search, support functions} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  This is the template file for the 6th International conference
+%  NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+%  June 25-30, 2018
+%  Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[12pt]{llncs}  
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes} 
+\usepackage{amssymb}
+
+\usepackage[russian]{nla}
+
+\begin{document}
+\fi
+
+\title{Применение кусочно-линейных опорных функций в задачах линейного двухуровневого программирования}
+% Первый автор
+\author{Н.~В.~Дресвянская}
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{Институт систем энергетики им. Л.~А.~Мелентьева СО РАН (ИСЭМ СО РАН), Иркутск, Россия \\
+  \email{nadyadresvyanskaya@gmail.com}
+}
+
+\maketitle
+
+\begin{abstract}
+В работе рассматривается задача линейного двухуровневого программирования в оптимистической постановке и 
+осуществляется ее редукция к одноуровневой задаче линейного программирования с дополнительным обратно-выпуклым ограничением. 
+Для решения одноуровневой задачи предлагается метод локального поиска, основанный на применении кусочно-линейных выпуклых опорных функций. 
+Обосновывается сходимость метода к точке локального минимума. Приводятся результаты вычислительных экспериментов.
+
+\keywords{двухуровневая оптимизация, локальный поиск, опорные функции} % в конце списка точка не ставится
+\end{abstract}
+
+% \section{Основные результаты} % не обязательное поле
+
+Задача двухуровневого линейного программирования формулируется следующим образом:
+\begin{gather}
+c_1^Tx+d_1^Ty\rightarrow\min_{x,y}, \qquad\qquad\qquad\quad \label{blp1}\\
+\qquad\qquad\qquad\: A_1x+B_1y\leqslant r_1,\;x\in X\subset\mathbb{R}^{n_1},\qquad\qquad \label{blp2}\\
+\quad c_2^Tx+d_2^Ty\rightarrow\min_y,\qquad\qquad \label{blp3}\\
+\qquad\qquad\qquad\qquad A_2x+B_2y\leqslant r_2,\;y\in Y\subset\mathbb{R}^{n_2},\qquad \label{blp4}
+\end{gather}
+где $A_i$ -- $m_i\times n_1$ матрицы, $B_i$ -- $m_i\times n_2$ матрицы, $r_i\in\mathbb{R}^{m_i}$, $i=1,2$, $X$ и $Y$ --- многогранные множества. 
+Введем функцию оптимального значения второго уровня
+\begin{eqnarray}
+\psi(x)&=&\min_{y\in Y}\{c_2^Tx+d_2^Ty: A_2x+B_2y\leqslant r_2\}=\nonumber\\
+&=&c_2^Tx+\min_{y\in Y}\{d_2^Ty: B_2y\leqslant r_2-A_2x\}=c_2^Tx+\varphi(x),\label{blp5}\\
+\varphi(x)&=&\min_{y\in Y}\{d_2^Ty: B_2y\leqslant r_2-A_2x\}=\min_{y\in Y(x)}d^T_2y,\label{blp6}\\
+Y(x)&=&\{y\in Y: B_2y\leqslant r_2-A_2x\}.\label{blp7}
+\end{eqnarray}
+
+Запишем исходную двухуровневую задачу \eqref{blp1}-\eqref{blp4} в виде следующей одноуровневой, используя функцию оптимального значения $\psi$
+\begin{equation}
+c_1^Tx+d_1^Ty\rightarrow\min_{x,y},
+\label{blp8}
+\end{equation}
+\begin{equation}
+A_1x+B_1y\leqslant r_1,\;x\in X\subset\mathbb{R}^{n_1},
+\label{blp9}
+\end{equation}
+\begin{equation}
+A_2x+B_2y\leqslant r_2,\;y\in Y\subset\mathbb{R}^{n_2},
+\label{blp10}
+\end{equation}
+\begin{equation}
+c_2^Tx+d_2^Ty\leqslant \psi(x).
+\label{blp11}
+\end{equation}
+
+Везде далее будем предполагать, что ограничения \eqref{blp9}-\eqref{blp10} совместны. В силу линейности ограничений, проверка этого предположения не составляет труда. 
+Если ограничения несовместны, то очевидно задача \eqref{blp1}-\eqref{blp4} не имеет решения.
+
+В силу \eqref{blp5} неравенство \eqref{blp11} можно переписать следующим образом:
+\begin{equation}
+d_2^Ty\leqslant \varphi(x).
+\label{blp12}
+\end{equation}
+
+Слагаемое $c_2^Tx$ в целевой функции \eqref{blp3} задачи второго уровня никак не влияет ни на решение задачи второго уровня, ни на общее решение всей двухуровневой задачи. 
+Поэтому, в дальнейшем можно полагать $c_2=0$.
+
+Определим функцию $\psi$ следующим образом:
+\begin{eqnarray}
+\psi(x)&=&\sup_{u\geqslant 0}\min_{y\in Y}\left\{d^T_2y+u^T(A_2x+B_2y-r_2)\right\}=\nonumber\\
+&=&\sup_{u\geqslant 0}\left\{\min_{y\in Y}\left[(B_2^Tu+d_2)^Ty\right]+(A_2x-r_2)^Tu\right\}.\label{blp13}
+\end{eqnarray}
+
+Очевидно, $\psi$ --- функция оптимального значения задачи, двойственной задаче \eqref{blp6}. 
+Пусть множество $Y$ есть неотрицательный ортант, $Y=\mathbb{R}^{n_2}_{+}=\{y\in\mathbb{R}^{n_2}: y\geqslant 0\}$. Тогда задача \eqref{blp13} эквивалентна следующей
+\begin{equation}
+(A_2x-r_2)^Tu\rightarrow\max_u,
+\label{du1}
+\end{equation}
+\begin{equation}
+u\in U=\{u\in\mathbb{R}^{m_2}:B_2^Tu+d_2\geqslant 0, \; u\geqslant 0\}.
+\label{du2}
+\end{equation}
+
+В этом случае допустимое множество двойственной задачи не зависит от $x$. 
+
+В дальнейшем будем предполагать, что допустимое множество двойственной задачи второго уровня \eqref{du1}-\eqref{du2} не пусто, $U\ne\emptyset$.
+
+В условиях данного предположения $\varphi(x)=\psi(x)$, функцию оптимального значения задачи второго уровня будем далее обозначать $\varphi(x)$. 
+Значение $\varphi(x)$ либо конечно, либо $\varphi(x)=+\infty$. Если $\varphi(x)=+\infty$, то ограничения прямой задачи \eqref{blp6} несовместны \cite{FPV_I_LP} и задача второго уровня --- несобственная задача 1-го рода. 
+Если $\varphi(x)$ конечно, решение двойственной задачи \eqref{du1}-\eqref{du2} достигается в вершине $U$, прямая задача \eqref{blp6} также разрешима. Пусть $w_1,\ldots,w_P$ --- вершины множества $U$, тогда
+\begin{equation}
+\varphi(x)=\begin{cases}
++\infty, & Y(x)=\emptyset;\\
+\max\limits_{1\leqslant i\leqslant P}w_i^T(A_2x-r_2), & Y(x)\ne\emptyset.
+\end{cases}
+\label{ObjDu}
+\end{equation}
+
+Идея локального поиска реализует общую схему из \cite{Khamisov} и состоит в следующем. Необходимо сначала построить функцию \eqref{ObjDu}, затем для каждого $i=1,\ldots,P$ решить задачу \eqref{blp8}-\eqref{blp10} 
+с дополнительным ограничением $d^T_2y\leqslant w_i^T(A_2x-r_2)$. При таком подходе определяется локальное решение задачи двухуровневого программирования.
+
+В докладе приводятся результаты численных экспериментов и обоснование сходимости метода к точке локального минимума.
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+\bibitem{FPV_I_LP} Васильев~Ф.~П., Иваницкий~А.~Ю. Линейное программирование. --- М.: Изд-во "Факториал"$\;$,~1998. --- 176 c.
+\bibitem{Khamisov} Khamisov~O. Quadratic support functions in quadratic bilevel problems~// in: Operations Research Proceedings 2017. Springer International Publishing, 2018. P.~105--110.
+\end{thebibliography}
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок.
+
+
+
+
+%\end{document}
+

@@ -1,0 +1,97 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{Pontryagin's maximum principle for an optimal control problem with irregular mixed constraints}
+% First author
+\author{Dmitry Karamzin }
+\institute{FRC CSC of RAS, Moscow, Russia\\
+\email{dmitry\_karamzin@mail.ru}}
+% etc
+
+\maketitle
+
+\begin{abstract}
+The optimal control problem with irregular mixed constraints is studied. For problems of this type, the Pontryagin maximum principle has been proven. An example is considered that demonstrates the possibility of applying the obtained optimality conditions.
+
+\keywords{optimal control, mixed constraints, maximum principle} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes}
+
+\usepackage[russian]{nla}
+
+%\newcommand{\Clos}{\mathop{\rm Clos}}
+%\newcommand{\mathop{\rm conv}}{\mathop{\rm conv}}
+
+
+\begin{document}
+\fi
+
+\title{Принцип максимума Понтрягина для задачи оптимального управления с нерегулярными смешанными ограничениями\thanks{Работа выполнена при поддержке РНФ, проект \textnumero~23-21-00161.}}
+% Первый автор
+\author{Д.~Ю.~Карамзин
+} % обязательное поле
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{ФИЦ ИУ РАН, г. Москва, Россия\\
+  \email{dmitry\_karamzin@mail.ru}
+}
+
+\maketitle
+
+\begin{abstract}
+Исследуется задача оптимального управления с нерегулярными смешанными ограничениями. Для задач такого типа доказан принцип максимума Понтрягина. Рассмотрен пример, демонстрирующий возможность применения полученных условий оптимальности.
+
+\keywords{оптимальное управление, смешанные ограничения, принцип максимума} % в конце списка точка не ставится
+\end{abstract}
+
+
+\section{Основные результаты} % не обязательное поле
+
+В работе исследуется задача оптимального управления с ограничением вида
+$$
+g(x(t),u(t),t)\le 0.
+$$
+Ограничение такого типа в литературе обычно называют смешанным. Изучение смешанных ограничений во многом основано на свойстве регулярности экстремальной траектории, которое предполагается изначально для анализа задачи или вывода необходимых условий оптимальности. Необходимые условия оптимальности в форме принципа максимума Понтрягина без априорных гипотез регулярности экстремальной траектории относительно отображения $g$ были получены в работе \cite{Milyutin_2001}.
+
+В настоящей работе предложено еще одно доказательство принципа максимума для задач с нерегулярными смешанными ограничениями. При этом по сравнению с работой \cite{Milyutin_2001} получено усиленное условие дополняющей нежесткости. Оно имеет вид
+\begin{equation}
+\label{complementary_M}
+0\in \int_{[0,1]}\Bigl(g(\bar x(t),\bar u(t),t)d\mu + \mathop{\rm conv}\mathop{\rm Clos} g(\bar x(t),\bar u(t),t)d(\eta-\mu)\Bigr).
+\end{equation}
+Здесь $\mathop{\rm Clos}$ означает замыкание измеримой функции по мере; $\eta$ -- борелевская мера-множитель Лагранжа; $\mu$ -- абсолютно непрерывная мера, которая мажорируется абсолютно непрерывной компонентой меры $\eta$.
+
+% Рисунки и таблицы оформляются по стандарту класса article. Например,
+
+% В конце текста можно выразить благодарности, если этого не было
+% сделано в ссылке с заголовка статьи, например,
+Работа выполнена при поддержке РНФ, проект \textnumero~23-21-00161.
+%
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+
+\bibitem{Milyutin_2001}
+Милютин А.А. Принцип максимума в общей задаче оптимального управления. М.: Физматлит, 2001.
+
+\end{thebibliography}
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок и аннотацию.
+
+
+
+
+%\end{document} 

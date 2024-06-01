@@ -1,0 +1,104 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{On the construction of two-stage multistep methods for the numerical solution of integral algebraic equations}
+% First author
+\author{Olga Budnikova\inst{1}   \and   Mikhail Bulatov\inst{2}
+ % \and
+%  Name FamilyName3\inst{1}
+}
+\institute{ISU, ISDCT SB RAS, Irkutsk, Russia\\
+  \email{osbud@mail.ru}
+  \and
+ISDCT SB RAS, Irkutsk, Russia\\
+\email{mvbul@icc.ru}}
+% etc
+
+\maketitle
+
+\begin{abstract}
+Systems of Volterra linear integral equations with identically singular matrices in the principal part (called integral-algebraic equations) are examined. Two-stage multistep methods for the numerical solution of a selected class of such systems are proposed.
+
+\keywords{Volterra integral equations, block methods, multistep algorithms, integral algebraic equations} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes}
+
+\usepackage[russian]{nla}
+
+
+
+\begin{document}
+\fi
+
+\title{О построении двухстадийных многошаговых методов для численного решения интегро алгебраических уравнений\thanks{Исследование выполнено за счет гранта Российского научного фонда \textnumero~22-11-00173, https://rscf.ru/project/22-11-00173/}}
+% Первый автор
+\author{О.~С.~Будникова\inst{2} \and   М.~В.~Булатов\inst{2}
+%  \and
+% Третий автор
+%  И.~О.~Фамилия\inst{1}
+} % обязательное поле
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{ИГУ, ИДСТУ СО РАН, Иркутк, Россия\\
+  \email{osbud@mail.ru}
+  \and   % Разделяет институты и присваивает им номера по порядку.
+ИДСТУ СО РАН, Иркутк, Россия\\
+\email{mvbul@icc.ru}
+% \and Другие авторы...
+}
+
+\maketitle
+
+\begin{abstract}
+Доклад посвящен разработке класса численных методов для решения вырожденных систем взаимосвязанных интегральных уравнений типа Вольтеррра.
+
+\keywords{интегральные уравнения Вольтерра, блочные методы, многошаговые алгоритмы, интегро алгебраические уравнения} % в конце списка точка не ставится
+\end{abstract}
+
+%\section{Основные результаты} % не обязательное поле
+
+В работе рассматриваются вырожденные системы взаимосвязанных интегральных уравнений Вольтерра первого и второго рода, для которых зарубежом устоялся термин <<интегро алгебраическое уравнение>>:
+\begin{equation}
+\label{eq_BudnikovaOS_1}
+A(t)x(t)+\int\limits^{t}_{0}{K(t,s)x(s)ds}=f(t),
+\end{equation}
+здесь
+\begin{equation*}
+\det A(t) \equiv 0,
+\end{equation*}
+где $A(t),$ $K(t,s)$ -- матрицы размерности $(n \times n),$ $f(t)$ и $x(t)$ -- $n$-мерные известная и искомая вектор-функции.
+
+Для численного решения задачи (\ref{eq_BudnikovaOS_1}) предложено строить двухстадийные многошаговые методы.  В докладе будут представлены условия на весовые коэффициенты, при которых разработанные алгоритмы являются устойчивыми. Результаты численных расчетов тестовых примеров приведены для иллюстрации теоретических положений и выявления достигнутого порядка точности.
+
+Представляемые результаты являются естественным продолжением исследований отраженных в \cite{ct_BudnikovaOS_1}.
+
+
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+%Статья на английском:
+\bibitem{ct_BudnikovaOS_1} Будникова~О.С., Булатов~М.В. Численное решение интегро-алгебраических уравнений многошаговыми методами~// Журнал вычислительной математики и математической физики. 2012. Т.~52. \textnumero~5. С.~829--839.
+
+
+\end{thebibliography}
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок и аннотацию.
+
+
+
+%\end{document}

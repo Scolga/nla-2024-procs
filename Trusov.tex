@@ -1,0 +1,102 @@
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+\usepackage{todonotes}
+
+\usepackage{nla} 
+
+\begin{document}
+\fi
+
+\title{The group behaviour analysis of the high-frequency traders based on Mean Field Games approach\thanks{The research is supported by RSF, project No.~23-21-00281.}}
+
+\author{Nikolai Trusov\inst{1,2}   \and  Lev Egorov\inst{1}
+}
+\institute{Federal Research Center “Computer Science and Control” of the Russian Academy of Sciences,
+Moscow, 119333 Russia\\
+  \and
+ Moscow Center for Fundamental and Applied Mathematics, Moscow, 119991 Russia\\
+   \email{trunick.10.96@gmail.com}, \email{lev\_yegorov@mail.ru}}
+
+\maketitle
+
+\begin{abstract}
+We present an approach to describe the group behaviour of the high-frequency traders (HFTs) in the stock market based on Mean Field Games and Optimal Control theory with a turnpike effect. The problem is formalized as a system of coupled PDEs: Kolmogorov--Fokker--Planck, evolving forward in time with initial condition, and Hamilton--Jacobi--Bellman, evolving backwards in time with terminal condition. Under certain assumptions, the system of PDEs can be reduced to Riccati ODEs. We solve the inverse problem to describe the behavior of HFTs during the Chinese stock market crisis in 2015.
+
+\keywords{Mean Field Games, ill-posedness, turnpike effect, optimal control synthesis.}
+\end{abstract}
+
+
+\section{The main results} %optional section
+
+The impact of the large amount of HFTs can be modelled via mean field term. A Mean Field Game is a coupled system of PDEs: a Kolmogorov--Fokker--Planck equation, evolving forward in time and describing evolution of the HFTs probability density function spread by the amount of asset shares; and a Hamilton--Jacobi--Bellman equation, evolving backwards in time and defining the strategy of the HFTs. These equations form a boundary value problem. We consider the model of the HFTs' behavior in the stock market with reference to \cite{FatoneMarianiRecchioniZirilli}. A coupling condition of this system is 
+$\alpha = \frac{1}{2k}\frac{\partial u}{\partial x}$:
+\[
+\begin{cases}
+\frac{\partial m}{\partial t} - \frac{\sigma^2}{2}\frac{\partial^2 m}{\partial x^2} + \frac{1}{2k}\frac{\partial}{\partial x}\left(\frac{\partial u}{\partial x}m\right) = 0,\\
+\frac{\partial u}{\partial t} + \frac{\sigma^2}{2}\frac{\partial^2 u}{\partial x^2} + \frac{1}{4k}\left(\frac{\partial u}{\partial x}\right)^2 - \lambda\left(x - \tilde{a}(t)\right)^2 = -V(m),\\
+m(0,x) = m_0(x),\\
+u(T,x)=-\theta(x-a)^2,
+\end{cases}
+\]
+where $m(t,x)$ is a probability density function of HFTs, $x(t) \in \mathbb{R}$ is the amount of asset shares held by HFT at time $t \in [0,T]$,  $\tilde{a}(t) \in \mathbb{R}$ is a turnpike function, $k > 0$, $\lambda > 0$, $\theta > 0$, $a \in \mathbb{R}$. 
+
+Let $V(m) = \ln m$, $m_0(x)$ be the Gaussian probability distribution with mean $\mu_0 \in \mathbb{R}$ and dispersion $\delta_0 > 0$, i.e.
+\[
+	m_0(x) = \frac{1}{\sqrt{2\pi \delta_0^2}}\exp\left[-\frac{1}{2\delta_0^2}(x - \mu_0)^2\right], \quad x \in \mathbb{R},
+\]
+then the solution of the system of PDEs is
+\[
+	u(t,x) = C_0(t) + C_1(t)x + C_2(t)x^2, \quad x \in \mathbb{R}, t \in [0,T],
+\]
+\[
+	m(t,x) = \exp\left[D_0(t) + D_1(t)x + D_2(t)x^2\right], \quad x \in \mathbb{R}, t \in [0,T],
+\]
+where the functions $D_0(t)$, $D_1(t)$, $D_2(t)$, $C_0(t)$, $C_1(t)$, $C_2(t)$ are defined as Riccati-type ODEs:
+\begin{equation}\label{trusov_reduction5}
+	\left\{
+	\begin{array}{ll}
+		\dot{D}_0 = -\frac{1}{2k}C_1D_1 - \frac{1}{k}C_2 + \frac{\sigma^2}{2}D_1^2 + \sigma^2D_2, \quad D_0(0) = -\frac{\mu_0^2}{2\delta_0^2} - \frac{1}{2}\ln\left(2\pi \delta_0^2\right),\\
+		\dot{D}_1 = -\frac{1}{k}C_1D_2 - \frac{1}{k}C_2D_1 + 2\sigma^2 D_1D_2, \quad D_1(0) = \frac{\mu_0}{\delta_0^2},\\
+		\dot{D}_2 = -\frac{2}{k}C_2D_2 + 2\sigma^2D_2^2, \quad D_2(0) = -\frac{1}{2\delta_0^2},\\
+		\dot{C}_0 = -\frac{1}{4k}C_1^2 - \sigma^2 C_2 - D_0 + \lambda\tilde{a}^2, \quad C_0(T) = -a^2\theta,\\
+		\dot{C}_1 = -\frac{1}{k}C_1C_2 - D_1 - 2\lambda\tilde{a}, \quad C_1(T) = 2a\theta,\\
+		\dot{C}_2 = -\frac{1}{k}C_2^2 - D_2 + \lambda, \quad C_2(T) = -\theta.
+	\end{array}
+	\right.
+\end{equation}
+This is an extension of the ODEs presented in \cite{FatoneMarianiRecchioniZirilli}. 
+
+The asset share price is based on the geometric Brownian motion that is used to model stock prices in the Black--Scholes model in mathematical finance. We suppose that the asset price $S(t)$ satisfies the following ODE:
+\begin{equation}\label{trusov_S}
+	\dot{S} = S\eta\left(M(t) + f(t)\right),
+\end{equation}
+where $\eta > 0$, $M(t) = C_1(t) - C_2(t)\frac{D_1(t)}{D_2(t)}$ is the influence of the HFTs, $f(t)$ is the influence of the professional traders. 
+
+Denote by $\tilde{S}(t)$ the statistic asset price. We pose an inverse problem of finding such turnpike function $\tilde{a}(t)$ of the HFTs that would reproduce the statistic asset price:
+\begin{equation}\label{trusov_J}
+	J = \int\limits_0^T \left(\tilde{S}(t) - S(t)\right)^2 dt \rightarrow \min\limits_{\tilde{a}}
+\end{equation}
+To do this, we apply the Pontryagin maximum principle to the problem (\ref{trusov_reduction5})-(\ref{trusov_J}). With it help we construct an optimal control synthesis:
+\[
+	\tilde{a}(t) = \frac{1}{2k\eta}\ln\frac{\tilde{S}(t)}{\tilde{S}(0)} - \frac{1}{2k}\int\limits_0^t f(\tau)d\tau + \mu_0 + \frac{1}{2\lambda}\dot{f}(t) - \frac{1}{2\lambda\eta}\frac{d^2\left(\ln\tilde{S}(t)\right)}{dt^2}.
+\]
+To satisfy the optimal control conditions, the initial and the terminal conditions of Riccati-type ODEs (\ref{trusov_reduction5}), the following expression on the parameters should be true:
+\[
+	\mu_0 - a + \frac{1}{2k\eta}\ln\frac{\tilde{S}(T)}{\tilde{S}(0)} + \frac{1}{2\eta\theta}\frac{\dot{\tilde{S}}(T)}{\tilde{S}(T)} - \frac{1}{2\theta}f(T) - \frac{1}{2k}\int\limits_0^T f(\tau)d\tau = 0.
+\]
+We apply the Mean Field Games approach to describe the Chinese stock market crash in 2015. The HFTs wanted to make profit through the transactions. The behavior of the professional traders can be described as the behavior of one rational representative trader. We solve an inverse problem of reproducing the asset price and explain the strategies of the HFTs and the professional traders in the stock market during the Chinese stock market crisis in 2015. 
+
+% At the end of the text, acknowledgments are expressed, if you haven't
+% made a footnote from the title. For example, we can write
+The research is carried on with support of RSF, project No.~23-21-00281.
+
+\begin{thebibliography}{9} % or {99}, if there is more than ten references.
+\bibitem{FatoneMarianiRecchioniZirilli} L. Fatone, F. Mariani, M.C. Recchioni, and F. Zirilli, "A trading execution model based on mean field games
+and optimal control", Appl. Math. 5, 3091-3116 (2014).
+
+
+
+\end{thebibliography}
+%\end{document}

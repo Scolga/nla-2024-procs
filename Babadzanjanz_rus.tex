@@ -1,0 +1,106 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{Integration of the two-body problem equations using  polynomial total systems of PDEs}
+% First author
+\author{Levon~K.~Babadzanjanz   \and  Irina~Yu.~Pototskaya   \and  Yulia~Yu.~Pupysheva
+}
+\institute{St. Petersburg State University, St. Petersburg, Russia\\
+  \email{j\_poupycheva@mail.ru}}
+%  \and
+%Affiliation, City, Country\\
+%\email{email}}
+% etc
+
+\maketitle
+
+\begin{abstract}
+In this paper an original algorithm for solving the two-body problem using the Taylor method is presented. This method often has an advantage over other numerical integration methods in the accuracy of calculations. But the difficulty of its application lies in the need to repeatedly calculate the coefficients of Taylor series. Such calculations can make the method software implementation more cumbersome and slow. But when the integrated system has polynomial right-hand sides, the Taylor coefficients are calculated using a simple recurrent formula, and this numerical method becomes preferable for solving complex problems.
+One of such tasks is the two-body problem. This is one of the most famous problems of classical mechanics. It consists in determining the motion of two material points interacting only with each other. Examples of this problem are the mutual motion of a planet and a satellite, a planet and a star, or an electron orbiting an atomic nucleus. The mathematical model of the two-body problem can be represented as a complete polynomial system of twenty-three partial differential equations. The solution of this system can be obtained by the Taylor series method. But, until recently, there was no literature describing an algorithm for such solving. Only in 2021, an article by the authors "Estimates for Taylor series method to polynomial total systems of PDEs" was published in the Bulletin of St. Petersburg State University, which provides the necessary mathematical tools for this.
+In this paper the polynomial total system of partial differential equations constructed for the two-body problem is described. The algorithm for its numerical integration using the Taylor series method is presented. Recurrent formulas for Taylor coefficients obtained for the problem being solved are provided.
+
+
+\keywords{two-body problem, Taylor Series Method, total polynomial PDE system, numerical PDE system integration} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes}
+
+\usepackage[russian]{nla}
+
+
+\begin{document}
+\fi
+
+\title{Интегрирование уравнений задачи двух тел с помощью полной полиномиальной системы УрЧП}
+% Первый автор
+\author{Л.~К.~Бабаджанянц \and  И.~Ю.~Потоцкая  \and  Ю.~Ю.~Пупышева
+} % обязательное поле
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{Санкт-Петербургский государственный университет (СПбГУ), Санкт-Петербург, Россия\\
+  \email{j\_poupycheva@mail.ru}
+%  \and   % Разделяет институты и присваивает им номера по порядку.
+%Институт (название в краткой форме), Город, Страна\\
+%\email{email@examle.com}
+% \and Другие авторы...
+}
+
+\maketitle
+
+\begin{abstract}
+В настоящей  работе представлен оригинальный алгоритм решения задачи двух тел с помощью метода рядов Тейлора.
+
+\keywords{метод рядов Тейлора, задача двух тел, полная полиномиальная система УрЧП, коэффициенты Тейлора} % в конце списка точка не ставится
+\end{abstract}
+
+\section{Основные результаты} % не обязательное поле
+
+Метод рядов Тейлора часто имеет преимущество перед другими численными методами интегрирования в точности вычислений. Но сложность его применения заключается в необходимости многократного вычисления коэффициентов рядов. В общем случае это может сделать программную реализацию метода более громоздкой и медленной. Но в случае, когда интегрируемая система имеет полиномиальные правые части, коэффициенты Тейлора вычисляются по простой рекуррентной формуле, и этот численный метод становится предпочтительнее для решения сложных задач.
+Одной из таких задач является задача двух тел \cite{1975}, \cite{2007}.  Это одна из самых известных задач классической механики, которая заключается в том, чтобы определить движение двух материальных точек, взаимодействующих только друг с другом. Примерами такой задачи служат взаимное движение планеты и спутника, планеты и звезды или электрон, вращающийся вокруг атомного ядра. Математическая модель задачи двух тел может быть представлена в виде полной полиномиальной системы  из двадцати трёх уравнений в частных производных \cite{2016}, \cite{2020}. Решение такой системы может быть получено методом рядов Тейлора. Но, до недавнего времени, литературы, описывающей такой алгоритм для подобных систем, не было. Только в 2021 году в «Вестнике СПбГУ» была опубликована статья авторов «Estimates for Taylor series method to polynomial total systems of PDEs» \cite{2021}, дающая необходимые для этого математические инструменты.
+В представленной работе описывается полная система полиномиальных уравнений в частных производных, построенная для задачи двух тел, излагается алгоритм её численного интегрирования методом рядов Тейлора, приводятся рекуррентные формулы для коэффициентов Тейлора, полученные для решаемой задачи.
+
+
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+
+
+
+\bibitem{2021} Babadzanjanz~L.K., Pototskaya~I. Yu., Pupysheva~Yu. Yu. Estimates for
+Taylor series method to polynomial total systems of PDEs~// Вестник Санкт-Петербургского
+университета. Прикладная математика. Информатика. Процессы управления. 2021. Т. 17.
+Вып. 1. С.~27–-39.
+
+\bibitem{2020} Babadzanjanz~L.K., Pototskaya~I.Yu., Pupysheva~Yu.Yu. Estimates
+for Taylor series method to linear total systems of PDEs // Вестник Санкт-Петербургского
+университета. Прикладная математика. Информатика. Процессы управления. 2020. Т. 16.
+Вып. 2. С.~112–-120
+
+\bibitem{2016} Бабаджанянц~Л.К., Брэгман~А.М., Брэгман~К.М., Касикова~П.В., Петросян~Л.К. Вычисление проиводных по элементам для задачи двух тел // Технические науки - от теории к практике: сб. ст. по матер. LXI междунар. науч.-практ. конф. № 8(56). Новосибирск: СибАК, 2016. С.~6--13.
+    
+\bibitem{1975} Дубошин~Г.Н. Небесная механика. Основные задачи и методы. 3-е изд. М.:~Наука, 1975.
+
+\bibitem{2007} Холшевников~К.В., Титов~В.Б. Задача двух тел: Учеб. пособие. СПб: СПбГУ, 2007.
+
+
+\end{thebibliography}
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок и аннотацию.
+
+
+
+
+%\end{document} 

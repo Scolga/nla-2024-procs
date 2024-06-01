@@ -1,0 +1,112 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{Exact Increment Formulas in Optimal Control of Balance Equations}
+% First author
+\author{ Elena Goncharova \and Nikolay Pogodaev \and Lev Dreglea Sidorov \and Maksim Staritsyn
+}
+\institute{
+ISDCT SB RAS, Irkutsk, Russia\\
+\email{$\{$starmax,goncha\}@icc.ru, $\{$nickpogo,lev.ryan.lev$\}$@gmail.com}}
+% etc
+
+\maketitle
+
+\begin{abstract}
+We study a nonlinear optimal control problem for nonlocal transport equations with source terms on the space of signed measures. The epithet ``nonlocal'' emphasizes the fact that the vector field and the source operator depend on the measure-state. We develop an approach to numerical solving  this problem based on exact formulas for the increment of the cost functional. The approach relies on (explicit or implicit) duality and leads to a series of necessary optimality conditions of the ``feedback'' nature. A constructive interpretation of the latter gives rise to numerical algorithms, free from ``depth'' parameters.
+
+\keywords{nonlocal balance law, optimal control, feedback control, necessary optimality conditions, numerical algorithms}
+\end{abstract}
+\end{englishtitle}
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  This is the template file for the 6th International conference
+%  NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+%  June 25-30, 2018
+%  Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[12pt]{llncs}  
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes} 
+
+\usepackage[russian]{nla}
+
+\begin{document}
+\fi
+
+\title{Точные формулы приращения функционала в задаче оптимального управления уравнением баланса\thanks{Исследование выполнено за счет гранта Российского научного фонда № 23-21-00161, \url{https://rscf.ru/project/23-21-00161/}.}}
+% Первый автор
+\author{Е.~В.~Гончарова \and Н.~И.~Погодаев \and Л.~Р.~Д. Дрегля Сидоров \and М.~В.~Старицын
+}
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{
+ИДСТУ СО РАН, Иркутск, Россия\\
+  \email{$\{$starmax,goncha\}@icc.ru, $\{$nickpogo,lev.ryan.lev$\}$@gmail.com}
+% \and Другие авторы...
+}
+
+\maketitle
+
+\begin{abstract}
+
+Изучается задача оптимального управления нелокальным транспортным уравнением с источником на пространстве конечных знакопеременных мер, где эпитет ``нелокальное'' подчеркивает тот факт, что векторное поле и оператор источника зависят от меры-состояния (нелинейным образом). Развивается подход к численному решению поставленной задачи на основе точных формул приращения целевого функционала. Подход опирается на явную или скрытую двойственность и приводит к серии необходимых условий оптимальности ``позиционного'' типа. Конструктивной интерпретацией последних выступают методы последовательных приближений, свободные от параметров ``глубины спуска''. 
+
+\keywords{нелокальное уравнение баланса, оптимальное управление, позиционные управления, необходимые условия оптимальности, методы спуска} % в конце списка точка не ставится
+\end{abstract}
+
+\section{Основные результаты} % не обязательное поле
+
+Изучается задача оптимального управления
+\begin{gather}
+(P) \qquad \mathcal I[u] \doteq \ell(\mu_{T}[u]) \to \inf,\label{eq:cost}\notag\\
+\partial_t\mu + \nabla_x \cdot \left(V\left(\mu,u_t\right) \mu\right) = G(\mu, u_t), \  t \in I\doteq [0, t]; \quad \quad \mu_0=\vartheta;\label{PDE}\\
+%\quad \mu_0=\vartheta;\label{mu-in}\\
+u \in \mathcal U \doteq L_\infty(I; U).\nonumber
+\end{gather}
+В ней пространством $X$ фазовых состояний $\mu_t$ выступает метрическое пространство ограниченных регулярных мер на $\mathbb R^n$, обладающих конечным первым моментом; траектории суть непрерывные кривые $\mu \colon t \mapsto \mu_t$, $I \to X$, а управления~--- измеримые функции $u\colon t \mapsto u_t$, $I \to U \neq \emptyset$. Отображения \(\ell\colon X \to \mathbb R\), 
+\(V\colon I \times \mathbb R^{n}\times X\times U\to \mathbb R^{n}\) и \(G\colon I \times X\times U\to X\),  мера $\vartheta \in X$ и множество $U \subseteq \mathbb R^m$ предполагаются заданными и удовлетворяют предположениям \cite[теорема 1]{1}.  
+
+Задача $(P)$  хорошо изучена в случае, когда источниковый член тривиален, т.е. $G \equiv 0$. При этом уравнение баланса \eqref{PDE} превращается в закон сохранения --- нелокальное уравнение неразрывности, которое разумно рассматривать на пространстве вероятностных мер. В такой задаче получено несколько эквивалентных форм принципа Понтрягина \cite{2,3} и необходимые условия второго порядка \cite{4}. В то же время при $G \neq 0$ ни принцип Понтрягина, ни его аналоги неизвестны даже в частной постановке --- когда все объекты задачи $(P)$ линейны по переменной $\mu$.
+
+В докладе представлен альтернативный подход к вариационному анализу задачи $(P)$, приводящий к ``позиционной'' версии принципа Понтрягина, родственной условиям \cite{5}. Основным результатом выступает нелокальный алгоритм спуска, свободный от внутренних процедур параметрической оптимизации и отличающийся высокой скоростью сходимости в численных экспериментах.
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+
+\bibitem{1} Погодаев Н.И., Старицын М.В. Нелокальные уравнения баланса с параметром в пространстве знакопеременных мер. Матем. сб. 2022. Т. 213 \textnumero~1. С. 69-94.
+
+\bibitem{2} Averboukh Y., Khlopin D. Pontryagin maximum principle for the deterministic mean-field type optimal control problem via the Lagrangian approach. 2022. doi:
+10.48550/arXiv.2207.01892
+
+\bibitem{3} Bonnet B. A Pontryagin maximum principle in Wasserstein spaces for constrained optimal control problems. ESAIM Control Optim. Calc. Var. 2019. V. 25.  \textnumero~52. 
+
+\bibitem{4} Bonnet B., Frankowska H. Necessary optimality conditions for optimal control problems in Wasserstein spaces. Appl. Math. Optim. 2021. V. 84. P. 1281--1330.
+
+\bibitem{5} Дыхта В.А. Позиционный принцип минимума: вариационное усиление понятий экстремальности в оптимальном управлении. Изв. ИГУ. Сер. Математика. 2022. Т. 41. С. 19-39.
+
+\end{thebibliography}
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок.
+
+
+
+
+%\end{document}
+

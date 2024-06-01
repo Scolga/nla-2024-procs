@@ -1,0 +1,61 @@
+
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+\usepackage{todonotes}
+
+\usepackage{nla} 
+
+\begin{document}
+\fi
+
+\title{On one generalized Lyapunov matrix equation\thanks{The work is supported by the Mathematical Center in Akademgorodok under
+agreement No. 075-15-2022-282 with the Ministry of Science and Higher
+Education of the Russian Federation.}}
+
+\author{Vladislav S. Prokhorov
+}
+\institute{Novosibirsk State University, Novosibisk, Russia\\
+  \email{v.prokhorov@g.nsu.ru}}
+\maketitle
+
+\begin{abstract}
+We discuss the problem on belonging of the matrix spectrum to a region bounded by a parabola in terms of solving a generalized Lyapunov matrix equation. Using a solution to the matrix equation, an estimate for the norm of the matrix exponential is obtained.
+
+
+\keywords{generalized Lyapunov matrix equation, Krein's theorem, matrix exponential}
+\end{abstract}
+
+
+
+
+It is well known that the spectrum of the matrix $A$ belongs to the domain
+$${\cal P}_i = \left\{\lambda : \frac{1}{2p}({\rm Im}\,\lambda)^2 < {\rm Re}\,\lambda\right\}, \quad p>0,$$  if and only if there exists a solution $H = H^*>0$ to the following generalized Lyapunov matrix equation (see, for example, [1],[2])
+$$HA+A^*H-\frac{1}{2p}\left[A^*HA - \frac{1}{2}(HA^2+(A^*)^2H)\right] = I. \eqno(1)$$
+    
+   We obtain a representation for a solution to this equation that differs from one given by M.G.Krein [2]:
+
+\begin{theorem}
+	Let A be a matrix $n\times n$ whose eigenvalues are located in ${\cal P}_i$, then the solution $H$ to (1) can be represented as follows
+	$$
+    H = \sum\limits_{k=0}^\infty
+	\bigg(\frac{-1}{4p}\bigg)^k \Bigg( {\int\limits_{0}^{+\infty} \dots \int\limits_{0}^{+\infty}}  e^{-(t_0 + \dots + t_k)A^*}
+	\bigg(\sum\limits_{r=0}^{2k}C_{2k}^r(-A^*)^{2k-r}A^r\bigg)
+	e^{-(t_0 + \dots + t_k)A} dt_0 \dots dt_k \Bigg).
+	$$	
+		
+\end{theorem}
+\begin{theorem}
+	Let the spectrum of the matrix A belong to ${\cal P}_i$. If $H = H^*>0$ is a solution to (1), then the following estimate holds:
+	$$\| e^{-tA} \| \leq \sqrt{\mu(H)}e^{\bigg(p-\sqrt{p^2+\frac{1}{\|(A^*A)^{-1}\|}+\frac{p}{\|H\|}}\bigg)t}, \quad \mu(H) = \|H\|\|H^{-1}\|, \quad t>0.$$
+\end{theorem}
+ 
+
+% At the end of the text, acknowledgments are expressed, if you haven't
+
+\begin{thebibliography}{9} % or {99}, if there is more than ten references.
+\bibitem{Mazko1999} Mazko A. G. Localization of the Spectrum and Stability of Dynamical Systems. Inst. Mat., Nats. Akad. Nauk Ukrain., Kiev, 1999. [In Russian]
+\bibitem{Demidenko2023} Demidenko G. V., Prokhorov V. S. On location of the matrix spectrum with respect to a parabola. Sib. Adv. Math. 2023. Vol.~33. Pp.~190–199.
+\end{thebibliography}
+%\end{document}

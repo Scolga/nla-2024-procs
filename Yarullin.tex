@@ -1,0 +1,136 @@
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+\usepackage{todonotes}
+
+\usepackage{nla} 
+
+\begin{document}
+\fi
+
+\title{A minimization method with sequential use of constraint functions when constructing embedding sets\thanks{This paper has been supported by the Kazan Federal University Strategic Academic Leadership Program (``PRIORITY-2030'').}}
+
+\author{Rashid Yarullin\inst{1} \and Igor Zabotin\inst{2}
+}
+\institute{Kazan (Volga region) Federal University, Kazan, Russia\\
+  \email{yarullinrs@gmail.com}
+  \and
+Kazan (Volga region) Federal University, Kazan, Russia\\
+\email{iyazabotin@mail.ru}}
+
+\maketitle
+
+\begin{abstract}
+We propose a cutting method with approximation of the constraint region to solve a constrained minimization problem.
+The developed method is characterized by the fact that the constraint functions are used sequentially when constructing approximating sets.
+This approach of taking into account constraints is implemented as follows. 
+At the initial step only one constraint is used and the number of involved constraints increases as the iteration points reach the admissible set.
+As a result, the volume of computational operations performed when constructing approximating sets is reduced, which makes the proposed cutting method convenient from a practical point of view for problems with a large number of constraints.
+The convergence of the developed cutting method is proven, and the estimate of the accuracy of the solution is obtained.
+
+
+\keywords{constrained minimization, convex function, cutting methods, cutting plane}
+\end{abstract}
+
+Let 
+$f(x)$, $g_j(x)$, $j\in J=\{1,\dots,m\}$, $m\ge 1$, be convex functions defined  in the $n$-dimensional Euclidean space ${\rm R_n}$,
+$G_j = \{ x \in {\rm R_n } : g_j(x) \le 0 \}$,
+$G^\prime= \underset{j\in J}{\cap} G_j,$
+$G^{\prime\prime}\subset {\rm R_n}$ be a convex closed set,
+$G=G^\prime \cap G^{\prime\prime}$.
+Let us immediately note that the interior of the set $G$ can be empty.
+We solve the problem
+$\min \{ f(x) : x\in G\}$.
+
+Suppose
+$f^*= \min \{ f(x) : x\in G\}$,  %used
+$X^* = \{ x\in G : f(x) = f^*\}$, %used
+$x^*\in X^*$,% used
+$g(x) = \max \limits_{j\in J} g_j(x)$,
+$\partial f(x)$, $\partial g_j(x)$, $j\in J$, are subdifferentials of the functions
+$f(x)$, $g_j(x)$, $j\in J$, at the point 
+$x\in {\rm R_n}$, respectively,
+$K=\{ 0, 1, \dots\}$,
+$I(x, \tilde{J}) = \{ j\in \tilde{J} : x \notin G_j\}$ %used
+, where
+$\tilde{J}\subset J$.
+
+The proposed method constructs points $x_k$, $k\in K$, as follows.
+
+0. Choose a convex closed set $M_0 \subseteq {\rm R_n}$ such that $x^* \in M_0$.
+Put $k=0$,
+$J_0^1=\{1\}$, $J_0^2 = J \setminus \{1\}$.
+
+1. Find the point
+$x_k \in M_k \cap G^{\prime\prime} \cap \{ x \in {\rm R_n} : f(x) \le f^*\}$.
+
+2. Form subsets 
+$J_k^\prime$, $J_k^{\prime\prime} \subset J$ as follows.
+Put
+$J_k^{\prime} = I(x_k, J_k^1)$.
+If
+$I(x_k, J_k^2) = \emptyset$, then
+$J_k^{\prime\prime} = \emptyset$.
+Otherwise, $J_k^{\prime\prime}$ is chosen as any non-empty subset of the set $I(x_k, J_k^2)$.
+Put
+$J_k = J_k^{\prime} \bigcup J_k^{\prime\prime}$.
+If $J_k = \emptyset$,
+then the iterative process is stopped, and $x_k$ is a solution of the optimization problem.
+
+3. Choose finite sets $A_k^j \subset \partial g_j(x_k)$ for all $j\in J_k$, and put
+\begin{equation}\label{step1.1:5.1}
+M_{k+1} = M_k \underset{j\in J_k}{\cap}
+\{ x\in {\rm R_n} :  g_j(x_k) + \langle a, x - x_k \rangle \le 0 \ \forall a \in A_k^j\}.
+\end{equation}
+
+4. Put 
+$J_{k+1}^1=J_k^1 \cup J_k^{\prime\prime}$,
+$J_{k+1}^2 = J_k^2 \setminus J_k^{\prime\prime}$,
+$k:=k+1$, and go to Step 1.
+
+In cutting methods with approximation of the constraint region (see, for example, \cite{bulatov_1977,topkis_1970,polyak_1966,yarullin_2022}), to construct the next approximating set, a certain subset of constraint indices is formed at each step.
+The process of forming such a subset of indices can be very labor-intensive, since all the constraint functions that define the admissible set are involved.
+Therefore, in practice, there is a need to consistently take into account the restrictions involved in the construction of approximating sets, and this method of using restrictions in the proposed method is implemented as follows.
+
+The transition from the current approximating set $M_k$ to $M_{k+1}$ occurs by separating the point $x_k$ from the set $G^\prime$ by cutting planes according to (\ref{step1.1:5.1}).
+In order not to use all the restrictions that define $G^\prime$ in this transition, the set $J$ is divided into two parts.
+The first part $J_k^1$ includes numbers of restrictions that are allowed to participate in the construction of cuts at the $k$th iteration, and in the second part $J_k^2$ there remain unused numbers of restrictions, and in a certain way can be transferred from $J_k^2 $ into the first part of $J_{k+1}^1$ indices to carry out sequential accounting of all functions $g_j(x)$, $j\in J$.
+In particular, for $I(x_k, J_k^2) \ne \emptyset$ it is permissible to put the number $j_k \in I(x_k, J_k^2)$ of some constraint $g_{ j_k}(x)$ or a small group of numbers $\tilde{J}_k \subset I(x_k, J_k^2)$ into $J_k^{\prime\prime}$.
+Then the set of constraint numbers $J_k^{\prime\prime}$ that were not taken into account at previous iterations according to Step 4 will go into the set $J^1_{k+1}$ and the numbers from $J_k^{\prime\prime}$ from the next iterations will be taken into account when cutting iteration points from the set $G^\prime$.
+Due to this feature of the constructing the set $J_k^{\prime\prime}$, consistent consideration of constraint functions is implemented when constructing approximating sets.
+
+The convergence of the method is substantiated and the estimate of the accuracy of the solution is obtained.
+
+\begin{theorem}\label{the1}
+Let the proposed method constructs the sequence
+$\{x_k\}$, $k\in K$.
+Then any limit point of this sequence  belongs to the set
+$X^*$.
+\end{theorem}
+
+\begin{theorem}\label{theorem1.1:3}
+Let $g_{\bar{j}}(x)$, $\bar{j}\in J$, be a strongly convex function in ${\rm R_n}$ with strong convexity constant $\mu_{\bar{ j}} > 0$,
+$\bar{x} \in G$, and at some step
+$k\in K$ the inclusion $\bar{j} \in J_k$ is performed, the points $x_k$ are constructed, $y_k = \bar{x} + \bar{\alpha} (x_k - \bar{x})$, where $\bar{\alpha}\in (0, 1)$ is a fixed number.
+If for some $\xi > 0$ the inequality $g_{\bar{j}}(x_k) - g_{\bar{j}}(y_k) \le \xi$ holds, then the estimate $f^* - f(x_k) \le \|\bar{s}\| \sqrt{ 2\xi / (\mu_{\bar{j}} \bar{\alpha}(1-\bar{\alpha}) }$  is valid, where $\bar{s} \in \partial f( \bar{x})$.
+\end{theorem}
+
+
+
+
+\begin{thebibliography}{9} % or {99}, if there is more than ten references.
+\bibitem{bulatov_1977}
+ Bulatov, V.P.: Embedding Methods in Optimization Problems. Nauka, Novosibirsk (1977) [in Russian]. 
+ 
+ \bibitem{polyak_1966}
+Levitin, E.S., Polyak, B.T.: Constrained minimization methods. USSR Computational Mathematics and Mathematical Physics, \textbf{6}(5), 1--50 (1966).
+
+\bibitem{topkis_1970}
+ Topkis, D. M.: Cutting plane methods without nested constraint sets. Operations Research, \textbf{18}, 404 -- 413 (1970).
+
+\bibitem{yarullin_2022}
+Zabotin, I., Shulgina, O., Yarullin, R.: Procedures for Updating Immersion Sets in the Cutting Method and Estimating the Solution Accuracy. CCIS. \textbf{1661}, 218--229 (2022).
+
+\end{thebibliography}
+%\end{document}

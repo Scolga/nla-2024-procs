@@ -1,0 +1,99 @@
+\begin{englishtitle}
+\title{Algorithms for rasterizing two-dimensional objects and gradients}
+\author{Vladislav Yakovlev}
+\institute{Institute of Mathematics and Information Technologies\\Irkutsk State University, Irkutsk, Russia\\
+  \email{zedark890@gmail.com}
+  }
+% etc
+
+\maketitle
+
+\begin{abstract}
+The aim is to study the rasterization algorithms and create  tools for rasterization of closed surfaces. The implemented tools are used for rasterization of three-dimensional objects.
+
+\keywords{rasterization algorithms, line, polygon, color, gradient}
+\end{abstract}
+\end{englishtitle}
+
+
+\iffalse
+\documentclass[12pt]{llncs}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[russian]{nla}
+
+%\usepackage[english,russian]{nla}
+
+% \graphicspath{{pics/}} %Set the subfolder with figures (png, pdf).
+
+%\usepackage{showframe}
+\begin{document}
+%\selectlanguage{russian}
+\fi
+
+\title{Алгоритмы растеризации двумерных объектов и градиента%\thanks{Работа выполнена при поддержке РФФИ (РНФ, другие фонды), проект \textnumero~00-00-00000.}
+}
+% Первый автор
+\author{В.~А.~Яковлев%\inst{1}
+%  \and
+% Второй автор
+%  И.~О.~Фамилия\inst{2}
+%  \and
+% Третий автор
+%  И.~О.~Фамилия\inst{2}
+} 
+\institute{Институт математики и информационных технологий\\ Иркутский государственный университет, Иркутск, Россия\\
+  \email{zedark890@gmail.com}
+  }
+.
+
+\maketitle
+
+\begin{abstract}
+Цель работы заключается в изучении алгоритмов растеризации и создании инструментария для растеризации замкнутых поверхностей с целью дальнейшего использования реализованного инструментария для растеризации трёхмерных объектов. %Представлены алгоритмы растеризации двумерных объектов и градиента    и их реализация  на языке программирования python с использованием библиотеки pygame.   
+
+\keywords{алгоритмы растеризации, прямая, многоугольник, цвет, градиент}
+\end{abstract}
+
+%\section{Основные результаты} % не обязательное поле
+
+%{\color{red}
+
+%Текст доклада на русском языке.
+
+В докладе рассмотрены алгоритмы растеризации двумерных и трехмерных объектов и градиента %\cite{Yakovlev1,Yakovlev2} 
+и их реализация на языке программирования python с использованием библиотеки pygame. 
+%На текущем этапе реализации программа  будет способна строить многоугольники; на начальном этапе -- это треугольники четырех типов: каркасные, с однотонным цветом, с параметром тени и с градиентом.
+
+В работе рассмотренно важное понятие растеризации: 4- и 8-связные развертки. Реализованы алгоритмы отрисовки прямых: интерполяция прямой по формуле y = ax + b; интерполяция по формуле y[i+1] = y[i] + a; алгоритм Брезенхейма. На основе одного из алгоритмов отрисовки прямых разобран способы растеризации многоугольников  и растеризации однотонного цвета при помощи алгоритма отрисовки множества горизонтальных прямых внутри всей поверхности многоугольника. %После этого введение параметра тени и в конце растеризация градиента. 
+Разработан программный инструмент, позволяющий отображать поверхность, залитую градиентом.
+Программа, содержит следующий инструментарий: функции различных алгоритмов растеризации прямой;  растеризация каркасного треугольника;   растеризация треугольника с однотонным цветом;  растеризация треугольника с однотонным цветом и параметром тени;   растеризация треугольника с градиентом.
+
+%}
+
+
+
+% Список литературы.
+%\begin{thebibliography}{99}
+%\bibitem{Yakovlev1}
+%Боресков А.В. Программирование компьютерной графики. Современный OpenGL.  Москва: ДМК Пресс, 2019.  372 с.
+%\bibitem{Yakovlev2}
+%Гамбетта Г. Компьютерная графика. Рейтрейсинг и растеризация.  Санкт-Петербург: Питер, 2022.  224 с.
+%\bibitem{1}
+% Format for Journal Reference:
+%Author1 N., Author2 N.  Article title. Journal. Year. Vol.~Volume, No~Number. Pp.~Page %numbers.
+% Format for books:
+%\bibitem{2}
+%Author N. Book title. Place: Publisher, year.
+% Format for Russian Journal Reference:
+%\bibitem{3} Фамилия И.О. Название статьи~// Журнал. Год. Т.~том,  \textnumero~номер. %С.~страницы.
+% etc
+%\end{thebibliography}
+
+
+% Обязательная информация на английском языке:
+
+
+
+%\end{document}

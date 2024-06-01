@@ -1,0 +1,170 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{An asymptotic behaviour for increments of sums of independent random variables and stochastic processes}
+% First author
+\author{Aleksei Bogarev}
+\institute{Saint Petersburg University, Saint Petersburg, Russia\\
+  \email{abogarevs1997@mail.ru}
+}
+% etc
+
+\maketitle
+
+\begin{abstract}
+The asymptotic behaviour of increments of a stochastically continuous homogeneous process with independent increments from a domain of normal attraction of an asymmetric stable law has been studied.
+
+\keywords{stochastically continuous homogeneous process with independent increments, domain of normal attraction of an asymmetric stable law, Borel--Cantelly lemma} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  This is the template file for the 8th International conference
+%  NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+%  June 24-28, 2024
+%  Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[12pt]{llncs}  
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes} 
+
+\usepackage[russian]{nla}
+
+\usepackage{cmap} % Поиск по документу
+
+\usepackage{amsmath,amssymb}
+
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\Exp}{\mathbb{E}}
+\newcommand{\Z}{\mathbb{Z}}
+
+
+\theoremstyle{remark}
+\newtheorem{rem}{Замечание}
+
+
+\begin{document}
+\fi
+
+\title{Асимптотическое поведение приращений сумм независимых случайных величин и случайных процессов\thanks{Работа выполнена при поддержке РНФ, грант \textnumero~23-21-00078.}}
+% Первый автор
+\author{А.\,С.~Богарев}
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{СПбГУ, Санкт-Петербург, Россия \\
+  \email{abogarevs1997@mail.ru}
+}
+
+\maketitle
+
+\begin{abstract}
+Исследовано асимптотичекское поведение приращений стохастически непрерывного однородного процесса с независимыми приращениями из области нормального притяжения асимметричного устойчивого закона.
+
+\keywords{стохастически непрерывный однородный процесс с независимыми приращениями, область нормального притяжения асимметричного устойчивого закона, лемма Бореля--Кантелли} % в конце списка точка не ставится
+\end{abstract}
+
+\section{Основные результаты} % не обязательное поле
+
+Пусть $X, X_1, X_2, \ldots X_n, \ldots$ --- последовательность независимых одинаково распределённых случайных величин и $\{a_n\}_{n=1}^{+\infty}$~--- неубывающая последовательность натуральных чисел, $1\leqslant a_n\leqslant n$, $S_n = X_1 + \ldots + X_n$, $S_0=0\text{ п.н.}$
+
+Изучению асимптотического поведения приращений сумм $S_{n+ca_n}-S_n$, где $c>0$, посвящены работы множества авторов, среди которых У. Штадтмюллер~\cite{LanStadt}, Х. Ланцингер~\cite{Lan, LanStadt}, А.\,Н. Фролов~\cite{FrolovArt1}, М.\,Н. Тертеров~\cite{Terterov}. Для этого в зависимости от вида $a_n$ ищется нормирующая последовательность $\{b_n\}_{n=1}^{+\infty}$, для которой справедливо
+\[
+\limsup_{n\to +\infty}\frac{S_{n+ca_n}-S_n}{b_n} = 1\text{\quad п.н.}
+\]
+
+Например, при $a_n=n$, $c=1$, $\Exp X=0$, $\Exp X^2=1$ справедлив известный закон повторного логарифма Хартмана--Винтнера, где $b_n = \sqrt{2n\ln\ln n}$.
+
+При $a_n = (\ln n)^p$, где $p>1$, предельное поведение приращений $S_{n+ca_n}-~S_n$ изучалось в работах Тетрерова~\cite{Terterov} и Фролова~\cite{FrolovArt1} для величин из областей притяжения нормального закона и асимметричных устойчивых законов, а также Ланцингера~\cite{Lan} и Ланцингера и Штадтмюллера~\cite{LanStadt} для величин с конечной дисперсией.
+
+Пусть функция распределения $F(x)$ случайной величины $X$ принадежит области нормального притяжения асимметричного устойчивого закона с параметром $\alpha\in(1,2)$ и $a_n=(\ln n)^p$, где $p>1$. Положим $c_n=(\ln n)^{(p+\alpha-1)/\alpha}$, $t_0=\sup\{t\geqslant 0\mid\Exp e^{t(X^{+})^{\alpha/(p+\alpha-1)}}<\infty\}$,
+\[
+\varphi(c)=max\left\{\,x+y\;\middle|\;\frac{(\alpha-1)x^{\alpha/(\alpha-1)}}{\alpha c^{1/(\alpha-1)}}+t_0y^{\alpha/(p+\alpha-1)}\leqslant 1,\,x\geqslant 0,\,y\geqslant 0\,\right\}.
+\]
+
+В~\cite{Terterov} Тертеровым был получен следующий результат.
+
+\begin{theorem}
+
+Пусть $t_0\in(0,+\infty)$. Тогда
+\[
+\limsup_{n\to +\infty}\frac{S_{n+ca_n}-S_n}{c_n\varphi(c)} = 1\text{\quad п.н.}
+\]
+
+\end{theorem}
+
+\begin{rem}
+
+Под $S_h$ при $h\notin\Z$ подразумевается $S_{[h]}$, где $[h]$ --- целая часть числа $h$.
+
+\end{rem}
+
+Поведение однородных процессов с независимыми приращениями во многом похоже на поведение сумм независимых одинаково распределённых случайных величин (см.~\cite{FrolovArt2}). Это обстоятельство наводит нас на мысль о возможности перенесения результатов о поведении приращений сумм случайных величин на приращения случайных процессов.
+
+Пусть всюду далее $\xi(t)$, $t\geqslant 0$ --- стохастически непрерывный однородный процесс с независимыми приращениями, с вероятностью $1$ непрерывный справа и имеющий пределы слева, $\xi(0)=0 \text{ п.н.}$ Пусть также функция распределения случайной величины $\xi(1)$ принадлежит области нормального притяжения асимметричного устойчивого закона с параметром $\alpha\in(1,2)$.
+
+Положим $a_t=(\ln t)^p$, где $p>1$, и $c_t=(\ln t)^{(p+\alpha -1)/\alpha}$ при $t\geqslant 0$. Определим также $t_0=\sup\{t\geqslant 0\mid\mathbb{E}e^{t(\xi(1)^{+})^{\alpha/(p+\alpha-1)}}<\infty\}$,
+\[
+\varphi(c)=max\left\{\,x+y\;\middle|\;\frac{(\alpha-1)x^{\alpha/(\alpha-1)}}{\alpha c^{1/(\alpha-1)}}+t_0y^{\alpha/(p+\alpha-1)}\leqslant 1,\,x\geqslant 0,\,y\geqslant 0\,\right\},
+\]
+\[M_t=\sup\limits_{0\leqslant s\leqslant ca_t}\bigl(\xi(t+s)-\xi(t)\bigr).
+\]
+Желание перенести результат Тертерова~\cite{Terterov} на случай стохастически непрерывных однородных процессов с независимыми приращениями приводит нас к следующему утверждению.
+
+\begin{theorem} \label{main}
+
+Пусть $t_0\in (0,+\infty)$. Тогда
+\[
+\limsup_{t\to +\infty}\frac{\xi(t+ca_t)-\xi(t)}{\varphi(c)c_t}=\limsup_{t\to +\infty}\frac{M_t}{\varphi(c)c_t}=1\text{\quad п.н.}
+\]
+
+\end{theorem}
+
+Доказательству теоремы \ref{main} была посвящена выпускная квалификационная работа автора.
+
+\begin{thebibliography}{99}
+
+\bibitem{Terterov} Тертеров М.\,Н.  О предельном поведении приращений сумм независимых случайных величин из областей притяжения асимметричных устойчивых распределений // Вестник
+Санкт-Петербургского университета. Математика. Механика. Астрономия. Сер. 1.   2011.   в. 2.   С. 95--103.
+
+\bibitem{FrolovBookEn} A.\,N. Frolov. Universal theory for strong limit theorems of probability. Singapore: World Scientific, 2019.
+
+\bibitem{FrolovArt1} A.\,N. Frolov. One-sided strong laws for increments of sums of i.i.d. random variables // Studia Scientiarum Mathematicarum Hungarica. 2002. Vol. 39, \textnumero 3--4. Pp. 333--359.
+
+\bibitem{FrolovArt2} Фролов А.\,Н. Универсальные предельные теоремы для приращений процессов с независимыми приращениями // Теория вероятностей и её применения.  2004.  Т. 49, в. 3.   С. 601--609.
+
+\bibitem{Lan} H. Lanzinger. A law of the single logarithm for moving averages of random variables under exponential moment conditions. // Studia Scientiarum Mathematicarum Hungarica. 2002. Vol. 36. Pp. 65--91.
+
+\bibitem{LanStadt} H. Lanzinger, U. Stadtmüller. Maxima of increments of partial sums for certain subexponential distributions. // Stochastic Processes and their Applications. 2000. Vol. 86. Pp. 307--322.
+
+\bibitem{FrolovBookRu1} Фролов А.\,Н. Предельные теоремы теории вероятностей. Учебное пособие. Издательство СПбГУ, 2014.
+
+\bibitem{FrolovBookRu2} Фролов А.\,Н. Устойчивые распределения и суммы независимых случайных величин. Учебное пособие. Издательство Лань, 2021.
+
+\bibitem{FrolovBookRu3} Фролов А.\,Н. Безгранично делимые распределения и суммы независимых случайных величин и случайных процессов. Учебное пособие. Издательство Лань, 2023.
+
+\end{thebibliography}
+
+ 
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок.
+
+
+
+
+%\end{document}
+

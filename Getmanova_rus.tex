@@ -1,0 +1,139 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{Geometric methods of analysis in the study of some problems in the theory of differential inclusions}
+% First author
+\author{Ekaterina Getmanova
+  %\and
+  %Name FamilyName2\inst{2}
+  %\and
+  %Name FamilyName3\inst{1}
+}
+\institute{VSPU, Voronezh, Russia\\
+  \email{ekaterina\_getmanova@bk.ru} }
+ % \and
+%Affiliation, City, Country\\
+%\email{email@example.com}}
+% etc
+\maketitle
+
+\begin{abstract}
+Differential inclusions are a convenient and completely natural apparatus for describing controlled systems of various types, systems with discontinuous characteristics, which are studied in many sections of modern optimal control theory, mathematical physics, radiophysics, acoustics, theory of nonlinear oscillations, mathematical economics, optimization theory. The best tools for studying this type of problem include methods of multivalued and nonlinear analysis. The theory of topological degree of multivalued mappings plays a significant role in the development of these methods.
+
+
+\keywords{differential inclusion, functional differential inclusion, random multivalued maps, random coincidence point, multioperator of translation, random coincidence index, method of random integral guiding functions}
+
+\end{abstract}
+\end{englishtitle}
+
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  This is the template file for the 6th International conference
+%  NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+%  June 25-30, 2018
+%  Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[12pt]{llncs}
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes}
+
+\usepackage[russian]{nla}
+
+\begin{document}
+\fi
+
+\title{О топологических методах анализа в исследовании некоторых задач теории дифференциальных включений\thanks{Работа выполнена при финансовой поддержке РНФ в рамках реализации Президентской программы исследовательских проектов, проект \textnumero~22-71-10008.}}
+% Первый автор
+\author{Е.~Н.~Гетманова 
+%  \and
+% Второй автор
+%  И.~О.~Фамилия\inst{2}
+%  \and
+% Третий автор
+%  И.~О.~Фамилия\inst{1}
+}
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{Воронежский государственный педагогический университет (ВГПУ), Воронеж, Россия \\
+  \email{ekaterina$\_$getmanova@bk.ru}
+  %\and   % Разделяет институты и присваивает им номера по порядку.
+%Институт (название в краткой форме), Город, Страна\\
+%  \email{email@example.com}
+% \and Другие авторы...
+}
+
+\maketitle
+
+\begin{abstract}
+Дифференциальные включения -- удобный и вполне естественный аппарат для описания управляемых систем различных типов, систем с разрывными характеристиками, которые изучаются во многих разделах современной теории оптимального управления, математической физики, радиофизики, акустики, теории нелинейных колебаний, математической экономики, теории оптимизации и т.д. К наилучшим средствам для изучения такого типа задач относятся методы многозначного и нелинейного анализа. Существенную роль в развитии этих методов играет теория топологической степени многозначных отображений.
+
+
+\keywords{дифференциальное включение, функционально-диф\-фе\-рен\-циаль\-ное включение, случайное мультиотображение, случайная точка совпадения, мультиоператор сдвига, случайный индекс совпаденияметод случайных интегральных напралвляющих функций} % в конце списка точка не ставится
+\end{abstract}
+
+\section{Основные результаты} % не обязательное поле
+
+
+В докладе будут представлены результаты исследованния задач для случайных дифференциальных и операторных включений, существование решений которых доказывается с помощью новых топологических характеристик некоторых классов многозначных отображений, а именно:
+
+1) задача управления со случайной обратной связью, заданная интегро-диф\-фе\-рен\-циаль\-ным уравнением. Разрешимость поставленной задачи сведена к нахождению точки совпадения для пары случайных отображений, одно из которых является нелинейным фредгольмовым оператором нулевого индекса, а второе -- многозначное отображение с невыпуклозначными значениями. В докладе будут приведены условия, при которых многозначное отображение будет уплотняющим относительно фредгольмова оператора, что дает возможность применить для отыскания точек совпадения случайный индекс совпадения (см. \cite{OKG_OtnInd}, \cite{OKG8});
+
+2) задача об операторе сдвига по траекториям случайных дифференциальных включений. В докладе будет определен мультиоператор сдвига и показано, что такой мультиоператор -- случайное мультиотобра\-жение (см. \cite{OKG_OpSdv});
+
+3) периодическая задача для случайных функционально-дифференциальных включений. Для решения данной задачи использована теория случайной топологической степени совпадения и применен метод случайных интегральных направляющих функций (гладкий и негладкий случаи). Решена также задача  для дифференциаль\-ных включений с возмущенной правой частью (см. \cite{OKG_f}, \cite{OKG} -- \cite{G_Bel});
+
+4) случайная версия теоремы Каристи. Данная задача является примером применения топологических методов в задаче о равновесии, которая важна в теории игр и математической экономике (см. \cite{GO_Rand_eq_point}, \cite{GOY}).
+
+% Рисунки и таблицы оформляются по стандарту класса article. Например,
+
+
+
+
+% В конце текста можно выразить благодарности, если этого не было
+% сделано в ссылке с заголовка статьи, например,
+%Работа выполнена при поддержке РФФИ (РНФ, другие фонды), проект \textnumero~00-00-00000.
+%
+Работа выполнена при финансовой поддержке РНФ в рамках реализации Президентской программы исследовательских проектов, проект \textnumero~22-71-10008.
+
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+
+\bibitem{OKG_f} Обуховский~В.В., Корнев~С.В., Гетманова~Е.Н. О топологических характеристиках для некоторых классов многозначных отображений~// Чебышевский сборник. 2020. Т.~21. \textnumero~2 (74). С.~301--319.
+
+  \bibitem{OKG_OpSdv} Обуховский~В.В., Корнев~С.В., Гетманова~Е.Н. Об операторе сдвига по траекториям решений случайных дифференциальных включений~// Вестник ВГУ. Серия: Физика. Математика. 2021. \textnumero~4. С.~81--89.
+
+ \bibitem{OKG_OtnInd} Обуховский~В.В., Корнев~С.В., Гетманова~Е.Н.  Об относительном индексе неподвижных точек для одного класса некомпактных многозначных отображений~// Известия высших учебных заведений. Математика. 2021. \textnumero~5. С.~64--77.
+
+\bibitem{GO_Rand_eq_point} Getmanova E., Obukhovskii V. A note on random equilibrium points of two multivalued maps~// Journal of Nonlinear and Variational Analysis. 2018. Vol.~2. \textnumero~3. С.~269--272.
+
+ \bibitem{GOY} Getmanova~E., Obukhovskii~V., Yao~J.C. A random topological fixed point index for a class of multivalued maps~// Applied Set-Valued Analysis and Optimization. 2019. Vol.~1. Pp.~95--103.
+
+ \bibitem{OKG} Kornev~S., Getmanova~E., Obukhovskii~V., Wong~N.-C. On periodic solutions for a ckass of random differential inclusions~// Journal of Nonlinear and Convex Analisis. 2021. Vol.~22. \textnumero~8. Pp.~1615--1626.
+	
+\bibitem{OKG8} Obukhovskii~V., Kornev~S., Getmanova~E. On a random topological characteristic for inclusions with nonlinear fredholm operators: applications to some classes of reedback control systems~// Advances in Systems Science and Applications. 2023. V. 23. \textnumero~3. Pp.~1000--1017.
+
+\bibitem{G_Bel} Гетманова~Е.Н. О методе строгих негладких интегральных направляющих функций  в периодической задаче для случайных функционально-диф\-фе\-рен\-циаль\-ных включений~// Прикладная математика \& Физика. 2023. Т. 55. \textnumero~4. С.~346--353.
+
+\end{thebibliography}
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок.
+
+
+
+%\end{document}
+

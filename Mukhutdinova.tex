@@ -1,0 +1,85 @@
+
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+% The correcting style file is added.
+\usepackage{todonotes}
+
+\usepackage{nla} % This package is needed for compiling
+                 % this template, it should be removed
+                 % from your article.
+
+% Many popular packages (amsXXX, graphicx, etc.) are already imported in the style file.
+% If there is a conflict with your packages, try disabling them and compile
+% the text.
+%
+% It would be convenient in the layout of the proceedings if the file names
+% of the figures of different authors do not clash.
+% To minimize the clash, the drawings can be placed in a separate subfolder
+% named after the author or the title of the paper.
+%
+% \graphicspath{{ivanov-petrov-pics/}} % specifies the folder with images in png, pdf formats.
+% or
+% \graphicspath{{great-problem-solving-paper-pics/}}.
+
+\begin{document}
+\fi
+% Text should be formatted in accordance with the 'article' class, using extensions like
+% AMS.
+%
+\title{The problem of the inflow of a hot thermoviscous liquid into a cooled annular channel\thanks{The research work was supported by the state budget funds for the state assignment 124030400064-2 (FMRS-2024-0001).}}
+
+% First author
+\author{Mukhutdinova Aygul Ayratovna
+}
+\institute{Mavlyutov Institute of Mechanics UFRC RAS, Ufa, Russia\\
+  \email{mukhutdinova23@ya.ru}}
+% etc
+
+\maketitle
+
+\begin{abstract}
+The features of the flow of a liquid, the viscosity of which depends on temperature, are studied under various conditions of heat exchange in an annular channel filled with a stationary liquid. The mathematical model includes the Navier-Stokes equations taking into account variable viscosity, as well as continuity and energy conservation equations. The influence of rheological parameters of the liquid and heat exchange conditions on the characteristics of liquid inflow has been established. It is shown that the hydrodynamic parameters of the flow strongly depend on the location of the flow region with high viscosity. Diagrams of axial velocity were constructed in various sections of the channel. The influence of channel geometry on the asymmetry of the temperature distribution and the viscous barrier was also noted.
+
+\keywords{thermoviscous liquid, annular channel, heat-transfer conditions}
+\end{abstract}
+
+% at the end of the list, there should be no final dot
+\section{The main results}
+
+The processes of heat exchange between a fluid flow and the external environment largely determine the characteristics of the flow. In this case, taking into account the dependence of viscosity and thermophysical constants on temperature makes a significant contribution not only to the quantitative, but also to the qualitative characteristics of the flow. Under the assumption of an exponentially decreasing dependence of viscosity on temperature \cite{ref1}, a significant number of hydrodynamic studies have been carried out to solve various problems in geophysics, ecology, metallurgy and the chemical industry. Meanwhile, the dependence of viscosity on temperature can also have a non-monotonic character, the physical nature of which can be explained by the continuous processes of polymerization and decomposition of polymer chains. The nonmonotonic nature of the temperature dependence is revealed when determining the viscosity of some amorphous metal alloys in the liquid state \cite{ref2,ref3}. As was shown in \cite{ref4,ref5}, the property of non-monotonicity can be used in flow diverter technologies for the production of liquid hydrocarbons. The article \cite{ref6,ref7} presented results on determining the characteristics of the steady-state flow of an anomalously thermoviscous fluid in flat and annular channels.
+
+In this work, a detailed study of the features of the inflow of liquid with a dependence of viscosity on temperature at various values of heat transfer parameters into a channel of an annular cross-section filled with a stationary liquid was carried out.
+
+The mathematical model consists of modified Navier-Stokes equations taking into account variable viscosity, continuity and energy conservation equations, written in a cylindrical coordinate system in the presence of axial symmetry \cite{ref8}. The equations of the mathematical model are implemented using computer code based on the control volume method using the SIMPLE algorithm.
+
+Using numerical modeling, the influence of rheological parameters of the liquid and heat exchange conditions on the characteristics of liquid inflow was established. It is shown that the hydrodynamic parameters of the flow strongly depend on the location of the flow region with high viscosity. Diagrams of axial velocity were constructed in various sections of the channel. The influence of channel geometry on the asymmetry of the temperature distribution and the viscous barrier was also noted.
+
+
+\begin{thebibliography}{99} % or {99}, if there is more than ten references.
+
+\bibitem{ref1} Vinogradov G.V., Malkin A.Ya. Rheology of Polymers. Moscow: Chemistry, 1977. 438 p. (Translation)
+
+\bibitem{ref2} Tabachnikova E.D., Bengus V.Z., Egorov D.V., Tsepelev V.S., Ocelik V. Mechanical properties of amorphous alloys ribbons prepared by rapid quenching of the melt after different thermal treatments before quenching // Mater. Sci. Eng. A, 1997, vol. 226-228, pp. 887-890.
+
+\bibitem{ref3} Ladyanov B.I., Beltyukov A.L., Shishmarnn A.I. Temperature and concentration dependences of viscosity of melts of the Fe-B system // Rasplavy (Melts). 2005. No. 4. P. 34-40. (Translation)
+
+\bibitem{ref4} Altunina L.K., Kuvshinov V.A., Kuvshinov I.V., Stasyeva L.A., Chertenkov M.V., Andreev D.V., Karmanov A.Yu. Increasing oil recovery of the Permian-Carboniferous reservoir of high-viscosity oil of the Usinsk field by physicochemical and complex technologies (review) // Journal of SFU. Chemistry. 2018. Vol. 11. No. 3. P. 462-476. (Translation)
+
+\bibitem{ref5} Toma A., Sayuk B., Abirov Zh., Mazbayev E. Polymer flooding for enhanced oil recovery in light and heavy oil fields // Territoriya Neftegaz. 2017. P. 58-67. (Translation)
+
+\bibitem{ref6} Urmancheev S.F., Kireev V.N. Steady-state flow of a liquid with a temperature anomaly of viscosity // Reports of the Russian Academy of Sciences. 2004. Vol. 396. No. 2. P. 204-207. 
+
+\bibitem{ref7} Kireev V.N., Mukhutdinova A.A., Urmancheev S.F. Towards heat transfer critical conditions for flow of fluids with a nonmonotonic dependence of viscosity on the temperature in annular channel // Fluid Dynamics, 2023, Vol. 58, No. 7, pp. 1310-1317.
+
+\bibitem{ref8} Mukhutdinova A.A., Kireev V.N., Urmancheev S.F. Influence of variable thermophysical properties on the flow of fluids in an annular channel under intensive heat exchange // St Petersburg State Polytechnical University Journal. Physics and Mathematics. 2023. V. 16. No 1.1. Pp. 269-274.
+
+\end{thebibliography}
+
+%\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

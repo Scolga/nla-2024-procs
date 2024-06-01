@@ -1,0 +1,99 @@
+
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+\usepackage{todonotes}
+
+\usepackage{nla} 
+
+\begin{document}
+\fi
+
+\title{Conditions for the existence of periodic solutions to \\ one class of systems of \\ nonlinear differential equations\thanks{The work is supported 
+by the Mathematical Center in Akademgorodok under agreement 075-15-2022-282 
+with the Ministry of Science and Higher Education of the Russian Federation.}}
+
+\author{Gennadii V. Demidenko
+}
+\institute{Novosibirsk State University, Novosibirsk, Russia\\
+\email{g.demidenko@g.nsu.ru}
+}
+
+\maketitle
+
+\begin{abstract}
+A class of systems of nonlinear differential equations is considered.
+It is assumed that the linear parts of the systems have periodic coefficients
+and are exponentially dichotomous.
+Conditions for the existence of periodic solutions are established
+and their stability is proved under small perturbations of coefficients
+of the linear parts and nonlinear terms.
+\keywords{periodic solutions, exponential dichotomy, Lyapunov equation}
+\end{abstract}
+
+We consider systems of nonlinear differential equations
+\begin{equation}\label{1}
+\frac{dy}{dt} = A(t)y + f(t,y), \quad -\infty < t< \infty,
+\end{equation}
+where
+$A(t)$
+is an $(n\times n)$-matrix with $T$-periodc entries, 
+the continuous vector-function
+$f(t,y)$
+satisfies the Lipschitz condition locally with respect to
+$y$ 
+and the following conditions
+\begin{equation}\label{2}
+f(t + T, y) \equiv f(t,y), \quad \|f(t,y)\| \le q(1 + \|y\|)^{\omega}, 
+\end{equation}
+where
+$q > 0$
+and
+$\omega \ge 0$
+are constants. 
+We assume that the linear systems are exponentially dichotomous (see, for example, [1]). 
+According to the spectral criterion, this is equivalent to the fact that the spectrum 
+of the monodromy matrix does not intersect with the unite circle. In [2]  
+we established a criterion of the exponential dichotomy for systems of differential equations 
+with periodic coefficients. The criterion is formulated in terms of the solvability of a special 
+boundary value problem for the Lyapunov differential equation 
+$$
+\frac{d}{dt}H + HA(t) + A^*(t)H = C(t), \quad 0 < t < T,
+$$ 
+where 
+$C(t) = C^*(t)$ 
+is a special matrix. 
+Using this criterion, one can obtain estimates for all dichotomy parameters,  
+establish the existence of 
+$T$-periodic solutions to (\ref{1})  
+and prove their stability under small perturbations of the right-hand sides.
+
+The obtained results can be used for more detailed study of stability of 
+periodic oscillations of an inverted pendulum whose suspension point oscillates
+along a straight line having a small angle with the vertical (see, for example, [3]): 
+$$
+\varphi'' + \varepsilon \varphi' - \frac{g - a \omega^2 \sin (\omega t) \cos \alpha}{l} \sin \varphi 
++ \frac{a \omega^2 \sin (\omega t) \sin \alpha}{l} \cos \varphi = 0.
+$$		
+	
+\begin{thebibliography}{9} % or {99}, if there is more than ten references.
+
+\bibitem{1}
+Daleckii Ju.L., Krein, M.G.:
+Stability of Solutions of Differential Equations in Banach Space.
+Am. Math. Soc., Providence, 1974.
+
+\bibitem{2}
+Demidenko G.V. On conditions for exponential dichotomy 
+of systems of linear differential equations with periodic coefficients.  
+Int. J. Dynamical Systems and Differential Equations. 2016. Vol.~6, no.~1. Pp.~63--74.  
+
+\bibitem{3}
+Demidenko G.V., Dulepova A.V. On periodic solutions of one second-order 
+differential equation. Journal of Mathematical Sciences (United States). 2024. Vol.~278, 
+no.~2. Pp.~314-327.
+
+\end{thebibliography}
+
+%\end{document}

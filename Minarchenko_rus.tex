@@ -1,0 +1,174 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{An optimization approach to search of Nash equilibrium in nonmonotone quadratic games}
+% First author
+\author{Ilya Minarchenko}
+\institute{Melentiev Energy Systems Institute SB RAS, Irkutsk, Russia\\
+  \email{minar@isem.irk.ru}
+}
+
+\maketitle
+
+\begin{abstract}
+We investigate normal form game with quadratic payoffs and polyhedral strategy sets. The game is not supposed to be monotone and concave, therefore Nash equilibrium may not exist. The Nash equilibrium problem is reduced to minimization of nonconvex implicit function. Global and local search methods based on nonlinear support functions are proposed for this statement.
+
+\keywords{Nash equilibrium, nonmonotone game, global optimization} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  This is the template file for the 6th International conference
+%  NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+%  June 25-30, 2018
+%  Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[12pt]{llncs}
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes}
+
+\usepackage[russian]{nla}
+
+\begin{document}
+\fi
+
+\title{Оптимизационный подход к поиску равновесия\\ по Нэшу в немонотонных квадратичных играх}
+% Первый автор
+\author{И.~М.~Минарченко}
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{Институт систем энергетики им. Л. А. Мелентьева СО РАН (ИСЭМ СО РАН), Иркутск, Россия \\
+  \email{minar@isem.irk.ru}
+}
+
+\maketitle
+
+\begin{abstract}
+Исследуется игра в нормальной форме с квадратичными функциями выигрыша и множествами стратегий, заданными выпуклыми многогранниками. Монотонность и вогнутость игры не предполагается, в силу чего не гарантируется существование равновесия по Нэшу. Задача поиска равновесия сводится к задаче минимизации невыпуклой неявно заданной функции. Для решения указанной оптимизационной постановки предлагаются методы глобального и локального поиска, основанные на использовании нелинейных опорных функций.
+
+\keywords{равновесие по Нэшу, немонотонная игра, глобальная оптимизация} % в конце списка точка не ставится
+\end{abstract}
+
+Рассмотрим игру $n$ лиц в нормальной форме. Пусть $N=\{ 1,2,\dots, n\}$ --- множество игроков, $X_i\subset \mathbb{R}^{m_i}$ --- множество стратегий $i$-го игрока, $m=m_1+m_2+\dots+m_n$ --- общее число переменных, $X=X_1\times X_2 \times \dots \times X_n\subset\mathbb{R}^m$ --- множество ситуаций игры, $f_i\colon X\rightarrow \mathbb{R}$ --- функция выигрыша $i$-го игрока. $\mathbb{R}$ обозначает множество действительных чисел. Для любого $i\in N$ будем предполагать, что $X_i$ является ограниченным множеством вида
+\begin{equation*}
+	\label{minar:X}
+	X_i = \{ x_i\in \mathbb{R}^{m_i} \colon A_i x_i \leq b_i \},
+\end{equation*}
+где $A_i\in \mathbb{R}^{r_i\times m_i}$, $b_i\in \mathbb{R}^{r_i}$, $i\in N$. Функции выигрыша определим следующим образом:
+\begin{equation*}
+	\label{minar:f}
+	f_i(x) = x_i^\top \left( \frac{1}{2}B_i x_i + d_i \right) + \sum_{j\in N\setminus\{i\}} x_i^\top C_{ij} x_j, \qquad i\in N,
+\end{equation*}
+где $B_i\in \mathbb{R}^{m_i\times m_i}$ --- симметричные и, вообще говоря, знаконеопределённые матрицы, $C_{ij} \in \mathbb{R}^{m_i\times m_j}$, $d_i\in \mathbb{R}^{m_i}$. Обозначим $(y_i,x_{-i}) = (x_1,x_2,\dots,x_{i-1},y_i,x_{i+1}, \dots, x_n)$. Задача заключается в нахождении равновесия по Нэшу, то есть такой ситуации $x^\ast\in X$, для которой выполнено
+\begin{equation*}
+	f_i(x_i^\ast, x_{-i}^\ast) \geq f_i(x_i, x_{-i}^\ast), \qquad x_i\in X_i, \quad i\in N.
+\end{equation*}
+Рассмотрим следующие функции~\cite{NikaidoIsoda1955}:
+\begin{equation*}
+	\varphi(x,y) = \sum_{i\in N} \left( f_i(y_i,x_{-i}) - f_i(x_i,x_{-i}) \right),\qquad
+	F(x) = \max_{y\in X} \varphi(x,y).
+\end{equation*}
+Нетрудно убедиться, что $F(x)\geq 0$ для любых $x\in X$. Для того чтобы ситуация $x^\ast\in X$ являлась равновесием по Нэшу, необходимо и достаточно, чтобы $F(x^\ast) = 0$~\cite{NikaidoIsoda1955}. Отсюда следует, что множество равновесий является пустым тогда и только тогда, когда $F(x)>0$ для любых $x\in X$. Учитывая неотрицательность функции~$F$, рассмотрим задачу
+\begin{equation}
+	\label{minar:main_problem}
+	F(x)\rightarrow\min, \qquad x\in X.
+\end{equation}
+Если множество равновесий непусто, то оно совпадает с множеством решений задачи~\eqref{minar:main_problem}~\cite{Khamisov2003}. Введём следующие векторы и матрицы:
+$d =
+  \begin{pmatrix}
+  	d_1 & d_2 & \dots & d_n
+  \end{pmatrix}^\top
+$, %
+$b =
+  \begin{pmatrix}
+  	b_1 & b_2 & \dots & b_n
+  \end{pmatrix}^\top
+$,
+\begin{equation*}
+  C =
+  \begin{pmatrix}
+    0 & C_{12} & \dots & C_{1n} \\
+    C_{21} & 0 & \dots & C_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    C_{n1} & C_{n2} & \dots & 0
+  \end{pmatrix}
+  ,\quad
+  B =
+  \begin{pmatrix}
+    B_{1} & 0 & \dots & 0 \\
+    0 & B_{2} & \dots & 0 \\
+    \vdots & \vdots & \ddots & \vdots \\
+    0 & 0 & \dots & B_{n}
+  \end{pmatrix}
+  ,\quad
+  A =
+  \begin{pmatrix}
+    A_{1} & 0 & \dots & 0 \\
+    0 & A_{2} & \dots & 0 \\
+    \vdots & \vdots & \ddots & \vdots \\
+    0 & 0 & \dots & A_{n}
+  \end{pmatrix}
+  .
+\end{equation*}
+Тогда для квадратичной игры функция~$F$ примет вид
+\begin{equation*}
+	F(x) = \max_{y\in X} \bigg[\frac{1}{2} y^\top By + y^\top (Cx+d) \bigg] - x^\top \left( \frac{1}{2}B+C \right) x - x^\top d,
+\end{equation*}
+где	$X = \{x \in \mathbb{R}^{m} \colon A x \leq b \}$. Для поиска глобального оптимума задачи~\eqref{minar:main_problem} предлагается метод, основанный на аппроксимации целевой функции снизу нелинейными опорными функциями. Если дополнительно предположить, что функции выигрыша строго вогнуты по собственным переменным, т.~е. матрицы $B_1, \dots, B_n$ отрицательно определены, то может быть рассмотрен метод локального поиска, основанный на d.c.-разложении функции~$F$.
+
+% Рисунки и таблицы оформляются по стандарту класса article. Например,
+
+%\begin{figure}[htb]
+%  \centering
+%  % Поддерживаются два формата:
+%  %\includegraphics[width=0.7\linewidth]{figure.pdf} % Растровый формат
+%  %\includegraphics[width=0.7\linewidth]{figure.png} % Векторный и растровый формат
+%  %
+%
+%  \begin{center}
+%    \missingfigure[figwidth=0.7\linewidth]{Уберите меня из статьи!}
+%  \end{center}
+%  \caption{Заголовок рисунка}\label{fig:example}
+%\end{figure}
+
+
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+\bibitem{NikaidoIsoda1955} Nikaido~H., Isoda~K. Note on non-cooperative convex games~// Pacific~J.~Math. 1955. Vol.~5. No.~5. Pp.~807--815.
+
+\bibitem{Khamisov2003} Khamisov~O. A global optimization approach to solving equilibrium programming problems~// Optimization and Optimal Control. World Scientific, 2003. Pp.~155--164.
+
+%Гантмахер~Ф.Р. Теория матриц. М.:~Наука,~1966.
+
+%\bibitem{Kholl} Современные численные методы решения обыкновенных дифференциальных уравнений~/ Под~ред.~Дж.~Холл, Дж.~Уатт. М.:~Мир,~1979.
+
+%\bibitem{Aleksandrov1} Александров~А.Ю. Об устойчивости сложных систем в критических случаях~// Автоматика и телемеханика. 2001. \textnumero~9. С.~3--13.
+
+%\bibitem{Moreau1977} Moreau~J.-J. Evolution problem associated with a moving convex set in a Hilbert space~// J.~Differential~Eq. 1977. Vol.~26. Pp.~347--374.
+
+%\bibitem{Semenov} Семенов~А.А. Замечание о вычислительной сложности известных предположительно односторонних функций~// Тр.~XII Байкальской междунар. конф. <<Методы оптимизации и их приложения>>. Иркутск, 2001. С.~142--146.
+
+\end{thebibliography}
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок.
+
+
+
+
+%\end{document}
+

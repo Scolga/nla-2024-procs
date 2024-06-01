@@ -1,0 +1,144 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{Control Problem for a Parabolic System with Uncertainties and Multiple Changes in Dynamics}
+% First author
+\author{Igor V. Izmestev\inst{1} \inst{2}
+}
+\institute{SUSU, Chelyabinsk, Russia\\
+  \and
+CSU, Chelyabinsk, Russia\\
+\email{j748e8@gmail.com}}
+% etc
+
+\maketitle
+
+\begin{abstract}
+
+The problem of control of a parabolic system, which describes the heating of a given number of rods, is considered. Control is point heat sources that are located at the ends of the rods. The density functions of the internal heat sources are unknown. We admit the possibility of a given number of changes in the dynamics of the controlled system, the time of occurrence of which is not known in advance. The goal of choosing a control is to bring the average temperature of the system to a given segment at a fixed time for any realization of unknown functions and any moments of change in dynamics. Termination conditions are found.
+
+\keywords{control, uncertainty, parabolic system, breakdown} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  This is the template file for the 6th International conference
+%  NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+%  June 25-30, 2018
+%  Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[12pt]{llncs}  
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes} 
+
+\usepackage[russian]{nla}
+
+\begin{document}
+\fi
+
+\title{Задача управления параболической\\ системой с неопределенностями и\\ многократным изменением в 
+динамике\thanks{Исследования выполнено за счет гранта Российского научного фонда \textnumero~23-21-00539, https://rscf.ru/project/23-21-00539/.}}
+% Первый автор
+\author{И.~В.~Изместьев 
+}
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{ЮУрГУ, Челябинск, Россия \\
+  \and   % Разделяет институты и присваивает им номера по порядку.
+ЧелГУ, Челябинск, Россия\\
+  \email{j748e8@gmail.com}
+% \and Другие авторы...
+}
+
+\maketitle
+
+\begin{abstract}
+Рассматривается задача управления параболической системой, описывающей нагрев заданного количества стержней. Управлением являются точечные источники тепла на концах стержней. Функции плотности внутренних источников тепла стержней точно неизвестны. Считается, что возможно заданное количество изменений в динамике управляемой системы, время наступления которых заранее не известно. Цель выбора управления~--- привести в фиксированный момент времени среднюю температура системы на заданный отрезок при любых реализациях неизвестных функций и любых моментах изменения динамики. Найдены условия окончания.
+
+\keywords{управление, неопределенность, параболическая система, поломка} % в конце списка точка не ставится
+\end{abstract}
+
+Уравнения теплопроводности
+$$
+{{\partial T_i(x,t)}\over{\partial t}}={{\partial^2 T_i(x,t)}\over{\partial x^2}}+f_i(x,t), \eqno(1)
+$$
+где $0 \leq t \leq p$ и $0 \leq x \leq 1$, описывают распределения температур $T_i(x,t)$, $i=\overline{1,n}$, 
+в однородных стержнях единичной длины как функцию от времени $t$. 
+В начальный момент $t=0$ заданы распределения температур $T_i(x,0)=g_i(x)$, где функции $g_i(x)$ являются непрерывными. Считается, что управляемая температура $T_i(0,t)$ на левом конце $i$-того стержня меняется согласно уравнению
+$$
+{{d\,T_i(0,t)}\over{dt}}=a_i^{(1)}(t)+a_i^{(2)}(t, \tau_i) G_i\overline{\xi}(t), \quad i=\overline{1,n}. \eqno(2)
+$$
+Здесь
+$$
+a_i^{(2)}(t, \tau_i)=\left\{\begin{array}{ll}
+a^{(2)}_{1i}(t)& \text{при } t <\tau_i,\\
+a^{(2)}_{2i}(t)& \text{при } \tau_i \leq t,
+\end{array} \right. \quad i=\overline{1,n};
+$$ 
+функции $a_i^{(1)}(t)$, $a^{(2)}_{1i}(t)\geq  0$, $a^{(2)}_{2i}(t)\geq  0$, $i=\overline{1,n}$, являются непрерывными при $0\leq t \leq p$, причем $a^{(2)}_{1i}(t)>0$, $a^{(2)}_{2i}(t)>0$. Вектор-функция $\overline{\xi}(t)=(\xi_1(t),\xi_2(t),\ldots,\xi_q(t))^* \in U$, где $U$~--- связный компакт из $\mathbb{R}^q$, является управлением. Символ $*$ обозначает операцию транспонирования. С помощью матрицы $G$ размерности $n$ на $q$ задается выбор соответствующих одномерных управлений $\xi_i(t)$ для левого конца каждого стержня. За $G_i$ обозначена $i$-тая строка матрицы $G$.
+
+Предполагается, что возможно не более, чем $k$ ($k \leq n$) моментов $\tau_i<p$ изменения в динамике управляемой системы, которые, например, могут произойти в результате поломок (см., например, \cite{Nik}). Эти моменты заранее неизвестны.
+
+Значения температур $T_i(1,t)$, $i=\overline{1,n}$, зависящие непрерывно от времени $t \in [0,p]$, точно не известны, но заданы границы их изменения
+$$
+\delta_i^{(1)}(t) \leq T_i(1,t) \leq \delta_i^{(2)}(t), \quad 0 \leq t \leq p. \eqno(3)
+$$
+Здесь функции $\delta_i^{(1)}(t)$ и $\delta_i^{(2)}(t)$, $i=\overline{1,n}$, являются непрерывными при $0\leq t \leq p$.
+
+Известны оценки непрерывных функций $f_i(x, t)$, которые являются плотностями внутренних источников тепла:
+$$
+f_i^{(1)}(x,t)\leq f_i(x,t) \leq f_i^{(2)}(x,t),  \quad 0 \leq t \leq p, \quad 0 \leq x \leq 1, \quad i=\overline{1,n}. \eqno(4)
+$$
+Здесь функции $f_i^{(1)}(x,t)$ и $f_i^{(2)}(x,t)$, $i=\overline{1,n}$, являются непрерывными.
+
+Пусть заданы числа  $\varepsilon \geq 0$, $c \in \mathbb{R}$  и вектор $\overline{\lambda}=(\lambda_1,\ldots,\lambda_n)^* \in \mathbb{R}^n$ такой, что $\lambda_i>0$, $i=\overline{1,n}$. Цель выбора управления $\overline{\xi}(t)$ в (2) заключается в осуществлении неравенства
+$$
+\left|\sum_{i=1}^n \lambda_i\int_{0}^1  T_i(x,p)\sigma_i(x)dx - c \right|\leq \varepsilon \eqno(5)
+$$
+при любых непрерывных функциях $T_i(1,t)$ (3), $i=\overline{1,n}$, любых непрерывных функциях $f_i(x,t)$~(4), $i=\overline{1,n}$, и любых $k$ ($k \leq n$) моментах изменения динамики управляемой системы $\tau_i<p$. Здесь непрерывные функции $\sigma_i:[0,1]\rightarrow \mathbb{R}$, $i=\overline{1,n}$, удовлетворяют условиям $\sigma_i(0)=\sigma_i(1)=0$.
+
+
+Следуя подходам изложенным в \cite{Ukh, Izm}, сделаем замену переменных и получим одномерную задачу управлению при наличии неопределенности с уравнением движения
+$$
+\dot{z}=-\alpha(t,\overline{\tau})u+\beta(t)v, \quad |u|\leq 1, \quad |v|\leq 1, \quad t \leq p, \quad z \in \mathbb{R}; \eqno(6)
+$$
+$$
+\alpha(t,\overline{\tau})=\sum_{i=1}^n \lambda_i a^{(2)}_i(t,\tau_i)\gamma_i(t), \quad \overline{\tau}=(\tau_1,\tau_2,\ldots,\tau_n).
+$$
+Здесь $u$~--- одномерное управление, $v$~--- неопределенность; функции $\gamma_{i}(t) \geq 0$, $i=\overline{1,n}$,  и $\beta(t) \geq 0$ являются непрерывными при $t \leq p$. Цель управления примет вид $|z(p)|\leq \varepsilon$.
+
+Используя метод оптимизации гарантированного результата \cite{Kras}, найдены необходимые и достаточные условия окончания в задаче (6). Кроме того, построено соответствующее управление $\overline{\xi}$, решающее задачу (1)--(5).
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+\bibitem{Nik} Никольский~М.С., Пэн~Чж. Дифференциальная игра преследования с нарушением в динамике~// Дифференциальные уравнения. 1994. Т.~30,  \textnumero~11. С.~1923--1927.
+
+\bibitem{Ukh} Ухоботов~В.И., Изместьев~И.В. Задача управления процессом нагрева стержня с неизвестными температурой на правом конце и плотностью источника тепла~// Труды Института математики и механики УрО РАН. 2019. Т.~25, \textnumero~1. С.~297--305.
+
+\bibitem{Izm} Изместьев~И.В., Ухоботов~В.И. Об одной задаче управления нагревом системы стержней при наличии неопределенности~// Вестник Удмуртского университета. Математика. Механика. Компьютерные науки. 2022. Т~32, вып.~4. С.~546--556.
+
+\bibitem{Kras} Красовский~Н.Н. Управление динамической системой. М.:~Наука,~1985.
+\end{thebibliography}
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок.
+
+
+
+
+%\end{document}
+

@@ -1,0 +1,129 @@
+\begin{englishtitle}
+\title{Epidemic optimal control problem with\\ vaccination and isolation processes}
+% First author
+\author{Nikita Kosyanov}
+\institute{Institute for System Dynamics and Control Theory of SB RAS, Irkutsk, Russia\\
+  \email{kosyanov.nik@gmail.com}}
+% etc
+
+\maketitle
+
+\begin{abstract}
+In modern models of spreading viruses, special attention focuses necessary for vaccination and isolation processes. These processes can significantly affect to course of the epidemic, and also is an additional control function of epidemic. This paper considers SIIR compartment epidemic model, which define with nonlinear control system. Modifications of the model have been carried out to deal with vaccination and isolation in the population. The final formulas of the differential equations to the modified problem are presented and the objective functional is described, as well as the properties of its integrative function.
+
+\keywords{application of mathematical control theory, nonlinear control systems, compartment epidemic model}
+\end{abstract}
+\end{englishtitle}
+
+\iffalse
+\documentclass[12pt]{llncs}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[russian]{nla}
+
+%\usepackage[english,russian]{nla}
+
+% \graphicspath{{pics/}} %Set the subfolder with figures (png, pdf).
+
+%\usepackage{showframe}
+\begin{document}
+%\selectlanguage{russian}
+\fi
+
+\title{Эпидемические задачи оптимального управления с изоляцией и вакцинацией в популяции\thanks{Работа выполнена при поддержке РНФ, проект \textnumero~24-41-03004.}}
+% Первый автор
+\author{Н.~О.~Косьянов
+} % обязательное поле
+\institute{Институт динамики систем и теории управления СО РАН, Иркутск, Российская Федерация\\
+  \email{kosyanov.nik@gmail.com}
+}
+% Другие авторы...
+
+\maketitle
+
+\begin{abstract}
+В современных моделях распространения вирусов особое внимания заслуживают процессы вакцинации и изоляции. Данные процессы могут не только существенно влиять на ход эпидемии, но и представляют собой дополнительные функции управления эпидемией. В данной работе рассмотрена групповая эпидемическая модель SIIR, которая задаётся нелинейной управляемой системой. Проведена модификаций модели, позволяющая учитывать вакцинацию и изоляцию в популяции. Представлены итоговые формулы дифференциальных уравнений модифицированной задачи и описан целевой функционал, а также свойства его подынтегральной функции.
+
+\keywords{приложения математической теории управления, нелинейные управляемые системы, групповые эпидемические модели}
+\end{abstract}
+
+Рассмотрим двухвирусную модель SIIR (Восприимчивый, Зараженный1, Зараженный2, Выздоровевший) с модифицированным параметром заражения и без учета процессов вакцинации и изоляции представителей популяции \cite{kosyan}, обозначим $S(t),I_1(t),I_2(t),R(t)$~-- доли восприимчивых, инфицированных и выздоровевших в популяции. Определим следующее допущение для модели: если представитель популяции заразился одним из вирусов, то другим вирусом он заразиться не может. В таком случае изменение состояний системы SIIR, на некотором временном интервале $T = [t_0, t_1]$, можно описать следующей системой дифференциальных уравнений:
+
+\begin{equation}\label{SIIR_sys}
+	\begin{cases}
+        \dot{I_1}(t)=\widetilde{\delta_1}(I_1(t),I_2(t),l) S(t) - (\sigma_1 + u_1)I_1(t), 
+        \ \ \
+		\dot{S}(t)=-(\widetilde{\delta_1} + \widetilde{\delta_2})S(t), \\
+        \dot{I_2}(t)=\widetilde{\delta_2}(I_1(t),I_2(t),l) S(t) - (\sigma_2 + u_2)I_2(t), 	\ \ \
+		\dot{R}(t)=(\sigma_1+u_1) I_1(t)+(\sigma_2+u_2 )I_2(t), \\
+	\end{cases}
+\end{equation}
+
+Здесь $\widetilde{\delta_i}(I_i(t),I_i(t),l)$ -- модифицированный параметр интенсивности распространения вируса $\mathcal{V}_i$, который зависит от долей зараженных особей в популяции ($I_1$, $I_2$) и среднего количества контактов между особями ($l$): 
+
+\begin{equation}\label{mod_delta}
+    \widetilde{\delta_i}(I_1(t),I_2(t),l) = p_i I_i(t) \cdot \left[ \frac{1-(1 - p_1 I_1(t) - p_2 I_2(t))^l}{p_1 I_1(t) + p_2 I_2(t))} \right],
+\end{equation}
+где $p_i = const \in [0,1]$ -- вероятность заражения вирусом $\mathcal{V}_i$ при единичном контакте восприимчивого и зараженного, $i=\overline{1,2}, t \in T$.
+
+Параметр $\sigma_i = const \in [0,1]$ отвечает за интенсивность выздоровления от вируса $\mathcal{V}_i$. Функции $u_i(t) = \left(  u_1(t), u_2(t) \right) ^ T$ -- доли заболевших, проходящих дополнительное финансируемое лечение, при этом $u_i(t) \in U \subseteq PC(T), U$ -- множество допустимых управлений (подмножество кусочно-непрерывных функций). Экономические затраты на эпидемию для данной задачи представляются в виде функционала с интегральным слагаемым:
+
+\begin{equation}\label{obj_func}
+    J = \int\limits_T \underbrace{\left[\underbrace{r_1(I_1(t)) + r_2(I_2(t))}_{r(I_1(t),I_2(t))} +\underbrace{s_1(u_1(t)) + s_2(u_2(t))}_{s(u_1(t),u_2(t))} - p(S(t),R(t)) \right]}_{f_{SIIR}(S,I_1,I_2,R,u_1,u_2)}dt.
+\end{equation}
+
+Здесь функции $r_i(I_i(t))$ -- расходы, связанные с заболевшей группой индивидов (выплаты больничных, предоставление бесплатного питания и лекарств и т.д.), $p(S(t),R(t))$ -- поступление средств от трудоспособного населения (например -- налоги), $s_i(u_i(t))$ -- cтоимость дополнительного лечения, $i=\overline{1,2}$. Если функции $r, p, s$ -- линейные, то подынтегральная функция в (\ref{obj_func}) также линейна, а значит и выпукла. В случае, если $r(\cdot), p(\cdot), s(\cdot)$ -- выпулкые, то она является D.C. функцией (difference of two convex functions) \cite{pshen,alexan}:
+\begin{equation}\label{obj_func}
+    f_{SIIR}(\cdot) = \underbrace{r_1(I_1(t)) + r_2(I_2(t)) + s_1(u_1(t)) + s_2(u_2(t))}_{g(I_1, I_2, u_1, u_2)} - \underbrace{p(S(t),R(t))}_{h(S,R)}.
+\end{equation}
+
+В моделях с вакцинацией представителей популяции появляется дополнительная группа граждан $V$ -- вакцинированнные, а система (\ref{SIIR_sys}) модифицируется следующим образом:
+
+\begin{equation}\label{SVIIR_sys}\tag{1*}
+	\begin{cases}
+        \dot{I_1}(t)=\widetilde{\delta_1}(I_1(t),I_2(t),l) S(t) - (\sigma_1 + u_1)I_1(t), 
+        \ \ \
+		\dot{S}(t)=-(\widetilde{\delta_1} + \widetilde{\delta_2} + \omega)S(t), \\
+        \dot{I_2}(t)=\widetilde{\delta_2}(I_1(t),I_2(t),l) S(t) - (\sigma_2 + u_2)I_2(t),
+        \ \ \
+        \dot{V}(t)=\omega S(t) - (\widetilde{\delta_1} + \widetilde{\delta_2} - \nu)V(t), \\
+        \dot{R}(t)=(\sigma_1+u_1) I_1(t)+(\sigma_2+u_2 )I_2(t) + \nu V(t),
+	\end{cases}
+\end{equation}
+где $\omega(t)$ -- новая переменная управления, которая представляет собой долю граждан, вакцинируемых за единицу времени, $\mu = const$ -- скорость приобретения иммунитета после вакцинации.
+
+Изоляция граждан~-- функции управления в формуле модифицированного параметра интенсивности распространения вируса (\ref{mod_delta}):
+\begin{equation}\label{con_mod_delta} \tag{2*}
+    \widetilde{\delta_i}(I_1(t),I_2(t),l) = p_i I_i(t) (1-v_i) \cdot \left[ \frac{1-(1 - p_1 I_1(t)(1-v_1) - p_2 I_2(t)(1-v_2))^l}{p_1 I_1(t)(1-v_1) + p_2 I_2(t)(1-v_2))} \right],
+\end{equation}
+Здесь $v_i$ -- доля изолированных индивидов из группы зараженных вирусом $\mathcal{V}_i$. 
+
+С учетом всех нововведений необходимо обновить формулу целевого функционала задачи (\ref{SVIIR_sys}-\ref{con_mod_delta}):
+\begin{equation}\label{iso_obj_func} \tag{3*}
+    J^* = \int\limits_T \left[r(I_1(t),I_2(t)) + s(u_1(t),v_1(t),u_2(t),v_2(t)) + q(\omega) - p(S(t),V(t),R(t)) \right]dt.
+\end{equation}
+
+При этом свойства подынтегральной функции аналогичны свойствам функции $f_{SIIR}(\cdot)$. Так как система (\ref{SVIIR_sys}) нелинейна, то с помощью классического принципа максимума возможно найти управления, удовлетворяющие только необходимому условию оптимальности. Таким образом, для поиска решения задачи оптимального управления (\ref{SVIIR_sys})--(\ref{iso_obj_func}) требуется разработка специальных методов.
+
+% Список литературы.
+\begin{thebibliography}{99}
+\bibitem{kosyan}
+% Format for Journal Reference
+Kosyanov~N., Gubar~E., Taynitskiy V. {\it MPC Controllers in SIIR Epidemic Models}. Computation (MDPI). 2023. No~9.
+\bibitem{alexan} Александров А.Д. {\it Поверхности, представимые разностями выпуклых функций}. Доклад АН СССР. 1950. Т.~72,  \textnumero~4. С.~613--616.
+% Format for books
+\bibitem{pshen}
+Пшеничный~Б.\,Н. Выпуклый анализ и экстремальные задачи.  М.\,: Наука, 1980.
+% Format for Russian Journal Reference
+% etc
+\end{thebibliography}
+
+
+
+%\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

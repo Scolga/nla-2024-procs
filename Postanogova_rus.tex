@@ -1,0 +1,117 @@
+\begin{englishtitle}
+\title{On invertibility of the operator for derivative in a~neutral type differential equation}
+% First author
+\author{Irina Postanogova}
+\institute{Perm National Research Polytechnic University, Perm, Russia\\
+  \and
+Perm State University, Perm, Russia\\
+\email{ipostanogova@psu.ru}}
+% etc
+
+\maketitle
+
+\begin{abstract}
+We study the spectrum of the operator for derivative in a neutral type equation and the location of roots of the characteristic equation on the complex plane. The general form of the spectrum is found.
+It is established that there exists an exact right boundary of the characteristic equation roots.
+ The conditions under which all the roots lie to the left of the imaginary axis and are separated from it are identified.
+
+\keywords{functional equations, difference equations, operator spectrum, incommensurable quantities}
+\end{abstract}
+\end{englishtitle}
+
+\iffalse
+\documentclass[12pt]{llncs}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[russian]{nla}
+
+%\usepackage[english,russian]{nla}
+
+% \graphicspath{{pics/}} %Set the subfolder with figures (png, pdf).
+
+%\usepackage{showframe}
+\begin{document}
+%\selectlanguage{russian}
+\fi
+
+\title{Об обратимости оператора при производной для дифференциального уравнения нейтрального типа}
+% Первый автор
+\author{И.~Ю.~Постаногова
+ } % обязательное поле
+\institute{Пермский национальный исследовательский политехнический университет (ПНИПУ), Пермь, Россия\\
+  \and
+    Пермский государственный национальный исследовательский университет (ПГНИУ), Пермь, Россия\\
+  \email{ipostangova@psu.ru}
+}
+
+
+\maketitle
+
+\begin{abstract}
+Исследуется спектр оператора при производной в уравнении нейтрального типа, а также расположние корней его характеристического уравнения на комплексной плоскости. Найден общий вид спектра, установлено, что существует точная правая граница корней характеристического уравнения и найдены условия, при которых все корни лежат слева от мнимой оси и отделены от неё.
+
+\keywords{функциональные уравнения, разностные уравнения, спектр оператора, несоизмеримые величины.}
+\end{abstract}
+
+%\section{Основные результаты} % не обязательное поле
+
+Рассмотрим автономное функционально-дифференциальное уравнение нейтрального типа, записанное в операторном виде [1]:
+\begin{equation} \label{eq_MainFDE}
+    (I-S)\dot{x}(t)=Tx(t)+g(t),\;t\ge0,
+\end{equation}
+где  \(S=aS_1+bS_{\alpha}\), \(S_1, S_{\alpha}\) -- операторы сдвига на соответствующие числа, \(T\) -- линейный ограниченный оператор, заданный интегралом Римана~-- Стилтьеса, функция \(g: \mathbb{R}_+\to\mathbb{R}\) суммируема на каждом конечном отрезке. Как известно [1], в этих предположениях уравнение (\ref{eq_MainFDE}) с заданными начальными условиями однозначно разрешимо в классе абсолютно непрерывных на каждом конечном отрезке функций. Будем предполагать, что \(\alpha>1\) и \(\alpha\notin\mathbb{Q}\); заметим, что по сравнению с хорошо изученным случаем соизмеримых запаздываний иррациональность \(\alpha\) существенно усложняет исследование.\par
+При изучении асимптотических свойств решений уравнения (\ref{eq_MainFDE}) важную роль играет обратимость оператора \(I-S\) в лебеговых пространствах заданных на полуоси функций [2]. Рассмотрим функциональное уравнение
+\begin{equation*}
+    (I-S)y(t)=f(t),\; t\ge0,
+\end{equation*}
+и поставим ему в соответствие \emph{характеристическое уравнение}
+\begin{equation} \label{eq_CharEq}
+    1-ae^{-p}-be^{-\alpha p}=0,\;p\in\mathbb{C}.
+\end{equation}\par
+В случае иррационального \(\alpha\) на комплексной плоскости существует прямая \(\mathrm{Re}\,{z}=\xi_0\), такая, что все корни характеристического уравнения (\ref{eq_CharEq}) лежат слева от неё и, помимо этого, являющаяся точной границей корней. Это значит, что существует последовательность \(\left\{p_k=\xi_k+i\eta_k\right\}\) корней уравнения (\ref{eq_CharEq}), для которой \(\displaystyle\lim_{k\to\infty}{\xi_k}=\xi_0\), а \(\displaystyle\lim_{k\to\infty}{\left|\eta_k\right|}=\infty\). Показано, что на этой прямой может лежать не более одного корня характеристического уравнения и найдены условия, при которых корней на этой прямой нет.
+
+\textbf{Теорема 1.} Спектр оператора \(S\) представляет собой круг
+\begin{equation*}
+\sigma\left(S\right)=\left\{\lambda\in\mathbb{C}\mid \left|\lambda\right|\le\left|a\right|+\left|b\right|\right\}.
+\end{equation*}
+
+Приведённые ниже теоремы обобщают и уточняют результаты работ [2, 3].
+
+\textbf{Теорема 2.} Следующие утверждения эквивалентны:
+\begin{enumerate}
+    \item \(|a|+|b|<1;\)
+    \item оператор \(I-S\) обратим в \(L_p\) при любом \(p\ge1\);
+    \item все корни уравнения (\ref{eq_CharEq}) лежат слева от мнимой оси и отделены от неё (\(\xi_0<0\))
+    \item уравнение (\ref{eq_MainFDE}) экспоненциально устойчиво.
+\end{enumerate}
+
+\textbf{Теорема 3.} Если \(|a|+|b|>1\), то
+\begin{enumerate} 
+    \item оператор \(I-S\) не обратим в \(L_p\) при любом \(p\ge1\);
+    \item справа от мнимой оси существует бесконечно много корней уравнения (\ref{eq_CharEq}) (\(\xi_0>0\));
+    \item уравнение (\ref{eq_MainFDE}) неустойчиво.
+\end{enumerate}
+
+\textbf{Теорема 4.} Если \(\left|a\right|+\left|b\right|=1\), то
+\begin{enumerate} 
+    \item оператор \(I-S\) не обратим в \(L_p\) при любом \(p\ge1\);
+    \item все корни уравнения (\ref{eq_CharEq}) лежат слева от мнимой оси либо на ней, и существует вертикальная цепь корней, бесконечно приближающаяся к мнимой оси (\(\xi_0=0\)).
+\end{enumerate}
+
+% Список литературы.
+\begin{thebibliography}{99}
+\bibitem{1}
+Азбелев~Н.~В., Максимов~В.~П., Рахматуллина~Л.~Ф. Введение в теорию функ\-ци\-о\-наль\-но-дифференциальных уравнений. М.: Наука, 1991. %- 280~с.
+\bibitem{2} Чистяков~А.~В. К вопросу о множестве корней квазиполинома с несоизмеримыми показателями~// Краевые задачи: межвуз. сб. науч. тр. Перм. политехн. ин-т. 1986. С.~32--36.
+\bibitem{3} Баландин~А.~С. Экспоненциальная устойчивость автономных дифференциальных уравнений нейтрального типа.~ I~// Изв. вузов. Матем. 2023. \textnumero~3. C.~3--14.
+\end{thebibliography}
+
+% Обязательная информация на английском языке:
+
+
+
+
+%\end{document}
+
+

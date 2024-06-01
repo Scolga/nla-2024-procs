@@ -1,0 +1,155 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{Linear inverse problem for second kind mixed type with semi-nonlocal boundary condition in a primatic unbounded domain}
+% First author
+\author{S.Z.Dzhamalov\inst{1} \and  B.K.Sipatdinova\inst{2}
+}
+\institute{V.I.Romanovskiy Institute of Mathematics, Uzbekistan Academy of Sciences, Tashkent, Uzbekistan\\
+  \email{siroj63@mail.ru}
+  \and
+V.I.Romanovskiy Institute of Mathematics, Uzbekistan Academy of Sciences, Tashkent, Uzbekistan\\
+\email{sbiybinaz@mail.ru}
+}
+% etc
+
+\maketitle
+
+\begin{abstract}
+This article discusses the correctness of a linear inverse problem with semi-nonlocal boundary conditions for the three-dimensional second kind, second order mixed type equation, in a prismatic unbounded domain is investigated. For this problem, using the Fourier transform, methods of ``$\varepsilon$-regularization'', a priori estimates, successive approximations and contracting mappings, existence and uniqueness theorems for a generalized solution in a certain class of integrable functions are proved.
+
+\keywords{of the second kind second order mixed type equation , linear inverse problem with semi-nonlocal boundary conditions, correctness of the problem, Fourier transforms, methods of ``$\varepsilon$-regularization'', a priori estimates, successive approximations and contracting mappings. } % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  This is the template file for the 6th International conference
+%  NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+%  June 25-30, 2018
+%  Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[12pt]{llncs}
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes}
+
+\usepackage[russian]{nla}
+
+\begin{document}
+\fi
+
+\title{Об одной линейной задаче для уравнения смешанного типа второго рода, второго порядка с полунелокальным краевым условием в призматической неограниченной области}
+% Первый автор
+\author{С.~З.~Джамалов\inst{1} \and  Б.~К.~Сипатдинова\inst{2}
+  \and
+% Третий автор
+%  И.~О.~Фамилия\inst{1}
+}
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{Институт математики  имени В.И.Романовского Академии наук Республики Узбекистан, Ташкент, Узбекистан \\
+  \email{siroj63@mail.ru}
+  \and   % Разделяет институты и присваивает им номера по порядку.
+Институт математики  имени В.И.Романовского Академии наук Республики Узбекистан, Ташкент, Узбекистан\\
+  \email{sbiybinaz@mail.ru}
+% \and Другие авторы...
+}
+
+\maketitle
+
+\begin{abstract}
+В данной статье рассматриваются вопросы корректности одной линейной обратной задачи c полунелокальным краевым условием для трехмерного уравнения смешанного типа второго рода, второго порядка в призматической неограниченной области. Для этой задачи с применением преобразования Фурье, методами <<$\varepsilon$-регуляризации>>, априорных оценок, последовательных приближений и сжимающихся отображений доказаны теоремы существования и единственности обобщенного решения в определенном классе интегрируемых функций.
+
+\keywords{уравнения смешанного типа второго рода второго порядка, линейная обратная задача с полунелокальным краевым условием, корректность задачи, преобразования Фурье, методы <<$\varepsilon$-регуляризации>>, априорных оценок, последовательных приближений и сжимающихся отображений.} % в конце списка точка не ставится
+\end{abstract}
+
+\section{Основные результаты} % не обязательное поле
+
+В данной работе, для исследования однозначное разрешимости обратных задач для трехмерного уравнения смешанного типа второго рода в неограниченной призматической области предлагается метод, который основан на сведение обратной задачи к прямым полунелокальным краевым задачам для  семейство нагруженных интегро-дифферен \\циальных уравнений смешанного типа второго рода в ограниченной прямоугольной области \cite{Dzhamalov1}-\cite{Dzhamalov3}.
+
+Напомним, что нагруженным уравнением принято называть уравнение с частными производными, содержащее в коэффициентах или в правой части значения тех или иных функционалов от решения уравнения \cite{Nakhushev}.
+
+В области
+$$G=(0,1)\times (0,T)\times \mathbb{R}=Q\times \mathbb{R}=\{(x,t,z);x\in (0,1),0<t<T<+\infty , z\in \mathbb{R}\}$$
+рассмотрим трехмерное уравнение смешанного типа второго рода, второго порядка
+ \begin{equation}\label{1}
+Lu=k(t)u_{tt}-\Delta u +a(x,t)u_{t}+ c(x,t)u=\psi (x,t,z),
+ \end{equation}
+где $\Delta u=u_{xx}+u_{zz}$-оператор Лапласа, и пусть  $k(0)=k(T)=0$. Здесь $\psi (x,t,z)=g(x,t,z)+h(x,t)f(x,t,z)$,  $g(x,t,z)$ и $f(x,t,z)$-заданные функции, а функция  $h(x,t)$ подлежит определению.
+
+{\bf Линейная обратная задача} Найти функции $\{u(x,t,z),\; h(x,t)\}$, удовлетворяющие уравнению \eqref{1} в области $G$, такие, что функция $u(x,t,z)$  удовлетворяет следующим полунелокальным краевым условием
+\begin{equation} \label{2}
+\gamma u|_{t=0}= u|_{t=T},
+\end{equation}
+\begin{equation} \label{3}
+u|_{x=0}=  u|_{x=1}=0;
+\end{equation}
+где $\gamma $-некоторое постоянное число, отличное от нуля,  величина которого будет уточнена ниже.
+
+\begin{equation} \label{4}
+\begin{array}{c}
+\text{В дальнейшем будем считать, что}\, u(x,t,z)\, \text{и}\, u_{z}(x,t,z)\rightarrow 0 \,  \text{при} \, \left|z\right|\rightarrow \infty.
+\end{array}
+\end{equation}
+
+Кроме того, решение задачи \eqref{1}-\eqref{4}  удовлетворяет дополнительному условию
+\begin{equation} \label{5}
+u(x,t,\ell_{0})=\varphi _{0}(x,t),
+\end{equation}
+где $\ell_{0}\in \mathbb{R}$ и вместе с функцией  $h(x,t)$ принадлежит классу
+$$U=\{(u,h)|u\in W_{2}^{2,3}(G);h\in W_{2}^{2}(Q)\}.$$
+
+Здесь $W_{2}^{2,3} (G)$ Банахово пространство с нормой
+$$||u||^{2}_{W_{2}^{2,3}(G)}=(2\pi)^{-1/2}\int\limits_{-\infty}^{+\infty}\big(1+|\lambda|^{2}\big)^{3}\, ||\hat{u}(x,t,\lambda)||^{2}_{W_{2}^{2}(Q)} d \lambda,    $$
+где $W_{2}^{2} (Q)$ пространство Соболева,
+$$\hat{u}(x,t,\lambda )=(2\pi )^{-1/2} \int\limits_{-\infty }^{+\infty }u(x,t,z)\,  e^{-i\lambda z} dz$$
+-преобразование Фурье по переменной $z$ функции $u(x,t,z)$.
+
+{\bf Условие 1:} \\
+Периодичность: $a(x,0)=a(x,T)$, $c(x,0)=c(x,T)$;\\
+Нелокальные условые:  $\gamma \cdot g(x,0,z)=g(x,T,z)$, $\gamma \cdot f(x,0,z)=f(x,T,z)$;\\
+Гладкость: $f(x,t,\ell_{0})=f_{0}(x,t)\in C_{x,t}^{0,1}(Q)$, $|f_{0}(x,t)|\geq \rho >0$, $f\in W_{2}^{3,3}(G)$, $g\in W_{2}^{1,3}(G) $.\\
+
+{\bf Условие 2:} \\
+$$\varphi _{0}(x,t)\in W_{2}^{4}(Q);\, \gamma D_{t}^{q}\varphi_{0}|_{t=0}=D_{t}^{q}\varphi _{0}|_{t=T},\, q=0,1,2;\,\varphi_{0}|_{x=0}=\varphi _{0}|_{x=1}=0.\,$$
+
+{\bf Теорема.} {\it Пусть выполнены выше указанные условия 1 и 2 для коэффициентов уравнения \eqref{1}, кроме того, пусть
+$2a-\left|k_{t}\right|+\mu k\geq B_{1}>0,$ $\,\mu c(x,t)-c_{t}(x,t) \ge b_{2}>0$\, для всех  $(x,t)\in \overline{Q}$, где $\mu=\frac{2}{T} \ln \left|\gamma \right|>0,\: \left|\gamma \right|>1$, и пусть существует положительное число  $\sigma$ такое, что для $b_{0}=\min \{B_{1},\mu,b_{2}\}$ имеют место оценки  $b_{0}-14\mu^{2}\sigma^{-1}=\delta>0, \, q=M \left\|f\right\|^{2}_{W_{2}^{3,3}(G)}<1$, где $M=const\left(\sigma\mu^{2}m\delta^{-1}\rho^{-2}\left\|f_{0}\right\|^{2}_{C_{x,t}^{0,1}(Q)}\right)$,  $m=20c_{1}c_{2}c_{3}$, $c_{1}=\int\limits_{-\infty}^{+\infty}\frac{\lambda^{4}d\lambda}{\left(1+|\lambda|^{2}\right)^{3}}<+\infty,\, \, c_{i}(i=2,3)$-коэффициенты теоремы вложения Соболева. Тогда следующее функции \{u(x,t,z),\; h(x,t)\} являются единственным решением линейной обратной задачи \eqref{1}-\eqref{5} из указанного класса $U$.}
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+
+\bibitem{Dzhamalov1} C.З.Джамалов, Р.Р.Ашуров. Об одной линейной обратной задаче для многомерного уравнения смешанного типа второго рода, второго порядка / Дифференциальные уравнения. ~2019.~Т.55. \textnumero ~1, с.34-44.
+
+\bibitem{Dzhamalov2} C.З.Джамалов. Р.Р.Ашуров. Об одной линейной обратной задаче для многомерного уравнения смешанного типа первого рода, второго порядка. // Известия вузов. Математика.2019, \textnumero ~6, с.1-12.
+
+\bibitem{Dzhamalov3} C.З.Джамалов. Нелокальные краевые и обратные задачи для уравнений смешанного типа. // Монография. Ташкент.2021г, с.176.
+
+\bibitem{Nakhushev} Нахушев А.М. Нагруженные уравнения и их приложения. // Дифференц, уравнения, 1983,  Т.19, \textnumero ~1, 86–94.
+
+
+
+
+
+\end{thebibliography}
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок.
+
+
+
+%\end{document}
+

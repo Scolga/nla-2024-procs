@@ -1,0 +1,97 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{Study of the solvability of quasi-parabolic degenerate integro-differential equations of Volterra type}
+% First author
+\author{B.~Kh.~Barotov\inst{1}   \and  A.~I.~Kozhanov\inst{1,2}
+}
+\institute{Novosibirsk State University, Novosibirsk, Russia\\
+  \email{b.barotov@g.nsu.ru}
+  \and
+Sobolev Institute of Mathematics, Novosibirsk, Russia\\
+\email{kozhanov@math.nsc.ru}}
+% etc
+
+\maketitle
+
+\begin{abstract}
+The report presents results on the solvability of boundary value problems for quasi-parabolic integro-differential equations
+
+$$ h(t)u_{ttt}(x,t)+ Au(x,t) +\int\limits_0^t R(t-\tau) (Bu)(x,\tau)d\tau =f(x,t),  $$
+
+in which the function $h(t)$ can vanish, $A$ and $B$ are either identical operators or linear operators elliptic in spatial variables.  For the problems under study, the existence and uniqueness theorems for regular solutions are obtained, that is, solutions that have all derivatives generalized according to S.L. Sobolev and included in the corresponding equation.
+
+\keywords{quasi-parabolic, integro-differential equations of Volterra type, degeneration, boundary value problems, regular solutions, existence, uniqueness } % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  This is the template file for the 6th International conference
+%  NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+%  June 25-30, 2018
+%  Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[12pt]{llncs}  
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes} 
+
+\usepackage[russian]{nla}
+
+\begin{document}
+\fi
+
+\title{Исследование разрешимости квазипараболических вырождающихся интегро-дифференциальных уравнений вольтерровского типа}
+% Первый автор
+\author{Б.~Х.~Баротов\inst{1}  \and А.~И.~Кожанов\inst{1,2}
+}
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{Новосибирский государственный университет, Новосибирск, Россия \\
+  \email{ b.barotov@g.nsu.ru}
+  \and   % Разделяет институты и присваивает им номера по порядку.
+Институт математики им. С.Л. Соболева СО РАН, Новосибирск, Россия\\
+  \email{kozhanov@math.nsc.ru}
+% \and Другие авторы...
+}
+
+\maketitle
+
+\begin{abstract}
+В докладе излагаются результаты о разрешимости краевых задач для квазипараболических интегро-дифференциальных  уравнений 
+
+	
+ $$ h(t)u_{ttt}(x,t)+ Au(x,t) +\int\limits_0^t R(t-\tau) (Bu)(x,\tau)d\tau =f(x,t),  $$
+ в которых  функция $h(t)$ может обращаться  в нуль, $A$ и $B$ есть  либо  тождественные  операторы, либо  линейные эллиптические по пространственным  переменным операторы. Для изучаемых задач получены теоремы существования и единственности регулярных решений-то есть решений, имеющих все обобщенные по С.Л. Соболеву производные, входящие в соответствующее уравнение.
+
+\keywords{квазипараболические, интегро-дифференциальные уравнения вольтерровского типа, вырождение, краевые задачи, регулярные решениях, существование, единственность} % в конце списка точка не ставится
+\end{abstract}
+
+
+
+
+
+
+
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок.
+
+
+
+%\end{document}
+

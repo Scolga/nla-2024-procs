@@ -1,0 +1,113 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{On the properties of the collocation-variational approach for solving differential algebraic equations}
+% First author
+\author{Mikhail Bulatov
+  \and
+  Liubov Solovarova
+	}
+  
+
+\institute{ISDCT SB RAS, Irkutsk, Russia\\
+  \email{mvbul@icc.ru, soleilu@mail.ru}}
+% etc
+
+\maketitle
+
+\begin{abstract}
+The report deals with the initial value problem for systems of ordinary differential equations with an identically singular matrix in front of the derivative. For such systems, collocation-variational difference schemes have been proposed, the construction of which is based on solving a special type of mathematical programming problem. Calculations of model examples are given.
+
+\keywords{differential algebraic equations, numerical methods, index} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+\iffalse
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  This is the template file for the 6th International conference
+%  NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+%  June 25-30, 2018
+%  Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[12pt]{llncs}  
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes} 
+
+\usepackage[russian]{nla}
+
+\begin{document}
+\fi
+
+\title{О свойствах коллокационно-вариационного подхода для решения дифференциально-алгебраических уравнений}
+% Первый автор
+\author{М.~В.~Булатов  
+  \and  
+% Второй автор
+  Л.~С.~Соловарова
+}
+
+\institute{ИДСТУ СО РАН, Иркутск, Россия \\
+  \email{mvbul@icc.ru,soleilu@mail.ru}
+% \and Другие авторы...
+}
+
+
+
+\maketitle
+
+\begin{abstract}
+В докладе рассмотрена начальная задача для систем обыкновенных дифференциальных уравнений с тождественно вырожденной матрицей перед производной. Для таких систем предложены коллокационно-вариационные разностные схемы, построение которых основано на решении задачи математического программирования специального вида. Приведены расчеты модельных примеров.
+
+\keywords{дифференциально-алгебраические уравнения, численные методы, индекс} % в конце списка точка не ставится
+\end{abstract}
+
+\section{Основные результаты} % не обязательное поле
+
+
+В докладе рассмотрена задача
+$$
+A(t) x^{'}(t) + B(t)x(t) = f(t), \; x(0) = x_{0}, \; t \in [0,1], 
+$$
+где $A(t)$, $B(t)$ -- $(n \times n)$-матрицы, $f(t)$ и $x(t)$~-- заданная и искомая $n$-мерные вектор-функции, элементы матриц $A(t)$, $B(t)$ и $f(t)$ достаточно гладкие, и
+  $$detA\equiv0.$$ Такие задачи принято называть дифференциально-алгебраическими уравнениями (ДАУ). Предполагается, что начальное условие задано корректно, а из исходной задачи и $r$ ее производных путем элементарных преобразований можно выделить классическую систему обыкновенных дифференциальных уравнений $x^{'}(t)+\bar{B}(t)x(t)=\bar{f}(t)$. Значение $r$ принято называть индексом рассматриваемой задачи. Многие известные неявные методы могут порождать неустойчивый процесс или принципиально неприменимы для ДАУ.
+	
+	Авторы для таких задач предлагают коллокационно-вариационные разностные схемы, которые имеют принципиальное отличие от классических алгоритмов. Описан общий подход к созданию коллокационно-вариационных разностных схем, основанный на построении задачи квадратичного программирования специального вида. Приведены конкретные алгоритмы с одной и двумя точками коллокации и результаты численных расчетов \cite{BulSol1},\cite{BulSol2} для задач индекса два, задач, содержащих жесткие компоненты.
+
+
+% В конце текста можно выразить благодарности, если этого не было
+% сделано в ссылке с заголовка статьи, например,
+
+%
+
+
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+
+\bibitem{BulSol1} Bulatov~M.V., Solovarova~L.S. Collocation-variation difference schemes for differential-algebraic equations~// Mathematical Methods in the Applied Sciences. 2018. Vol.~41, No. 18. P. 9048--9056.
+
+\bibitem{BulSol2} Bulatov~M., Solovarova~L. Collocation-variation difference schemes with several collocation points for differential-algebraic equations~// Applied Numerical Mathematics. 2020. Vol.~149. P.~153--163. 
+
+\end{thebibliography}
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок.
+
+
+
+
+%\end{document}
+

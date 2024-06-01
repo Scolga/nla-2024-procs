@@ -1,0 +1,105 @@
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+\usepackage{todonotes}
+
+\usepackage{nla}
+
+\begin{document}
+\fi
+
+\title{Urysohn operator in subspaces of the space of essentially bounded functions\thanks{The research is supported by SIDA under the subprogram Capacity Building in Mathematics, Statistics and Its Applications, project No. 1.4.2/UEM-Sweden 2017--2024.}}
+
+\author{Elena V.~Alves\inst{1}
+  \and
+  Manuel J.~Alves\inst{2}
+  \and
+  Jo\~ao S.P.~Munembe\inst{3}
+  \and
+  Yury V.~Nepomnyashchikh\inst{4}
+}
+\institute{Higher Institute of Sciences and Technology of Mozambique,
+Street 1.194 no 332, Central C, Municipal District KaMpfumu, Maputo, Mozambique\\
+  \hspace{-3.5mm} 
+$^1\;$\email{ealves@isctem.ac.mz}
+  \hspace{23mm}\email{ORCID: https://orcid.org/0009-0000-1452-2553}
+  \and
+$\!\!\!^{,3,4}\;$Eduardo Mondlane University,
+Main Campus, PO. Box 257, Maputo, Mozambique\\
+\begin{tabular}{ll}
+$^2\;$\email{mjalves.moz@gmail.com} & \hspace{3mm}\email{ORCID: https://orcid.org/0000-0003-3713-155X} \\
+$^3\;$\email{jmunembe3@gmail.com} &
+\hspace{3mm}\email{ORCID: https://orcid.org/0000-0002-0380-6734}\\
+$^4\;$\email{yuriy.nepomnyashchikh@uem.ac.mz} & \hspace{3mm}\email{ORCID: https://orcid.org/0009-0008-1374-4283}
+\end{tabular}}
+
+\maketitle
+
+\begin{abstract}
+The criterion for the action and the uniform continuity of the nonlinear integral operator of Urysohn from the space of measurable functions with compact range in the space of continuous functions have been obtained, when the functions take values in Banach spaces. In this case, an expression was found for the modulus of continuity of the operator in terms of the kernel of the Urysohn operator. The result generalizes the well-known classical test for the continuity of an operator from \cite[p.~372]{Z}, as well as the authors' results on nonlinear integral functionals \cite{AAMN1} and linear integral operators \cite{AAMN2}.
+
+\keywords{Banach space, uniformly continuous operator, Urysohn operator, modulus of continuity}
+\end{abstract}
+
+\section{Basic notations}
+
+Let $\Omega$ be a closed bounded set in $\mathbb{R}^n$ with the classical Lebesgue measure $\mu$.
+
+Let $B_r(U)$ (where $r>0$) denote the closed ball centered at the origin with radius $r$ of the  Banach space $U$.
+
+We assume that $X$ and $Y$ are real separable Banach spaces, with the additional condition that $Y$ does not contain a copy of $c_0$ ($Y\not\supset c_0$). The value of the functional $g\in Y^\ast$ at the point $y\in Y$ will be denoted as $\langle y,g\rangle$.
+
+We denote by $L_\infty(X)$ the Banach space consisting of measurable bounded functions $u:\Omega\to X$, with the norm
+$\displaystyle \|u\|=\sup_{t\in\Omega}\|u(t)\|_X,
+ $
+and by $L_\infty^c(X)$ and $C(X)$ the subspaces of the space $L_\infty(X)$ consisting of measurable functions with pre-compact range in and continuous functions, respectively. We denote by $\mathrm{L}_\infty(X)$ and $\mathrm{L}_\infty^c(X)$ the standard quotient spaces of $L_\infty(X)$ and $L_\infty^c(X)$, respectively,  consisting of classes of $\mu$-equivalent functions, equipped with the norm
+$\displaystyle\|u\|_\infty= \mathop{\mbox{ess\;sup}}\limits_{t\in\Omega}\|u(t)\|_X.$
+
+ We assume that $k:\Omega^2\times X\to Y$ is a function such that for any $t\in\Omega$, the function $k(t,\cdot,\cdot)$ satisfies
+satisfy the Carath\'eodory conditions:  the function $k(t,\cdot, x)$ is measurable for each $x\in X$, and the function $k(t,s,\cdot)$ is continuous for almost every $s\in\Omega$.
+
+The main object of our study is the nonlinear integral operator of Urysohn $K$ with kernel $k$, defined by 
+$$
+(Ku)(t)=\int_{\Omega}k(t,s,u(s))\,ds, \qquad t\in \Omega,
+$$
+where the integral is understood in the Pettis sense \cite[p. 54]{D}.
+
+Let's define, for now formally, the quantity  $\omega_r(\delta)$ for arbitrary $r>0$ and $\delta>0$ as follow:
+$$
+\omega_r(\delta)= \sup_{t\in\Omega;\;g\in B_1(Y^\ast)}\int_\Omega\;\sup_{x_1,x_2\in B_r(X),\;\|x_1-x_2\|_X\le \delta}|\langle k(t,s,x_1)-k(t,s.x_2),g\rangle|\,ds.
+$$
+From the Carath\'eodory conditions it follows that the function under the integral sign is measurable in $s$, which means that the quantity $\omega_r(\delta)$ is defined correctly, but we do not assume a priori that it is finite.
+ 
+\section{The main results}
+
+\begin{theorem} \label{t1} In order for the operator $K$ to act from $\mathrm{L}_\infty^c(X)$ to $C(Y)$ and to be uniformly continuous on each ball, it is necessary and sufficient that the following conditions be satisfied $\mathrm{(a)}$ , $\mathrm{(b)}$ and $\mathrm{(c)}$: \smallskip
+
+\ \ \   $\mathrm{(a)}$ \ There is $u\in L_\infty^c(X)$ such that $Ku\in C(Y)$; 
+
+ \ \ \  $\mathrm{(b)}$ \  For any measurable set $A\subset \Omega$ and $\forall x_1,x_2\in X$, we have $$\displaystyle \int_A \bigl[k(\cdot,s,x_1)-k(\cdot,s,x_2)\bigr]\,ds\in C(Y);$$
+
+ \ \ \  $\mathrm{(c)}$ \  For all $r>0$, we have $\displaystyle \lim_{\delta\to 0}\omega_r(\delta)=0$. \smallskip
+
+ Moreover, if $K$ acts from $\mathrm{L}_\infty^c(X)$ to $C(Y)$ and is uniformly continuous on each ball, then for any $r>0$ the modulus of continuity of the operator $K$ on the ball $B_r(\mathrm{L}_\infty^c(X))$ is exactly the function $\omega_r(\cdot)$.
+\end{theorem}
+
+\begin{theorem} \label{t2} Let $K$ be an operator that acts from $C(X)$ to $C(Y)$. Then the following statements are true:\smallskip 
+
+\ \ \  $\mathrm{1)}$ \  In order for $K$ to be uniformly continuous, it is necessary and sufficient for the condition $\mathrm{(c)}$ of the theorem \ref{t1} to hold; \smallskip
+
+\ \ \  $\mathrm{2)}$ \ If o operator $K: C(X) \to C(Y)$ is uniformly continuous on each ball, then $K$ acts from  $\mathrm{L}_\infty(X)$ to $L_\infty(Y)$ and is also uniformly continuous on each ball. Moreover, for any $r>0$, the modulus of continuity of each of the operators $K:B_1(C(X))\to C(Y)$ and $K:B_1(\mathrm{L}_\infty(X))\to L_\infty(Y)$ is exactly the function $\omega_r(\cdot)$.
+\end{theorem}
+
+\begin{thebibliography}{9} 
+
+\bibitem{Z} Zabrejko P.P., Koshelev A.I, Krasnosel'skii M.A., Mikhlin S.G., Rakovshchik L.S., Stecenko V.J. Integral equations. Nauka, Moscow, 1968.~[In Russian]
+
+\bibitem{AAMN1} Alves M.J., Alves E.V, Munembe J.S.P., Nepomnyashchikh Y.V. Linear and nonlinear integral functionals on the space of continuous vector functions. Vestnik rossiyskikh universitetov. Matematika = Russian Universities Reports. Mathematics. 2023. Vol.~28, no~142. Pp.~111–-124. https://doi.org/10.20310/2686-9667-2023-28-142-111-124 [In Russian]
+
+\bibitem{AAMN2} Alves M.J., Alves E.V, Munembe J.S.P., Nepomnyashchikh Yu.V. Linear integral operators in spaces of continuous and essentially bounded vector functions. Vestnik rossiyskikh universitetov. Matematika = Russian Universities Reports. Mathematics. 2024. Vol.~29, no~145. Pp.~5–-19. https://doi.org/10.20310/2686-9667-2024-29-145-5-19
+
+\bibitem{D} Diestel J., Uhl J.J. Vector Measures. Math. Surveys. Vol.~15. AMS, Providence, 1977. 
+
+\end{thebibliography}
+%\end{document}

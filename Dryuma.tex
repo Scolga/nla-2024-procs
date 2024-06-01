@@ -1,0 +1,174 @@
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+\usepackage{todonotes}
+
+\usepackage{nla} 
+
+\begin{document}
+\fi
+
+\title{The $14D$ Ricci-flat metric in the theory of fluid flows and the equations of rotation of a top\thanks{This work is supported by the Program SATGED 011303, Moldova State University.}}
+
+\author{Valery Dryuma 
+}
+\institute{Institute of Mathematics and Computer Science ``V. Andrunachievici'',\\  Moldova State University, Chi\c sin\u au, Republic of Moldova\\
+  \email{valdryum@gmail.com}
+ }
+
+\maketitle
+
+\begin{abstract}
+ Properties of Riemannian metric of14D space in local coordinates $(x,y,z,t,\eta,\rho,$ $m,u,v,w,p,\xi,\chi,n)$ which is the Ricci-flat on solutions of the Navier-Stokes system of equations are studied.Considered space consists of $6D$ space in local coordinates $(\eta,\rho,m,\xi,\chi,n)$ and of two $4D$ dual subspaces -in Euler coordinates $(x,y,z,t)$ and Lagrangian coordinates $(u,v,w,p)$. Structure of partition of $14D$ space depend significanltly on the properties of $6D$-flat space devided into two $3D$ subspaces. In this cotext properties of the Kovalevskaya top are studied in more detail.   
+
+\keywords{equations, invariants, metrics,top.}
+\end{abstract}
+
+
+\section{The Ricci-flat 14D metric and NS-equations}
+\begin{theorem}      The metric of the form 
+	\begin{equation}\label{metric1}
+	\begin{gathered}
+	ds^{2}=2\,{{\it dx}}^{2}+2\,{\it dx dy}+2\,{\it dx du}+2\,{{\it 
+			dy}}^{2}+2\,{\it dy dz}+2\,{\it dy dv}+2\,{{\it dz}}^{2}+2\,{\it dz dw}+\\ +2
+	\,{\it dt dp}+2\,{\it d\eta d\xi}+2\,{\it d\rho d\chi}+2\,{\it dm dn}+A{{\it 
+			dt}}^{2}+B{{\it d\eta}}^{2}+C{{\it d\rho}}^{2}+E{{\it dm}}^{2},
+	\end{gathered}
+	\end{equation}
+	where
+	$$
+	A=2-U \left( x,y,z,t \right) u-V \left( x,y,z,t \right) v-W \left( x,y
+	,z,t \right) w,
+	$$
+	$$
+	B= \left( -U  W +\mu\,{
+		\frac {\partial }{\partial z}}U   \right) w+
+	\left( -U  V  +\mu\,{
+		\frac {\partial }{\partial y}}U \right) v+
+	\left( \mu\,{\frac {\partial }{\partial x}}U  -
+	\left( U  \right) ^{2}-P \right) u-U p,
+	$$
+	$$
+	C= \left( -V  W +\mu\,{
+		\frac {\partial }{\partial z}}V  \right) w+
+	\left( \mu\,{\frac {\partial }{\partial y}}V -
+	\left( V   \right) ^{2}-P \right) v+ \left( -U V  +\mu\,{\frac {\partial }{\partial x}}V 
+	\right) u-V p,
+	$$
+	$$
+	E= \left( -\mu\,{\frac {\partial }{\partial x}}U -\mu\,{\frac {\partial }{\partial y}}V  - 
+	\left( W \right) ^{2}-P \right) w+ \left( -V W +\mu\,{\frac {\partial }{\partial y}}W \right) v+
+	$$
+	$$
+	\left( -U  W +\mu\,{\frac {\partial }{\partial x}}W \right) u-W p
+	$$
+	is the Ricci-flat on solutions of Navier-Stokes system of equations (\ref{cub}) 
+\end{theorem}
+The Navier-Stokes system of equations
+\begin{equation}\label{cub}
+{\frac {\partial }{\partial t}}\vec U +\left(\vec U \cdot \vec\nabla\right)\vec U-\mu \Delta \vec U+\vec \nabla P=0, \qquad\vec\nabla \cdot \vec U=0,
+\end{equation}
+where  $\vec U=[U(\vec x,t), V(\vec x,t), W(\vec x,t)]$ is the fluid velocity , $P=P(\vec x,t)$, is the pressure, $\mu$ is the viscosity and 
+$\vec x=(x,y,z)$  has numerous applications. 
+The problem of their integration and classification  solutions is an important to the modern  mathematical and theoretical physics.
+We will use  methods of the Riemannian geometry to studies properties of the system  (\ref{cub}).
+
+ In the case of the Kovalevsky top $A=2C,B=2C,y0=0,z0=0$ the Euler-Poisson system of equations  
+\begin{equation}\label{case6}
+%\begin{gathered}
+{\frac { d}{{ d}t}}x \left( t \right) =-{\frac { \left( C-B
+		\right) yz}{A}}+{\frac {Mg \left( {\it y0}\,\omega2 \left( t \right) 
+		-{\it z0}\,\omega1 \left( t \right)  \right) }{A}},$$$$
+{\frac { d}{{ d}t}}y \left( t \right) =-{\frac { \left( A-C \right) x \left( t
+		\right) z \left( t \right) }{B}}+{\frac {{\it z0}\,\omega \left( t
+		\right) -{\it x0}\,\omega2 \left( t \right) }{B}}, $$$$
+{\frac { d}{{d}t}}z \left( t \right) =-{\frac { \left( B-A
+		\right) x \left( t \right) y \left( t \right) }{C}}+{\frac {{\it x0}
+		\,\omega1 \left( t \right) -{\it y0}\,\omega \left( t \right) }{C}},$$$$
+%\end{gathered}
+%\end{equation}
+%\begin{equation}\label{case7}
+%\begin{gathered}
+{\frac { d}{{ d}t}}\omega \left( t \right) =z \left( t \right) 
+\omega1 \left( t \right) -y \left( t \right)
+\omega2 \left( t \right),~~ 
+{\frac {d}{{d}t}}\omega1 \left( t \right) =x \left( t \right)\omega2 \left( t \right) -z \left( t \right) \omega \left( t \right),~~$$$$ 
+{\frac {d}{{d}t}}\omega2 \left( t \right) =y \left( t \right) 
+\omega \left( t \right) -x \left( t \right) \omega1 \left( t \right),
+%\end{gathered}
+\end{equation}
+ leads to the relations 
+\begin{equation}\label{case8}  
+ x \left( t \right) ={\frac {y \left( t \right) \omega \left( t
+ 		\right) \omega2 \left( t \right) +\omega \left( t \right) {\frac 
+ 			{ d}{{ d}t}}\omega \left( t \right) +\omega1 \left( t \right) {
+ 			\frac { d}{{d}t}}\omega1 \left( t \right) }{\omega2 \left( t
+ 		\right) \omega1 \left( t \right) }} 
+\end{equation}
+\begin{equation}\label{case9}z \left( t \right) ={\frac {y \left( t \right) \omega2 \left( t
+		\right) +{\frac { d}{{ d}t}}\omega \left( t \right) }{\omega1
+		\left( t \right) }}
+\end{equation}
+\begin{equation}
+%\begin{gathered}\label{case10}z
+y \left( t \right) =-2\,{\frac {C \left( {\frac {d}{{ d}t}}
+		\omega1 \left( t \right)  \right) \omega \left( t \right) \omega1
+		\left( t \right) }{\omega2 \left( t \right)  \left( 2\,C \left( -
+		\left( \omega1 \left( t \right)  \right) ^{2}- \left( \omega2 \left( 
+		t \right)  \right) ^{2}-1 \right) +2\,C \left( \omega1 \left( t
+		\right)  \right) ^{2}+C \left( \omega2 \left( t \right)  \right) ^{2}
+		\right) }}-$$$${\frac { \left( 2\,C \left( - \left( \omega1 \left( t
+		\right)  \right) ^{2}- \left( \omega2 \left( t \right)  \right) ^{2}-
+		1 \right) +C \left( \omega2 \left( t \right)  \right) ^{2} \right) {
+			\frac {d}{{d}t}}\omega \left( t \right) }{\omega2 \left( t
+		\right)  \left( 2\,C \left( - \left( \omega1 \left( t \right) 
+		\right) ^{2}- \left( \omega2 \left( t \right)  \right) ^{2}-1
+		\right) +2\,C \left( \omega1 \left( t \right)  \right) ^{2}+C \left( 
+		\omega2 \left( t \right)  \right) ^{2} \right) }}+$$$$+{\frac {{\it C2}\,
+		\omega1 \left( t \right) }{2\,C \left( - \left( \omega1 \left( t
+		\right)  \right) ^{2}- \left( \omega2 \left( t \right)  \right) ^{2}-
+		1 \right) +2\,C \left( \omega1 \left( t \right)  \right) ^{2}+C
+		\left( \omega2 \left( t \right)  \right) ^{2}}}.
+%\end{gathered}
+\end{equation}
+
+    Together with the known first integrals of system (10)
+\begin{equation}
+ \left( \omega \left( t \right)  \right) ^{2}+ \left( \omega1 \left( t
+ \right)  \right) ^{2}+ \left( \omega2 \left( t \right)  \right) ^{2}- 1,
+ Ax \left( t \right) \omega \left( t \right) +By \left( t \right) 
+ \omega1 \left( t \right) +Cz \left( t \right) \omega2 \left( t
+ \right) -{\it C2},$$$$
+ A \left( x \left( t \right)  \right) ^{2}+B \left( y \left( t \right) 
+ \right) ^{2}+C \left( z \left( t \right)  \right) ^{2}-2\,Mg \left( {
+ 	\it x0}\,\omega \left( t \right) +{\it y0}\,\omega1 \left( t \right) +
+ {\it z0}\,\omega2 \left( t \right)  \right) +{\it C1},$$$$
+ \left(  \left( x \left( t \right)  \right) ^{2}+ \left( y \left( t
+ \right)  \right) ^{2}+c\omega \left( t \right)  \right) ^{2}+ \left( 
+ 2\,x \left( t \right) y \left( t \right) +c\omega1 \left( t \right) 
+ \right) ^{2}={K}^{2}
+\end{equation}    
+the components of fluid-flow velocity and pressure $P(x,y,z,t)$ are determined using the Ricci-flat metric  on solutions of the system (\ref{cub}).
+%\section{ Acknowledgements}
+%The author was supported in part by the project $N 15.817.02.3F$.
+%\bigskip
+\begin{thebibliography}{9}
+%\footnotesize
+%\medskip
+\bibitem{dryuma31:dryuma} {  Dryuma V. } {  On spaces related t the Navier-Stokes equations.}
+Bul. Acad. \c Stiin\c te Repub. Moldova, Mat. 2010. Vol. 64. No.~3. P. 107--110.
+%Mathematical Research, issue 122, Chisinau, "Stiinta",  1990, 93--103 (in Russian).
+%\smallskip
+
+ \bibitem{dryuma31:dryuma} {  Dryuma V. } {  The Ricci-flat spaces related t the Navier-Stokes equations.}
+ Bul. Acad. \c Stiin\c te Repub. Moldova, Mat.  2012. Vol. 69. No.~2. P. 99--102.
+ %Mathematical Research, issue 122, Chisinau, "Stiinta",  1990, 93--103 (in Russian).
+ %\smallskip
+ 
+  \bibitem{dryuma7} {  Golubev V. } {  Lectures on integrating the equations of motion of a rigid body around a fixed point} {  Gostexizdat, Moskva,1953}.
+ 
+\end{thebibliography} 
+%\end{document}
+
+

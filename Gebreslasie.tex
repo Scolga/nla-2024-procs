@@ -1,0 +1,94 @@
+
+
+\iffalse
+% This is LLNCS.DEM the demonstration file of
+% the LaTeX macro package from Springer-Verlag
+% for Lecture Notes in Computer Science,
+% version 2.4 for LaTeX2e as of 16. April 2010
+%
+\documentclass[12pt]{llncs}
+\usepackage{iftex}
+\usepackage{nla}
+%\usepackage{showframe}
+%
+%
+\begin{document}
+\fi
+\title{On some pseudo-differential equation in a certain conical domain}
+%
+\titlerunning{PsDE in conical domain.}  % abbreviated title (for running head)
+%                                     also used for the TOC unless
+%                                     \toctitle is used
+%
+\author{Hadish~F.~Gebreslasie\inst{1,2 }  \and
+Vladimir~Vasilyev\inst{1 }   }
+%
+\authorrunning{Hadish~F.~Gebreslasie.} % abbreviated author list (for running head)
+%
+%%%% list of authors for the TOC (use if author list has to be modified)
+\tocauthor{Hadish~F.~Gebreslasie, Vladimir~Vasilyev}
+%
+\institute{$^1$Belgorod State National Research University, Pobedy Street 85, 308015 Belgorod, Russia,\\$^2$ Mainefhi College of Science, National Higher Education and Research Institute,12676 Asmara, Eritrea\\
+\email{ 1609295@bsu.edu.ru,  vbv57@inbox.ru}}
+
+\maketitle              % typeset the title of the contribution
+
+\begin{abstract}
+  The study investigate a unique solution of a model pseudo differential equation with integral boundary condition and solvability of the equation as the parameters "a and b" increase significantly, while d remains constant is also explored.  
+\keywords{pseudo differential equation, integral boundary conditions, domain with a cut.}
+\end{abstract}
+%
+%\section{Introduction}
+%
+Model elliptic pseudo-differential equations in domains with non-smooth boundaries of various dimensions were examined in previous studies \cite{Ref1,Ref2}.The research focused on a special wave factorization of the elliptic symbol allowing for a description of the solvability pattern of the model pseudo-differential equation with an operator A defined as \cite{Ref3},
+$$(Au)(x) = \int_{C}\int_{\mathbb{R}^5} A(\xi)u(y)e^{i(y-x)\xi}d\xi dy, x \in C, C\subset \mathbb{R}^5$$
+where $A(\xi)$ is a symbol of the operator A with order $\alpha \in \mathbb{R}$ having property $$c_1<|A(\xi)(1+|\xi|)^{-\alpha}|<c_2, \xi \in \mathbb{R} ^5,c_1,c_2>0.$$
+In this study we consider the equation,
+\begin{equation} \label{1}
+	(Au)(x) =0 ,  x\in \mathbb{R}^5\setminus\overline{C_+^a \times C_+^{bd}}  
+\end{equation}
+with integral boundary condition 
+\begin{equation} \label{2}
+	\int_{\mathbb{R}^2}u(x_1,x_2,x_3,x_4,x_5)dx_2dx_5=f(x_1,x_3,x_4) 
+\end{equation}
+where:
+$C_+^a\subset \mathbb{R}^2,C_+^{bd}\subset \mathbb{R}^3$ and\\
+$ C_+^a \times C_+^{bd}=\{{x\in\mathbb{R}^5|x=(x_1,x_2,x_3,x_4,x_5), x_2>a|x_1|,x_5>b|x_3|+d|x_4|,a,b,d>0}\} $,\\
+Assuming $A(\xi) $admits the wave factorization relate to $- C_+^a \times C_+^{bd}$ having index $\mbox{\ae}$ , such that $\mbox{\ae}-s=1+\delta$, $|\delta|<\frac{1}{2} $ .\\
+We investigate general solution of the elliptic problem \eqref{1} expressed in terms of an unknown function $c_0 \in H^{s-\ae+\frac{1}{2}}(\mathbb{R}^3) $ and $S_kc_0$, $S_k$ a one dimensional singular integral operator on $k^{th}$ variable for $k=1,3,4$ as well as some of their compositions \cite{Ref1,Ref2}.\\Upon obtaining the solution, we explore its uniqueness with integral boundary condition \eqref{2}.\\
+  Finally, we obtain the following result: 
+  \begin{theorem} Suppose that $\ae -s=1+\delta,|\delta|<\frac{1}{2}$.Then a unique solution of the equation $\eqref{1}$ with integral boundary condition $\eqref{2}$, is obtained when, $\tilde{c}_0(\xi_1,\xi_3,\xi_4)=A_{\not=}(\xi_1,0,\xi_3,\xi_4,0)\tilde{f}(\xi_1,\xi_3,\xi_4)$, where $f\in H^{s+1}(\mathbb{R}^3)$.
+  	\qed
+  \end{theorem}
+  %
+When the parameters a and b are significantly larger but d remains constant,\\ (i.e. $a \rightarrow \infty,b\rightarrow\infty$ and $d=const.$),
+we have the following, \\  
+  %
+  \begin{align}
+  	\begin{split}
+  		K\left(\frac{r_1+r_2}{2},\frac{r_3+r_5}{2},\xi_4\right)=\frac{K(r_2,r_5,\xi_4)+K(r_2,r_3,\xi_4)+K(r_1,r_5,\xi_4)+K(r_1,r_3,\xi_4)}{4}\\
+  		-\frac{(S_1K(r_2,r_5,\xi_4)+S_1K(r_2,r_3,\xi_4)-S_1K(r_1,r_5,\xi_4)-S_1K(r_1,r_3,\xi_4))}{2}\\
+  		-\frac{(S_3K(r_2,r_5,\xi_4)-S_3K(r_2,r_3,\xi_4)+S_3K(r_1,r_5,\xi_4)-S_3K(r_1,r_3,\xi_4))}{2}\\
+  		+\frac{(S_{31}K(r_2,r_5,\xi_4)-S_{31}K(r_2,r_3,\xi_4)-S_{31}K(r_1,r_5,\xi_4)+S_{31}k(r_1,r_3,\xi_4))}{2}
+  	\end{split}
+  	\label{3}
+  \end{align}
+  where:\\ $K\left(\frac{r_1+r_2}{2},\frac{r_3+r_5}{2},\xi_4\right)=A_{\not =}\left(\frac{r_1+r_2}{2},0,\frac{r_3+r_5}{2},\xi_4,0\right)\tilde{f}\left(\frac{r_1+r_2}{2},\frac{r_3+r_5}{2},\xi_4\right)$.
+  
+%
+\begin{theorem}
+	Suppose that $A(\xi)$ admits the wave factorization for constant d and sufficiently large values of a and b, with index $\ae$,$\ae -s=1+\delta,|\delta|<\frac{1}{2}$ with respect to $-C_+^a\times C_+^{bd}$. Then the unique solution of the problem $\eqref{1}$,$\eqref{2}$ has limiting function as $a \rightarrow \infty,b\rightarrow\infty$ while $d=const.$ if and only if the function $f \in H^{s+1}(\mathbb{R}^3)$ fulfills the equation $\eqref{3}$.\\
+	The a priori estimate is defined as \\
+	\[ || u ||_s \le c[f]_{s+1}\]\\ where: $K(\xi_1,\xi_3,\xi_4) \in H^{s-\ae+\frac{1}{2}}(\mathbb{R}^3)$.
+\qed
+\end{theorem}
+%
+\begin{thebibliography}{5}
+\bibitem{Ref1} Vladimir B. Vasilyev:On certain 3-Dimensional Limit Boundary Value Problems.Lobachevskii Jornal of Mathematics. 2020. 
+ Vol. {41}, No (5). Pp. 917--925.
+
+\bibitem{Ref2} Vasilyev V.B.   {Wave Factorization of Elliptic Symbols: Theory and Applications.Introduction to the Theory of Boundary Value Problems in Non-smooth Domains}. Dordrecht-Boston-London: Kluwer Academic Publishers, 2000.
+
+\bibitem{Ref3} Vladimir B. Vasilyev  General boundary value problems for Pseudo-differential equations and related difference equation.	Advanced in Difference Equations. 2013. Vol. 289 
+\end{thebibliography}
+%\end{document}

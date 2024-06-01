@@ -1,0 +1,109 @@
+
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+
+\usepackage{todonotes}
+
+\usepackage{nla} 
+
+\begin{document}
+\fi
+
+\title{On the properties of solutions to some system of discrete equations\thanks{This work was supported by the Project No. 121041300058-1 of the Ministry of Education and Science of the Russian Federation..}}
+
+\author{Andrei Svinin}
+\institute{Matrosov Institute for System Dynamics and Control Theory of SB 
+RAS, Irkutsk, Russia\\
+ \email{svinin@icc.ru}
+  }
+
+\maketitle
+
+\begin{abstract}
+We consider a system of two ordinary discrete third-order equations. For a general solution of this system, we present some statements characterizing the integrability property of this system.
+
+\keywords{System of discrete equations, invariant, Somos recurrence}
+\end{abstract}
+
+
+
+
+Given any $(a, b, c, d)\in \mathbb{C}^4$, let us consider the system of two recurrences
+\begin{equation}
+\begin{array}{l}
+t_{1, n} t_{2, n+3}=a t_{1, n+1} t_{2, n+2} + b t_{1, n+2} t_{2, n+1}, \\[0.3cm]
+t_{2, n} t_{1, n+3}=d t_{2, n+1} t_{1, n+2} + c t_{2, n+2} t_{1, n+1}. 
+\end{array}
+\label{3490865409}
+\end{equation}
+The system of discrete equations (\ref{3490865409}) is a slight generalization of system (2.15), which appeared recently in the work \cite{Hone2023} in the context of the theory of cluster algebras \cite{Fomin2002}. More exactly, the system (2.15) in \cite{Hone2023} compared to (\ref{3490865409}) is burdened with the conditions $a=d$ and $c=1$.
+
+The following lemma can be verified by direct calculations.
+\begin{lemma}
+The system (\ref{3490865409}) has an invariant
+\begin{eqnarray}
+H&=&a\left(\frac{t_{2, n}t_{1, n+1}}{t_{1, n}t_{2, n+1}}+\frac{t_{2, n+1}t_{1, n+2}}{t_{1, n+1}t_{2, n+2}}\right)+ d \left(\frac{t_{1, n}t_{2, n+1}}{t_{2, n}t_{1, n+1}} +\frac{t_{1, n+1}t_{2, n+2}}{t_{2, n+1}t_{1, n+2}}\right) \nonumber \\
+&&+ b \frac{t_{2, n}t_{1, n+2}}{t_{1, n}t_{2, n+2}}+c \frac{t_{1, n}t_{2, n+2}}{t_{2, n}t_{1, n+2}}.
+\label{980876}
+\end{eqnarray}
+\end{lemma}
+In turn the following theorem connects the  system (\ref{3490865409}) with the Somos recurrence. Let us recall that the Somos-$N$ recurrence is a bi-linear relation of the form
+\[
+t_nt_{n+N}=\sum_{j=1}^{\left\lfloor N/2 \right\rfloor}\alpha_j t_{n+j}t_{n+N-j}.
+\]
+\begin{theorem}
+Let $\alpha=ad-bc,\; \beta=a^2 c + d^2 b +b c H$, where $H$ is defined by (\ref{980876}). Given any solution of (\ref{3490865409}), both sequences $(t_{1, n})$ and $(t_{2, n})$ satisfy the same Somos-5 recurrence
+\begin{equation}
+t_{n} t_{n+5}=\alpha t_{n+1} t_{n+4} + \beta t_{n+2} t_{n+3}.
+\label{896439}
+\end{equation}
+\end{theorem}
+It should be noted that the Somos-5 recurrence (\ref{896439}) is currently a fairly well-studied integrable equation  the general solution of which is expressed in terms of the Weierstrass $\sigma$-function \cite{Hone2007}. Thus, we can give a similar representation of a general solution for the system (\ref{3490865409}).
+
+The following statement indicates the compatibility of system (1) with another similar system of a higher order.
+\begin{proposition}
+Any pair of sequences $(t_{1, n}, t_{2, n})$ that is a general solution of (\ref{3490865409}),  also satisfies the system
+\begin{equation}
+\begin{array}{l}
+t_{1, n} t_{2, n+5}=x t_{1, n+3} t_{2, n+2} + y t_{1, n+4} t_{2, n+1}, \\[0.3cm]
+t_{2, n} t_{1, n+5}=w t_{2, n+3} t_{1, n+2} + z t_{2, n+4} t_{1, n+1} 
+\end{array}
+\label{34988888}
+\end{equation}
+with coefficients $(x, y, z, w)\in \mathbb{C}^4$ defined by
+\[
+x=\frac{a}{c} \beta,\; w=\frac{d}{b} \beta,\;y=-\frac{b }{c}\alpha,\; z=-\frac{c }{b}\alpha.
+\]
+\end{proposition}
+
+Let us now consider a more general system 
+\begin{equation}
+\begin{array}{l}
+t_{1, n} t_{2, n+N}=x t_{1, n+N-q} t_{2, n+q} + y t_{1, n+N-p} t_{2, n+p}, \\[0.3cm]
+t_{2, n} t_{1, n+N}=w t_{2, n+N-q} t_{1, n+q} + z t_{2, n+N-p} t_{1, n+p} 
+\end{array}
+\label{765342}
+\end{equation}
+compared to (\ref{34988888}), where $(p, q, N)$ is supposed to be an arbitrary  triple  of positive integers such that $N\geq 4$ and $1\leq p<q\leq N-1$. Actual calculations support the following assumption.
+\begin{conjecture}
+Any pair of sequences $(t_{1, n}, t_{2, n})$ that is a solution of the system (\ref{3490865409}),  also satisfies the system (\ref{765342}), if and only if $N\geq 5$ is odd, while  the coefficients $(x, y, z, w)$ in  (\ref{765342}) are uniquely defined as rational functions of variables $(a, b, c, d, H)$.
+\end{conjecture}
+A proof of this assumption is one of the trends in further work. This conjecture suggests the existence of corresponding coefficients $(x, y, z, w)$; however, it would also be interesting to find their constructive description
+
+
+
+
+\begin{thebibliography}{9} % or {99}, if there is more than ten references.
+
+\bibitem{Fomin2002} Fomin S., Zelevinsky A. Cluster algebras I: Foundations. J. Amer. Math. Soc. ~2002. Vol.~15. Pp.~497--529.
+
+
+\bibitem{Hone2007} Hone A. N. Sigma function solution of the initial value problem for Somos 5 sequences. Trans.  Amer. Math. Soc. ~2007. Vol.~359. Pp.~5019--5034.
+
+
+\bibitem{Hone2023} Hone A. N., Kouloukas T. E.  Deformations of cluster mutations and invariant presymplectic forms. J. Alg. Comb.~2023. Vol.~57. Pp.~763--791.
+
+\end{thebibliography}
+%\end{document}

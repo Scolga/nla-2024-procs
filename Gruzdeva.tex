@@ -1,0 +1,191 @@
+
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is the template file for the 6th International conference
+% NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+% June 25-30, 2018
+% Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The preparation of the article is based on the standard llncs class
+% (Lecture Notes in Computer Sciences), which is adjusted with style
+% file of the conference.
+%
+% There are two ways of compilation of the file into PDF
+% 1. Use pdfLaTeX (pdflatex), (LaTeX+DVIPS will not work);
+% 2. Use LuaLaTeX (XeLaTeX will work too).
+% When using LuaLaTeX You will need TTF or OTF CMU fonts
+% (Computer Modern Unicode). The fonts are installed with 'cm-unicode' package in
+% a distribution of LaTeX % (https://www.ctan.org/tex-archive/fonts/cm-unicode),
+% either by downloading and installing these fonts system wide, the address of their page is
+% http://canopus.iacp.dvo.ru/%7Epanov/cm-unicode/
+% The second option won't work in XeLaTeX.
+%
+% For MiKTeX (LaTeX distribution for Windows),
+%  1. Package 'cm-unicode' is installed manually with the MiKTeX administration Console.
+%  2. For the compilation of this example, namely, the stub figure, one will also need to
+% download package 'pgf' manually. This package uses in the popular
+% package tikz.
+%  3. Tests showed that the rest of the required packages MiKTeX loads automatically (if
+%     it is allowed). The 'auto download' option is
+%     configured in 'Settings' section in MiKTeX Console.
+%
+%
+% The easiest way to compile an article is to use pdfLaTeX, but
+% the final layout of the book will be compiled with LuaLaTeX,
+% as a result will be of better quality thanks to the package 'microtype' and
+% use vector OTF instead of standard raster fonts of pdfLaTeX.
+%
+% In the case of questions and problems with the article compilation,
+% write letters to e-mail: eugeneai@irnok.net, Cherkashin Evgeny.
+%
+% New version of the correcting style file will be available at the website:
+%     https://github.com/eugeneai/nla-style
+%     file - nla.sty
+%
+% Further instructions are in the text body of the template. The template itself
+% is an article example.
+%
+% The LaTeX2e format is used!
+
+% 12 points font size is used.
+\documentclass[12pt]{llncs}
+
+% The correcting style file is added.
+\usepackage{todonotes}
+
+\usepackage{nla} % This package is needed for compiling
+                 % this template, it should be removed
+                 % from your article.
+
+% Many popular packages (amsXXX, graphicx, etc.) are already imported in the style file.
+% If there is a conflict with your packages, try disabling them and compile
+% the text.
+%
+% It would be convenient in the layout of the proceedings if the file names
+% of the figures of different authors do not clash.
+% To minimize the clash, the drawings can be placed in a separate subfolder
+% named after the author or the title of the paper.
+%
+% \graphicspath{{ivanov-petrov-pics/}} % specifies the folder with images in png, pdf formats.
+% or
+% \graphicspath{{great-problem-solving-paper-pics/}}.
+
+\begin{document}
+\fi
+% Text should be formatted in accordance with the 'article' class, using extensions like
+% AMS.
+%
+\title{On center-based clustering by Mahalanobis distance}
+% First author
+\author{Tatiana Gruzdeva\inst{1}   \and Igor Semakin\inst{2}}
+\institute{Matrosov Institute for System Dynamics and Control Theory of SB RAS, Irkutsk, Russia\\
+  \email{gruzdeva@icc.ru}\and
+ Irkutsk National Research Technical University, Irkutsk, Russia\\
+  \email{semakini@inbox.ru}
+ }
+% etc
+
+\maketitle
+
+\begin{abstract}
+We address a generalization of the $k$-means problem, where the distances between data items and closest cluster centers are computed using Mahalanobis distances. Two variants of a distance metric learning were considered and compared by computational simulation using  k-means-type algorithms.
+\keywords{supervised machine learning, minimum-sum-of-squares clustering,  k-means, distance metric learning}
+\end{abstract}
+
+% at the end of the list, there should be no final dot
+
+
+
+One of the basic data analysis tools is a division given set of data items into some groups, i.e. clusters.
+Performance and efficiency of clustering algorithms rely critically on a metric over the data items, the distances between data items and closest cluster centers. In one of the most well-known and popular clustering models, k-means problem, these distances calculate by squared Euclidean distance \cite{Hansen}.
+
+ Clustering with Mahalanobis distance is a generalization of the k-means problem.
+The problem can be formulated as the following non-smooth optimization problem \cite{0GS}. Given a set $J=\{1,\ldots,m\}$ of objects, represented as $a^j\in\mathbb R^n$, $j\in J$. The problem is to find $k$ cluster centers  $c^i\in\mathrm R^n$, $i\in I=\{1,\ldots,k\},$ such that the total sum of squared Mahalanobis distances between objects and their closest centers is minimized:
+\begin{equation}
+\min_{C\subset\:\mathbb R^n}\Bigl\{\sum_{j=1}^{m}\min_{c\:\in\: C}\|a^j-c\|^2_{M_c}, \ |C|=k\Bigr\},\label{MSSC;nonsmth}
+\end{equation}
+where $\|a^j-c\|^2_{M_c}=(a^j-c)^T{M_c}(a^j-c),\;\;{M_c}={M_c}^T\succeq0,\;\;{c\in C}$. 
+The problem \eqref{MSSC;nonsmth} is NP-hard even in the plane for arbitrary number of clusters $k$~\cite{MahNimVar12}.
+
+
+Various ways allow to get the matrix defining Mahalanobis distance. Following to methodology of supervised machine learning, we chose a way of using items side-information to construct the matrix via solving the following convex optimization problem
+\begin{equation}
+\left.
+\begin{array}{c}
+\sum\limits_{(a^i\!,a^j)\in \:\mathbb D}\|a^i-a^j\|^2_{M_c}\rightarrow\max\limits_{M_c},\\
+\sum\limits_{(a^i\!,a^j)\in \:\mathbb S}\|a^i-a^j\|^2_{M_c}\leq 1,\\
+M_c\succeq 0,
+\end{array}\right\} \label{optM}
+\end{equation}
+where $\mathbb D$ and $\mathbb S$ are  sets of  points' pairs known to be from different clusters (“dissimilar”) and from the same cluster (“similar”), correspondingly. The mean of the matrix $M_c$ elements search is obvious: it is a desired to maximize the distance between points from different clusters, and reduce the distance between points from the same cluster. 
+The property of positive semi-definiteness of the matrix $M_c=\{\mu_{ij}\},\;M_c\in I\!\! R^{n\times n},$ can be achieved, for instance, by adding in the problem statement the following constraints:
+$
+\!\!\displaystyle\sum\limits_{{l=1},\;{l\neq p}}^{n}\mu_{lp}\leq\mu_{pp},\;p=1,\ldots,n,
+$ %{\substack{{l=1}\\l\neq p}}
+ which represent the matrix's main diagonal domination. 
+Since the problem~\eqref{optM} is convex one, it can be solved with any
+conventional convex optimization methods or software.\\
+
+Another way to construct a matrix specifying the Mahalanobis distance is to use a covariance matrix. Its construction is carried out in the following stages:
+\begin{itemize}
+\item[1) ]
+a matrix $A$ is formed, the columns of which correspond to the data items $a^j,\;j\in J$, and the matrix $B=\frac 1 m AA^T$ is constructed;
+
+\item[2) ]
+a matrix $L$ is formed, the rows of which are the eigenvectors of the matrix $B$;
+\item[3) ]
+ finally, the covariance matrix of the data items is formed as $M=LBL^T$.
+
+\end{itemize}
+
+
+A computational experiment was carried out on test data sets from the UCI MLR database (https://archive.ics.uci.edu) as well as on the so-called BIRCH test data collection~\cite{4GS} using
+the conventional widespread Lloyd’s
+algorithm~\cite{1GS} and its most popular modification --- k-means++~\cite{2GS}.
+The idea of the algorithms is to sequentially assign data items to the current closest cluster centers (according to the squared distance) and then recompute the centers as a means of objects assigned to the same clusters. The algorithms terminate when there are no changes in cluster assignments of a sufficiently large number of data items. A difference in the algorithms concerns the special pick of initial clusters' centers in the K-means++  algorithm.
+
+Computational simulation showed that the generalization of k-means clustering model can be used to significantly improve clustering performance.  The quality of clustering was estimated both by the value of the sum of square-error of all clusters  and by using clustering performance metrics: Precision, Recall, and F-measure.\\
+
+
+
+The research is carried on with support of  the Ministry of Education and Science of the Russian Federation No. 121041300065-9.
+
+\begin{thebibliography}{9} % or {99}, if there is more than ten references.
+
+\bibitem{Hansen}
+Hansen, P., Jaumard, B. Cluster analysis and mathematical programming. Math.
+Program.~1997. Vol.~79(1-3). Pp.~191--215.
+
+\bibitem{0GS}
+Gambella, C., Ghaddar, B., Naoum-Sawaya, J. Optimization problems for
+machine learning: A survey. Eur. J. Oper. Res.~2021. Vol.~290(3). Pp.~807--828.
+
+\bibitem{MahNimVar12}
+Mahajan, M., Nimbhorkar, P., Varadarajan, K. The planar k-means
+problem is NP-hard. Theor. Comput. Sci.~2012.  Vol.~442. Pp.~13--21.
+
+
+
+ 
+%\bibitem{3GS} UC Irvine Machine Learning Repository, https://archive.ics.uci.edu/
+
+\bibitem{4GS}
+Hansen, P., Brimberg, J., Urosevic, D., Mladenovic, N. Solving large p-median
+clustering problems by primal-dual variable neighborhood search. Data Min.
+Knowl. Discov.~2009. Vol.~19(3). Pp.~351--375.
+
+\bibitem{1GS}
+ Lloyd, S. Least squares quantization in PCM. IEEE Trans. Inf. Theory~1982. Vol.~28(2). Pp.~129--137.
+
+\bibitem{2GS}
+ Arthur, D., Vassilvitskii, S. K-means++: The advantages of careful seeding. In Proceedings of the Eighteenth Annual ACM-SIAM Symposium on Discrete Algorithms (SODA '07), SIAM, Philadelphia, 2007. Pp.~1027--1035.
+\end{thebibliography}
+%\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

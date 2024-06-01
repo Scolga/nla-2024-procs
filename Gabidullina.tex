@@ -1,0 +1,139 @@
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is the template file for the 6th International conference
+% NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+% June 25-30, 2018
+% Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The preparation of the article is based on the standard llncs class
+% (Lecture Notes in Computer Sciences), which is adjusted with style
+% file of the conference.
+%
+% There are two ways of compilation of the file into PDF
+% 1. Use pdfLaTeX (pdflatex), (LaTeX+DVIPS will not work);
+% 2. Use LuaLaTeX (XeLaTeX will work too).
+% When using LuaLaTeX You will need TTF or OTF CMU fonts
+% (Computer Modern Unicode). The fonts are installed with 'cm-unicode' package in
+% a distribution of LaTeX % (https://www.ctan.org/tex-archive/fonts/cm-unicode),
+% either by downloading and installing these fonts system wide, the address of their page is
+% http://canopus.iacp.dvo.ru/%7Epanov/cm-unicode/
+% The second option won't work in XeLaTeX.
+%
+% For MiKTeX (LaTeX distribution for Windows),
+%  1. Package 'cm-unicode' is installed manually with the MiKTeX administration Console.
+%  2. For the compilation of this example, namely, the stub figure, one will also need to
+% download package 'pgf' manually. This package uses in the popular
+% package tikz.
+%  3. Tests showed that the rest of the required packages MiKTeX loads automatically (if
+%     it is allowed). The 'auto download' option is
+%     configured in 'Settings' section in MiKTeX Console.
+%
+%
+% The easiest way to compile an article is to use pdfLaTeX, but
+% the final layout of the book will be compiled with LuaLaTeX,
+% as a result will be of better quality thanks to the package 'microtype' and
+% use vector OTF instead of standard raster fonts of pdfLaTeX.
+%
+% In the case of questions and problems with the article compilation,
+% write letters to e-mail: eugeneai@irnok.net, Cherkashin Evgeny.
+%
+% New version of the correcting style file will be available at the website:
+%     https://github.com/eugeneai/nla-style
+%     file - nla.sty
+%
+% Further instructions are in the text body of the template. The template itself
+% is an article example.
+%
+% The LaTeX2e format is used!
+
+% 12 points font size is used.
+\documentclass[12pt]{llncs}
+
+\usepackage{todonotes}
+%
+\usepackage{nla} 
+
+
+\begin{document}
+\fi
+
+% Text should be formatted in accordance with the 'article' class, using extensions like
+% AMS.
+%
+\title{Analysis of some  differential properties of nonconvex functions\thanks{The research has been supported by the Kazan Federal University Strategic Academic Leadership Program (``PRIORITY-2030'').}}
+% First author
+\author{Zulfiya Gabidullina %\inst{1}
+ % \and
+  %Name FamilyName2\inst{2}
+%  \and
+%  Name FamilyName3\inst{1}
+}
+\institute{Institute of Computational Mathematics and Information Technologies,\\ Kazan Federal University, Kazan, Russia\\
+  \email{zulfiya.gabidullina@kpfu.ru}
+ % \and
+%Affiliation, City, Country\\
+%\email{email@example.com}
+}
+% etc
+
+\maketitle
+
+\begin{abstract} 
+	We study some differential properties of functions in the nonconvex context. For modern methodics, they are crucial  mostly for establishing the convergence and evaluating the convergence rate of optimization methods.
+
+\keywords{pseudoconvex function,  quasiconvex function,
+	nonconvex programming methods, supporting functional,
+	Lipschitz continuity, differential inequality}
+\end{abstract}
+
+% at the end of the list, there should be no final dot
+
+	The requirement of convexity of objective functions represents a~very serious restriction, which in real-world
+	technical and economic optimization problems,  can not always be fulfilled.
+	Earlier and mostly in recent years, many various generalizations of the convexity concept  of a~func\-tion
+	are of exceptional interest both from the point of view of theory 
+	and applications of mathematical programming methods.
+	
+	Nonconvex programming methods have naturally some important priori characteristics such as the scope of application, fact of convergence, rate of convergence. 
+	The presence of these characteristics is determined primarily by the differential properties of optimized functions, as well as by the  
+	possibility of  modern methodics of investigating the convergence
+	and sustainability of studied optimization methods (see, for instance, \cite{Gabid_Karmanov}). 
+	The main thing for applications of nonconvex functions 
+	is to reveal their differential properties, which are very similar
+	to the following useful property of convex functions:
+	$$f(x)-f(y) \leq \langle \nabla f(x),x-y \rangle,
+	\enspace x,y \in D(f),$$
+	where \,$\nabla f(x)$\, denotes the gradient of the function at
+	\,$x$,\, \,$D(f)$\, stands for the function's domain. 
+	Usually, on the basis of this differential property, it becomes  possible for convex functions to substantiate the relaxation nature and convergence of optimization methods, to obtain the estimates of their convergence rate.      
+		For nonconvex functions, we prove the presence of some differential properties which are crucial in applications such as optimization methods (for establishing their convergence characteristics).  In particular, we prove the following theorem.
+		\begin{theorem}\,(Differential inequality for a continuously differentiable, quasiconvex, and Lipschitz continuous function) If: \,$f(x)$\, is a continuously differentiable quasiconvex function satisfying the Lipschitz condition on all of \,$\mathbb{R}^{n}$,\, then for any \,$\forall y \in \mathbb{R}^{n}$\,  such that
+			\,$\|\nabla f(y)\| \neq {\bf 0}$\, there is fulfilled the following inequality:
+			\begin{equation} \label{l3}
+			f(y) - f(x) \leq L \cdot\langle \dfrac{\nabla f(y)}{\|\nabla f(y)\|},y-x
+			\rangle,
+			\end{equation}
+			for any \,$x \in M(f,y) =\{x \in \mathbb{R}^{n}:f(x) \leq f(y)\}$.\,
+			\end{theorem} 
+		We used these properties, for instance, in \cite{Gabid_jota2019} to prove a sublinear rate of convergence  of the adaptive conditional gradient method in the case of pseudoconvex functions. We also applied these differential properties for analyzing the convergence rate of the fully adaptive steepest descent method in \cite{Gabid_arxiv}. 
+	
+	\begin{thebibliography}{99}
+		
+		\bibitem{Gabid_Karmanov} %2-1	
+		Karmanov V.G. Mathematical Programming.  Nauka, Moscow, 1986.
+		
+				\bibitem{Gabid_jota2019}  %4-19
+		Gabidullina Z.R. Adaptive Conditional Gradient Method. J. of Optimization Theory and Applications~2019. Vol.~183, no~3. Pp.~1077--1098.
+		
+		\bibitem{Gabid_arxiv} %21-20
+		Gabidullina Z.R. A Fully Adaptive Steepest Descent Method. Arxiv Preprint, arXiv:2108.05027, 2021, 18 p.
+		\url{https://arxiv.org/abs/2108.05027}
+		
+	\end{thebibliography}{}
+%\end{document}
+
+
+

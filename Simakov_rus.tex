@@ -1,0 +1,122 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{About one method of decision-making with inaccurate information about the importance of criteria}
+% First author
+\author{Pavel Simakov  \and  Konstantin Kudryavtsev
+}
+\institute{SUSU (National Research University), Chelyabinsk, Russia\\
+  \email{pavelsimakov35707@gmail.com }
+\email{kudrkn@gmail.com}}
+% etc
+
+\maketitle
+
+\begin{abstract}
+The paper considers a multi-criteria decision-making problem in which the importance of criteria is given in the form of intervals and the set of alternatives is a convex compact. 
+A modification of the EDAS method is proposed. A modelling example is considered. 
+
+\keywords{multicriteria problem, uncertainty, decision-making} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  This is the template file for the 6th International conference
+%  NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+%  June 25-30, 2018
+%  Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[12pt]{llncs}  
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes} 
+
+\usepackage[russian]{nla}
+
+\begin{document}
+\fi
+
+\title{Об одном методе принятия решений с использованием неточной информации о важности критериев\thanks{Исследование выполнено за счет гранта Российского научного фонда, проект \textnumero~23-21-00539.}}
+% Первый автор
+\author{П.~К.~Симаков \and К.~Н.~Кудрявцев
+}
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{ЮУрГУ (НИУ), Челябинск, Россия \\
+  \email{pavelsimakov35707@gmail.com }
+  \email{kudrkn@gmail.com}
+% \and Другие авторы...
+}
+
+\maketitle
+
+\begin{abstract}
+В докладе рассматривается многокритериальная задача принятия решений, в которой важность критериев задана в виде интервалов, а множество альтернатив -- выпуклый компакт. Предлагается модификация метода EDAS. Рассмотрен модельный пример. 
+
+
+\keywords{многокритериальная задача, неопределенность, принятие решений} % в конце списка точка не ставится
+\end{abstract}
+
+
+Рассматривается $N$–критериальная задача принятия решений, которая задается кортежем
+\begin{equation*}
+	\varGamma=\langle X, \{f_{i}(x)\}_{i=1,...,N} \rangle .
+\end{equation*}
+В задаче $\varGamma$ лицо принимающее решение (ЛПР) выбирает альтернативу $x \in X \subset \mathbb{R}^{n}$, которая одновременно максимизирует (или минимизирует) каждый из $N$ критериев вектор-функции
+$$
+f(x)=(f_{1}(x), ..., f_{N}(x)) :X \rightarrow \mathbb{R}^{N}.
+$$
+При этом, не имея точной информации о важности критериев, ЛПР оценивает важность $\omega_{j}$ критерия $f_{j}(x)$ через принадлежность к некоторому промежутку $[\alpha_{j};\beta_{j}]$, $(j=1, ..., N)$. А именно, считается, что $\omega_{j}$ представляет собой интервальную неопределенность, о которой ЛПР не имеет никакой стохастической информации, а знает только множество ее возможных значений.
+
+
+Для задачи $\varGamma$ предлагается модификация метода EDAS \cite{Ghorabaee} с интервальными весами критериев. На основе такой модификации, и следуя подходу из \cite{Uh}, 
+определяется понятие нечеткого EDAS-решения задачи $\varGamma$ с интервальными весами критериев. 
+
+Для варианта $N$–критериальной задачи $\varGamma$ с линейными критериями
+\begin{equation}
+	f_{j}(x)=c_{j1}x_{1}+c_{j2}x_{2}+ ... + c_{jn}x_{n}, \;\;\; (j = 1, \ldots , N),
+\end{equation} 
+и множеством альтернатив $X \subset \mathbb{R}^{n}$, заданным линейными связями типа равенств
+\begin{equation}
+	q_{i}(x)=\alpha_{i1}x_{1} + \alpha_{i2}x_{2} + ... + \alpha_{in}x_{n}-b=0 \;\;\; (i=1, ..., k)
+\end{equation} 
+и условиями неотрицательности
+$$
+	x_{l} \geq 0 \;\;\; (l = 1, ..., n),
+$$
+предлагается конструктивный алгоритм построения нечеткого EDAS-решения задачи $\varGamma$ с
+интервальными весами критериев. 
+
+Заметим, что с учетом (1), (2) и вида весов критериев $\omega_{j} \in [\alpha_{j};\beta_{j}]$, $(j=1, ..., N)$, задача $\varGamma$ может трактоваться как 
+многокритериальная задача линейного программирования с неточно заданной целевой функцией.
+
+В качестве модельного примера, строится нечеткое EDAS-решение для задачи определения оптимальной по микроэлементам и витаминам рецептуры начинки фруктового пирога.
+
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+\bibitem{Ghorabaee} Ghorabaee. et al. Multi-Criteria Inventory Classification Using a New Method of Evaluation Based on Distance from Average Solution (EDAS)~// Ghorabaee, Mehdi Keshavarz // Informatica 26 — (2015) — P. 435–451.
+\bibitem{Uh} Ukhobotov V.I., Stabulit I.S., Kudryavtsev K.N. On Decision Making under Fuzzy Information about an Uncontrolled Factor~// Procedia Computer Science. 150 — (2019),  — P. 524-531.
+
+\end{thebibliography}
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок.
+
+
+
+
+%\end{document}
+

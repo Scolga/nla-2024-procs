@@ -1,0 +1,226 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{On the positivity of the cauchy function and the fundamental solution of a linear autonomous differential equation of neutral type}
+% First author
+\author{Anton Balandin
+%  \and
+%  Name FamilyName2\inst{2}
+%  \and
+%  Name FamilyName3\inst{1}
+}
+\institute{Perm National Research Polytechnic University, Perm, Russia\\
+  \email{balandin-anton@yandex.ru}
+%  \and
+%Affiliation, City, Country\\
+%\email{email}
+}
+% etc
+
+\maketitle
+
+\begin{abstract}
+A linear autonomous differential equation of neutral type is considered. The positivity of the fundamental solution and the Cauchy function of this equation is investigated, and two-sided exponential estimates for these functions are established.
+
+\keywords{functional differential equation, neutral type equation, exponential stability,
+fundamental solution, Cauchy function} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+
+\iffalse
+\documentclass[12pt]{llncs}
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes}
+
+\usepackage[russian]{nla}
+
+
+
+\begin{document}
+\fi
+% Текст оформляется в соответствии с классом article, используя дополнения
+% AMS.
+%
+
+\title{О положительности функции Коши и фундаментального решения линейного автономного дифференциального уравнения нейтрального типа\thanks{Работа выполнена при поддержке Министерства науки и высшего образования Российской Федерации, проект \textnumero~FSNM-2023-0003.}}
+% Первый автор
+\author{А.~С.~Баландин % \inst ставит циферку над автором.
+%  \and  % разделяет авторов, в тексте выглядит как запятая.
+% Второй автор
+%  И.~О.~Фамилия\inst{2}
+%  \and
+% Третий автор
+%  И.~О.~Фамилия\inst{1}
+} % обязательное поле
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{Пермский национальный исследовательский политехнический университет (ПНИПУ), Пермь, Россия\\
+  \email{balandin-anton@yandex.ru}
+%  \and   % Разделяет институты и присваивает им номера по порядку.
+%Институт (название в краткой форме), Город, Страна\\
+%\email{email@examle.com}
+% \and Другие авторы...
+}
+
+\maketitle
+
+\begin{abstract}
+В работе рассматривается линейное автономное дифференциальное уравнение нейтрального типа. Исследуется положительность фундаментального решения и функции Коши данного уравнения, а также устанавливаются двусторонние экспоненциальные оценки на указанные функции.
+
+
+\keywords{функционально-дифференциальное уравнение, уравнение нейтрального типа, экспоненциальная устойчивость, %положительность,
+фундаментальное решение, функция Коши} % в конце списка точка не ставится
+\end{abstract}
+
+%\section{Основные результаты} % не обязательное поле
+
+Рассмотрим линейное автономное дифференциальное уравнение нейтрального типа
+\begin{equation}
+\label{1_bal}
+\begin{aligned}
+\dot x(t)-a\dot x(t-h)-bx(t)-cx(t-h)=f(t),\quad t\ge0,\\
+x(\xi)=\varphi(\xi),\quad\dot x(\xi)=\psi(\xi),\quad\xi\in[-h,0),
+\end{aligned}
+\end{equation}
+где $a\in\mathbb R_+$, $b\in\mathbb R$, $c\in\mathbb R_-$, $h>0$, функция $f$ локально суммируема.
+
+Уравнение~\eqref{1_bal} возникает в различных прикладных задачах: динамика популяции клеток, движение плоских упругих плит с учетом трения, исследование дефектов с помощью ультразвука.
+С другой стороны, уравнение~\eqref{1_bal} обладает большим разнообразием асимптотических свойств решений и поэтому интересно также с теоретической точки зрения.
+
+Через $I$ обозначим тождественный оператор, через $S_h$~--- оператор сдвига, действующий в пространстве непрерывных (кусочно-непрерывных, суммируемых) функций по правилу:
+\begin{equation*}
+(S_hy)(t)=\left\{
+\begin{aligned}
+&y(t-h),\quad&\mbox{при }t\ge h,\\
+&0,&\mbox{при }t<h.\\
+\end{aligned}
+\right.
+\end{equation*}
+Уравнение~\eqref{1_bal} можно переписать в виде
+\begin{equation}
+\label{eq_main_bal}
+\dot x(t)-a(S_h\dot x)(t)=bx(t)+c(S_hx)(t)+\sigma(t),\quad t\in\mathbb R_+,
+\end{equation}
+где роль внешнего возмущения играет функция $\sigma\colon\mathbb R_+\to\mathbb R$, суммируемая на $[-1,0]$ и
+определяемая по правилу:
+\begin{equation*}
+\sigma(t)=\left\{
+\begin{aligned}
+&a\psi(t)+c\varphi(t),\quad\mbox{при }t\in[-1,0),\\
+&0,\quad\mbox{при }t\notin[-1,0).
+\end{aligned}
+\right.
+\end{equation*}
+
+Под {\it решением} уравнения~\eqref{eq_main_bal} будем понимать абсолютно непрерывную на каждом конечном отрезке функцию $x\colon\mathbb R_+\to\mathbb R$, удовлетворяющую~\eqref{eq_main_bal} почти всюду на $\mathbb R_+$.
+
+Как известно (см. \cite[с. 84, теорема 1.1]{bib_amr_bal}, \cite{bib_BalMal2_bal}), уравнение~\eqref{eq_main_bal} с заданными начальными условиями $x(0)\in\mathbb R$ однозначно разрешимо и его решение представимо в виде
+\begin{equation*}
+%\label{eq_Cauchy_formula_bal}
+x(t)=X(t)x(0)+\int_0^tY(t-s)\sigma(s)\,ds,
+\end{equation*}
+где $X\colon\mathbb R_+\to\mathbb R$ называется {\it фундаментальным решением}, а $Y\colon\mathbb R_+\to\mathbb R$~--- {\it функцией Коши} уравнения~\eqref{eq_main_bal}.
+На отрицательной полуоси $X$, $Y$ доопределим нулём.
+
+Функция $X$ определяется как решение однородного уравнения вида~\eqref{eq_main_bal},
+дополненного начальным условием $x(0)=1$.
+
+%\begin{theorem}[\cite{bib_BalMal2_bal}]
+{\bf Теорема 1 \cite{bib_BalMal2_bal}.} $X(t)=(I-aS_h)Y(t)$.
+%\end{theorem}
+
+Определим
+$$
+g_X(\gamma) = \frac{-\gamma(1 - a{e^{\gamma}}) - b - c{e^{\gamma}}}{1-ae^{\gamma}},\quad g_Y(\gamma) =-\gamma(1 - a{e^{\gamma}}) - b - ce^{\gamma},\quad \gamma \in \mathbb{R}.
+$$
+
+%\begin{theorem}
+{\bf Теорема 2.}
+{\it
+Если $c\le0$, а для характеристической функции при некотором вещественном $\zeta>0$ выполнены условия $g_X(\zeta)=0$, $g'_X(\zeta)<0$, то фундаментальное решение уравнения~\eqref{eq_main_bal} имеет двустороннюю оценку
+\begin{equation}
+\label{eq9_bal}
+e^{-\zeta t}\le X(t)\le -\frac1{g'_X(\zeta)}e^{-\zeta t},\quad t\ge 0,
+\end{equation}
+и, кроме того, $\lim\limits_{t\to\infty}X(t)e^{\zeta t}=-1/{g'_X(\zeta)}$.
+}
+%\end{theorem}
+
+Показатель экспоненты и постоянные 1 и $-1/{g'_X(-\zeta)}$ в~\eqref{eq9_bal} точные.
+
+%\begin{theorem}
+{\bf Теорема 3.}
+{\it
+Если $c\le0$, а для характеристической функции при некотором вещественном $\zeta>0$ выполнены условия $g_Y(\zeta)=0$, $g'_Y(\zeta)<0$, то функция Коши уравнения~\eqref{eq_main_bal} имеет двустороннюю оценку
+\begin{equation}
+\label{eq10_bal}
+e^{-\zeta t}\le Y(t)\le -\frac1{g'_Y(\zeta)}e^{-\zeta t},\quad t\ge 0,
+\end{equation}
+и, кроме того, $\lim\limits_{t\to\infty}Y(t)e^{\zeta t}=-1/{g'_Y(\zeta)}$.
+}
+%\end{theorem}
+
+Показатель экспоненты и постоянные 1 и $-1/{g'_Y(-\zeta)}$ в~\eqref{eq10_bal} точные.
+
+% Рисунки и таблицы оформляются по стандарту класса article. Например,
+
+%\begin{figure}[htb]
+%  \centering
+  % Поддерживаются два формата:
+  %\includegraphics[width=0.7\linewidth]{figure.pdf} % Растровый формат
+  %\includegraphics[width=0.7\linewidth]{figure.png} % Векторный и растровый формат
+  %
+  % Векторные рисунки можно рисовать в редакторе Inkscape
+  % https://inkscape.org/ru/download/
+  % Основной формат этого редактора - SVG, поэтому рисунки необходимо экспортировать в
+  % PDF или PNG (с разрешением - минимум 150 dpi, максимум - 300dpi).
+%  \begin{center}
+%    \missingfigure[figwidth=0.7\linewidth]{Уберите меня из статьи!}
+%  \end{center}
+%  \caption{Заголовок рисунка}\label{fig:example}
+%\end{figure}
+
+% Современные издательства требуют использовать кавычки-елочки << >>.
+
+% В конце текста можно выразить благодарности, если этого не было
+% сделано в ссылке с заголовка статьи, например,
+%Работа выполнена при поддержке Министерства науки и высшего образования Российской Федерации, проект \textnumero~FSNM-2023-0005.
+%
+
+% Список литературы оформляется подобно ГОСТ-2008.
+% Примеры оформления находятся по этому адресу -
+%     https://narfu.ru/agtu/www.agtu.ru/fad08f5ab5ca9486942a52596ba6582elit.html
+%
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+\bibitem{bib_amr_bal} Азбелев~Н.В., Максимов~В.П., Рахматуллина~Л.Ф. Введение в теорию функ\-ци\-о\-наль\-но-дифференциальных уравнений. М.:~Наука,~1991.
+
+\bibitem{bib_BalMal2_bal} Баландин А.С., Малыгина В.В. Об экспоненциальной устойчивости линейных диф\-фе\-рен\-циально-разностных уравнениях нейтрального типа~// Изв. вузов. Матем. 2007. \textnumero~7. С.~17--27.
+%{Gantmakher} Гантмахер~Ф.Р. Теория матриц. М.:~Наука,~1966.
+
+%\bibitem{Kholl} Современные численные методы решения обыкновенных дифференциальных уравнений~/ Под~ред.~Дж.~Холл, Дж.~Уатт. М.:~Мир,~1979.
+
+    %{Aleksandrov1} Александров~А.Ю. Об устойчивости сложных систем в критических случаях~// Автоматика и телемеханика. 2001. \textnumero~9. С.~3--13.
+%\bibitem{Moreau1977} Moreau~J.-J. Evolution problem associated with a moving convex set in a Hilbert space~// J.~Differential~Eq. 1977. Vol.~26. Pp.~347--374.
+
+%\bibitem{Semenov} Семенов~А.А. Замечание о вычислительной сложности известных предположительно односторонних функций~// Тр.~XII Байкальской междунар. конф. <<Методы оптимизации и их приложения>>. Иркутск, 2001. С.~142--146.
+
+\end{thebibliography}
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок.
+
+
+
+
+%\end{document}

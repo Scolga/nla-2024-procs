@@ -1,0 +1,80 @@
+\iffalse
+
+\documentclass[12pt]{llncs}
+%\usepackage{amsthm,amsfonts,amssymb,amsmath}
+
+\usepackage{todonotes}
+
+\usepackage{nla} 
+
+\begin{document}
+\fi
+
+\title{The first initial-boundary value problem for a pseudohyperbolic equation\thanks{The work is supported by the Mathematical Center in Akademgorodok under agreement No. 075-15-2022-282 with the Ministry of Science and Higher Education of the Russian Federation.}}
+
+\author{Ma~Xin  }
+\institute{Novosibirsk State University, Novosibirsk, Russia\\
+  \email{s.ma2@g.nsu.ru}}
+
+\maketitle
+
+\begin{abstract}
+We consider the first initial-boundary value problem in a cylinder for an equation unsolved with respect to the highest time derivative. This equation belongs to the class of pseudohyperbolic equations. In one-dimensional case, it describes the propagation of waves with consideration of the surface tension. In this work, the existence and uniqueness of a generalized solution to the first initial-boundary value problem in Sobolev space are proved, and estimates for the solution are obtained.
+\keywords{pseudohyperbolic equation, first initial-boundary value problem, generalized Boussinesq equation, generalized solution}
+\end{abstract}
+
+
+\section{The main results} %optional section
+
+
+We consider the first initial-boundary value problem for a strictly pseudohyperbolic equation (see [1]) in a cylinder $Q_T=\{(t,x)\in R_+^{n+1}:t\in(0,T), x\in G\subset R^n \}$:
+$$
+\left\{
+\begin{array}{l}
+	(a_0 I+a_1\Delta+a_2\Delta^2)D_t^2u +(b_0 I+b_1\Delta+b_2\Delta^2)D_tu\\ 
+	\qquad+(d_0 I+d_1\Delta+d_2\Delta^2+d_3\Delta^3)u =f(t,x),
+	\\ \\
+	\displaystyle
+	u \big|_{t=0} = \varphi_1(x), \qquad D_t u \big|_{t=0} = \varphi_2(x), \\ \\
+	u \big|_{S} =0, \qquad \frac{\partial u }{\partial \nu}\big|_{S} =0,  \qquad \frac{\partial^2 u }{\partial \nu^2}\big|_{S} =0,
+\end{array}
+\right.
+\eqno(1)
+$$where $a_1^2-4a_0a_2<0$, $a_2b_0\leq 0$, $a_2b_1\geq 0$, $a_2b_2\leq 0$, $a_2d_0\geq 0$, $a_2d_1\leq 0$, $a_2d_2\geq 0$, $a_2d_3<0$. Here $G$ is a bounded domain with smooth boundary $\partial G$, $\nu$ is the unit vector of the outer normal to $\partial G$,
+$$
+S=
+\left\{ (t, x)\in \overline{Q_T}:\; t\in(0, T),\quad x\in \partial G\right\}.
+$$ 
+
+This equation is called the generalized Boussinesq equation [2-3]. In one-dimensional case, it describes the propagation of waves in a liquid with consideration of the surface tension.
+
+Let us discuss the existence and uniqueness theorem for the first-initial boundary value problem (1).
+
+\begin{theorem} Let $f(t,x)\in L_2(Q_T)$, 
+	$\displaystyle\varphi_1(x)\in \overset{o}{W^3_2}(G)$ and 
+	$\displaystyle\varphi_2(x)\in \overset{o}{W^2_2}(G)$. Then the initial-boundary value problem (1) has a unique generalized solution $u(t,x)\in W^{1,3}_{2}(Q_T)$ such that there exists
+	$D_{t}\Delta u(t,x)\in L_2(Q_T)$; moreover, the estimate holds 
+	$$
+	\|u(t,x),W^{1,3}_{2}(Q_T)\| +\|D_{t}\Delta u(t,x),L_{2}(Q_T)\|
+	$$
+	$$
+	\le c\bigg(\|f(t,x),L_2(Q_T)\|+\|\varphi_1(x),W^{3}_{2}(Q_T)\|+\|\varphi_2(x),W ^{2}_{2}(Q_T)\|\bigg).
+	$$
+\end{theorem} 
+
+
+
+% At the end of the text, acknowledgments are expressed, if you haven't
+% made a footnote from the title. For example, we can write
+%The work is supported by the Mathematical Center in Akademgorodok under agreement No. 075-15-2022-282 with the Ministry of Science and Higher Education of the Russian Federation.
+
+\begin{thebibliography}{9} % or {99}, if there is more than ten references.
+\bibitem{Demidenko}
+Demidenko G.V., Uspenskii S.V. Partial Differential Equations and Systems Not 	Solvable with Respect to the Highest-Order Derivative. Nauchnaya Kniga, Novosibirsk, 1998.~[In Russian]; English transl. Marcel Dekker, New York and Basel, 2003.
+
+\bibitem{Umarov} Umarov Kh.G. Blow-up and global solvability of the Cauchy problem for a pseudohyperbolic equation related to the generalized Boussinesq equation. Siberian Math. J. 2022. Vol.~63, no~3. Pp.~559--574.
+
+\bibitem{Wang} Wang S., Xue H. Global solution for a generalized Boussinesq equation. Appl. Math. Comput. 2008. Vol.~204, no~1. Pp.~130--136.
+
+\end{thebibliography}
+%\end{document}

@@ -1,0 +1,128 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{Decomposition of Webullah function into an orthogonal row}
+% First author
+\author{R.~R.~Mutigullina\inst{1}  \and  R.~D.~Murtazina\inst{2}
+ }
+\institute{UUST, Ufa, Russia\\
+  \email{Regina.mutigullina@mail.ru}
+  \and
+  UUST, Ufa, Russia \\
+\email{reginaufa@yandex.ru}
+  }
+% etc
+
+\maketitle
+
+\begin{abstract}
+When expanding the Weibull distribution function into an orthogonal series of exponentials, the coefficients are uniformly convergent integrals with the parameter.
+
+\keywords{Weibull function, orthogonal series, uniform convergence} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  This is the template file for the 6th International conference
+%  NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+%  June 25-30, 2018
+%  Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{llncs}  
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes} 
+
+\usepackage[russian]{nla}
+
+\begin{document}
+\fi
+
+\title{Разложение функции Вейбулла в ортогональный ряд}
+% Первый автор
+\author{Р.~Р.~Мутигуллина\inst{1}  \and Р.~Д.~Муртазина\inst{2}
+ } % обязательное поле
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{УУНиТ, Уфа, Россия \\
+  \email{Regina.mutigullina@mail.ru}
+  \and
+  УУНиТ, Уфа, Россия \\
+\email{reginaufa@yandex.ru}
+  % \and Другие авторы...
+}
+
+\maketitle
+
+\begin{abstract}
+При разложении функции распределения Вейбулла в ортогональный ряд экспонент коэффициенты представляют собой равномерно сходящиеся интегралы с параметром.
+
+\keywords{функция Вейбулла, ортогональный ряд, равномерная сходимость} % в конце списка точка не ставится
+\end{abstract}
+
+%\section{Основные результаты} % не обязательное поле
+
+Рассмотрим функцию распределения Вейбулла
+$$
+f(t)=\frac{k}{r}\left(\frac{t}{r}\right)^{k-1}\cdot e^{-\left(\frac{t}{r}\right)^k},
+$$
+с параметрами $r=1$, $k=1,5$.
+
+
+В работе получено разложение данной функции в ортогональный ряд
+$$
+f(t)=\sum_{l=1}^q a_l\phi_l(t),
+$$ 
+где ортогональные функции $\phi_l(t)$ выражаются в виде
+$$
+\phi_l(t)=\sum_{i=1}^l\lambda_{li}\cdot e^{-(i-1)\beta t},\quad l=1,2,\ldots.
+$$ 
+
+Будем считать, что $\beta=1$.
+Коэффициенты $a_l$ ряда определяются так
+$$
+a_l=\int_0^{\infty}e^{-t}f(t)\phi_l(t)dt,
+$$
+а именно
+$$
+a_l=\frac{3}{2}\sum_{i=1}^l\lambda_{li}\int_0^{\infty}\sqrt{t}e^{-t\sqrt{t}-it}dt.
+$$
+
+Интеграл $\int_0^{\infty}\sqrt{t}e^{-t\sqrt{t}-it}dt$ равномерно сходится. Задавая границы интегрирования от $0$ до $5$ вычислим интегралы при $i=1,2,3,4,5,6$ методом прямоугольников, методом трапеций и методом Симпсона.
+% В конце текста можно выразить благодарности, если этого не было
+% сделано в ссылке с заголовка статьи, например,
+%Работа выполнена при поддержке РФФИ (РНФ, другие фонды), проект \textnumero~00-00-00000.
+%
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+\bibitem{Ilin} Ильин~В.~А. Необходимые и достаточные условия базисности в $L^p$ и равносходимости с тригонометрическим рядом спектральных разложений по системе экспонент // Докл. АН СССР, 1983. Том~273. \textnumero~4. С.~789--793.
+
+\bibitem{Xabib} Хабибуллин~Б.~Н. Полнота систем экспонент и множества единственности.  Уфа:~ РИЦ БашГУ, 2011.
+
+
+\bibitem{KrTer}	Красичков-Терновский~И.Ф., Шилова~Г.Н. Абсолютная полнота систем экспонент на выпуклых компактах // Матем. сб., 2005. V.~196. \textnumero~12. С.~85--98.
+
+\bibitem{Leo}	Леонтьев~А.Ф. О полноте системы экспонент на кривой // Сиб. матем. журнал, 1974. Т.~15. \textnumero~5. С.~1103--1114.
+
+\bibitem{Leo2}	Леонтьев~А.Ф. Ряды экспонент. М.:~Наука, 1976.
+\end{thebibliography}
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок.
+
+
+
+
+%\end{document}

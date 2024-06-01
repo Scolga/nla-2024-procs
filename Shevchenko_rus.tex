@@ -1,0 +1,150 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{Algorithms for processing remote sensing data in problems of variational data assimilation}
+% First author
+\author{B.S. Shevchenko\inst{1}  \and  N.B. Zakharova\inst{2}
+}
+\institute{Lomonosov Moscow State University, Moscow, Russia \\
+  \email{bilalsevcenko@gmail.com}
+  \and
+Marchuk Institute of Numerical Mathematics, Moscow, Russia\\}
+% etc
+
+\maketitle
+
+\begin{abstract}
+Continuous high-quality satellite observations are essential for improving our understanding of the ocean and its interactions with the atmosphere and the Earth's overall system. One important tool for studying these interactions is the creation of accurate four-dimensional reconstructions of various oceanic parameters, such as temperature, salinity, and currents. Mathematical methods from data assimilation allow us to distribute information from these observations over time and space, filling in gaps in data where direct observations are not available. These methods use dynamic and physical constraints from numerical models to ensure that the reconstructed data is consistent with known physical laws.The present work focuses on algorithms for processing remote sensing data from the ICI-Monitoring Center. These data are used in the variational data assimilation process [1] for a numerical model of the Black, Azov, and Marmara seas. Earth remote sensing (ERS) data from the ICI-Data Center contains abnormal values for sea surface temperature (TPM), which can significantly impact the accuracy of the numerical model. Therefore, the main objectives of this research are to verify the data, filter out such anomalies, and interpolate the data onto a grid suitable for the numerical model.
+The work is supported by the Russian Science Foundation (project №19-71-20035).
+\keywords{sea surface temperature, data verification, data processing, satellite data } % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  This is the template file for the 6th International conference
+%  NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+%  June 25-30, 2018
+%  Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[12pt]{llncs}  
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes} 
+
+\usepackage[russian]{nla}
+
+\begin{document}
+\fi
+
+\title{Алгоритмы обработки данных дистанционного зондирования в задачах вариационной ассимиляции данных\thanks{Работа выполнена при поддержке Российского научного фонда., проект \textnumero~19-71-20035.}}
+% Первый автор
+\author{Б.~С.~Шевченко\inst{1}  \and  Н.~Б.~Захарова\inst{2}
+}
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{Московский Государственный Университет им. М.В. Ломоносова, Москва, Россия \\
+  \email{bilalsevcenko@gmail.com}
+  \and   % Разделяет институты и присваивает им номера по порядку.
+Институт вычислительной математики им. Г.И. Марчука Российской академии наук, Москва, Россия\\
+% \and Другие авторы...
+}
+
+\maketitle
+
+\begin{abstract}
+Непрерывные высококачественные наблюдения со спутников необходимы для улучшения нашего понимания океана и его взаимодействия с атмосферой и всей земной системой. Важным инструментом для изучения земной системы является создание исторически точных четырехмерных реконструкций величин, характеризующих состояние океана (таких как температура, соленость и течения). Математические методы из области ассимиляции данных позволяют распространять информацию, полученную из наблюдений, во времени и пространстве в ненаблюдаемые области, используя динамические и физические ограничения, налагаемые численными моделями. \\
+Настоящая работа посвящена алгоритмам обработки данных дистанционного зондирования ЦКП ''ИКИ-Мониторинг'', использующихся в процедурах вариационной ассимиляции данных [1] в численной модели Черного, Азовского и Мраморного морей. Данные дистанционного зондирования Земли (ДЗЗ) ЦКП ''ИКИ-Мониторинг'' о температуре поверхности моря (ТПМ) содержат аномальные значения, которые оказывают существенное влияние на точность численной модели. Основными задачами настоящей работы являлись: верификация данных, фильтрация таких аномалий и интерполяция данных на сетку численной модели.
+
+
+\keywords{температура поверхности моря, верификация данных, обработка данных, данные наблюдений со спутников, дистанционное зондирование} % в конце списка точка не ставится
+\end{abstract}
+
+\section{Основные результаты} % не обязательное поле
+
+Рассмотрим алгоритм обработки данных о температуре. В массиве данных определяется максимальное значение и его индексы, далее берётся область размера N×N вокруг элемента с максимальным значением (изначально N = 21). Азовское и Черное моря отличаются средней температурой из-за разных глубины и солености, поэтому точки (элементы массива с данными), принадлежащие разным морям, нельзя включать в одну выборку.  Если точка находится в Черном море, то точки Азовского моря исключаются, если в Азовском, то исключаются точки Черного моря. Полученный массив выбранных элементов преобразуется в одномерный. Если размер выборки меньше 100, то число N увеличивается до тех пор, пока размер выборки не станет больше или равен 100 или N больше 40. 
+Если размер итоговой выборки больше или равен 100, то к ней применяется статистический метод Роснера [2]. Найденные аномальные значения заменяются на среднее арифметическое выборки. Если размер выборки меньше 100, то к ней применяется метод трёх сигм [3] по всему полю данных. Значения, не входящие в интервал трех сигм, исключаются.
+
+% Рисунки и таблицы оформляются по стандарту класса article. Например,
+
+\begin{figure}[htb]
+  \centering
+  % Поддерживаются два формата:
+  %\includegraphics[width=0.7\linewidth]{figure.pdf} % Растровый формат
+  %\includegraphics[width=0.7\linewidth]{figure.png} % Векторный и растровый формат
+  %
+  
+  \begin{center}
+%    \includegraphics[width=0.8\linewidth]{photo1.png}
+  \end{center}
+  \caption{Рис. 1. Данные ТПМ. (а) до обработки (данные 27 июля 2018 года в 07:47); (б) после обработки (данные 27 июля 2018 года в 07:47); }\label{fig:example}
+\end{figure}
+
+На рисунке 1 представлены результаты работы алгоритма. Видно, что аномальные значения температур были изменены или удалены.
+В работе также было проведено исследование различных методов интерполяции: 
+	бикубическая интерполяция [4];
+	площадная [5];
+	метод ближайшего соседа [6]
+
+Как показал анализ результатов, данные после применения площадной интерполяции получаются более «гладкими», чем после бикубической. Также после применения бикубического и площадного методов данные занимают меньшую площадь, чем изначальные (исключается много значений), а в методе ближайших соседей площадь покрытия данными не меняется.
+В результате проведенного сравнительного анализа было предложено объединить площадной метод (из-за «гладкости» получившихся данных) и метод ближайших соседей (из-за сохранения площади, занимаемой данными). Так если P – область с данными после применения площадного метода и S – область с данными после применения метода ближайших соседей, итоговая область $D = P \cup (S \textbackslash P).$
+
+\begin{figure}[htb]
+  \centering
+  % Поддерживаются два формата:
+  %\includegraphics[width=0.7\linewidth]{figure.pdf} % Растровый формат
+  %\includegraphics[width=0.7\linewidth]{figure.png} % Векторный и растровый формат
+  %
+  
+  \begin{center}
+%    \includegraphics[width=0.8\linewidth]{photo2.png}
+  \end{center}
+  \caption{Рис. 2 (а) оригинальные данные; (б) данные после объединения площадного метода и метода ближайшего соседа }\label{fig:example}
+\end{figure}
+
+На рисунке 2 показано, что после применения метода данные остались «гладкими», но занимаемая ими площадь не уменьшилась. 
+Таким образом, в работе реализован метод интерполяции данных наблюдений, позволяющий получить «гладкое» поле значений с минимумом потерь.
+
+
+% В конце текста можно выразить благодарности, если этого не было
+% сделано в ссылке с заголовка статьи, например,
+Работа выполнена при поддержке Российского научного фонда., проект \textnumero~19-71-20035.
+%
+
+
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+\bibitem{Gantmakher} Parmuzin, E. I., Agoshkov, V. I., Zakharova, N. B., Shutyaev, V. P. (2019). Variational Data Assimilation of Satellite Observations in the Model of Sea Hydrothermodynamics. 1-8 doi: https://doi.org/10.21046/rorse2018.1
+
+\bibitem{Kholl} Rosner, B. On the detection of many outliers // Technometrics. 1975. Vol. 17. No 2, P. 221-227.
+
+\bibitem{Aleksandrov1} Гмурман В.Е. Теория вероятностей и математическая статистика // Учеб. Пособие для вузов – 9-е изд., стер. М.: Высш. шк., 2003. 479 с.
+
+\bibitem{Moreau1977} Carlson R. E., Fritsch F. N. Monotone piecewise bicubic interpolation //SIAM journal on numerical analysis.  1985.  Vol. 22. No. 2. P. 386--400.
+
+\bibitem{Semenov} Di Piazza A. et al. Comparative analysis of spatial interpolation methods in the Mediterranean area: application to temperature in Sicily // Water. – 2015. – Т. 7. – No. 5. – С. 1866-1888.
+Rukundo O., Cao H. Nearest neighbor value interpolation //arXiv preprint arXiv:1211.1768. – 2012
+
+
+\end{thebibliography}
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок.
+
+
+
+
+%\end{document}
+

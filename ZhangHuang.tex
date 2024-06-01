@@ -1,0 +1,170 @@
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is the template file for the 6th International conference
+% NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+% June 25-30, 2018
+% Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The preparation of the article is based on the standard llncs class
+% (Lecture Notes in Computer Sciences), which is adjusted with style
+% file of the conference.
+%
+% There are two ways of compilation of the file into PDF
+% 1. Use pdfLaTeX (pdflatex), (LaTeX+DVIPS will not work);
+% 2. Use LuaLaTeX (XeLaTeX will work too).
+% When using LuaLaTeX You will need TTF or OTF CMU fonts
+% (Computer Modern Unicode). The fonts are installed with 'cm-unicode' package in
+% a distribution of LaTeX % (https://www.ctan.org/tex-archive/fonts/cm-unicode),
+% either by downloading and installing these fonts system wide, the address of their page is
+% http://canopus.iacp.dvo.ru/%7Epanov/cm-unicode/
+% The second option won't work in XeLaTeX.
+%
+% For MiKTeX (LaTeX distribution for Windows),
+%  1. Package 'cm-unicode' is installed manually with the MiKTeX administration Console.
+%  2. For the compilation of this example, namely, the stub figure, one will also need to
+% download package 'pgf' manually. This package uses in the popular
+% package tikz.
+%  3. Tests showed that the rest of the required packages MiKTeX loads automatically (if
+%     it is allowed). The 'auto download' option is
+%     configured in 'Settings' section in MiKTeX Console.
+%
+%
+% The easiest way to compile an article is to use pdfLaTeX, but
+% the final layout of the book will be compiled with LuaLaTeX,
+% as a result will be of better quality thanks to the package 'microtype' and
+% use vector OTF instead of standard raster fonts of pdfLaTeX.
+%
+% In the case of questions and problems with the article compilation,
+% write letters to e-mail: eugeneai@irnok.net, Cherkashin Evgeny.
+%
+% New version of the correcting style file will be available at the website:
+%     https://github.com/eugeneai/nla-style
+%     file - nla.sty
+%
+% Further instructions are in the text body of the template. The template itself
+% is an article example.
+%
+% The LaTeX2e format is used!
+
+% 12 points font size is used.
+\documentclass[12pt]{llncs}
+
+% The correcting style file is added.
+\usepackage{todonotes}
+\usepackage{bm}
+\usepackage{nla} % This package is needed for compiling
+                 % this template, it should be removed
+                 % from your article.
+
+% Many popular packages (amsXXX, graphicx, etc.) are already imported in the style file.
+% If there is a conflict with your packages, try disabling them and compile
+% the text.
+%
+% It would be convenient in the layout of the proceedings if the file names
+% of the figures of different authors do not clash.
+% To minimize the clash, the drawings can be placed in a separate subfolder
+% named after the author or the title of the paper.
+%
+% \graphicspath{{ivanov-petrov-pics/}} % specifies the folder with images in png, pdf formats.
+% or
+% \graphicspath{{great-problem-solving-paper-pics/}}.
+
+\begin{document}
+\fi
+% Text should be formatted in accordance with the 'article' class, using extensions like
+% AMS.
+%
+\title{A proximal bundle method to solve variational inequalities with inexact information\thanks{the National Key Research and Development Program of China (No.2022YFB3304602), the International Postdoctoral Exchange Fellowship Program 2020 by the Office of China Postdoctoral Council (No.2020003), the National Natural Science Foundation of China ( No.11701063, 11901075),
+the Project funded by China Postdoctoral Science Foundation  (No.2019M651091 and 2019M661073). The corresponding author: Ming Huang.}}
+% First author
+\author{Si Qi Zhang\inst{1} \and Ming Huang\inst{1} \and Ping Ping Qiao\inst{1} \and Yong Xiu Feng\inst{1} \and Suo Suo Yang\inst{2}
+  }
+\institute{School of Science,~Dalian Maritime University,~Dalian 116026, China.\\
+  \email{zsq0216@dlmu.edu.cn}, \email{huangming0224@163.com}, \email{wo820360592@163.com}, \email{fengyongxiu2001@dlmu.edu.cn}\\
+  \and
+  The First Affiliated Hospital, Dalian Medical University, Dalian 116011, China.\\
+\email{langzai2007@126.com}
+}
+\maketitle
+\begin{abstract}
+This paper presents a new bundle method for solving generalized variational inequalities. This method introduces inexact data to accelerate the convergence rate of the algorithm. Finally, the effectiveness of the proposed algorithm is verified by numerical experiments.
+\keywords{non-smooth optimization, bundle method, inexact information.}
+\end{abstract}
+\section{The main results}
+Let $\Gamma$ denote a monotone multivalued operator defined on a real Hilbert space $H$ equipped with the inner product $\langle \cdot,\cdot \rangle$, let $C$ represent a nonempty closed convex subset of $H$, and let $l:H\to R\cup\left \{ +  \infty  \right \} $ be a lower semicontinuous (l.s.c.) proper convex function. We are concerned with the following general variational inequality problem:
+ \begin{equation}
+              (P)\left\{
+              \begin{array}{ll}
+                 &  \text{Find} ~ x^{*}\in C\  \text{and}\  \sigma(x^{*})\in \Gamma(x^{*}) ~ \text{subject to, for every}\  x\in C,\\
+                 & \left \langle \sigma(x^{*}),x-x^{*} \right \rangle +l(x)-l(x^{*})\ge 0.
+              \end{array}
+             \right.
+             \nonumber
+  \end{equation}
+In this paper, we assume that $C\subseteq \text{int}(\text{dom} l)$. \\
+\indent Then, we make the following assumption: at each given point $x\in R^{n}$, for $\varepsilon\geq 0$, call the oracle to obtain $\hat{l} \in R$ satisfying $\hat{l} (x):=l(x)-\varepsilon$.\\
+\indent It is expensive to solve the subgradient of a non-smooth function, so we use the subgradient at some point $\tilde{x}$ near $x$, expressed as $g(\tilde{x})$, instead of the approximate subgradient at that point $x$ .\\
+\textbf{Proximal Bundle Algorithm For Solving Problem (P).}\\
+\textbf{Step 1.} Let an initial point $x^{0}$ be given, together with a tolerance $\rho\in(0, 1)$ and a positive sequence $\{\mu_{k}\}_{\mu\in\mathbb{N} }$. Compute $\sigma(x^{0})\in \Gamma(x^{0})$. Set $y^{0}=x^{0}, k=0,i=1$.\\
+\textbf{Step 2.} Choose a piecewise linear convex function $\theta\leq l$ and solve
+$$
+\begin{aligned}
+\min_{x \in C}  \{\theta+ \langle \sigma(x^{k}),x-x^{k}\rangle+\mu_{k}^{-1}[ \eta(x)-\eta(x^{k})-\langle\nabla \eta(x^{k}),x-x^{k}\rangle]\}.
+\end{aligned}
+$$
+Where $\eta$ is a strongly convex function, so we get a unique optimal solution $y^{i}\in C$.\\
+\textbf{Step 3.} Determine whether candidate point $y^{i}$ is suitable, if
+$$\hat{l}(x^{k})-\hat{l}(y^{i})\geq \rho[\hat{l}(x^{k})-\theta(y^{i})]+(1-\rho)\langle \sigma(x^{k}),y^{i}-x^{k}\rangle.$$
+then make a Serious step, set $x^{k+1}=y^{i}$ and increase $k$ by 1; otherwise, make a Null step, $x^{k}$ is kept fixed for the next inner iteration and set $x^{k+1}=x^{k}$.\\\
+\textbf{Step 4}  Increased $i$ by 1 and go to Step 2.\\
+\textbf{Example 1.} Consider the following problem:
+ \begin{equation}
+             \left\{
+              \begin{array}{ll}
+                 & \operatorname{min}_{x \in C}  \{\omega+ \langle \Gamma(x^{k}),x-x^{k}\rangle+\mu_{k}^{-1}[ \eta(x)-\eta(x^{k})-\langle\nabla \eta(x^{k}),x-x^{k}\rangle]\},\\
+                 & \text{subject to }\  \omega \geq \hat{l}(y^{i})+\langle g(\tilde{y}^{i}),x-y^{i}\rangle.
+              \end{array}
+             \right.
+             \nonumber
+  \end{equation}
+where
+$$
+l(x)=\max \left\{\begin{array}{l}
+x_{1}^{2}-9 x_{2}-1; \\
+e^{x_1+x_2}; \\
+x_1^4+x_2^2,
+\end{array}\right.
+$$
+and \qquad \qquad  \qquad $\Gamma(x)=A_{1}x$ ($A_1$ denotes a second-order identity matrix),\\
+and\qquad \qquad \qquad \qquad \qquad \quad  $x=[x_{1},x_{2}]^{T} , \eta(x)=\|x_{1}-x_{2}\|^2.$\\
+\textbf{Solution:} \\
+\begin{center}
+\textbf{Table 1: The results of Example 1.}\\
+\end{center}
+$$
+\begin{array}{cccccccccc}
+\hline \text { Algorithm }   ~~& x_{0} ~~&~~ x^{*} ~~&~~ f^{*} ~~&~~ \textbf{k} &~~ \text{ST} & \text{NT} ~~&~~ \text { Time } \\
+\hline \text { exact } ~~& (0.5, 0.5) ~~&~~ (-0.2825 ,-0.1727) ~~&~~0.1912 ~~&~~ 15 &~~ 9 & 5 ~~&~~ 0.3303842 \\
+\text { inexact } ~~& (0.5, 0.5) ~~&~~ (-0.2825 ,-0.1727) ~~&~~ 0.1813 ~~&~~ 15 &~~ 9 & 5 ~~&~~ 0.163582 \\
+\hline
+\nonumber
+\end{array}
+$$
+Where \bm{$x_0$} denotes the initial point; \bm{$x^*$} represents the stable point; \bm{$f^*$} denotes the value of the function at the stable point; \textbf{k} represents the total number of iterations, with \textbf{ST} and \textbf{NT} representing the Serious steps and Null steps; \textbf{Time} represents the running time of the algorithm.\\
+\indent It can be seen from Table 1 that the inexact algorithm obtains better optimal values and takes less time, which proves the actual effectiveness of the algorithm. We will introduce more examples to enhance the generalization of the algorithm.
+\begin{thebibliography}{9} % or {99}, if there is more than ten references.
+\bibitem{ref1} M. Huang, S. D. Lin, J. L. Yuan, Z. H. Gong, X. J. Liang. A VU-decomposition technique for a class of eigenvalue optimizations. Pacific Journal of Optimization. 2020. Vol. 16, No. 1. Pp. 129--147.
+\bibitem{ref2} M. Huang, C. Cheng, Y. Li and Z. Q. Xia. The space decomposition method for the sum of nonlinear convex maximum eigenvalues and its applications. Journal of Industrial and Management Optimization. 2020. Vol. 16, No. 4. Pp. 1885--1905.
+\bibitem{ref3}  M. Huang, H. M. Niu, S. D. Lin, Z. R. Yin, J. L. Yuan.
+A redistributed proximal bundle method for nonsmooth nonconvex functions with inexact information.
+Journal of Industrial and Management Optimization. 2023. Vol. 19, No. 12. Pp. 8691--8708.
+\end{thebibliography}
+%\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

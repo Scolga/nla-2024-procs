@@ -1,0 +1,96 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{A collocation method based on roots of Chebyshev polynomial for solving integral equations}
+% First author
+\author{Oksana Germider\inst{1}  \and  Vasilii Popov\inst{2}
+}
+\institute{Northern (Arctic) Federal University named after M.V. Lomonosov, Arkhangelsk, Russian Federation\\
+  \email{o.germider@narfu.ru}
+  \and
+Northern (Arctic) Federal University named after M.V. Lomonosov, Arkhangelsk, Russian Federation\\
+\email{v.popov@narfu.ru}}
+% etc
+
+\maketitle
+
+\begin{abstract}
+The paper proposes a matrix implementation of the collocation method for constructing a solution to integral equations of Volterra and Fredholm type using a system of Chebyshev polynomials of the first kind orthogonal on the interval $[-1,\,1]$. The roots of Chebyshev polynomials are chosen as collocation points. Solutions to integral equations are found by polynomial interpolation of the obtained function values at these points using orthogonal relations for polynomials. Error estimates for the constructed solutions are obtained with respect to the infinite norm and finite norm in the Hilbert space of measurable functions.
+
+\keywords{collocation method, Volterra and Fredholm integral equations, Chebyshev polynomials of the first kind, roots of Chebyshev polynomials} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  This is the template file for the 6th International conference
+%  NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+%  June 25-30, 2018
+%  Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[12pt]{llncs}
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes}
+
+\usepackage[russian]{nla}
+
+\begin{document}
+\fi
+
+\title{О методе коллокации с использованием корней многочленов Чебышева для решения интегральных уравнений\thanks{Исследование выполнено за счет гранта Российского научного фонда, проект \textnumero~24-21-00381.}}
+% Первый автор
+\author{О.~В.~Гермидер\inst{1} \and  В.~Н.~Попов\inst{2}
+}
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{Северный (Арктический) федеральный университет имени М.В. Ломоносова, Архангельск, Российская Федерация \\
+  \email{o.germider@narfu.ru}
+  \and   % Разделяет институты и присваивает им номера по порядку.
+Северный (Арктический) федеральный университет имени М.В. Ломоносова, Архангельск, Российская Федерация\\
+  \email{v.popov@narfu.ru}
+% \and Другие авторы...
+}
+
+\maketitle
+
+\begin{abstract}
+
+В работе предлагается матричная реализация метода коллокации для построения решения интегральных уравнений типа Вольтерра и Фредгольма с применением системы ортогональных на отрезке $[-1,\,1]$ многочленов Чебышева первого рода. В качестве точек коллокаций выбираются корни многочленов Чебышева. Решения интегральных уравнений находятся путем полиномиальной интерполяции полученных значений функций в этих точках с использованием ортогональных соотношений для полиномов. Получены оценки погрешностей построенных решений по бесконечной норме и конечной норме в гильбертовом пространстве измеримых функций.
+
+\keywords{метод коллокации, интегральные уравнения Вольтерра и Фредгольма, многочленов Чебышева первого рода, корни многочленов Чебышева} % в конце списка точка не ставится
+\end{abstract}
+
+\section{Основные результаты} % не обязательное поле
+
+
+  В работе выполнено построение решения методом коллокации на основе полиномиальной аппроксимации Чебышева интегральных уравнений Вольтерра и Фредгольма второго рода. Подынтегральная функция в этих уравнениях записана в виде частичной суммы ряда по многочленам Чебышева первого рода с использованием произведения двух матриц, элементами первой из них являются многочлены Чебышева первого рода, а второй матрицы --- коэффициенты в этой сумме. С применением корней многочленов Чебышева в качестве точек коллокаций интегральные уравнения  приведены к системам линейных алгебраических уравнений относительно неизвестных значений искомых функций в этих точках. При этом использованы соотношения ортогональности для рассматриваемых многочленов и интегральные формулы \cite{bGermider1} и \cite{bGermider2}. Вычисление интегралов от матрицы, элементами которой являются многочлены Чебышева, выполнено с помощью произведения этой матрицы на квадратную матрицу достаточно простого вида, определение элементов которой осуществлено с использованием интегральных формул и степенного представления для многочленов Чебышева. Последнее в значительной степени может способствовать оптимизации при вычислении значений кратных интегралов. Решения интегральных уравнений в представленной работе найдены путем полиномиальной интерполяции полученных значений функций в точках коллокаций. Обратная матрица при этом записана в явном виде. Получены оценки погрешностей построенных решений по бесконечной норме и конечной норме в гильбертовом пространстве измеримых функций.
+
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+\bibitem{bGermider1} Mason J., Handscomb  D. Chebyshev polynomials. Florida: CRC Press, 2003.
+
+\bibitem{bGermider2} Shen J., Tang T., Wang  L. Spectral Methods. Heidelberg: Springer Berlin, 2011.
+
+\end{thebibliography}
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок.
+
+
+
+
+%\end{document}
+

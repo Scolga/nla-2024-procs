@@ -1,0 +1,112 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{On the blow up the solution of the Cauchy problem for a~$(3+1)$--dimensional heat-electric model}
+% First author
+\author{M.V. Artemeva\inst{1}  \and  M.O. Korpusov\inst{1,} \inst{2}
+%  \and
+%  Name FamilyName3\inst{1}
+}
+\institute{Lomonosov Moscow State University, Moscow, Russia\\
+  \email{artemeva.mv14@physics.msu.ru}
+  \and
+Nikolskiy Mathemathical institute PFUR, Moscow, Russia\\
+\email{korpusov@gmail.com}}
+% etc
+
+\maketitle
+
+\begin{abstract}
+A heat–electric $(3+1)$--dimensional model of semiconductor heating in an electric field is considered. For the corresponding Cauchy problem, the existence of a nonextendable classical solution is proved and a global time a priori estimate is obtained.
+
+\keywords{nonlinear Sobolev type equations, blow-up, local solvability, nonlinear capacity, estimates of the blow up time} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  This is the template file for the 6th International conference
+%  NONLINEAR ANALYSIS AND EXTREMAL PROBLEMS
+%  June 25-30, 2018
+%  Irkutsk, Russia
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[12pt]{llncs}  
+
+% При использовании pdfLaTeX добавляется стандартный набор русификации babel.
+
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % Кодировка utf-8, cp1251 и т.д.
+\usepackage[english,russian]{babel}
+\fi
+
+\usepackage{todonotes} 
+
+\usepackage[russian]{nla}
+
+\begin{document}
+\fi
+
+\title{О разрушении решения задачи Коши одной $(3+1)$--мерной тепло--электрической модели\thanks{Работа выполнена при поддержке РНФ, проект \textnumero~23-11-00056.}}
+% Первый автор
+\author{М.~В.~Артемьева\inst{1}   \and  М.~О.~Корпусов\inst{1,} \inst{2}
+%  \and
+% Третий автор
+%  И.~О.~Фамилия\inst{1}
+}
+
+% Аффилиации пишутся в следующей форме, соединяя каждый институт при помощи \and.
+\institute{Московский государственный университет им. М.~В. Ломоносова, Москва, Россия \\
+  \email{artemeva.mv14@physics.msu.ru}
+  \and   % Разделяет институты и присваивает им номера по порядку.
+Математический институт им. С.М. Никольского РУДН, Москва, Россия\\
+  \email{korpusov@gmail.com}
+% \and Другие авторы...
+}
+
+\maketitle
+
+\begin{abstract}
+В работе рассматривается одна тепло–электрическая $(3+1)$--мерная модель нагрева полупроводника в электрическом поле. Для соответствующей задачи Коши  доказано  существование  непродолжаемого  во  времени  классического решения и получена глобальная во времени априорная оценка.
+
+\keywords{нелинейные уравнения соболевского типа, разрушение, blow-up, локальная разрешимость, нелинейная емкость, оценки времени раз	рушения} % в конце списка точка не ставится
+\end{abstract}
+
+В настоящей работе рассматривается следующая задача Коши для модельного $(3+1)$--мерного уравнения~\cite{KorpAtrTMF}:
+\begin{equation}\label{1.4-0-1}
+	\dfrac{\partial}{\partial t}\left(\Delta_x u(x,t)+|D_x u(x,t)|^q\right)+\Delta_xu(x,t)=0,\quad u(x,0)=u_0(x),
+\end{equation}
+$$
+\Delta_x:=\sum\limits_{j=1}^3\dfrac{\partial^2}{\partial x_j^2}.
+$$
+Данное уравнение описывает тепло--электрический разогрев полупроводника. 
+
+При $q>3/2$ доказывается существование непродолжаемого решения, что с физической точки зрения означает возникновение электрического <<пробоя>>. Для малых начальных данных доказано существование глобального во времени решения задачи Коши и получена оценка убывания по времени.
+
+% В конце текста можно выразить благодарности, если этого не было
+% сделано в ссылке с заголовка статьи, например,
+Работа   выполнена   при   финансовой   поддержке   Российского   научного   фонда, проект   \textnumero23-11-00056.
+%Работа выполнена при поддержке РФФИ (РНФ, другие фонды), проект ~00-00-00000.
+%
+
+
+
+\begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
+\bibitem{KorpAtrTMF} Артемьева М.В., Корпусов М.О. О разрушении решения одной (1+1)--мерной тепло–электрической модели //~ТМФ. 2024. Т.~219, \textnumero~2. С.~249--262.
+
+
+\end{thebibliography}
+
+% После библиографического списка в русскоязычных статьях необходимо оформить
+% англоязычный заголовок.
+
+
+
+
+%\end{document}
+
