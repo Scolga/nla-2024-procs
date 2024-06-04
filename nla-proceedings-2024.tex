@@ -63,6 +63,48 @@
 
 \newtheorem{hp}{Hypothesis}   % for Raghuwanshi.tex
 
+
+\RequirePackage[protrusion=false,expansion=false]{microtype}
+\SetProtrusion
+    [name=std]
+    {
+      encoding={utf8},
+      family=*}
+    {
+    « = {300,     },
+    » = {    , 300},
+    „ = {300,     },
+    “ = {    , 300},
+    ( = {300,     },
+    ) = {    , 300},
+    ! = {    , 300},
+    ? = {    , 300},
+    : = {    , 300},
+    ; = {    , 300},
+    . = {    , 300},
+    - = {    , 300},
+   {,}= {    , 300}
+    }
+%\DeclareMicrotypeSet{t2atext}{}
+%\UseMicrotypeSet{t2atext}
+\microtypesetup{protrusion=true,expansion=true}
+\newfontfeature{Microtype}{protrusion=default;expansion=default;}
+
+\setmainlanguage{russian}
+\setotherlanguage{english}
+\setkeys{russian}{babelshorthands=true}
+
+% \newfontfamily{\cyrillicfont}{Times New Roman}
+% \newfontfamily{\cyrillicfontrm}{Times New Roman}
+\newfontfamily{\cyrillicfonttt}{Courier New}
+% \newfontfamily{\cyrillicfontsf}{Arial}
+
+
+\DeclareMathOperator{\Exp}{exp}
+
+\newtheorem{rem}{Замечание}
+\providecommand{\Z}{\mathbb{Z}}
+
 \begin{document}%
 %
 \frontmatter          % for the preliminaries
@@ -84,7 +126,7 @@
   Krasovskii Institute of Mathematics and Mechanics of UrB RAS\\[0.3em]
 
  	Irkutsk State University\\[0.3em]
- 	Mathematical center in Akademgorodok 
+ 	Mathematical center in Akademgorodok
  	  }
 
 
@@ -125,7 +167,7 @@ ISBN 978-5-6041814-5-4
 
  \vspace{1cm}
 
-This volume contains proceedings of the 8th International school--seminar ``Nonlinear Analysis and Extremal Problems'' (NLA-2024).  
+This volume contains proceedings of the 8th International school--seminar ``Nonlinear Analysis and Extremal Problems'' (NLA-2024).
 The 8th International school-seminar ``Nonlinear Analysis and Extremal Problems'' is a biennial scientific event that takes place in Irkutsk, Russia. The school-seminar  will be held on 24-28 June 2024. NLA-2024 aims at sharing recent advances in various areas of modern nonlinear analysis and exposing young researchers to some fast-paced topics in the field. The 8th International School-Seminar is dedicated to the 300th anniversary of the Russian Academy of Sciences and the 75th anniversary of science in Eastern Siberia.
 
 The 8th International School-Seminar is supported by the Mathematical Center in Akademgorodok under the agreement No. 075-15-2022-282 with the Ministry of Science and Higher Education of the Russian Federation.
@@ -167,7 +209,7 @@ This volume is intended for researchers specializing in the corresponding fields
 
  \begin{englisharticle}
 
-This volume contains proceedings of the 8th International school--seminar ``Nonlinear Analysis and Extremal Problems'' (NLA-2024).  
+This volume contains proceedings of the 8th International school--seminar ``Nonlinear Analysis and Extremal Problems'' (NLA-2024).
 The 8th International school-seminar ``Nonlinear Analysis and Extremal Problems'' is a biennial scientific event that takes place in Irkutsk, Russia. The school-seminar  will be held on 24-28 June 2024. NLA-2024 aims at sharing recent advances in various areas of modern nonlinear analysis and exposing young researchers to some fast-paced topics in the field. The 8th International School-Seminar is dedicated to the 300th anniversary of the Russian Academy of Sciences and the 75th anniversary of science in Eastern Siberia.
 
 
@@ -270,7 +312,7 @@ Stepan P. Sorokin \\
 Pavel S. Sorokovikov &
 Maksim V. Staritsyn&
 Lubov S. Solovarova\\
-Pavel A. Kuznetsov & 
+Pavel A. Kuznetsov &
 Svetlana V. Svinina
 \end{tabular}
 
@@ -445,7 +487,7 @@ Svetlana V. Svinina
 \begin{englisharticle}
 \input{Gorokhovik}
 \end{englisharticle}
- 
+
 \input{Grazhdantseva_rus}
 
 \begin{englisharticle}
@@ -591,7 +633,7 @@ Svetlana V. Svinina
 \begin{englisharticle}
 \input{OsipovAndrey}
 \end{englisharticle}
- 
+
 \input{Pavlenko_rus}
 
 \input{Perevaryukha_rus}
@@ -785,7 +827,7 @@ ${}$
 
 %Passed for printing May 31, 2024.\\ Format $60\times 84$ $1/8$. Conventional printed sheets 19,65.\\[0.5em]
 
-Published in Matrosov Institute for System Dynamics and Control Theory  
+Published in Matrosov Institute for System Dynamics and Control Theory
 of\\ the Siberian Branch of the Russian Academy of Science\\[0.5em]
 
 Publisher's address: 134, Lermontova str., Irkutsk, Russia, 664033
