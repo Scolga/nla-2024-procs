@@ -100,11 +100,15 @@
 % \newfontfamily{\cyrillicfontsf}{Arial}
 
 
-\DeclareMathOperator{\Exp}{exp}
+\newcommand{\Exp}{\mathbb{E}}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
 
 \newtheorem{rem}{Замечание}
 \providecommand{\Z}{\mathbb{Z}}
 
+\usepackage{multirow}
 \begin{document}%
 %
 \frontmatter          % for the preliminaries
@@ -197,8 +201,8 @@ This volume is intended for researchers specializing in the corresponding fields
 
 
  \begin{flushright}
- \copyright ISDCT SB RAS, 2024
-
+ \copyright\ ISDCT SB RAS, 2024
+\end{flushright}
 
 
 \chapter*{Preface}
@@ -440,9 +444,9 @@ Svetlana V. Svinina
 \input{Dykhta}
 \end{englisharticle}
 
-\begin{englisharticle}
+%\begin{englisharticle}
 \input{Dzhamalov}
-\end{englisharticle}
+%\end{englisharticle}
 
 \input{Fankina_rus}
 

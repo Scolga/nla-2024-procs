@@ -4,7 +4,7 @@
 
 \usepackage{todonotes}
 
-\usepackage{nla} 
+\usepackage{nla}
 
 \begin{document}
 \fi
@@ -29,26 +29,28 @@ In this paper the method of solving a terminal continuous linear quadratic optim
 \end{abstract}
 
 
-The penalty function method is effectively used in optimal control theory to eliminate phase constraints. In various applications, problems of transferring a system to a certain fixed state in a finite time using the synthesizing controls may arise. 
-In this case, it is desirable to select feedbacks following some criteria of rationality, while often choosing a quadratic criterion, the minimization of which leads to a compromise between the good “behavior” of the closed-loop system trajectory 
-and the desire to save costs on the energy required for such a transition. As in the continuous case \cite{GlizDmitr1977}, we will use the penalty functions method and the corresponding asymptotic expansions of the gain matrix to solve the same terminal problem, 
-only the system will be weakly nonlinear with two parameters: the penalty parameter and a small parameter in the right-hand side of the system equations. In this case, the general structure of reasoning is preserved, as in  \cite{GlizDmitr1977},  \cite{GlizDmitr1981}, \cite{DmitMak2018} but an expansion by the powers of two parameters (the penalty parameter and the parameter of regular disturbances) is added, as in the discrete case in \cite{Motor2023}. Moreover, along with the numerical calculations, considerations are given for using the Richardson extrapolation method with the asymptotic expansions of the solutions of the corresponding initial problem in terms of the inverse value of the penalty coefficient and the nonlinear perturbation parameter for continuous or discrete matrix Riccati equations solutions, which form the corresponding matrices of gain coefficients in the closed-loop controls. Asymptotic 
+The penalty function method is effectively used in optimal control theory to eliminate phase constraints. In various applications, problems of transferring a system to a certain fixed state in a finite time using the synthesizing controls may arise.
+In this case, it is desirable to select feedbacks following some criteria of rationality, while often choosing a quadratic criterion, the minimization of which leads to a compromise between the good “behavior” of the closed-loop system trajectory
+and the desire to save costs on the energy required for such a transition. As in the continuous case \cite{GlizDmitr1977}, we will use the penalty functions method and the corresponding asymptotic expansions of the gain matrix to solve the same terminal problem,
+only the system will be weakly nonlinear with two parameters: the penalty parameter and a small parameter in the right-hand side of the system equations. In this case, the general structure of reasoning is preserved, as in  \cite{GlizDmitr1977},  \cite{GlizDmitr1981}, \cite{DmitMak2018} but an expansion by the powers of two parameters (the penalty parameter and the parameter of regular disturbances) is added, as in the discrete case in \cite{Motor2023}. Moreover, along with the numerical calculations, considerations are given for using the Richardson extrapolation method with the asymptotic expansions of the solutions of the corresponding initial problem in terms of the inverse value of the penalty coefficient and the nonlinear perturbation parameter for continuous or discrete matrix Riccati equations solutions, which form the corresponding matrices of gain coefficients in the closed-loop controls. Asymptotic
 approximations make it possible to apply the Richardson method \cite{Marchuk1979} to refine the controller gain matrices, which leads to the construction of a controls that provide the solutions to the terminal problems with increased accuracy.
 
 Let us consider the following weakly nonlinear system
 \begin{equation}
-\dot x = A(x,\varepsilon )x + B(x,\varepsilon )u,\,\,x({t_0}) = {x^0}, \\
-\;x \in X \subset {\mathbb{R}^n},\,\,\,u \in {\mathbb{R}^r},\,\,t \in \left[ {{t_0},{t_1}} \right],\,\,\,\,0 < \varepsilon \leq{\varepsilon _0} \ll 1 \\ 
+  \begin{aligned}
+    \dot x & = A(x,\varepsilon )x + B(x,\varepsilon )u,\,\,x({t_0}) = {x^0}, \\
+    x & \in X \subset {\mathbb{R}^n},\,\,\,u \in {\mathbb{R}^r},\,\,t \in \left[ {{t_0},{t_1}} \right],\,\,\,\,0 < \varepsilon \leq{\varepsilon _0} \ll 1
+  \end{aligned}
 \end{equation}
 where $x$ and $u$ are the state and control vectors respectively, $\varepsilon_0$ is a given sufficiently small positive parameter, $A(x,\varepsilon) = {A_0} + \varepsilon {A_1}(x),~ B(x,\varepsilon) = {B_0} + \varepsilon {B_1}(x)$, $A_0$ and $B_0$ are known constant matrices, ${A_1}(x) \in {\mathbb{R}^{n \times n}},\,\,{B_1}(x) \in {\mathbb{R}^{n \times r}}$  are known matrices with sufficiently smooth and bounded coefficients, $X$ is a closed neighborhood of the origin such that the closed-loop system trajectories corresponding to (1) exist, are unique and belong to $X$ for any continuous control $u(t)$ and $t \in \left[ {{t_0},{t_1}} \right]$. it is assumed that there is a terminal condition $x({t_1}) = {0}$.
 
-Let us consider the next cost functional  
+Let us consider the next cost functional
 \begin{equation}
 	J(u) = \frac{1}{2}\int\limits_{{t_0}}^{{t_1}} {\left( {{x^T}Qx + {u^T}Ru} \right)dt}  \to \mathop {\min }\limits_{\,u} ,\,\,\,\,Q(x,\varepsilon, \mu ) = {Q_0} + \varepsilon Q_{1,0}(x) + \mu Q_{0,1}(x)+... \geq 0,
 \end{equation}
-where $Q$  is a symmetric positive semidefinite matrix for $x \in X, 0 < \varepsilon \leq{\varepsilon _0} \ll 1 , \mu  \ll  1 $  and  ${Q_0},\,R$  are  symmetric positive definite matrices. 
+where $Q$  is a symmetric positive semidefinite matrix for $x \in X, 0 < \varepsilon \leq{\varepsilon _0} \ll 1 , \mu  \ll  1 $  and  ${Q_0},\,R$  are  symmetric positive definite matrices.
 
-By applying a quadratic penalty we replace the terminal control problem with a problem with the free right endpoint  
+By applying a quadratic penalty we replace the terminal control problem with a problem with the free right endpoint
 \begin{equation}
 	J(u) = \frac{1}{{2\mu }}{x^T}({t_1})Fx({t_1}) + \frac{1}{2}\int\limits_{{t_0}}^{{t_1}} {\left( {{x^T}Q(x,\varepsilon, \mu )x + {u^T}Ru} \right)dt}  \to \mathop {\min }\limits_u ,\,\,\quad 0 < \mu  \ll 1,F \geq 0.
 \end{equation}
@@ -58,20 +60,20 @@ It is known \cite{Heydari2015} that the optimal control in problem (1),(3), if i
 	u(x,t,\varepsilon, \mu ) =  - {R^{ - 1}}{B^T}(x,\varepsilon )(P(x,t,\varepsilon, \mu )x + \Pi (x,t,\varepsilon, \mu )),
 \end{equation}
 where $\Pi (x,t,\varepsilon, \mu) = \frac{1}{2}{\left[ {\begin{array}{*{20}{c}}
-			{{x^T}\frac{{\partial P(x,t,\varepsilon,\mu)}}{{\partial {x_1}}}x}&{{x^T}\frac{{\partial P(x,t,\varepsilon,\mu)}}{{\partial {x_2}}}x}& \ldots &{{x^T}\frac{{\partial P(x,t,\varepsilon,\mu)}}{{\partial {x_n}}}x} 
+			{{x^T}\frac{{\partial P(x,t,\varepsilon,\mu)}}{{\partial {x_1}}}x}&{{x^T}\frac{{\partial P(x,t,\varepsilon,\mu)}}{{\partial {x_2}}}x}& \ldots &{{x^T}\frac{{\partial P(x,t,\varepsilon,\mu)}}{{\partial {x_n}}}x}
 	\end{array}} \right]^T} \in {\mathbb{R}^n}$ and $P \in {\mathbb{R}^{n \times n}}$ is a positive definite solution of the following Cauchy problem for the next differential Riccati-like equation
 \begin{equation}
 	\frac{{dP}}{{dt}} =  - {A^T}P - PA + PSP - Q(x,\varepsilon ) - {\Omega _P}(x,t,\varepsilon, \mu),\,\,P(x({t_1}),{t_1},\varepsilon ) = F{\mu ^{-1}},
 \end{equation}
-where $A = A(x,\varepsilon ),\,\,S = S(x,\varepsilon ) = B(x,\varepsilon ){R^{ - 1}}{B^T}(x,\varepsilon ),\,\,{\Omega _P}(x,t,\varepsilon,\mu) = \\ {1 \over 4}{\mathord{\buildrel{\lower3pt\hbox{$\scriptscriptstyle\frown$}}\over 
-		P} _x}^TB(x,\varepsilon ){R^{ - 1}}(x){B^T}(x,\varepsilon ){\mathord{\buildrel{\lower3pt\hbox{$\scriptscriptstyle\frown$}}\over
-		P} _x}$,
-			${\mathord{\buildrel{\lower3pt\hbox{$\scriptscriptstyle\frown$}}\over 
-			P} _x}(x,t,\varepsilon, \mu) = {\left[ \begin{matrix}
-			 		{{{\partial P} \over {\partial {x_1}}}x} & {{{\partial P} \over {\partial {x_2}}}x} &  \ldots  & {{{\partial P} \over {\partial {x_n}}}x}  \cr  
-			 	\end{matrix} \right]^T}
-	 \in {\mathbb{R}^{n \times n}}$  and  $\frac{{dP}}{{dt}}$  is the total time derivative. 
-The obtained problem is solved approximately. 
+% where $A = A(x,\varepsilon ),\,\,S = S(x,\varepsilon ) = B(x,\varepsilon ){R^{ - 1}}{B^T}(x,\varepsilon ),\,\,{\Omega _P}(x,t,\varepsilon,\mu) = \\ {1 \over 4}{\mathord{\buildrel{\lower3pt\hbox{$\scriptscriptstyle\frown$}}\over
+% 		P} _x}^TB(x,\varepsilon ){R^{ - 1}}(x){B^T}(x,\varepsilon ){\mathord{\buildrel{\lower3pt\hbox{$\scriptscriptstyle\frown$}}\over
+% 		P} _x}$,
+% 			${\mathord{\buildrel{\lower3pt\hbox{$\scriptscriptstyle\frown$}}\over
+% 			P} _x}(x,t,\varepsilon, \mu) = {\left[ \begin{matrix}
+% 			 		{{{\partial P} \over {\partial {x_1}}}x} & {{{\partial P} \over {\partial {x_2}}}x} &  \ldots  & {{{\partial P} \over {\partial {x_n}}}x}  \cr
+% 			 	\end{matrix} \right]^T}
+% 	 \in {\mathbb{R}^{n \times n}}$  and  $\frac{{dP}}{{dt}}$  is the total time derivative.
+The obtained problem is solved approximately.
 
 The same scheme is applied to the terminal weakly nonlinear discrete control problem.
 
