@@ -65,7 +65,9 @@ where $\Pi (x,t,\varepsilon, \mu) = \frac{1}{2}{\left[ {\begin{array}{*{20}{c}}
 \begin{equation}
 	\frac{{dP}}{{dt}} =  - {A^T}P - PA + PSP - Q(x,\varepsilon ) - {\Omega _P}(x,t,\varepsilon, \mu),\,\,P(x({t_1}),{t_1},\varepsilon ) = F{\mu ^{-1}},
 \end{equation}
-% where $A = A(x,\varepsilon ),\,\,S = S(x,\varepsilon ) = B(x,\varepsilon ){R^{ - 1}}{B^T}(x,\varepsilon ),\,\,{\Omega _P}(x,t,\varepsilon,\mu) = \\ {1 \over 4}{\mathord{\buildrel{\lower3pt\hbox{$\scriptscriptstyle\frown$}}\over
+ where $A = A(x,\varepsilon )$, $S = S(x,\varepsilon ) = B(x,\varepsilon ){R^{ - 1}}{B^T}(x,\varepsilon )$, ${\Omega_P}(x,t,\varepsilon,\mu) = \frac{1}{4} \bar{P}_x^T B(x,\varepsilon)R^{-1}(x)B^T(x,\varepsilon)\bar{P}_x$, $\bar {P}(x,t,\varepsilon,\mu)=  \left[\frac{\partial P}{\partial {x_1}}x,\ldots, \frac{\partial P}{\partial {x_n}}x  \right]^T\in {\mathbb{R}^{n \times n}}$ and $\frac{{dP}}{{dt}}$  is the total time derivative.
+The obtained problem is solved approximately.
+% $ {1 \over 4}{\mathord{\buildrel{\lower3pt\hbox{$\scriptscriptstyle\frown$}}\over
 % 		P} _x}^TB(x,\varepsilon ){R^{ - 1}}(x){B^T}(x,\varepsilon ){\mathord{\buildrel{\lower3pt\hbox{$\scriptscriptstyle\frown$}}\over
 % 		P} _x}$,
 % 			${\mathord{\buildrel{\lower3pt\hbox{$\scriptscriptstyle\frown$}}\over
@@ -73,7 +75,7 @@ where $\Pi (x,t,\varepsilon, \mu) = \frac{1}{2}{\left[ {\begin{array}{*{20}{c}}
 % 			 		{{{\partial P} \over {\partial {x_1}}}x} & {{{\partial P} \over {\partial {x_2}}}x} &  \ldots  & {{{\partial P} \over {\partial {x_n}}}x}  \cr
 % 			 	\end{matrix} \right]^T}
 % 	 \in {\mathbb{R}^{n \times n}}$  and  $\frac{{dP}}{{dt}}$  is the total time derivative.
-The obtained problem is solved approximately.
+%The obtained problem is solved approximately.
 
 The same scheme is applied to the terminal weakly nonlinear discrete control problem.
 
