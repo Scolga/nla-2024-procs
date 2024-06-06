@@ -108,13 +108,13 @@ Different processes might play the role of exact filters. It turns out that ther
 Taking particular solutions %for equations  \eqref{eq:same_distributions},
 one can obtain analogues of particle filters for the purely continuous case, described in \cite{bishop}. Indeed, for particles $s^i$, $i=1,\ldots,m$, let the empirical mean and the empirical covariance be
 % \begin{subequations}
-% \begin{align}
-% %\label{eq: emp-mean def}
-%  \widehat s^{m}_t &= \frac{1}{m}\sum\limits_{i=1}^{m} s^i_t,
-% %\qquad
-% %\label{eq: emp-cov def}
-%   Q^{m}_t &= \frac{1}{m}\sum\limits_{i=1}^{m} (s^i_t - \widehat s^{m}_t)(s^i_t - \widehat s^{m}_t)^\top.
-% \end{align}
+ \begin{align}
+ %\label{eq: emp-mean def}
+  \widehat s^{m}_t &= \frac{1}{m}\sum\limits_{i=1}^{m} s^i_t,
+ %\qquad
+ %\label{eq: emp-cov def}
+   Q^{m}_t &= \frac{1}{m}\sum\limits_{i=1}^{m} (s^i_t - \widehat s^{m}_t)(s^i_t - \widehat s^{m}_t)^\top.
+ \end{align}
 % \end{subequations}
 The gain matrix becomes $L_t^{m} = Q_t^{m} C^\top (C Q_t^{m} C^\top + V_t)^{-1}.$
 The corresponding $m$-particle filters have the following forms:
