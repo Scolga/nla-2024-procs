@@ -23,7 +23,7 @@ V.I. Romanovsky Institute of Mathematics at the Academy of Sciences of the Repub
 \maketitle
 
 \begin{abstract}
-We investigate the $l$-capture problem for Pontryagin's control example in a differential game with two conflicting controlled players, where the controls of both players are subject to geometric constraints. The goal of the first player (the pursuer) is to $l$-capture the second player (the evader) by closing the distance between them to a value of $l$. Conversely, the goal of the second player is to prevent the pursuer from approaching it at a distance of $l$. The problem is divided into two parts. In the first part, we assume that both players have the same movement dynamics, and we construct an approach strategy for the pursuer, thereby identifying sufficient conditions for $l$-capture. In the second part, we examine the $\ell$-capture problem in the differential game when the players have different movement dynamics. We directly solve the problem by applying the $\Pi$-strategy.
+We investigate the $l$-capture problem for Pontryagin's control example in a differential game with two conflicting controlled players, where the controls of both players are subject to geometric constraints. The goal of the first player (the pursuer) is to $l$-capture the second player (the evader) by closing the distance between them to a value of $l$. Conversely, the goal of the second player is to prevent the pursuer from approaching it at a distance of $l$. The problem is divided into two parts. In the first part, we assume that both players have the same movement dynamics, and we construct an approach strategy for the pursuer, thereby identifying sufficient conditions for $l$-capture. In the second part, we examine the $l$-capture problem in the differential game when the players have different movement dynamics. We directly solve the problem by applying the $\Pi$-strategy.
 
 
 \keywords{Differential game, players, strategy, guaranteed time}
@@ -41,7 +41,7 @@ Assume that a player $\mathbb P$ (the pursuer) chases another player $\mathbb E$
 \mathbb{P}:\quad \ddot{x}+k\dot{x}=u,\quad x(0)=x_{10},\quad \dot{x}(0)=x_{11}, \\
 \mathbb{E}:\quad \ddot{y}+k\dot{x}=v,\quad y(0)=y_{10},\quad \dot{y}(0)=y_{11},
 \end{gather*}
-where $x, y, u, v \in \mathbf{R}^n$, $n\geq2$, $k>0$; $x_{10}$, $y_{10}$ are the initial states of the players accordingly, and it is presumed that $|x_{10}-y_{10}|>\ell$, $\ell>0$; $x_{11}$, $y_{11}$ are the players initial velocity vectors correspondingly; the acceleration vectors $u$, $v$ act as control parameters of the players respectively, and they depend on the time $t$, $t\geq0$.
+where $x, y, u, v \in \mathbf{R}^n$, $n\geq2$, $k>0$; $x_{10}$, $y_{10}$ are the initial states of the players accordingly, and it is presumed that $|x_{10}-y_{10}|>l$, $\ell>0$; $x_{11}$, $y_{11}$ are the players initial velocity vectors correspondingly; the acceleration vectors $u$, $v$ act as control parameters of the players respectively, and they depend on the time $t$, $t\geq0$.
 
 The temporal variations of $u$ and $v$ must be Lebesgue measurable functions $u(\cdot):[0,+\infty)\rightarrow\mathbf R^n$, $u(\cdot):[0,+\infty)\rightarrow\mathbf R^n$, and these functions are involved fulfilling the geometric constraints (shortly, G-constraints)\
 \begin{gather*}
@@ -69,7 +69,7 @@ $
 \lambda_{\Pi_\ell}(z_{10}, v)=\left[\langle v, z _{10}\rangle+\alpha \ell+\sqrt{(\langle v, z _{10}\rangle+\alpha \ell)+(\alpha^{2}-|v|^{2})(|z_{10}|^2-\ell^2)}\right]/(|z_{10}|^2-\ell^2),
  \end{equation*}
  $$
- m(z_{10},v)=-(v-\lambda_{\Pi_\ell}(z_{10},v) z_{10})\ell/(|v-\lambda_{\Pi_\ell}(z_{10},v) z_{10}|) [5].
+ m(z_{10},v)=-(v-\lambda_{\Pi_\ell}(z_{10},v) z_{10}) l/(|v-\lambda_{\Pi_l}(z_{10},v) z_{10}|) [5].
  $$
 \end{definition}
 \begin{definition}
@@ -85,7 +85,7 @@ the $\Pi$-strategy of the pursuer, where
 \begin{proposition}
 If $\alpha>\beta$ and $r\leq0$, then the equation
 \begin{equation*}
-e^{-kt}=-At+B,\quad A=\frac{(\alpha-\beta)k}{\alpha-\beta+kr|z_{10}|},\quad B=1+\frac{k^2(|z_{10}|-\ell)}{\alpha-\beta+kr|z_{10}|}
+e^{-kt}=-At+B,\quad A=\frac{(\alpha-\beta)k}{\alpha-\beta+kr|z_{10}|},\quad B=1+\frac{k^2(|z_{10}|-l)}{\alpha-\beta+kr|z_{10}|}
 \end{equation*}
 has a positive root with respect to $t$, and we denote it by $t^{*}_{1}$.
 \end{proposition}
@@ -93,13 +93,13 @@ has a positive root with respect to $t$, and we denote it by $t^{*}_{1}$.
 \begin{proposition}
 If $\alpha>\beta$, then the equation
 \begin{equation*}
-e^{-k(t-\tau)}=-k(t-\tau)+C,\quad C=1+\frac{k^2(|z^{*}_{10}|-\ell)}{\alpha-\beta},\quad \tau=\frac{1}{k}\ln{\frac{\alpha-\beta+|z_{11}|k}{\alpha-\beta}}
+e^{-k(t-\tau)}=-k(t-\tau)+C,\quad C=1+\frac{k^2(|z^{*}_{10}|-l)}{\alpha-\beta},\quad \tau=\frac{1}{k}\ln{\frac{\alpha-\beta+|z_{11}|k}{\alpha-\beta}}
 \end{equation*}
 has a positive root with respect to $t$, $t\in[\tau,+\infty)$, and we denote it by $\theta$. Here $z^{*}_{10}=z(\eta)$, $\big(\eta\in[0,\tau]\big)$ and $\eta$ is the time at which the players' velocities coincide.
 \end{proposition}
 
 \begin{theorem}
-Let $\alpha>\beta$ and let the vectors $z_{10}$ and $z_{11}$ be collinear in the $\ell$-capture problem. Then the $\Pi_\ell$-strategy is winning on the interval $[0, t^{*}_{1}]$.
+Let $\alpha>\beta$ and let the vectors $z_{10}$ and $z_{11}$ be collinear in the $l$-capture problem. Then the $\Pi_l$-strategy is winning on the interval $[0, t^{*}_{1}]$.
 \end{theorem}
 % At the end of the text, acknowledgments are expressed, if you haven't
 % made a footnote from the title. For example, we can write
