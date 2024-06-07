@@ -96,10 +96,7 @@ The work is supported by the Russian Science Foundation (project \textnumero 19-
 %На рисунке 1 представлены результаты работы алгоритма. 
 %Видно, что аномальные значения температур были изменены или удалены.
 
-В работе также было проведено исследование различных методов интерполяции: 
-	бикубическая интерполяция [4];
-	площадная [5];
-	метод ближайшего соседа [6].
+В работе также было проведено исследование различных методов интерполяции: бикубическая интерполяция [4]; площадная [5]; метод ближайшего соседа [6].
 
 Как показал анализ результатов, данные после применения площадной интерполяции получаются более <<гладкими>>, чем после бикубической. Также после применения бикубического и площадного методов данные занимают меньшую площадь, чем изначальные (исключается много значений), а в методе ближайших соседей площадь покрытия данными не меняется.
 В результате проведенного сравнительного анализа было предложено объединить площадной метод (из-за <<гладкости>> получившихся данных) и метод ближайших соседей (из-за сохранения площади, занимаемой данными). Так если P -- область с данными после применения площадного метода и S -- область с данными после применения метода ближайших соседей, итоговая область $D = P \cup (S \setminus P)$.
@@ -129,19 +126,13 @@ The work is supported by the Russian Science Foundation (project \textnumero 19-
 
 
 \begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
-\bibitem{Gantmakher} Parmuzin  E. I., Agoshkov  V. I.,  Zakharova  N. B., Shutyaev  V. P. Variational Data Assimilation of Satellite Observations in the Model of Sea. Hydrothermodynamics. 2019. Pp. 1--8 
+\bibitem{Gantmakher} Parmuzin  E. I., Agoshkov  V. I.,  Zakharova  N. B., Shutyaev  V. P. Variational Data Assimilation of Satellite Observations in the Model of Sea. Hydrothermodynamics. 2019. Pp. 1--8. 
 %doi: https://doi.org/10.21046/rorse2018.1
-
 \bibitem{Kholl} Rosner  B. On the detection of many outliers. Technometrics. 1975. Vol. 17, No 2. Pp. 221--227.
-
 \bibitem{Aleksandrov1} Гмурман В.Е. Теория вероятностей и математическая статистика // Учеб. Пособие для вузов – 9-е изд., стер. М.: Высш. шк., 2003. 479 с.
-
 \bibitem{Moreau1977} Carlson R. E., Fritsch F. N. Monotone piecewise bicubic interpolation. SIAM journal on numerical analysis.  1985.  Vol. 22, No. 2. Pp. 386--400.
-
 \bibitem{Semenov} Di Piazza A. et al. Comparative analysis of spatial interpolation methods in the Mediterranean area: application to temperature in Sicily. Water.  2015.  Vol. 7, No. 5.  Pp. 1866--1888.
 \bibitem{Rukundo} Rukundo O., Cao H. Nearest neighbor value interpolation. arXiv preprint arXiv:1211.1768.  2012.
-
-
 \end{thebibliography}
 
 % После библиографического списка в русскоязычных статьях необходимо оформить
