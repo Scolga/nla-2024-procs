@@ -110,14 +110,11 @@ This work presents a study on the class of nonlinear delay differential control 
 \section{The main results}
 
 Let $X$ and $U$ be Hilbert spaces of state and control variables with norms $||\cdot||$ and $||\cdot||_U$, respectively. Consider the nonlinear control system as follows
-%\begin{subequations}\label{eqn-main-nls-main}
-\begin{equation}
-\dot{x}(t) &= A x(t) + f(t, x_t, u(t)), ~ t \in (0,T], \label{eqn-main-nls} 
-\end{equation}
-\begin{equation}
+% \begin{subequations}\label{eqn-main-nls-main}
+\begin{align}
+\dot{x}(t) &= A x(t) + f(t, x_t, u(t)), ~ t \in (0,T], \label{eqn-main-nls} \\
 x(\theta) &= \phi(\theta) \quad \text{for  } \theta \in [-\tau,0], \label{eqn-main-ic}
-\end{equation}
-%\end{subequations}
+\end{align}
 where $\tau>0$, $x(t) \in X$, $u(t) \in U$, $x_t \in C([-\tau,0];X)$, $A : D(A) \subset X \rightarrow X$ is densely defined closed linear operator, $f: [0,T] \times C([-\tau,0];X) \times U \rightarrow X$ is nonlinear map, and $\phi \in C([-\tau,0];X)$.
 
 The motivation of this work came from the pioneer works of Chukwu \cite{Chukwu91delay} and Hernandez \emph{et al.} \cite{hernandez2020alka}.
