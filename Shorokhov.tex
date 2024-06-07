@@ -78,7 +78,7 @@
 % Text should be formatted in accordance with the 'article' class, using extensions like
 % AMS.
 %
-\title{Solving boundary value problems for wave PDE \\with quasi-classical variational formulation and \\neural network\thanks{The research is supported by the RUDN University named after Patrice Lumumba, project № 002092-0-000.}}
+\title{Solving boundary value problems for wave PDE \\with quasi-classical variational formulation and \\ neural network\thanks{The research is supported by the RUDN University named after Patrice Lumumba, project \textnumero 002092-0-000.}}
 % First author
 \author{Sergey Shorokhov %\inst{1}
 %  \and
@@ -115,38 +115,40 @@ u_{tt}-u_{xx}=0,\,\left(x,\,t\right)\in\Omega\subset\mathbb{R}^{2}
 \end{equation}
 in the rectangular area $\Omega=\left[0,\,l\right]\times\left[0,\,T\right]$ with boundary conditions
 \begin{equation}
-\left\{ \begin{aligned}u\left|_{t=0}\right.=\, & \chi_{1}\left(x\right),\,0\leq x\leq l,\,\\
-u_{x}\left|_{x=l}\right.=\, & \varphi_{2}\left(t\right),\,0\leq t\leq T,\\
-u_{t}\left|_{x=l}\right.=\, & \psi_{2}\left(t\right),\,0\leq t\leq T,\\
-u_{x}\left|_{t=T}\right.=\, & \varphi_{3}\left(x\right),\,0\leq x\leq l,\,\\
-u_{t}\left|_{t=T}\right.=\, & \psi_{3}\left(x\right),\,0\leq x\leq l,\,\\
-u_{x}\left|_{x=0}\right.=\, & \varphi_{4}\left(t\right),\,0\leq t\leq T\\
-u_{t}\left|_{x=0}\right.=\, & \psi_{4}\left(t\right),\,0\leq t\leq T.
-\end{aligned}
+\left\{ \begin{array}{lll}
+u\left|_{t=0}\right.=\, & \chi_{1}\left(x\right),\, & 0\leq x\leq l, \\
+u_{x}\left|_{x=l}\right.=\, & \varphi_{2}\left(t\right),\, & 0\leq t\leq T,\\
+u_{t}\left|_{x=l}\right.=\, & \psi_{2}\left(t\right),\, & 0\leq t\leq T,\\
+u_{x}\left|_{t=T}\right.=\, & \varphi_{3}\left(x\right),\, & 0\leq x\leq l, \\
+u_{t}\left|_{t=T}\right.=\, & \psi_{3}\left(x\right),\, & 0\leq x\leq l, \\
+u_{x}\left|_{x=0}\right.=\, & \varphi_{4}\left(t\right),\, & 0\leq t\leq T,\\
+u_{t}\left|_{x=0}\right.=\, & \psi_{4}\left(t\right),\, & 0\leq t\leq T.
+\end{array}
 \right.
 \label{eq:wavePDE_bc}
 \end{equation}
 We assume that functions on the right sides of \eqref{eq:wavePDE_bc} are smooth $L_{2}$-functions and the boundary conditions \eqref{eq:wavePDE_bc} are consistent.
 
-We prove the following statement  for the boundary value problem \eqref{eq:wavePDE}-\eqref{eq:wavePDE_bc} using the symmetrizing operator approach by V.M. Shalov \cite{Shalov1965}.
+We prove the following statement  for the boundary value problem \eqref{eq:wavePDE}--\eqref{eq:wavePDE_bc} using the symmetrizing operator approach by V.M. Shalov \cite{Shalov1965}.
 
 \begin{theorem}
 The variational functional for the boundary value problem \eqref{eq:wavePDE}-\eqref{eq:wavePDE_bc}  can be written in the form
 \begin{equation}
-D\left[u\right]=\intop_{\Omega}\left(u_{x}^{2}+u_{t}^{2}-u_{x}\left(\nu+\mu\right)-u_{t}\left(\nu-\mu\right)\right)\,dxdt+\intop_{0}^{l}\left(u^{2}-2\chi_{1}u\right)\left|_{t=0}\right.dx,
+D\left[u\right]=\int_{\Omega}\left(u_{x}^{2}+u_{t}^{2}-u_{x}\left(\nu+\mu\right)-u_{t}\left(\nu-\mu\right)\right)\,dxdt+\int_{0}^{l}\left(u^{2}-2\chi_{1}u\right)\left|_{t=0}\right. dx,
 \label{eq:wavePDE_func}
 \end{equation}
 where the functions $\mu,\,\nu$ are defined in area $\Omega$ according to the following formulas:
 \begin{equation}
-\begin{aligned}\mu\left(x,\,t\right) & =\begin{cases}
-\frac{1}{2}\left(\varphi_{2}\left(-x+t+l\right)-\psi_{2}\left(-x+t+l\right)\right), & x-t>l-T,\\
-\frac{1}{2}\left(\varphi_{3}\left(x-t+l\right)-\psi_{3}\left(x-t+l\right)\right), & x-t\leq l-T,
-\end{cases}\\
-\nu\left(x,\,t\right) & =\begin{cases}
-\frac{1}{2}\left(\varphi_{3}\left(x+t-T\right)+\psi_{3}\left(x+t-T\right)\right), & x+t>T,\\
-\frac{1}{2}\left(\varphi_{4}\left(x+t\right)+\psi_{4}\left(x+t\right)\right), & x+t\leq T.
-\end{cases}
-\end{aligned}
+\begin{array}{ll}
+\mu\left(x,\,t\right) & =\left\{\begin{array}{ll}
+0.5\left(\varphi_{2}\left(-x+t+l\right)-\psi_{2}\left(-x+t+l\right)\right), & x-t>l-T,\\
+0.5\left(\varphi_{3}\left(x-t+l\right)-\psi_{3}\left(x-t+l\right)\right), & x-t\leq l-T,
+\end{array}\right. \\[1em]
+\nu\left(x,\,t\right) & =\left\{\begin{array}{ll}
+0.5\left(\varphi_{3}\left(x+t-T\right)+\psi_{3}\left(x+t-T\right)\right), & x+t>T,\\
+0.5\left(\varphi_{4}\left(x+t\right)+\psi_{4}\left(x+t\right)\right), & x+t\leq T.
+\end{array}\right.
+\end{array}
 \end{equation}
 \end{theorem}
 
@@ -155,11 +157,11 @@ Functional \eqref{eq:wavePDE_func} contains first-order derivatives of the funct
 \section{Training neural network with variational functional}
 
 When training a deep neural network for a boundary value problem, the residual functional is generally used as a loss functional \cite{Raissi2019}. 
-When using the residual functional for the problem  \eqref{eq:wavePDE}-\eqref{eq:wavePDE_bc},
+When using the residual functional for the problem  \eqref{eq:wavePDE}--\eqref{eq:wavePDE_bc},
 it is necessary to evaluate five integrals (over area $\Omega$ and over four parts of its boundary $\partial\Omega$)  and calculate partial derivatives of $u$ up to the second order, inclusive.
 When using the quasi-classical functional \eqref{eq:wavePDE_func},  one has to evaluate two integrals (over $\Omega$ and a part of $\partial\Omega$) and calculate first order derivatives of $u$.
 
-Computational experiments on training neural networks for the boundary value problem \eqref{eq:wavePDE}-\eqref{eq:wavePDE_bc} using the residual functional and the constructed quasi-classical functional \eqref{eq:wavePDE_func} as a loss functional demonstrate that when using the quasi-classical functional, the neural network training occurs approximately three times faster with the achievement of significantly higher quality metrics.
+Computational experiments on training neural networks for the boundary value problem \eqref{eq:wavePDE}--\eqref{eq:wavePDE_bc} using the residual functional and the constructed quasi-classical functional \eqref{eq:wavePDE_func} as a loss functional demonstrate that when using the quasi-classical functional, the neural network training occurs approximately three times faster with the achievement of significantly higher quality metrics.
 
 Thus, the quasi-classical variational functional can have a number of advantages over the residual functional when training a neural network for a boundary value problem.
 
@@ -185,25 +187,9 @@ Thus, the quasi-classical variational functional can have a number of advantages
 % The research is carried on with support of RFBR (RNF, other funds), project No.~00-00-00000.
 
 \begin{thebibliography}{9} % or {99}, if there is more than ten references.
-
-\bibitem{Raissi2019} Raissi~M., Perdikaris~P., Karniadakis~G.E. Physics-Informed Neural Networks: A Deep Learning Framework for Solving Forward and Inverse Problems Involving Nonlinear Partial Differential Equations. J. of Comput. Phys. 2019. Vol. 378. Pp.686-707.
-
-\bibitem{Filippov1994} Filippov~V.M., Savchin~V.M., Shorokhov~S.G. Variational principles for nonpotential operators. J. Math. Sci. 1994. Vol. 68, no 3. Pp.275-398.
-
-\bibitem{Shalov1965} Shalov V.M.  Minimum principle of a quadratic functional for a hyperbolic equation. Differ. Uravn. 1965. Vol. 1, no. 10.  Pp.1338-1365.
-
-%\bibitem{DLions1976} Duvaut D., Lions J.L. Inequalities in Mechanics and Phisics. Springer, Berlin, 1976.
-
-%\bibitem{Gur1997}  Gurman V.I. The Extension Principle in Optimal Control Problems. 2nd~ed. Fizmatlit, Moscow, 1997.~[In Russian]
-
-%\bibitem{Moreau1977} Moreau J.-J. Evolution problem associated with a moving convex set in a Hilbert space. J. Differential Eq.~1977. Vol.~26. Pp.~347--374.
-
-%\bibitem{BrKr2013}  Brokate M., Krej\u{c}\'{\i} P. Optimal control of ODE systems involving a rate independent variational inequality. Disc. Cont. Dyn. Syst. Ser.~B. 2013. Vol.~18, no~2. Pp.~331--348.
-
-%\bibitem{Karpinski2014} Kapinski J., Deshmukh J, Sankaranarayanan S., Arechiga N. Simulation-guided Lyapunov analysis for hybrid dynamical systems. In Proceedings of the 17th International Conference on Hybrid Systems: Computation and Control (HSCC 2014), Berlin, Germany, 2014. Pp.~133--142.
-
-%\bibitem{Forsman1991} Forsman K. Construction of Lyapunov functions using Grobner bases. In Proceedings of the 30th IEEE Conference on Decision and Control, Brighton, UK, 1991. Vol.~1. Pp.~798--799.
-
+\bibitem{Raissi2019} Raissi~M., Perdikaris~P., Karniadakis~G.E. Physics-Informed Neural Networks: A Deep Learning Framework for Solving Forward and Inverse Problems Involving Nonlinear Partial Differential Equations. J. of Comput. Phys. 2019. Vol. 378. Pp. 686--707.
+\bibitem{Filippov1994} Filippov~V.M., Savchin~V.M., Shorokhov~S.G. Variational principles for nonpotential operators. J. Math. Sci. 1994. Vol. 68, no 3. Pp. 275--398.
+\bibitem{Shalov1965} Shalov V.M.  Minimum principle of a quadratic functional for a hyperbolic equation. Differ. Uravn. 1965. Vol. 1, no. 10.  Pp. 1338--1365.
 \end{thebibliography}
 %\end{document}
 
