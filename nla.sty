@@ -611,7 +611,7 @@
           \global\@topnum\z@   % Prevents figures from going at top of page.
       \@maketitle
     \fi
-    \thispagestyle{empty}\@thanks
+    \thispagestyle{fancy}\@thanks
 %
     \def\\{\unskip\ \ignorespaces}\def\inst##1{\unskip{}}%
     \def\thanks##1{\unskip{}}\def\fnmsep{\unskip}%
@@ -708,6 +708,10 @@
   \start@switcht
   \start@i18n
   \fi
+  \let\tmpsd\oddsidemargin
+  \let\oddsidemargin\evensidemargin
+  \let\evensidemargin\tmpsd
+  \reversemarginpar
 }
 
 \frenchspacing
