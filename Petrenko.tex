@@ -4,14 +4,14 @@
 
 \usepackage{todonotes}
 
-\usepackage{nla} 
+\usepackage{nla}
 
 \begin{document}
 \fi
 
 \title{About solvability and controllability of differential-algebraic equations with hysteresis phenomena}%\thanks{The research is supported by RFBR (RNF, other funds), project No.~00-00-00000.}}
 
-\author{Pavel Petrenko\inst{1, 2} 
+\author{Pavel Petrenko\inst{1, 2}
   %\and
   %Name FamilyName2\inst{2}
   %\and
@@ -28,7 +28,7 @@ Irkutsk State University, Irkusk, Russia\\
 \begin{abstract}
 In this note, we single out some promising classes of differential-algebraic equations (DAE) with non-linearity of hysteresis type modeled by a sweeping process. The systems under investigation arise in modeling various physical processes, in particular, in electrical circuits with hysteresis phenomena. For such a DAE, we design an equivalent structural form (in a sense of solutions). Necessary and sufficient conditions for the existence and uniqueness of a solution to an initial value problem and controllability are proved.
 
-\keywords{differential-algebraic equations, descriptor systems, hysteresis, sweeping process, solvability, controllability.}
+\keywords{differential-algebraic equations, descriptor systems, hysteresis, sweeping process, solvability, controllability}
 \end{abstract}
 
 
@@ -37,11 +37,13 @@ In this note, we single out some promising classes of differential-algebraic equ
 
 Consider the following system of ordinary differential equations (ODE) paired with a sweeping process \cite{KM2000,Moreau1977} of a rate independent hysteresis type (modeled by the play operator \cite{BS1996,Kr1991,PSS2020})
 \begin{equation} \label{pss1}
-	A(t)\dot{x}(t)=B(t)x(t)+C(t)y(t), \ \ \ x(t_0)=x_0,   
-\end{equation}	
+	A(t)\dot{x}(t)=B(t)x(t)+C(t)y(t), \ \ \ x(t_0)=x_0,
+\end{equation}
 \begin{equation}\label{pss2}
-	-\dot{z}(t)\in \mathcal{N}_{Q(t)}\big(z(t)\big),  \\\ z(t) = \dot{y}(t), \\\
-	{y}(t_0)=y_0, \\\ z(t_0)=z_0\in Q(t_0).
+  \begin{aligned}
+	-\dot{z}(t)&\in \mathcal{N}_{Q(t)}\big(z(t)\big),  \\ z(t) &= \dot{y}(t), \\
+	{y}(t_0)&=y_0, \\ z(t_0)&=z_0\in Q(t_0).
+  \end{aligned}
 \end{equation}
 Here $A(t), B(t), C(t) \in \mathbb R^{(n\times n)}$ are given matrices, wherein $\det A(t) \equiv 0$, $t \in T=[t_0,t_1]$ is a given time interval; $x(t), y(t) \in {\mathbb R}^n$ are unknown functions; $Q(t)=x(t)-Z$ is a ``moving set'', where $Z$ is a given closed convex subset of ${\mathbb R}^n$, and $\mathcal{N}_{Q}\big(q\big)$ denotes the normal cone to a closed convex set $Q$ at a point $q$.
 
@@ -55,7 +57,7 @@ Let's consider time-varying ODE system not resolved with respect to the derivati
 \begin{equation}\label{dau}
 A(t)x'(t)=B(t)x(t) + U(t)f(t), \;\;\; t \in T \subseteq {\mathbb R},
 \end{equation}
-where $A(t), B(t), U(t) \in \mathbb R^{(n\times n)}$ are given matrices, wherein $\det A(t) \equiv 0$, $f(t) \in {\mathbb R}^n$ is some continuous on $T$ function; $x(t) \in {\mathbb R}^n$ is unknown function of a state. Such systems are called differential-algebraic equations (DAE). 
+where $A(t), B(t), U(t) \in \mathbb R^{(n\times n)}$ are given matrices, wherein $\det A(t) \equiv 0$, $f(t) \in {\mathbb R}^n$ is some continuous on $T$ function; $x(t) \in {\mathbb R}^n$ is unknown function of a state. Such systems are called differential-algebraic equations (DAE).
 
 %Under some assumptions \cite{SCH2008} there exists a linear differential operator
 \begin{lemma}{\rm \cite{SCH2008}}
@@ -80,39 +82,39 @@ where $\left( x_1(t), x_2(t) \right)=S^{-1}x(t)$, $\overline{f}(t) = (f(t), \dot
 The following statements were obtained as the main results.
 \begin{theorem}
 Let $A(t),B(t) \in \mathbb C^{2}(T); C(t), y(t) \in \mathbb C^{1}(T)$, there is a resolving minor in matrix ${\mathcal D}_1(t)$ and ${\rm rank} \; {\mathcal D}_{1}(t)={\rm rank} \; {\mathcal D}_{0}(t)+n \;\;  \forall t \in T.$
-	
+
 Then problem (\ref{pss1}), (\ref{pss2}) solvable on $T$ iff
 	\begin{equation}\label{pss55}
 		x_{2,0} = J_2(t_0)x_{1,0} + G_0(t_0)y_0 + G_1(t_0)z_0.
 	\end{equation}
 Here $(x_{1,0},x_{2,0}) = S^{-1}x_0$. Moreover, if a solution to problem (\ref{pss1}), (\ref{pss2}) exists, then it is unique.
-\end{theorem} 
+\end{theorem}
 
 \begin{theorem}
-Let all the assumptions of Theorem 1 are satisfied. 
-		
+Let all the assumptions of Theorem 1 are satisfied.
+
 	Denote as:\\
 	1) ${\rm rank} \; (G_0(t) \; G_1(t)) = d \;\; \forall t \in T$;\\
 	2) $\exists{\sigma} \in T: {\rm rank} \; \mathcal{S}(\sigma)= n-d$;\\
 	3) ${\rm rank}\; \mathcal{S}(t)=n-d$ for almost all $t \in T$.
-	
+
 	System (\ref{pss1}), (\ref{pss2}) is $R$-controllable on $T$ if condition 2) is satisfied.
 
     System (\ref{pss1}), (\ref{pss2}) is completely controllable on $T$ if conditions 1), 2) are satisfied.
-	
+
 	System (\ref{pss1}), (\ref{pss2}) is differentialy controllable on $T$ if conditions 1), 3) are satisfied.
-	
-	
+
+
 	Here
 	$$\mathcal{S}(t) = (S_0(t) \;\; S_1(t) \;\; \ldots \; S_{n-d-1}(t)),$$
 	$$S_0(t)= - (H_0(t) \; H_1(t)), \;\; S_i(t) = - J_1(t)S_{i-1}(t) +  S'_{i-1}(t), \;\; i=\overline{1,n-d-1}.
 	$$
-\end{theorem} 
+\end{theorem}
 
 
 
 \begin{thebibliography}{9} % or {99}, if there is more than ten references.
-	
+
 \bibitem{KM2000} Kunze~M., Marques~M.~D.~M. An Introduction to Moreau's Sweeping Process. Impacts in Mechanical Systems. Lecture Notes in Physics. Springer, Berlin, Heidelberg, 2000. Vol.~551. https://doi.org/10.1007/3-540-45501-9\_1
 
 \bibitem{Moreau1977} Moreau J.-J. Evolution problem associated with a moving convex set in a Hilbert space. J. Differential Eq. 1977. Vol.~26. P.~347--374. https://doi.org/10.1016/0022-0396(77)90085-7

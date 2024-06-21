@@ -566,10 +566,15 @@
   \selectlanguage{english}
   \switcht@albion
   \@english@titletrue
+  %\@title@newpagetrue   %18 june 2024
+  %\@ru@head@shiftfalse  %18 june 2024 
 }%
 {\relax
   \selectlanguage{russian}
   \@english@titlefalse
+  %\@title@newpagefalse  %18 june 2024
+  %\@ru@head@shifttrue   %18 june 2024
+  %\vspace{-2em}         %18 june 2024
 }
 
 \newenvironment{englisharticle}%
@@ -577,11 +582,13 @@
   \startenglish
   \@english@titletrue
   \@russian@titlefalse
+  %\@title@newpagetrue   %18 june 2024
 }%
 {\relax
   \startrussian
   \selectlanguage{russian}
   \switcht@russian
+  %\@title@newpagetrue  %18 june 2024
 
 }
 
@@ -611,7 +618,7 @@
           \global\@topnum\z@   % Prevents figures from going at top of page.
       \@maketitle
     \fi
-    \thispagestyle{empty}\@thanks
+    \thispagestyle{fancy}\@thanks
 %
     \def\\{\unskip\ \ignorespaces}\def\inst##1{\unskip{}}%
     \def\thanks##1{\unskip{}}\def\fnmsep{\unskip}%
@@ -708,6 +715,10 @@
   \start@switcht
   \start@i18n
   \fi
+  \let\tmpsd\oddsidemargin
+  \let\oddsidemargin\evensidemargin
+  \let\evensidemargin\tmpsd
+  \reversemarginpar
 }
 
 \frenchspacing

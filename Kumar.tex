@@ -84,10 +84,11 @@
 %    left   = 1.50in,
 %    right  = 1.50in]{geometry}
 
-\newtheorem{asmp}{Assumption}
 
 \begin{document}
 \fi
+
+\newtheorem{asmp}{Assumption}
 
 \title{Controllability of nonlinear delay differential control systems in Hilbert spaces}
 
@@ -99,10 +100,8 @@
 
 \begin{abstract}
 This work presents a study on the class of nonlinear delay differential control systems in Hilbert spaces. Sufficient conditions for the existence of unique mild solution and the controllability have been established. The linearized control system is obtained by the linear approximation of the nonlinear control system. The main result proves that the nonlinear delay control system is approximately (exactly) controllable under the established conditions if the linearized control system is approximately (exactly) controllable. The results are applicable to partial differential equations.
-%
-%Chukwu \cite{CL91,Chukwu91delay} established the controllability of nonlinear delay systems. The concept of perturbation of a linear operator by time-dependent operator was presented by Lutz \cite{Lutz81perturbation} for second order evolution equations. Matsumoto \cite{Matsumoto96perturbation} established the time-dependent perturbation theory for the first order evolution equation. These are motivation to obtain the mild solution of the linearized control system which is nonautonomous.
 
-\keywords{Controllability, delay differential systems, control systems, nonlinear control problems.}
+\keywords{controllability, delay differential systems, control systems, nonlinear control problems}
 
 \end{abstract}
 
@@ -111,12 +110,11 @@ This work presents a study on the class of nonlinear delay differential control 
 \section{The main results}
 
 Let $X$ and $U$ be Hilbert spaces of state and control variables with norms $||\cdot||$ and $||\cdot||_U$, respectively. Consider the nonlinear control system as follows
-\begin{subequations}\label{eqn-main-nls-main}
+% \begin{subequations}\label{eqn-main-nls-main}
 \begin{align}
 \dot{x}(t) &= A x(t) + f(t, x_t, u(t)), ~ t \in (0,T], \label{eqn-main-nls} \\
 x(\theta) &= \phi(\theta) \quad \text{for  } \theta \in [-\tau,0], \label{eqn-main-ic}
 \end{align}
-\end{subequations}
 where $\tau>0$, $x(t) \in X$, $u(t) \in U$, $x_t \in C([-\tau,0];X)$, $A : D(A) \subset X \rightarrow X$ is densely defined closed linear operator, $f: [0,T] \times C([-\tau,0];X) \times U \rightarrow X$ is nonlinear map, and $\phi \in C([-\tau,0];X)$.
 
 The motivation of this work came from the pioneer works of Chukwu \cite{Chukwu91delay} and Hernandez \emph{et al.} \cite{hernandez2020alka}.
@@ -133,7 +131,7 @@ $f$ is continuous on $[0,T]$ and Lipschitz in $C([-\tau,0];X) \times U$, i.e. th
                 and $f(t,\phi,0)=0$ for all $t$.
 \end{asmp}
 
-The unique mild solution of \eqref{eqn-main-nls-main} exists under Assumptions \ref{asmp-A} - \ref{asmp-f-Lips}, and is given as
+The unique mild solution of \eqref{eqn-main-nls}, \eqref{eqn-main-ic} exists under Assumptions \ref{asmp-A}--\ref{asmp-f-Lips}, and is given as
 \begin{equation*}
 x(t,\phi,u) = \begin{cases}
                 \phi(t), & \mbox{if } t \in [-\tau,0], \\
@@ -146,7 +144,7 @@ $f$ is Frechet differentiable %in $[0,T] \times C([-\tau,0];X) \times U$
 with derivatives $D_i f(0,\phi,0)$ for $i = 1,2,3$, where $D_1$, $D_2$ and $D_3$ are derivatives in $[0,T]$, $C([-\tau,0];X)$ and $U$, respectively.
 \end{asmp}
 
-Under the Assumption \ref{asmp-f-Frechet}, the linear approximation of \eqref{eqn-main-nls} is
+Under the Assumption \ref{asmp-f-Frechet}, the linear approximation of (\ref{eqn-main-nls}) is
 \begin{equation}\label{eqn-lin-approx}
 \dot{x}(t) = A x(t) + D_2 f(0,\phi,0)x_t + D_3 f(0,\phi,0)u(t).
 \end{equation}
@@ -161,11 +159,11 @@ The controllability grammian $G_T$ is bounded below, i.e. there exists $\gamma >
 \end{asmp}
 
 \begin{definition}
-The linearized control system \eqref{eqn-lin-approx} is approximately (or exactly) controllable on $[0,T]$ if $\overline{Ran(G_T)} = X~ (\text{or } Ran(G_T) = X)$.
+The linearized control system (\ref{eqn-lin-approx}) is approximately (or exactly) controllable on $[0,T]$ if $\overline{Ran(G_T)} = X~ (\text{or } Ran(G_T) = X)$.
 \end{definition}
 
 \begin{definition}
-The nonlinear delay control system \eqref{eqn-main-nls-main} is approximately (or exactly) controllable on $[0,T]$ if for each $\phi \in C([-\tau,0];X)$, $\bar{x} \in X$ there is a control $u \in L^2([0,T];U)$ such that $x(0,\phi,u) = \phi(0)$ and $x(T,\phi,u) = \bar{x}$.
+The nonlinear delay control system \eqref{eqn-main-nls}, \eqref{eqn-main-ic} is approximately (or exactly) controllable on $[0,T]$ if for each $\phi \in C([-\tau,0];X)$, $\bar{x} \in X$ there is a control $u \in L^2([0,T];U)$ such that $x(0,\phi,u) = \phi(0)$ and $x(T,\phi,u) = \bar{x}$.
 \end{definition}
 
 \begin{asmp}\label{asmp-f-bound}
@@ -173,7 +171,7 @@ There exists $\xi \in L^1([0,T];(0,\infty))$ such that $||f(t,x_t,u(t))|| \le \x
 \end{asmp}
 
 \begin{theorem}
-Suppose that Assumptions \ref{asmp-A} - \ref{asmp-f-bound} hold. If the linearized control system \eqref{eqn-lin-approx} is approximately (exactly) controllable on $[0,T]$, then the nonlinear control system is approximately (exactly) controllable on $[0,T]$.
+Suppose that Assumptions \ref{asmp-A}, \ref{asmp-f-bound} hold. If the linearized control system \eqref{eqn-lin-approx} is approximately (exactly) controllable on $[0,T]$, then the nonlinear control system is approximately (exactly) controllable on $[0,T]$.
 \end{theorem}
 
 

@@ -23,7 +23,7 @@ The report is dedicated to a research on equilibrium in complex systems using th
 \end{englishtitle}
 
 
-\ifflase
+\iffalse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %  This is the template file for the 6th International conference
@@ -34,7 +34,7 @@ The report is dedicated to a research on equilibrium in complex systems using th
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\documentclass[12pt]{llncs}  
+\documentclass[12pt]{llncs}
 
 % При использовании pdfLaTeX добавляется стандартный набор русификации babel.
 
@@ -46,7 +46,7 @@ The report is dedicated to a research on equilibrium in complex systems using th
 \usepackage[english,russian]{babel}
 \fi
 
-\usepackage{todonotes} 
+\usepackage{todonotes}
 
 \usepackage[russian]{nla}
 
@@ -81,7 +81,7 @@ The report is dedicated to a research on equilibrium in complex systems using th
 
 В исследовании различных моделей систем большую роль занимает вопрос об устойчивости системы. Под устойчивостью понимается способность системы возвращаться в исходное состояние после какого-либо изменения, вызванного либо самой системой, либо внешним воздействием. Устойчивость тесно связана с понятием равновесия системы. Равновесием называется способность системы поддерживать свое существование без внешнего воздействия. Часто при исследовании вопроса о существовании равновесия возникают системы неявных алгебраических или дифференциальных уравнений. Прежде всего интересно получить условия существования решений для этих систем, затем найти само решение. В докладе предложен подход к решению этих задач, основанный на использовании результатов теории накрывающих отображений и точек совпадения. Данный подход продемонстрирован для исследования вопроса о положении равновесия в математической модели рынка.
 
-Пусть на рынке присутствует $n\in\mathbb{N}$ товаров, цены на которые описываются вектором $p\in\mathbb{R}^n, \ p=(p_1,...,p_n)$ таким, что $p_i\in[c_{1i},...,c_{2i}], i =\overline{1,n}$, где $c_1=(c_{11},...,c_{1n}), c_2 = (c_{21},...,c_{2n})\in\mathbb{R}: 0<c_{1i}<c_{2i}, i =\overline{1,n}$. Обозначим $P = [c_{11},...,c_{21}]\times...\times[c_{1n},c_{2n}]$. В рассматриваемой модели отображения спроса и предложения $D,S:P\to\mathbb{R}^n_+ = \left\{x=(x_1,...,x_n)\in\mathbb{R}^n \ | \ x_i > 0 \forall i = \overline{1,n}\right\}$ имеют специальный вид. Вектор $p\in P$ называется положением равновесия в модели открытого рынка, если
+Пусть на рынке присутствует $n\in\mathbb{N}$ товаров, цены на которые описываются вектором $p\in\mathbb{R}^n, \ p=(p_1,...,p_n)$ таким, что $p_i\in[c_{1i},...,c_{2i}], i =\overline{1,n}$, где $$c_1=(c_{11},...,c_{1n}), c_2 = (c_{21},\ldots ,c_{2n})\in\mathbb{R}: 0<c_{1i}<c_{2i}, i =\overline{1,n}.$$ Обозначим $P = [c_{11},...,c_{21}]\times...\times[c_{1n},c_{2n}]$. В рассматриваемой модели отображения спроса и предложения $$D,S:P\to\mathbb{R}^n_+ = \left\{x=(x_1,...,x_n)\in\mathbb{R}^n \ | \ x_i > 0 \forall i = \overline{1,n}\right\}$$ имеют специальный вид. Вектор $p\in P$ называется положением равновесия в модели открытого рынка, если
 $$
 S(p) = D(p).
 $$
@@ -94,11 +94,11 @@ $$
 
 
 \begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
-\bibitem{JMS23} Kotyukov A.M., Pavlova N.G. Equilibrium in Dynamic Market Models with Known Elasticity // Journal of Mathematical Sciences. 2023. 269. Pp. 847-852.
+\bibitem{JMS23} Kotyukov A.M., Pavlova N.G. Equilibrium in Dynamic Market Models with Known Elasticity. Journal of Mathematical Sciences. 2023. 269. Pp. 847-852.
 
 \bibitem{UBS24} Котюков А.М., Павлова Н.Г. Алгоритм поиска точек совпадения в сложных системах // Управление большими системами. 2024. Вып.107. С. 6-27.
 
-\bibitem{MLSD23} Kotyukov A.M., Pavlova N.G. Equilibrium in Open Market Models with Nonconstant Elastisities / Proceedings of the 16th International Conference Management of Large-Scale System Development (MLSD). М.: IEEE, 2023. С. https://ieeexplore.ieee.org/document/10303986.
+\bibitem{MLSD23} Kotyukov A.M., Pavlova N.G. Equilibrium in Open Market Models with Nonconstant Elastisities. Proceedings of the 16th International Conference Management of Large-Scale System Development (MLSD). М.: IEEE, 2023. С. https://ieeexplore.ieee.org/document/10303986.
 
 
 \end{thebibliography}
@@ -110,4 +110,3 @@ $$
 
 
 %\end{document}
-

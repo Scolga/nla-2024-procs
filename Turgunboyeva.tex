@@ -9,7 +9,8 @@
 \begin{document}
 \fi
 
-\title{The $\ell$-capture problem in a differential game with conflict-controlled inertial players}
+\title{The $l$-capture problem in a differential game with conflict-controlled inertial players}
+% \title{The {\protect $\ell$}-capture problem in a differential game with conflict-controlled inertial players}
 
 \author{Mohisanam Turgunboyeva\inst{1}  \and  Bahrom Samatov\inst{2}
   }
@@ -22,7 +23,7 @@ V.I. Romanovsky Institute of Mathematics at the Academy of Sciences of the Repub
 \maketitle
 
 \begin{abstract}
-We investigate the $\ell$-capture problem for Pontryagin's control example in a differential game with two conflicting controlled players, where the controls of both players are subject to geometric constraints. The goal of the first player (the pursuer) is to $\ell$-capture the second player (the evader) by closing the distance between them to a value of $\ell$. Conversely, the goal of the second player is to prevent the pursuer from approaching it at a distance of $\ell$. The problem is divided into two parts. In the first part, we assume that both players have the same movement dynamics, and we construct an approach strategy for the pursuer, thereby identifying sufficient conditions for $\ell$-capture. In the second part, we examine the $\ell$-capture problem in the differential game when the players have different movement dynamics. We directly solve the problem by applying the $\Pi$-strategy.
+We investigate the $l$-capture problem for Pontryagin's control example in a differential game with two conflicting controlled players, where the controls of both players are subject to geometric constraints. The goal of the first player (the pursuer) is to $l$-capture the second player (the evader) by closing the distance between them to a value of $l$. Conversely, the goal of the second player is to prevent the pursuer from approaching it at a distance of $l$. The problem is divided into two parts. In the first part, we assume that both players have the same movement dynamics, and we construct an approach strategy for the pursuer, thereby identifying sufficient conditions for $l$-capture. In the second part, we examine the $l$-capture problem in the differential game when the players have different movement dynamics. We directly solve the problem by applying the $\Pi$-strategy.
 
 
 \keywords{Differential game, players, strategy, guaranteed time}
@@ -32,15 +33,15 @@ We investigate the $\ell$-capture problem for Pontryagin's control example in a 
 \section{The main results} %optional section
 
 Differential game problems began to be examined systematically by Isaacs [1] in the 1950's. Fundamental results of differential games were
-obtained by Krasovsky [2], Pontryagin [3] and others. The problem for the case of $\ell$-approach [4] was first studied by Indian mathematician Ramchundra. Similar effects in the cases of geometric and integral constraint were considered in the works of Chikrii,
+obtained by Krasovsky [2], Pontryagin [3] and others. The problem for the case of $l$-approach [4] was first studied by Indian mathematician Ramchundra. Similar effects in the cases of geometric and integral constraint were considered in the works of Chikrii,
 Rappoport, Pshenichnyi, Ostapenko, Petrosjan, Satimov, Grigorenko, Azamov, Ibragimov, Samatov and etc.
 
-Assume that a player $\mathbb P$ (the pursuer) chases another player $\mathbb E$ (the evader) in space $\mathbf R^n$. Represent by $x$ a state of the pursuer and by $y$ that of the evader in $\mathbf R^n$. Let us consider the $\ell$-capture problem when the players' movements are based on the differential equations with initial conditions
+Assume that a player $\mathbb P$ (the pursuer) chases another player $\mathbb E$ (the evader) in space $\mathbf R^n$. Represent by $x$ a state of the pursuer and by $y$ that of the evader in $\mathbf R^n$. Let us consider the $l$-capture problem when the players' movements are based on the differential equations with initial conditions
 \begin{gather*}
 \mathbb{P}:\quad \ddot{x}+k\dot{x}=u,\quad x(0)=x_{10},\quad \dot{x}(0)=x_{11}, \\
 \mathbb{E}:\quad \ddot{y}+k\dot{x}=v,\quad y(0)=y_{10},\quad \dot{y}(0)=y_{11},
 \end{gather*}
-where $x, y, u, v \in \mathbf{R}^n$, $n\geq2$, $k>0$; $x_{10}$, $y_{10}$ are the initial states of the players accordingly, and it is presumed that $|x_{10}-y_{10}|>\ell$, $\ell>0$; $x_{11}$, $y_{11}$ are the players initial velocity vectors correspondingly; the acceleration vectors $u$, $v$ act as control parameters of the players respectively, and they depend on the time $t$, $t\geq0$.
+where $x, y, u, v \in \mathbf{R}^n$, $n\geq2$, $k>0$; $x_{10}$, $y_{10}$ are the initial states of the players accordingly, and it is presumed that $|x_{10}-y_{10}|>l$, $\ell>0$; $x_{11}$, $y_{11}$ are the players initial velocity vectors correspondingly; the acceleration vectors $u$, $v$ act as control parameters of the players respectively, and they depend on the time $t$, $t\geq0$.
 
 The temporal variations of $u$ and $v$ must be Lebesgue measurable functions $u(\cdot):[0,+\infty)\rightarrow\mathbf R^n$, $u(\cdot):[0,+\infty)\rightarrow\mathbf R^n$, and these functions are involved fulfilling the geometric constraints (shortly, G-constraints)\
 \begin{gather*}
@@ -51,7 +52,7 @@ where $\alpha$, $\beta$ are the given positive parametric numbers which represen
 
 Introduce the denotation: $z=x-y$, $z_{10}=x_{10}-y_{10}$, $z_{11}=x_{11}-y_{11}$.
 
-We will construct a solution to the $\ell$-capture problem using the provided initial states $z_{10}$ and $z_{11}$. It is important to note that there are only two possible cases in this situation:
+We will construct a solution to the $l$-capture problem using the provided initial states $z_{10}$ and $z_{11}$. It is important to note that there are only two possible cases in this situation:
 \begin{case}
 Players have the same movement dynamics, which is supposed to be $x_{11}=y_{11}$ or the vectors $z_{10}$ and $z_{11}$ are collinear, meaning that there exists a finite number $r$ such that $z_{11}=r z_{10}$.
 \end{case}
@@ -59,20 +60,20 @@ Players have the same movement dynamics, which is supposed to be $x_{11}=y_{11}$
 The vectors $z_{10}$ and $z_{11}$ are non-collinear, meaning that they are linearly independent.
 \end{case}
 \begin{definition}
-Let $\alpha>\beta$. Then  in the $\ell$-capture problem, we term the function \\
+Let $\alpha>\beta$. Then  in the $l$-capture problem, we term the function \\
 $
 \textbf{u}(z_{10}, v)=v+\lambda_{\Pi_\ell}(z_{10},v)\left(m(z_{10},v)-z_{10}\right)
 $
- the $\Pi_\ell$-strategy of the pursuer, where
+ the $\Pi_l$-strategy of the pursuer, where
 \begin{equation*}
 \lambda_{\Pi_\ell}(z_{10}, v)=\left[\langle v, z _{10}\rangle+\alpha \ell+\sqrt{(\langle v, z _{10}\rangle+\alpha \ell)+(\alpha^{2}-|v|^{2})(|z_{10}|^2-\ell^2)}\right]/(|z_{10}|^2-\ell^2),
  \end{equation*}
  $$
- m(z_{10},v)=-(v-\lambda_{\Pi_\ell}(z_{10},v) z_{10})\ell/(|v-\lambda_{\Pi_\ell}(z_{10},v) z_{10}|) [5].
+ m(z_{10},v)=-(v-\lambda_{\Pi_\ell}(z_{10},v) z_{10}) l/(|v-\lambda_{\Pi_l}(z_{10},v) z_{10}|) [5].
  $$
 \end{definition}
 \begin{definition}
-Let $\alpha>\beta$. Then  in the $\ell$-capture problem, we call the function \\
+Let $\alpha>\beta$. Then  in the $l$-capture problem, we call the function \\
 $
 \textbf{u}(v)=v+\lambda_{\Pi}(v)\xi_{11},
 $
@@ -84,7 +85,7 @@ the $\Pi$-strategy of the pursuer, where
 \begin{proposition}
 If $\alpha>\beta$ and $r\leq0$, then the equation
 \begin{equation*}
-e^{-kt}=-At+B,\quad A=\frac{(\alpha-\beta)k}{\alpha-\beta+kr|z_{10}|},\quad B=1+\frac{k^2(|z_{10}|-\ell)}{\alpha-\beta+kr|z_{10}|}
+e^{-kt}=-At+B,\quad A=\frac{(\alpha-\beta)k}{\alpha-\beta+kr|z_{10}|},\quad B=1+\frac{k^2(|z_{10}|-l)}{\alpha-\beta+kr|z_{10}|}
 \end{equation*}
 has a positive root with respect to $t$, and we denote it by $t^{*}_{1}$.
 \end{proposition}
@@ -92,18 +93,18 @@ has a positive root with respect to $t$, and we denote it by $t^{*}_{1}$.
 \begin{proposition}
 If $\alpha>\beta$, then the equation
 \begin{equation*}
-e^{-k(t-\tau)}=-k(t-\tau)+C,\quad C=1+\frac{k^2(|z^{*}_{10}|-\ell)}{\alpha-\beta},\quad \tau=\frac{1}{k}\ln{\frac{\alpha-\beta+|z_{11}|k}{\alpha-\beta}}
+e^{-k(t-\tau)}=-k(t-\tau)+C,\quad C=1+\frac{k^2(|z^{*}_{10}|-l)}{\alpha-\beta},\quad \tau=\frac{1}{k}\ln{\frac{\alpha-\beta+|z_{11}|k}{\alpha-\beta}}
 \end{equation*}
 has a positive root with respect to $t$, $t\in[\tau,+\infty)$, and we denote it by $\theta$. Here $z^{*}_{10}=z(\eta)$, $\big(\eta\in[0,\tau]\big)$ and $\eta$ is the time at which the players' velocities coincide.
 \end{proposition}
 
 \begin{theorem}
-Let $\alpha>\beta$ and let the vectors $z_{10}$ and $z_{11}$ be collinear in the $\ell$-capture problem. Then the $\Pi_\ell$-strategy is winning on the interval $[0, t^{*}_{1}]$.
+Let $\alpha>\beta$ and let the vectors $z_{10}$ and $z_{11}$ be collinear in the $l$-capture problem. Then the $\Pi_l$-strategy is winning on the interval $[0, t^{*}_{1}]$.
 \end{theorem}
 % At the end of the text, acknowledgments are expressed, if you haven't
 % made a footnote from the title. For example, we can write
 \begin{theorem}
-Let $\alpha>\beta$ and let the vectors $z_{10}$ and $z_{11}$ be non-collinear, then in the $\ell$-capture problem, using the $\Pi$ and $\Pi_\ell$-strategies can complete the $\ell$-capture in the time interval $[0,t^{*}_{2}]$, where $t^{*}_{2}=\tau+\theta$.
+Let $\alpha>\beta$ and let the vectors $z_{10}$ and $z_{11}$ be non-collinear, then in the $l$-capture problem, using the $\Pi$ and $\Pi_l$-strategies can complete the $l$-capture in the time interval $[0,t^{*}_{2}]$, where $t^{*}_{2}=\tau+\theta$.
 \end{theorem}
 \begin{thebibliography}{9} % or {99}, if there is more than ten references.
 \bibitem{Isaacs1965} Isaacs R. Differential games. John Wiley and Sons, New York, 1965.

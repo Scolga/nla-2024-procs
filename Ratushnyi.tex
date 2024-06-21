@@ -1,3 +1,47 @@
+\begin{englishtitle} % Настраивает LaTeX на использование английского языка
+% Этот титульный лист верстается аналогично.
+\title{
+Template-based approach to dynamic bin packing with placement groups
+}
+
+
+\author{
+A. V. Ratushnyi\inst{1}  \and A. A. Panin\inst{2}  \and E. A. Brazhnikov\inst{3}
+}
+\institute{
+Sobolev Institute of Mathematics of SB RAS, Novosibirsk, Russia\\
+\email{alexeyratushny@gmail.com}
+    \and
+Sobolev Institute of Mathematics of SB RAS, Novosibirsk, Russia\\
+\email{aapanin1988@gmail.com}
+    \and
+Novosibirsk State University, Novosibirsk, Russia\\
+\email{brazhnikov.eugene@gmail.com}
+}
+\maketitle
+
+
+\begin{abstract}
+
+We consider an NP-hard temporal bin packing problem that arises in cloud computing.
+Each item represents a virtual machine, defined by its creation and deletion timestamps, as well as a vector of resource allocation requests.
+Virtual machines are divided into two categories: large and small.
+Each container represents a server consisting of multiple NUMA nodes.
+A small virtual machine can be fully placed on one node, while a large virtual machine is split into two identical halves that are placed on different nodes.
+Servers are located in fixed-size racks.
+Some virtual machines are grouped together, and each group is further divided into subgroups called partitions.
+Virtual machines from different partitions within the same group conflict with each other, meaning they cannot be co-located on servers from the same rack at the same time.
+This constraint is crucial for ensuring system fault tolerance.
+Our goal is to efficiently pack all virtual machines into a minimum number of racks.
+To solve the problem, we use a column generation method to create packing templates for virtual machines, which are then distributed across servers.
+The templates are adapted to take into account conflicts related to partition existence.
+The effectiveness of the approach has been tested on an extensive open benchmark \cite{benchmark}, which contains up to 70,000 virtual machines.
+
+\keywords{bin packing, conflicts, column generation, resource allocation, greedy algorithm} % в конце списка точка не ставится
+\end{abstract}
+\end{englishtitle}
+
+
 
 \iffalse
 \documentclass[12pt]{llncs}  
@@ -33,6 +77,8 @@
 \begin{document}
 \fi
 % Текст оформляется в соответствии с классом article, используя дополнения AMS.
+
+\pagebreak
 
 \title{Шаблонизация для динамической задачи упаковки в контейнеры с группами размещения\thanks{Исследование выполнено в рамках государственного задания ИМ СО РАН (проект FWNF–2022–0019).}}
 
@@ -87,53 +133,11 @@ Temporal Bin Packing Problem with Placement Groups. \url{http://old.math.nsc.ru/
 % \bibitem{Gantmakher} Гантмахер~Ф.Р. Теория матриц. М.:~Наука,~1966.
 
 \end{thebibliography}
-\hfill \break
+%\hfill \break
 
 % После библиографического списка в русскоязычных статьях необходимо оформить
 % англоязычный заголовок.
 
-\begin{englishtitle} % Настраивает LaTeX на использование английского языка
-% Этот титульный лист верстается аналогично.
-\title{
-Template-based Approach to Dynamic Bin Packing with Placement Groups
-}
-
-
-\author{
-A. V. Ratushnyi\inst{1}  \and A. A. Panin\inst{2}  \and E. A. Brazhnikov\inst{3}
-}
-\institute{
-Sobolev Institute of Mathematics of SB RAS, Novosibirsk, Russia\\
-\email{alexeyratushny@gmail.com}
-    \and
-Sobolev Institute of Mathematics of SB RAS, Novosibirsk, Russia\\
-\email{aapanin1988@gmail.com}
-    \and
-Novosibirsk State University, Novosibirsk, Russia\\
-\email{brazhnikov.eugene@gmail.com}
-}
-\maketitle
-
-
-\begin{abstract}
-
-We consider an NP-hard temporal bin packing problem that arises in cloud computing.
-Each item represents a virtual machine, defined by its creation and deletion timestamps, as well as a vector of resource allocation requests.
-Virtual machines are divided into two categories: large and small.
-Each container represents a server consisting of multiple NUMA nodes.
-A small virtual machine can be fully placed on one node, while a large virtual machine is split into two identical halves that are placed on different nodes.
-Servers are located in fixed-size racks.
-Some virtual machines are grouped together, and each group is further divided into subgroups called partitions.
-Virtual machines from different partitions within the same group conflict with each other, meaning they cannot be co-located on servers from the same rack at the same time.
-This constraint is crucial for ensuring system fault tolerance.
-Our goal is to efficiently pack all virtual machines into a minimum number of racks.
-To solve the problem, we use a column generation method to create packing templates for virtual machines, which are then distributed across servers.
-The templates are adapted to take into account conflicts related to partition existence.
-The effectiveness of the approach has been tested on an extensive open benchmark \cite{benchmark}, which contains up to 70,000 virtual machines.
-
-\keywords{bin packing, conflicts, column generation, resource allocation, greedy algorithm} % в конце списка точка не ставится
-\end{abstract}
-\end{englishtitle}
 
 
 %\end{document}

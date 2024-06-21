@@ -9,7 +9,7 @@
 \usepackage{amsmath}
 
 
-\usepackage{nla} 
+\usepackage{nla}
 
 \begin{document}
 \fi
@@ -36,7 +36,7 @@ Institut national des sciences appliquées, Toulouse, France\\
 \maketitle
 
 \begin{abstract}
-The work studies a class of Monte Carlo methods for state estimation problems, i.e. for the objective is to retrieve the state by its noisy observations. These methods not only model the underlying process but also help to attenuate observation noises. 
+The work studies a class of Monte Carlo methods for state estimation problems, i.e. for the objective is to retrieve the state by its noisy observations. These methods not only model the underlying process but also help to attenuate observation noises.
 We explore what types of particle interactions can be utilized, highlighting their respective advantages and drawbacks. The novelty of this work lies in the adaptation of the known methods for a continuous-discrete estimation problem, revealing unexpected similarities and complexities in the modification process. Our findings suggest that the direct application of these methods may not always produce the expected results.
 
 \keywords{particle filters, interacting particles, linear filtering, state estimation}
@@ -57,7 +57,7 @@ with $\mathbb{R}^p$-valued discrete-time observations
 \begin{equation}\label{eq:Ch5:discOutput}
 y_{\tau_{k}} = C \, x(\tau_{k}) + v_{\tau_k}, \qquad \tau_{k+1}\geq \tau_k, \ k\in\mathbb{N}
 \end{equation}
-where $\tau_k$ are the arrival times of a Poisson process $N_t$,  $w_t$ is an $\mathbb{R}^m$-valued standard Wiener process, $v_{\tau_k} \sim \mathcal{N}(0,V)$ for each $k \in \mathbb{N}$. We let $(\Omega,\mathcal{F}, \mathsf{P})$ denote the underlying probability space.  The matrices $A \in \mathbb{R}^{n\times n}$, $C \in \mathbb{R}^{p\times n}$ and $G \in \mathbb{R}^{n \times m}$ are assumed to be constant. 
+where $\tau_k$ are the arrival times of a Poisson process $N_t$,  $w_t$ is an $\mathbb{R}^m$-valued standard Wiener process, $v_{\tau_k} \sim \mathcal{N}(0,V)$ for each $k \in \mathbb{N}$. We let $(\Omega,\mathcal{F}, \mathsf{P})$ denote the underlying probability space.  The matrices $A \in \mathbb{R}^{n\times n}$, $C \in \mathbb{R}^{p\times n}$ and $G \in \mathbb{R}^{n \times m}$ are assumed to be constant.
 
 The intensity $\lambda>0$ of the Poisson process is counted as a parameter; it affects the properties of the filter such as stability. Notice that $N_t$ is associated with $\tau_k$ as a counting process, i.e.
 %\begin{align*}
@@ -66,17 +66,17 @@ $
 $
 %\end{align*}
 Hence its range of values is a.s. the set of natural numbers with zero.
-The observations \eqref{eq:Ch5:discOutput} restricted to an interval $[0,t]$, as $\{y_{\tau_k} \mid \tau_k\in[0,t]\}$  generate the sigma-algebra $\mathcal{Y}_t$. 
+The observations \eqref{eq:Ch5:discOutput} restricted to an interval $[0,t]$, as $\{y_{\tau_k} \mid \tau_k\in[0,t]\}$  generate the sigma-algebra $\mathcal{Y}_t$.
 
 %Hence the sequence $\{v_{N_t}\}_{t\in \mathbb{R}^+}$ coincides with the sequence $\{v_{\tau_k}\}_{k\in \mathbb{N}}$.
 
 \subsection{Optimal filter}
 
 
-Let us recall that such filtering system has an optimal solution $\widehat x_t = \mathsf{E}[x_t \mid \mathcal{Y}_t]$. It can be described for each sample path of the observation process, as shown in \cite[Th. 7.1]{jazw}. For our case, it is more convenient to reformulate it in according to \cite[Th. 3.3]{yufer-transport} as follows 
+Let us recall that such filtering system has an optimal solution $\widehat x_t = \mathsf{E}[x_t \mid \mathcal{Y}_t]$. It can be described for each sample path of the observation process, as shown in \cite[Th. 7.1]{jazw}. For our case, it is more convenient to reformulate it in according to \cite[Th. 3.3]{yufer-transport} as follows
 \begin{align}
 \label{eq:ch5: opt-x}
-\mathrm{d} \widehat x_t  &= A \widehat x_t \mathrm{d} t + K_t(y_t - C \widehat x_{t})\mathrm{d} N_t, 
+\mathrm{d} \widehat x_t  &= A \widehat x_t \mathrm{d} t + K_t(y_t - C \widehat x_{t})\mathrm{d} N_t,
 \end{align}
 where $K_t = P_t C^\top (C P_t C^\top + V_t)^{-1}$ and the covariance matrix $P_t= \mathsf{E}[(x_t - \widehat x_t)(x_t - \widehat x_t)^\top \mid \mathcal{Y}_t]$ satisfies
 %\begin{align}
@@ -86,12 +86,12 @@ $\mathrm{d} P_t = (A P_t + P_t A^\top + G G^\top) \mathrm{d} t  - K_t C P_t \mat
 
 \subsection{Particle approach}
 
-Due to the linearity, and Gaussian noise, the distribution of the optimal estimator is Gaussian and it suffices to have only its first and second moments. However, the evolution of $\widehat x_t := \mathsf{E}[x_t \mid \mathcal{Y}_t]$, depends on the evolution of the error covariance matrix %$P_t := \mathsf{E}\cexpecof{(x_t - \widehat x_t)(x_t - \widehat x_t)^\top \vert \mathcal{Y}_t}$ 
+Due to the linearity, and Gaussian noise, the distribution of the optimal estimator is Gaussian and it suffices to have only its first and second moments. However, the evolution of $\widehat x_t := \mathsf{E}[x_t \mid \mathcal{Y}_t]$, depends on the evolution of the error covariance matrix %$P_t := \mathsf{E}\cexpecof{(x_t - \widehat x_t)(x_t - \widehat x_t)^\top \vert \mathcal{Y}_t}$
 and the computation of $P_t$ is often costly for higher dimensional systems.
 
 
 
-On the other hand, using the particle approach, it is possible to compute (an approximation) of 
+On the other hand, using the particle approach, it is possible to compute (an approximation) of
 the conditional distribution without solving the differential equation for the evolution of covariance matrix.
  This can be done by finding a process  that implicitly describes the optimal filter. Namely, the following condition \eqref{eq:same_distributions} is on the consideration.
  \begin{equation}
@@ -104,18 +104,18 @@ Afterward, such a process is approximated by interacting particles.
 
 \section{The main results} %optional section
 
-Different processes might play the role of exact filters. It turns out that there are several ways to construct exact filters that can be approximated by computation-friendly methods and provide sufficiently good efficiency. 
-Taking particular solutions %for equations  \eqref{eq:same_distributions}, 
+Different processes might play the role of exact filters. It turns out that there are several ways to construct exact filters that can be approximated by computation-friendly methods and provide sufficiently good efficiency.
+Taking particular solutions %for equations  \eqref{eq:same_distributions},
 one can obtain analogues of particle filters for the purely continuous case, described in \cite{bishop}. Indeed, for particles $s^i$, $i=1,\ldots,m$, let the empirical mean and the empirical covariance be
-\begin{subequations}
-\begin{align}
-%\label{eq: emp-mean def}
- \widehat s^{m}_t = \frac{1}{m}\sum\limits_{i=1}^{m} s^i_t,
-\qquad
-%\label{eq: emp-cov def}
-  Q^{m}_t = \frac{1}{m}\sum\limits_{i=1}^{m} (s^i_t - \widehat s^{m}_t)(s^i_t - \widehat s^{m}_t)^\top.
-\end{align}
-\end{subequations}
+% \begin{subequations}
+ \begin{align}
+ %\label{eq: emp-mean def}
+  \widehat s^{m}_t &= \frac{1}{m}\sum\limits_{i=1}^{m} s^i_t,
+ \qquad
+ %\label{eq: emp-cov def}
+   Q^{m}_t &= \frac{1}{m}\sum\limits_{i=1}^{m} (s^i_t - \widehat s^{m}_t)(s^i_t - \widehat s^{m}_t)^\top.
+ \end{align}
+% \end{subequations}
 The gain matrix becomes $L_t^{m} = Q_t^{m} C^\top (C Q_t^{m} C^\top + V_t)^{-1}.$
 The corresponding $m$-particle filters have the following forms:
 \begin{enumerate}
@@ -123,36 +123,36 @@ The corresponding $m$-particle filters have the following forms:
 \item `Transport-inspired' particle filter:
 \begin{align}
     \mathrm{d} s^i_t &:= A s^i_t \mathrm{d} t +  \frac{1}{2}GG^\top (Q^{m}_t)^{-1} (s^i_t-\widehat s^{m}_t) \mathrm{d} t
-    +  \Big(L^{m}_t y_t - L^{m}_t C \widehat s_t +\Xi^{m}_t (s^i_t - \widehat s^{m}_t) \Big) \mathrm{d} N_t, 
+    +  \Big(L^{m}_t y_t - L^{m}_t C \widehat s_t +\Xi^{m}_t (s^i_t - \widehat s^{m}_t) \Big) \mathrm{d} N_t,
     \label{eq:ch5: particles transport-insp}
     \\
     \Xi^{m}_{\tau_k} &: \quad Q^{m}_{\tau_k} (\Xi^{m}_{\tau_k})^\top + \Xi^{m}_{\tau_k} Q^{m}_{\tau_k} (\Xi^{m}_{\tau_k})^\top + \Xi^{m}_{\tau_k} Q^{m}_{\tau_k} = - L_{\tau_k}^{m} C Q^{m}_{\tau_k}.
     \label{eq:ch5: particles xi transport-insp}
     %\\
     %&\Delta_t : \quad Q_t \Delta_t^\top + \Delta_t Q_t = GG^\top,
-\end{align} 
+\end{align}
 \item `Vanilla' particle filter:
 \begin{align}
 \label{eq:ch5: particles vanilla}
-&\mathrm{d} s^i_t := A s^i_t \mathrm{d} t +  G  \mathrm{d} w^i_t 
+&\mathrm{d} s^i_t := A s^i_t \mathrm{d} t +  G  \mathrm{d} w^i_t
     + L^{m}_t \Big(y_t - C s^i_t  - v^i_t \Big) \mathrm{d} N_t, %\\
-    %&\mathrm{d} s_t := A s_t \mathrm{d} t +  G  \mathrm{d} w_t 
+    %&\mathrm{d} s_t := A s_t \mathrm{d} t +  G  \mathrm{d} w_t
     %+  \Big(L_t y_t - L_t C s_t  + \Omega_t v_t \Big) \mathrm{d} N_t, \\
     %&\Omega_{\tau_k} : \quad \Omega_{\tau_k} V_{\tau_k} \Omega_{\tau_k}^\top = Q_{\tau_k} C^\top L_{\tau_k}^\top - L_{\tau_k} C Q_{\tau_k} C^\top L_{\tau_k}^\top.
-\end{align} 
+\end{align}
 \end{enumerate}
-The noises 
-$w^i_t\sim \mathcal{N}(0,I), v^i_t\sim \mathcal{N}(0,V_t)$ are independent copies of $w_t$ and $v_t$ respectively, while the Poisson process $N_t$ is common for all the equations. 
+The noises
+$w^i_t\sim \mathcal{N}(0,I), v^i_t\sim \mathcal{N}(0,V_t)$ are independent copies of $w_t$ and $v_t$ respectively, while the Poisson process $N_t$ is common for all the equations.
 One should note that the `vanilla' filters resembles its continuous analoque while the `transport-inspired' one differs significantly: the matrix-valued coefficient $\Xi$ does not appear in continuous case. In contrast, the dependence on the covariance, hidden in  $\Xi$, becomes inevitable in the case of our consideration.
 
 
 \begin{thebibliography}{9} % or {99}, if there is more than ten references.
 
-\bibitem{bishop} Bishop A. N., Del Moral P. On the mathematical theory of ensemble (linear-Gaussian) Kalman–Bucy filtering. Mathematics of Control, Signals, and Systems. 2023. Vol.~35, no~4. Pp.~835-903.
+\bibitem{bishop} Bishop A. N., Del Moral P. On the mathematical theory of ensemble (linear-Gaussian) Kalman–Bucy filtering. Mathematics of Control, Signals, and Systems. 2023. Vol.~35, no~4. Pp.~835--903.
 
 \bibitem{jazw} Jazwinski A.H. Stochastic processes and filtering theory. Courier Corporation, 2007.
 
-\bibitem{yufer-transport} Yufereva O., Tanwani A. Transport Inspired Particle Filters with Poisson-Sampled Observations in Gaussian Setting. 2023 62nd IEEE Conference on Decision and Control (CDC). 2023. Pp.~7695-7700.
+\bibitem{yufer-transport} Yufereva O., Tanwani A. Transport Inspired Particle Filters with Poisson-Sampled Observations in Gaussian Setting. 2023 62nd IEEE Conference on Decision and Control (CDC). 2023. Pp.~7695--7700.
 
 \end{thebibliography}
 %\end{document}

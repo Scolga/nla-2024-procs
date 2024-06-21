@@ -22,7 +22,7 @@ the right part.
 
 %Keywords: differential equations, asymptotic sustainability
 
-\keywords{differential equations, asymptotic sustainability \ldots{}} % в конце списка точка не ставится
+\keywords{differential equations, asymptotic sustainability} % в конце списка точка не ставится
 \end{abstract}
 \end{englishtitle}
 
@@ -62,7 +62,7 @@ the right part.
 \begin{abstract}
 В работе исследуется система дифференциальных уравнений с голоморфной правой частью. Показано, что если нулевое решение системы автономных дифференциальных уравнений с голоморфной правой частью асимптотически устойчиво, то и нулевое решение системы уравнений с полиномиальной правой частью, где полином представляет собой сумму нескольких первых членов из голоморфного ряда исходной системы, будет асимптотически устойчивым.
 
-\keywords{дифференциальные уравнения, асимптотическая устойчивость \ldots} % в конце списка точка не ставится
+\keywords{дифференциальные уравнения, асимптотическая устойчивость} % в конце списка точка не ставится
 \end{abstract}
 
 \section{Основные результаты} % не обязательное поле
@@ -76,20 +76,20 @@ the right part.
 
 Пусть правая часть уравнения
 $$
-\dot x=f(x),\quad x\in R^n,\eqno 1
+\dot x=f(x),\quad x\in R^n,\eqno (1)
 $$
 представляется в виде сходящегося в окрестности нуля ряда
 $$
 f_1(x)+f_2(x)+\dots +f_k(x)+\dots,
 $$
-в котором $f_k(x)$  ---  однородная  степени  $k$  форма  относительно
+в котором $f_k(x)$  --  однородная  степени  $k$  форма  относительно
 переменных $x$ с постоянными коэффициентами.
 
 Теорема 1. Если решение   $x\equiv   0$   уравнения   (1)   асимптотически
 устойчиво, то существует $l\geq 1$ такое, что
 решение $x\equiv 0$ уравнения
 $$
-\dot x =g(x) =f_1(x)+f_2(x)+\dots +f_l(x) \eqno 2
+\dot x =g(x) =f_1(x)+f_2(x)+\dots +f_l(x) \eqno (2)
 $$
 также будет асимптотически устойчивым.
 
@@ -101,17 +101,16 @@ $$
 этой области будут существовать отрицательно определенная
 функция $v(x)$, $-1 < v(x) < 0$, и положительно определенная функция $w(x)$, $w(x) > \alpha > 0$
 при $\|x\| > \beta > 0$, связанные на решениях системы (1) соотношением
-$$\frac{dv(x)}{dt} = w(1 +v).\eqno 3$$
+$$\frac{dv(x)}{dt} = w(1 +v).\eqno (3)$$
 
 Соотношение (3) запишем в виде
-$$\frac{\partial v(x)}{\partial x}f(x) = w(1 +v(x). \eqno 4$$
+$$\frac{\partial v(x)}{\partial x}f(x) = w(1 +v(x). \eqno (4)$$
 Для некоторого $l$ определим функцию $h(x)$ равенством
 $$h(x) =\sum_{k =l}^\infty f_k((x).$$
 Тогда соотношение (4) можно записать так:
 $$\frac{\partial v(x)}{\partial x}(g(x) +h(x)) =w(1 +v)$$
 Отсюда ясно, что на решениях системы (2) будет выполняться соотношение
-$$\frac{dv(x)}{dt} =w(1 +v) -\frac{\partial v(x)}{\partial x}h(x). \eqno 5$$
-
+$$\frac{dv(x)}{dt} =w(1 +v) -\frac{\partial v(x)}{\partial x}h(x). \eqno (5)$$
 Из свойств функций $v(x)$ и $w(x)$ ясно, что, увеличивая значение
 параметра $l$, можно добиться, чтобы второе слагаемое из правой
 части соотношения (5) не меняло знак первого слагаемого. Но тогда
@@ -119,12 +118,10 @@ $$\frac{dv(x)}{dt} =w(1 +v) -\frac{\partial v(x)}{\partial x}h(x). \eqno 5$$
 системы (2) будет асимптотически устойчивым, что и доказывает справедливость утверждения теоремы.
 
 Замечания. Из доказательства теоремы следует, что:
-
-1. увеличение значения параметра $l$ не будет влиять на устойчивость
+1) увеличение значения параметра $l$ не будет влиять на устойчивость
 системы (2). Поэтому для любого $m > l$ нулевое решение системы (2),
 в которой $l$ заменено на $m$, будет также асимптотически устойчивым;
-
-2. для проверки  асимптотической  устойчивости систем (1) и (2)
+2) для проверки  асимптотической  устойчивости систем (1) и (2)
 можно использовать одну и ту же функцию Ляпунова.
 
 Из приведенных замечаний с очевидностью следует справедливость следующего
@@ -139,21 +136,13 @@ $$\frac{dv(x)}{dt} =w(1 +v) -\frac{\partial v(x)}{\partial x}h(x). \eqno 5$$
 %
 
 \begin{thebibliography}{9} % или {99}, если ссылок больше десяти.
-
 \bibitem{Kl} Ляпунов А.М. Общая задача об устойчивости движения. М.-Л., Гостехиздат, 1950.
-
-\bibitem{A1} Иванов Г.Г., Алферов Г.В., Ефимова П.А. Условия устойчивости линейных однородных систем с переключениями. //  Вестник Пермского университета. Математика. Механика. Информатика. 2016. Вып.3(34). С. 37-48
-
-\bibitem{A2} Иванов Г.Г., Алферов Г.В., Королев В.С.  Теорема об области асимптотической устойчивости и ее приложения.   //Вестник Пермского университета. Математика. Механика. Информатика. 2022. Вып.1 (56). С. 5-13
-
-\bibitem{A3} Alferov G., Ivanov G., Efimova P., Structural study of limited invariant sets of relay stabilized (Book Chapter), 2017, Mechanical systems: Research, Applications and Technology. P. 101-164.
-
-\bibitem{K2} Kadry S., Alferov G., Ivanov G., Korolev V. Investigation of the stability of solutions of systems of ordinary differential  equations.   // 2020, AIP Conference  Proceedings  ICNAAM,  2293, 060004
-
-\bibitem{K3} Kadry S., Alferov G.,  Korolev V. Shymanchuk D. Mathematical  Models of Control  Processes and Stability In Problems of Mechanics. // (2022) AIP Conference Proceedings 2425, 080004.
-
-\bibitem{A4} Alferov G.V., Korolev V.S., Polyakhova E.N., Kholshevnikov K.V. Modeling Problems of Dinamics and Development of Scientific Areas of Mechanics and Applied Mathematics. // Vestnik St. Petersburg University: Mathematics, 2023, 56(4), p. 470-477.
-
+\bibitem{A1} Иванов Г.Г., Алферов Г.В., Ефимова П.А. Условия устойчивости линейных однородных систем с переключениями  //  Вестник Пермского университета. Математика. Механика. Информатика. 2016. Вып.3(34). С. 37--48
+\bibitem{A2} Иванов Г.Г., Алферов Г.В., Королев В.С.  Теорема об области асимптотической устойчивости и ее приложения   // Вестник Пермского университета. Математика. Механика. Информатика. 2022. Вып.1 (56). С. 5--13
+\bibitem{A3} Alferov G., Ivanov G., Efimova P., Structural study of limited invariant sets of relay stabilized (Book Chapter). 2017. Mechanical systems: Research, Applications and Technology. Pp. 101--164.
+\bibitem{K2} Kadry S., Alferov G., Ivanov G., Korolev V. Investigation of the stability of solutions of systems of ordinary differential  equations.     2020, AIP Conference  Proceedings  ICNAAM,  2293, 060004
+\bibitem{K3} Kadry S., Alferov G.,  Korolev V. Shymanchuk D. Mathematical  Models of Control  Processes and Stability In Problems of Mechanics. 2022. AIP Conference Proceedings 2425, 080004.
+\bibitem{A4} Alferov G.V., Korolev V.S., Polyakhova E.N., Kholshevnikov K.V. Modeling Problems of Dinamics and Development of Scientific Areas of Mechanics and Applied Mathematics.  Vestnik St. Petersburg University: Mathematics. 2023. Vol. 56. no. 4. Pp. 470--477.
 \end{thebibliography}
 
 % После библиографического списка в русскоязычных статьях необходимо оформить

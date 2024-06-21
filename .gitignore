@@ -1,0 +1,8 @@
+
+*.out
+*.fls
+*.aux
+*.log
+*.thm
+*.toc
+*.synctex.gz
